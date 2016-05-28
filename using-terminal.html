@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title></title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="flint-style.css">
+  <link rel="stylesheet" href="ke-style.css">
+</head>
+
+<body>
+<div class="container-fluid">
+
+  <p>I grew-up on Windows. My computing life started less than a year before Windows 3.0 and I did little more than use word processors such as WordStar and WordPerfect. The only command line commands I knew were for listing, moving, renaming and deleting files, and I did very little of that.</p>
+  <p>Can you be a programmer and not know the command line? I nearly did. From Windows 3.0 to three years ago I developed Windows applications and I only rarely used the comand line. So yes, you can get by with very little command line savy.</p>
+  <p>But that was then and I think it a bit unusual to not be good with a command line, especially in the Linux world. In fact, I'm not sure that it is possible to completely avoid the command line on Linux.</p>
+  <p>Using the command line intimidates some people. However, it just takes some getting used to, and it will open-up some possibilities. If you are one of those intimitated by the command line just stick with it. Eventually it will become intuitive</p>
+  <p>It will help to have a cheatsheet. This can be a text file or it can go into Evernote or OneNote. Keep it simple such as the table below.
+
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2>Example Cheatshet Format</h2>
+
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <tr>
+          <th>Task</th>
+          <th>Command</th>
+          <th>Example</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Make directory</td>
+          <td>mkdir</td>
+          <td>
+            <ol>
+              <li>$ mkdir testdir33</li>
+              <li>$ mkdir -p testdir77</li>
+            </ol>
+          </td>
+          <td>-p will cause all parents in a path to be created if they don't exist</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="ke-callout ke-callout-warning">
+    <ol>
+      <li>Everything you do in Terminal is case sensitive. If something doesn't work be sure to double check the case.</li>
+      <li>You can open multiple tabs in terminal by pressing <kbd>Ctrl-t</kbd>.</li>
+      <li>Spaces in file names require quotes. It is easiest not put spaces in your file names</li>
+    </ol>
+  </div>
+
+  <div class="ke-callout ke-callout-warning">
+    <h4>Permissions</h4>
+    Although I would like to say that permissions are beyond the scope of this guide, they are present on every file listing and so hard to ignore. I will take a shallow dip into permissions and then list some good references for you at the bottom on the post.
+  </div>
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2>Getting Started</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+          <div class="col-md-8">
+            <p>If you have the screen real estate then open Terminal & Files side-by-side so that as you type commands into Terminal you can see the changes in Files.</p>
+            <ol start="1">
+              <li>To launch Terminal press <kbd>Super</kbd>, type 'terminal' and press <kbd>Enter</kbd>.</li>
+              <li>Position the terminal to the left side of your screen.</li>
+              <li>To launch Files press <kbd>Super</kbd>, type 'files' and press <kbd>Enter</kbd>.</li>
+              <li>Position the files to the right side of your screen.</li>
+          </div>
+          <div class="col-md-4">
+            <a href="dummy.png"><img class="img-responsiveimg-step-figure" src="dummy.png"></a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  1. Open Terminal
+  Super
+  Type 'terminal'
+  Press Enter
+
+  2. Layout windows
+
+  2.1 See what is in home directory
+  $ ls
+  $ ls -l (the -l option provides more information and a more readable layout)
+
+
+  3. Create Sample Files
+    $ cd ~/
+    $ mkdir samplefiles
+    $ cd samplefiles
+    In Files, enter the samplefiles directory so you can see the files appear as we create them below.
+
+
+  3.1 Clear - do it
+
+    Method 1 - Using rediection
+    $ > index.html
+    Method 2 - using an editor
+    $ gedit page1.html
+    The file is not created until you save it in gEdit. Press Ctrl+s to save page1.html
+
+    Check-out Terminal. You are not at the command prompt. When you exit gEdit you will be returned to the command prompt
+    Ctrl+q (q for quit) to exit gEdit
+
+    Method 3
+    You can also create a file with some text.
+    $ echo '&lt;h1&gt;Page 3&lt;/h1&gt;' > page2.html
+    View file in Firefox
+    $ firefox page2.html
+    View file in gEdit
+    $ gedit page2.html
+
+    Let's create a location for our CSS files
+    $ mkdir css
+    $ cd css
+    $ ls -l
+    $ > styles.css
+    $ > styles.mobile.css
+    $ > styles.tablet.css
+
+    Create JavaScript File
+    $ cd ..
+    $ > main.js
+    We should have created that in a js directory so let's create the directory and move the file
+    $ mkdir js
+    $ mv main.js js
+
+
+    -rw-rw-r-- 1 karl karl 0 May 28 08:50 test1.txt
+
+    There are 10 parts to the output as shown below.
+  </p>
+  </div>
+
+
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><h2>Output Parts</h2></div>
+      <div class="panel-body">
+        <table>
+          <tr>
+            <th>A</th><th>B</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th>
+          </tr>
+          <tr>
+            <td>-</td><td>rw-</td><td>rw-</td><td>r--</td>     <td>1</td><td>karl</td><td>karl</td><td>0</td><td>May 28 08:50</td><td>test1.txt</td>
+          </tr>
+        </table>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2>Definitions</h2>
+      For the first 10 characters, the individual characters have the following meaning
+    </div>
+    <div class="panel-body">
+      <table>
+        <tr>
+          <td>
+            -
+          </td>
+          <td>
+            When in the first position it indicates that the item is a file.<br>
+            When in any of the following 9 positions it means 'the permission is not granted'.
+          </td>
+        </tr>
+        <tr>
+          <td>d</td>
+          <td>directory (aka folder)</td>
+        </tr>
+        <tr>
+          <td>r</td>
+          <td>Read permission</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>Write permission</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>Execute permission</td>
+        </tr>
+        <tr>
+          <td>l</td>
+          <td>Symbolic link</td>
+        </tr>
+      </table>
+      <p>There are other letters that may appear here but these are the ones you will see most often.</p>
+    </div>
+  </div>
+
+
+
+  <p class="ke-callout ke-callout-warning">
+    It is confusing to have a user named 'karl' and a group named 'karl' in the example. I'll try to clear that up right after the next table. If after that it is causing confusion, leave a comment and I'll find a better approach.
+  </p>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2>Explanation of Output Parts</h2>
+    </div>
+    <div class="panel-body">
+      <table>
+        <tr>
+          <th>Ref</th><th>Part</th><th>Explanation</th>
+        </tr>
+        <tr>
+          <td>A</td><td>-</td><td>"-" (hyphen) indicates it is a file and not a directory which would be "d". There are other designators that can exist in this position. I have listed them in a table below.</td>
+        </tr>
+        <tr>
+          user, group, other
+          <td>B</td><td>rw-</td><td>The first grouping of three (characters 2-4) is the permissions for the user. In this case user karl has read & write but not execute.</td>
+        </tr>
+        <tr>
+          <td>C</td><td>rw-</td><td>The second grouping of three (characters 5-7) is the permissions for the group. In this case, same as previous, the group karl has read & write but not execute.</td>
+        </tr>
+        <tr>
+          <td>D</td><td>r--</td><td>The third grouping is the permissions for everyone else. In this case every other than user karl and members of the group karl have read but not write and not execute.</td>
+        </tr>
+        <tr>
+          <td>E</td><td>1</td><td></td>
+        </tr>
+        <tr>
+          <td>F</td><td>karl</td><td>Where the first karl is denotes the 'owner'. I think of it as 'the user that owns the file'.</td>
+        </tr>
+        <tr>
+          <td>G</td><td>karl</td><td>Where the second karl is called the group. In this case no group owns the file so karl is listed even though he is not a group.</td>
+        </tr>
+        <tr>
+          <td>H</td><td>0</td><td>The zero in this position says there are zero links to this file. This is a detail of how the Linux file system that is beyond the scope of this guide.</td>
+        </tr>
+        <tr>
+          <td>I</td><td>May 28 08:50</td><td>The date & time.</td>
+        </tr>
+        <tr>
+          <td>J</td><td>test1.txt</td><td>The name.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div> <!-- containter-fluid -->
+
+
+
+  PERMISSIONS
+  Understanding permissions is beyond the scop of this guide. However, you will need to view and change permissions at times so here is a quick introduction.
+  $ cd ..
+  $ >test1.txt
+  $ ls -l test1.txt
+    First a few definitions
+    r
+    w
+    x
+    -
+    d
+
+    -rw-rw-r-- 1 karl karl 0 May 28 08:50 test1.txt
+    Now Let's take this apart
+    - file
+    **put each part in a table cell with a letter above it.
+
+    "karl karl"
+    The first 'karl' is the owner. I.e., the account I logged in with
+    The second 'karl' is a group named 'karl'. That is confusing but I will clear it up some in a minute.
+
+    -rw-rw-r--
+    There are 10 characters in this string
+    The first caracter will be "-" for a file and "d" for a directory
+    "-" means it is a file, not a directory
+    "d" means it is a file
+    Then there are 3 groupings of 3 characters. The 3 characters in each group are r, w x (rwx) which mean
+    "r" means read permission
+    "w" means write permission
+    "x" means execute permission
+    "-" means the permission is not granted (does not have the permission)
+    The first group of 3 is the owner's permissions
+    The second group of 3 is the owning group's permissions
+    The third group of 3 are the permissions for everyone else
+    * They are always in the same order
+
+
+Move / rename
+Make directory
+Delete file
+Delete directory
+Copy
+List permissions with number
+Change permission on files onlyList directory
+Change permissions
+Change owner (user)
+Change owner (group)
+
+
+View beginning of file
+View end of file
+View a file
+Search within a file
+
+
+<h2>References</h2>
+https://help.ubuntu.com/community/FilePermissions
+
+
+<h2>See Also<h2>
+<ol>
+  <li><a href="https://en.wikipedia.org/wiki/Redirection_%28computing%29">, Redirection (computing)</a></li>
+  <li><a href="http://unix.stackexchange.com/questions/159672/how-to-create-a-simple-txt-text-file-using-terminal">How to create a simple .txt (text) file using terminal?</a></li>
+  <li>http://manpages.ubuntu.com/manpages/precise/man1/ls.1.html</li>
+  <li>http://www.tecmint.com/15-basic-ls-command-examples-in-linux/</li>
+  <li>http://www.ubuntujourneyman.com/2011/05/23/decoding-the-ls-l-output/</li>
+  <li>https://wiki.archlinux.org/index.php/users_and_groups</li>
+</ol>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
