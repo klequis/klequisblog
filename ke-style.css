@@ -142,9 +142,68 @@ div.widget_seriestoc > h4:first-of-type {
   height:1.7em;
 }
 
+
 div.row:nth-child(2) {
   border-top-color:#ddd;
   border-top-style:solid;
   border-top-width:1px;
+  padding-top:10px;
+}
 
+div.row + div.row {
+  /* another option might be div.row ~ div.row */
+  border-top-color:#ddd;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-top:10px;
+}
+
+
+/* Chart / Highlight Colors */
+.chart-color-one {
+  background-color:#265a88;
+  color:white;
+}
+
+.chart-color-two {
+  background-color:#31b0d5;
+  color: white;
+}
+
+.chart-color-three {
+  background-color:#3e8f3e;
+  color:white;
+}
+
+.chart-color-four {
+  background-color:#b2dba1;
+}
+
+.chart-color-five {
+  background-color:#c12e2a;
+
+  color:white;
+}
+
+.chart-color-six {
+  background-color:#d9534f;
+  color:white;
+}
+
+.chart-color-seven {
+  background-color:#ff23b3;
+  color:white;
+}
+
+.chart-color-eight {
+  background-color:#fdd2e8;
+}
+
+.chart-color-nine {
+  background-color:#eb9316;
+  color:white;
+}
+
+.chart-color-ten {
+  background-color:#f0ad4e;
 }
