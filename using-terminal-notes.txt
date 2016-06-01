@@ -1,0 +1,409 @@
+"SUDO"
+User accout v root account
+> What is sudo
+> Why use sudo
+> can change anything that is owned by your account
+> need super user privileges to change things owned by system 'root' account
+> sudo, can do destructive things
+
+3.1 Clear - do it
+
+  Method 1 - Using rediection
+  $ > index.html
+  Method 2 - using an editor
+  $ gedit page1.html
+  The file is not created until you save it in gEdit. Press Ctrl+s to save page1.html
+
+  Check-out Terminal. You are not at the command prompt. When you exit gEdit you will be returned to the command prompt
+  Ctrl+q (q for quit) to exit gEdit
+
+  Method 3
+  You can also create a file with some text.
+  $ echo '&lt;h1&gt;Page 3&lt;/h1&gt;' > page2.html
+  View file in Firefox
+  $ firefox page2.html
+  View file in gEdit
+  $ gedit page2.html
+
+  Let's create a location for our CSS files
+  $ mkdir css
+  $ cd css
+  $ ls -l
+  $ > styles.css
+  $ > styles.mobile.css
+  $ > styles.tablet.css
+
+  Create JavaScript File
+  $ cd ..
+  $ > main.js
+  We should have created that in a js directory so let's create the directory and move the file
+  $ mkdir js
+  $ mv main.js js
+
+
+  -rw-rw-r-- 1 karl karl 0 May 28 08:50 test1.txt
+
+  There are 10 parts to the output as shown below.
+
+
+  Move / rename (mv)
+  Make directory (mkdir)
+  Delete file (rm)
+  Delete directory (rmdir)
+  Copy (cp)
+  List permissions with number
+  Change permission on files onlyList directory
+  Change permissions
+  Change owner (user)
+  Change owner (group)
+
+
+  View beginning of file
+  View end of file
+  View a file
+  Search within a file
+
+
+
+  View beginning of file
+  View end of file
+  View a file
+  Search within a file
+
+
+
+
+COLORS
+
+#265a88
+#2aabd2
+#28a4c9
+#337ab7
+#3e8f3e
+#419641
+#5cb85c
+#5bc0de
+#5bc0de
+#ff2aabd2
+#ff337ab7
+#ff419641
+#ff5bc0de
+#f0ad4e
+#eb9316
+#d9534f
+#c12e2a
+#2e6da4
+#ffc8e5bc
+#b2dba1
+#9acfea
+#31b0d5
+
+
+<table>
+  <tr>
+    <th>A</th><th>B</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th>
+  </tr>
+  <tr>
+    <td>-</td><td>rw-</td><td>rw-</td><td>r--</td>     <td>1</td><td>karl</td><td>karl</td><td>0</td><td>May 28 08:50</td><td>test1.txt</td>
+  </tr>
+</table>
+
+About
+Cheatsheet
+> Commands used in this guide
+Launch Terminal
+Permissions
+> Let's bite the bullet and get right into it. The command you are likely to use most is "ls" which gives a listing of the current directory.
+
+
+Commands
+> ls
+
+
+
+
+
+about
+> the command-line is no more difficult than a programming language. If you are learning to program it implies that you believe you are capable of doing so. If you are capable of programming, the command line is not any harder to learn so you can do that too.
+
+
+
+"man pages"
+
+
+
+
+
+
+============================================================================
+===============================================================================
+
+
+
+1. Open Terminal
+  Super
+  Type 'terminal'
+  Press Enter
+
+  2. Layout windows
+
+  2.1 See what is in home directory
+  $ ls
+  $ ls -l (the -l option provides more information and a more readable layout)
+
+
+  3. Create Sample Files
+    $ cd ~/
+    $ mkdir samplefiles
+    $ cd samplefiles
+    In Files, enter the samplefiles directory so you can see the files appear as we create them below.
+
+
+
+
+
+
+
+
+=====================================================================
+=========================================================================
+
+
+
+
+
+
+
+
+PERMISSIONS
+  Understanding permissions is beyond the scop of this guide. However, you will need to view and change permissions at times so here is a quick introduction.
+  $ cd ..
+  $ >test1.txt
+  $ ls -l test1.txt
+    First a few definitions
+    r
+    w
+    x
+    -
+    d
+
+    -rw-rw-r-- 1 karl karl 0 May 28 08:50 test1.txt
+    Now Let's take this apart
+    - file
+    **put each part in a table cell with a letter above it.
+
+    "karl karl"
+    The first 'karl' is the owner. I.e., the account I logged in with
+    The second 'karl' is a group named 'karl'. That is confusing but I will clear it up some in a minute.
+
+    -rw-rw-r--
+    There are 10 characters in this string
+    The first caracter will be "-" for a file and "d" for a directory
+    "-" means it is a file, not a directory
+    "d" means it is a file
+    Then there are 3 groupings of 3 characters. The 3 characters in each group are r, w x (rwx) which mean
+    "r" means read permission
+    "w" means write permission
+    "x" means execute permission
+    "-" means the permission is not granted (does not have the permission)
+    The first group of 3 is the owner's permissions
+    The second group of 3 is the owning group's permissions
+    The third group of 3 are the permissions for everyone else
+    * They are always in the same order
+
+
+Move / rename (mv)
+Make directory (mkdir)
+Delete file (rm)
+Delete directory (rmdir)
+Copy (cp)
+List permissions with number
+Change permission on files onlyList directory
+Change permissions
+Change owner (user)
+Change owner (group)
+
+
+
+COLORS
+
+#265a88
+#2aabd2
+#28a4c9
+#337ab7
+#3e8f3e
+#419641
+#5cb85c
+#5bc0de
+#5bc0de
+#ff2aabd2
+#ff337ab7
+#ff419641
+#ff5bc0de
+#f0ad4e
+#eb9316
+#d9534f
+#c12e2a
+#2e6da4
+#ffc8e5bc
+#b2dba1
+#9acfea
+#31b0d5
+
+
+<table>
+  <tr>
+    <th>A</th><th>B</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th>
+  </tr>
+  <tr>
+    <td>-</td><td>rw-</td><td>rw-</td><td>r--</td>     <td>1</td><td>karl</td><td>karl</td><td>0</td><td>May 28 08:50</td><td>test1.txt</td>
+  </tr>
+</table>
+
+About
+Cheatsheet
+> Commands used in this guide
+Launch Terminal
+Permissions
+> Let's bite the bullet and get right into it. The command you are likely to use most is "ls" which gives a listing of the current directory.
+
+
+Commands
+> ls
+
+
+
+
+
+about
+> the command-line is no more difficult than a programming language. If you are learning to program it implies that you believe you are capable of doing so. If you are capable of programming, the command line is not any harder to learn so you can do that too.
+
+"SUDO"
+User accout v root account
+> What is sudo
+> Why use sudo
+> can change anything that is owned by your account
+> need super user privileges to change things owned by system 'root' account
+> sudo, can do destructive things
+
+
+"man pages"
+
+
+
+
+
+
+============================================================================
+===============================================================================
+
+
+
+1. Open Terminal
+  Super
+  Type 'terminal'
+  Press Enter
+
+  2. Layout windows
+
+  2.1 See what is in home directory
+  $ ls
+  $ ls -l (the -l option provides more information and a more readable layout)
+
+
+  3. Create Sample Files
+    $ cd ~/
+    $ mkdir samplefiles
+    $ cd samplefiles
+    In Files, enter the samplefiles directory so you can see the files appear as we create them below.
+
+
+  3.1 Clear - do it
+
+    Method 1 - Using rediection
+    $ > index.html
+    Method 2 - using an editor
+    $ gedit page1.html
+    The file is not created until you save it in gEdit. Press Ctrl+s to save page1.html
+
+    Check-out Terminal. You are not at the command prompt. When you exit gEdit you will be returned to the command prompt
+    Ctrl+q (q for quit) to exit gEdit
+
+    Method 3
+    You can also create a file with some text.
+    $ echo '&lt;h1&gt;Page 3&lt;/h1&gt;' > page2.html
+    View file in Firefox
+    $ firefox page2.html
+    View file in gEdit
+    $ gedit page2.html
+
+    Let's create a location for our CSS files
+    $ mkdir css
+    $ cd css
+    $ ls -l
+    $ > styles.css
+    $ > styles.mobile.css
+    $ > styles.tablet.css
+
+    Create JavaScript File
+    $ cd ..
+    $ > main.js
+    We should have created that in a js directory so let's create the directory and move the file
+    $ mkdir js
+    $ mv main.js js
+
+
+    -rw-rw-r-- 1 karl karl 0 May 28 08:50 test1.txt
+
+    There are 10 parts to the output as shown below.
+
+
+
+
+
+
+=====================================================================
+=========================================================================
+
+
+
+
+
+
+
+
+PERMISSIONS
+  Understanding permissions is beyond the scop of this guide. However, you will need to view and change permissions at times so here is a quick introduction.
+  $ cd ..
+  $ >test1.txt
+  $ ls -l test1.txt
+    First a few definitions
+    r
+    w
+    x
+    -
+    d
+
+    -rw-rw-r-- 1 karl karl 0 May 28 08:50 test1.txt
+    Now Let's take this apart
+    - file
+    **put each part in a table cell with a letter above it.
+
+    "karl karl"
+    The first 'karl' is the owner. I.e., the account I logged in with
+    The second 'karl' is a group named 'karl'. That is confusing but I will clear it up some in a minute.
+
+    -rw-rw-r--
+    There are 10 characters in this string
+    The first caracter will be "-" for a file and "d" for a directory
+    "-" means it is a file, not a directory
+    "d" means it is a file
+    Then there are 3 groupings of 3 characters. The 3 characters in each group are r, w x (rwx) which mean
+    "r" means read permission
+    "w" means write permission
+    "x" means execute permission
+    "-" means the permission is not granted (does not have the permission)
+    The first group of 3 is the owner's permissions
+    The second group of 3 is the owning group's permissions
+    The third group of 3 are the permissions for everyone else
+    * They are always in the same order

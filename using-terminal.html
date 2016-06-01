@@ -286,7 +286,99 @@
     </div>
   </div>
 
+  <!-- $ mkdir -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ mkdir</code> Make Directory</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+          <div class="col-md-8">
+            <p>Make directory named 'workspace'</p>
+            <pre>$ mkdir workspace</pre></li>
+            <p>Show the new directory in Terminal</>
+            <pre>$ ls -l</pre>
+            <p>Look for the new 'workspace' directory in Files</p>
+          </div>
+          <div class="col-md-4">
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"></a>
+          </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- $ cd -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ cd</code> Change Directory</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+          <div class="col-md-8">
+            <p>Change directory to 'workspace'</p>
+            <pre>$ cd workspace</pre>
+            <p>???????/Not sure what goes here??????????</p>
+            <pre>$ ls -l</pre>
+          </div>
+          <div class="col-md-4">
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"></a>
+          </div>
+          <div class="col-md-8">
+            <p>Let's make another directory for the files we will be creating.</p>
+            <pre>$ mkdir samplefiles</pre>
+            One last time for practice.
+            <pre>$ ls -l</pre>
+            <p>Change to 'samplefiles'</p>
+            <pre>$ cd samplefiles</pre>
+          </div>
+          <div class="col-md-8">
+            <p>So far each <code>$ cd</code> command has not started with with a '/'. This works because we are navigating within the same branch of the directory hierarchy, i.e., our 'home' directory (aka '~'). Let's navigate to a different root branch of the hierarchy using '/'.</p>
+            <p>On the left-hand side of Files, click on 'Computer'. You will now see all the root directories.</p>
+          </div>
+          <div class="col-md-4">
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/007.rootdirectories.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/007.rootdirectories.png"></a>
+          </div>
+          <div class="col-md-8">
+            <p>If you are not in 'workspace/samplefiles' then navigate there.</p>
+            <pre>$ cd workspace/samplefiles</pre>
+            <p>Confirm your current root directory is 'home' (aka "~"), then try to go to another root directory without preceeding the directory name with '/'. This produces an error.</p>
+            <pre>$ cd etc/calendar</pre>
+            <p>Now do the same but preceed the command with '/'.</p>
+            <pre>$ cd /etc/calendar</pre>
+          </div>
+          <div class="col-md-4">
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"></a>
+          </div>
+          <div class="col-md-8">
+            <p>Here are some other things you can do with <code>$ cd</code>.</p>
+            <p>Go to your home directory from anywhere.</p>
+            <pre>$ cd</pre>
+            <p>Navigate multiple directories at once.</p>
+            <pre>$ cd workspace/samplefiles</pre>
+            <p>Here is a quick way to get back to your home directory.</p>
+            <pre>$ cd</pre>
+            <p>Go up one level.</p>
+            <p>First go back to '../samplefiles'.</p>
+            <pre>$ cd workspace/samplefiles</pre>
+            <p>Now up one level</p>
+            <pre>$ cd ..</pre>
+            <p>Go up 2 levels.</p>
+            <p>First go back to '../samplefiles'.</p>
+            <pre>$ cd workspace/samplefiles</pre>
+            <pre>$ cd workspace/samplefiles</pre>
+            <p>Now up two levels.</p>
+            <pre>$ cd ../../</pre>
+          </div>
+          <div class="col-md-4">
+            <!-- needed to preserve shap -->
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Cheatsheet -->
   <h2>Linux/Ubuntu Command Line Cheetsheet</h2>
   <!-- Cheatsheet -->
   <div class="panel panel-default">
