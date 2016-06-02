@@ -34,7 +34,7 @@
     </ol>
   </div>
 
-  <h2>Commands used in this guide</h2>
+  <h2>Use a Cheetsheet</h2>
   <p>It will help to have a cheatsheet of commands. This can be a text file or it can go into a program such as Evernote or OneNote. Keep it simple so you can add to and refer to it quickly. A cheetsheet listing of all the commands used in this guide is at the bottom of the post.</p>
 
     <!-- Getting Started -->
@@ -376,6 +376,149 @@
     </div>
   </div>
 
+  <!-- -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code> Creating Files</h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-8">
+        <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods.</p>
+        <p>Overall I love GNOME. However, one of my fustrations with it is that you can not right-click in Files to create a new document. I'm sure there is a way to fix that and finding it is on my to do list.</p>
+        <p>Most of the time I create files from within a text editor. I currently use <a href="https://atom.io">Atom</a>. Knowing how to create files from the command line is useful but you can decide what workflow works for you best.</p>
+        <p><b>gEdit</b> - is a common text editor that comes with Ubuntu.</p>
+        <p>The fillowing command will launch gEdit with a new file open. Make sure you are in '~/workspace/samplefiles' (remember '~' is 'home')</p>
+        <pre>$ gedit page1.html</pre>
+        <p>Type the below into page1.html</p>
+        <pre>&lt;h1&gt;page1.html&lt;/h1&gt;</pre>
+        <p>Close gEdit and check-out page1.html in Files</p>
+        <p>Using Terminal look in '~/workspace/samplefiles' for page1.html. Remember, that is <code>$ ls -l</code>.</p>
+      </div>
+      <div class="col-md-4">
+        <!-- empty -->
+      </div>
+      <div class="col-md-8">
+        <p><b>'>' Redirection</b> - You can read-up on redirection on your own. For now I'll just note that normally output will go to the screen but you can 'redirect' it using '&gt;'. First lets try to print something without redirection.</p>
+        <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;'</pre>
+        <p>That printed to the screen. Now lets redirect it to a file.</p>
+        <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;' > page2.html</pre>
+        <p>View the file in Files and then in Terminal</p>
+        <p>Open the file with FireFox</p>
+        <pre>$ firefox page2.html</pre>
+      </div>
+      <div class="col-md-4">
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/009.firefoxpage2.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/009.firefoxpage2.png"></a>
+      </div>
+      <div class="col-md-8">
+        <p>You can also create empty files with redirection</p>
+        <pre>$ > page3.html</pre>
+        <p><code>$ touch</code> - <b>touch</b> is an easy way to create empty new files with the command line. It is also used to change the date/time of a file.</p>
+        <pre>$ touch file1.css</pre>
+      </div>
+      <div class="col-md-4">
+        <!-- empty -->
+
+      </div>
+    </div>
+  </div>
+
+  <!-- $ rm -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ rm</code> - Removing files and folders</h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-8">
+        <p>There is a <code>rmdir</code> command but I don't find it necessary. You can remove (aka delete) any file or folder using the <code>rm</code> command along with a couple of options: <code>-r</code> for 'recursize' and <code>-f</code> for force.</p>
+        <p><code>-r</code> (recursive) will drill down the directory structure and remove everything below the specified node</p>
+        <p><code>-f</code> (force) ignores nonexistent files, missing operands and never prompts the user. What that really means is it will silently go about removing things and not present any cautions or other information to you.</p>
+        <p>Follow these steps to learn how <code>rm</code> works</p>
+        <pre>$ cd ~/workspace/samplefiles<br>$ mkdir emptydir<br>$ mkdir nonemptydir<br>$ cd nonemptydir<br>$ > file1.txt<br>$ > file2.txt<br>$ mkdir innerdir<br>cd ..</pre>
+        <p>Now that our sample data is setup, let's try removing some stuff</p>
+        <p><code>rm</code> by itself will not work for an empty or non-empty directory. <code>rmdir</code> will work for both empty but not non-empty directories. I'll show you how to do both with one command.</p>
+        <p>Let's try <code>rm</code> to see what happens.</p>
+        <pre>$ rm emptydir<br>$ rm nonemptydir</pre>
+        <p>Now try <code>-f</code> wihtout <code>-r</code>.</p>
+        <pre>$ rm -f emptydir<br>$ rm -f nonemptydir</pre>
+        <p>That doesn't work either. However, in both cases, <code>-r</code> will.</p>
+        <pre>$ rm -r emptydir<br>$ rm -r nonemptydir</pre>
+      </div>
+      <div class="col-md-4">
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"></a>
+      </div>
+      <div class="col-md-8">
+        <p><code>rm</code> also works on files.</p>
+        <pre>$ cd ~/workspace/samplefiles<br>$ > rmfile1.txt<br>$ rm rmfile1.txt</pre>
+      </div>
+      <div class="col-md-4">
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/012.rmfile.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/012.rmfile.png"></a>
+      </div>
+    </div>
+  </div>
+
+  <h2><code>$ sudo</code></h2>
+  <blockquote>
+    <b>sudo</b> (superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system. Sudo also logs all commands and arguments.
+    <cite>Source: <a href="http://searchenterpriselinux.techtarget.com/definition/sudo">TechTarget</a></cite>
+  </blockquote>
+  <div class="col-md-8">
+    <p>So far we have been working with files owned by the currently log-in user (you). If you want to work with files and directories that you don't own you need to use <b>sudo</b>. Let's create both a directory and a file with <code>sudo</code> and then view the results.</p>
+    <pre>$ cd ~/workspace/samplefiles<br>$ sudo mkdir sudorootfiles<br>$ sudo > sudorootfile.txt<br>$ ls -l</pre>
+
+
+    <p>You will be prompted for your password, the same one you log in with.</p>
+    <p>Performing a directory listing will show that both the Owner and Group are 'root' which is the super user</p>
+    <pre>$ cd ls -l</pre>
+  </div>
+  <div class="col-md-4">
+    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"></a>
+  </div>
+  <div class="col-md-8">
+    <p class="ke-callout ke-callout-warning">
+      I left the error messages in the above window on purpose. They appear whenever you launch gEdit form Terminal. I assume there is a fix for it but I have been using gedit for years and have just lived with the errors with no ill-effect.
+    </p>
+    <p>Also look in Files. For both sudorootdir and sudorootfile.txt you will see a lock icon. This means that they are 'read-only' to you. They are 'read/write' to root.</p>
+  </div>
+  <div class="col-md-4">
+    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"></a>
+  </div>
+  <div class="col-md-8">
+    <p>You can remove sudorootdir and sudorootfile.txt without <code>sudo</code> but you will be prompted to confirm. Let's try on sudorootdir.</p>
+    <pre>$ rm sudorootdir</pre>
+  </div>
+  <div class="col-md-4">
+    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"></a>
+  </div>
+  <div class="col-md-8">
+    <p>However, if you try to edit sudorootfile.txt without <code>sudo</code> you will not be able to save it because it is read-only to you.</p>
+    <pre>$ gedit sudorootfile.txt</pre>
+    <p>Make a change to the file contents and then <kbd>Ctrl+q</kbd>.</p>
+    <p>As you can see in the accompaning picture, 1) the titlebar says [Read-Only], 2) the Save button is disabled and 3) when you quit you are offered Save As... instead of Save</p>
+
+  </div>
+  <div class="col-md-4">
+    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"></a>
+  </div>
+  <div class="col-md-4">
+    <p>Now let's give that a try in a real life scenario which you will meet later if you are following the series when creating a virtual host.</p>
+    <pre>$ gedit /etc/hosts</pre>
+    <p>Note that the file is read-only.</p>
+    <pre>Press <kbd>Ctrl+q</kbd><br><br>$ sudo gedit /etc/hosts</pre>
+    <p>Now the file is read/write.</p>
+  </div>
+  <div class="col-md-4">
+    <!-- empty -->
+  </div>
+  <h2>Mission Accomplished</h2>
+  <p>After completing this guide you should have greater confidence when using Terminal and the command line. There are many more commands which you can explore that with the resources at the bottom of this post. Use the below cheatsheet as long as you need it and add new commands to it as you come across them.</p>
+
+
+
+
+
+sudo
+
+
 
 
   <!-- Cheatsheet -->
@@ -397,7 +540,7 @@
           <td>Change directory</td>
           <td>$ cd</td>
           <td>$ cd workspace</td>
-          <td>$ cd (list current directory)<br>$ cd .. (go up one directory)<br>$ cd ../../ (go up two directories)<br>$cd ~ (go to you home directory)</td>
+          <td>$ cd (list current directory)<br>$ cd .. (go up one directory)<br>$ cd ../../ (go up two directories)<br>$ cd ~ or $ cd (go to you home directory)</td>
         </tr>
         <tr>
           <td>List contents of directory</td>
@@ -412,10 +555,22 @@
           <td>-p will cause all parents in a path to be created if they don't exist</td>
         </tr>
         <tr>
-          <td>Remove directory</td>
-          <td>$ rmdir workspace</td>
-          <td>$ remdir &lt;dirName&gt; (remove empty directory)</td>
-          <td></td>
+          <td>Remove directory or file</td>
+          <td>$ rm</td>
+          <td>$ rm &lt;fileName&gt;<br>$ rm -rf &lt;dirName&gt;</td>
+          <td>$ rm file1.txt (remove a file)<br>$ rm somedirectory (remove a directory)</td>
+        </tr>
+        <tr>
+          <td>Create a file</td>
+          <td>$ ></td>
+          <td>$ > file1.txt<br>$ echo '&lt;h1&gt;' > file2.txt</td>
+          <td>'echo' means print</td>
+        </tr>
+        <tr>
+          <td>Work with file you don't own</td>
+          <td>$ sudo '&lt;command&gt;</td>
+          <td>$ sudo gedit /etc/hosts</td>
+          <td>'sudo' gives you root/super user permissions</td>
         </tr>
       </table>
     </div>
@@ -424,18 +579,23 @@
 
 
   <h2>References</h2>
-  https://help.ubuntu.com/community/FilePermissions
-
-
-  <h2>See Also<h2>
   <ol>
-    <li><a href="https://en.wikipedia.org/wiki/Redirection_%28computing%29">, Redirection (computing)</a></li>
-    <li><a href="http://unix.stackexchange.com/questions/159672/how-to-create-a-simple-txt-text-file-using-terminal">How to create a simple .txt (text) file using terminal?</a></li>
-    <li>http://manpages.ubuntu.com/manpages/precise/man1/ls.1.html</li>
-    <li>http://www.tecmint.com/15-basic-ls-command-examples-in-linux/</li>
-    <li>http://www.ubuntujourneyman.com/2011/05/23/decoding-the-ls-l-output/</li>
-    <li>https://wiki.archlinux.org/index.php/users_and_groups</li>
-    <li>http://www.gnu.org/software/coreutils/manual/html_node/</li>
+    <li><a href="https://help.ubuntu.com/community/FilePermissions">Understanding and Using File Permissions</a>, Ubuntu, Official Documentation.</li>
+  </ol>
+
+  <h2>See Also</h2>
+  <ol>
+    <li><a href="https://en.wikipedia.org/wiki/Redirection_%28computing%29"> Redirection (computing)</a>, Wikipedia.</li>
+
+    <li><a href="http://unix.stackexchange.com/questions/159672/how-to-create-a-simple-txt-text-file-using-terminal">How to create a simple .txt (text) file using terminal?</a>, StackExchange: Unix & Linux discussion forum.</li>
+
+    <li><a href="http://manpages.ubuntu.com/manpages/precise/man1/ls.1.html">Ubuntu manuals.</a></li>
+
+    <li><a href="http://www.tecmint.com/15-basic-ls-command-examples-in-linux/">15 Basic 'ls' Command Examples in Linux</a>, Tecmint.com.</li>
+
+    <li><a href="https://wiki.archlinux.org/index.php/users_and_groups">Users and groups</a>, archlinux.</li>
+
+    <li><a href="http://www.gnu.org/software/coreutils/manual/html_node/">GNU Coreutils</a>, GNU Operating System.</li>
   </ol>
 
 

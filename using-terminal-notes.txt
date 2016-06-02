@@ -1,3 +1,21 @@
+
+1. finish sudo
+2. you need to do rm for files and folders
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code> Creating Files</h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+
+
 "SUDO"
 User accout v root account
 > What is sudo
@@ -17,6 +35,7 @@ User accout v root account
   Check-out Terminal. You are not at the command prompt. When you exit gEdit you will be returned to the command prompt
   Ctrl+q (q for quit) to exit gEdit
 
+
   Method 3
   You can also create a file with some text.
   $ echo '&lt;h1&gt;Page 3&lt;/h1&gt;' > page2.html
@@ -32,6 +51,8 @@ User accout v root account
   $ > styles.css
   $ > styles.mobile.css
   $ > styles.tablet.css
+
+
 
   Create JavaScript File
   $ cd ..
