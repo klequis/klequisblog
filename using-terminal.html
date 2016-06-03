@@ -14,16 +14,16 @@
 <body>
 
 <div class="container-fluid">
+  <p>If you already know how to use the command line you can skip this guide. If you are new to the command line read on.</p>
 
-  <p>I grew-up on Windows. My computing life started less than a year before Windows 3.0 and I did little more than use word processors such as WordStar and WordPerfect. The only command line commands I knew were for listing, moving, renaming and deleting files, and I did very little of that.</p>
-  <p>Can you be a programmer and not know the command line? I nearly did. From Windows 3.0 to three years ago I developed Windows applications and I only rarely used the comand line. So yes, you can get by with very little command line savy, but perhaps not on Linux.</p>
-  <p>But that was then and I think it a bit unusual to not be good with a command line, especially in the Linux world. In fact, I'm not sure that it is possible to completely avoid the command line on Linux.</p>
-  <p>Using the command line intimidates some people. However, it just takes some getting used to, and it will open-up some possibilities. If you are one of those intimitated by the command line just stick with it. Eventually it will become intuitive</p>
-  <p>I use Files (aka File Manager) for many tasks, especially moving/renaming files that I have permission to do so with. I use the command line when installing software requires it and when working with files that are owned by the system. So on a continium of always using command line to always using GUI tools, I'm somewhere in-between but close to the GUI end.
+  <p>Are you wondering how well you need to know the command line to effectively develop applications on Linux? The more you know the better, but you can get started with some basic commands and learn more over time.</p>
+
+  <p>As a developer using Linux there are things you will need to do with the command line. You need to get comfortable with it. Following the exercises below will help you get there. It will give you the skills you need to complete the remainder of this <a hrref="#">series</a> and provide you with a foundation you can build on.</p>
+
 
   <div class="ke-callout ke-callout-warning">
-    <p>Whereever you see <code>$ </code> type into terminal the text that follows.</p>
-    <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see it with particular attention to capitalization and spaces.</p>
+    <p>Where ever you see <code>$ </code> type what follows it into terminal.</p>
+    <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see it, paying careful attention to every character, especially spaces and capitalization.</p>
   </div>
 
   <div class="ke-callout ke-callout-warning">
@@ -31,11 +31,12 @@
       <li>Everything you do in Terminal is case sensitive. If something doesn't work be sure to double check the case.</li>
       <li>You can open multiple tabs in terminal by pressing <kbd>Ctrl-t</kbd>.</li>
       <li>Spaces in file names require quotes. It is easiest to not put spaces in your file names.</li>
+      <li>You can see and navigate all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typeing and many typos.
     </ol>
   </div>
 
   <h2>Use a Cheetsheet</h2>
-  <p>It will help to have a cheatsheet of commands. This can be a text file or it can go into a program such as Evernote or OneNote. Keep it simple so you can add to and refer to it quickly. A cheetsheet listing of all the commands used in this guide is at the bottom of the post.</p>
+  <p>It will help to have a cheatsheet of commands. This can be a text file or it can go into a program such as Evernote or OneNote. Keep it simple so you can add to and refer to it quickly. A cheatsheet listing of all the commands used in this guide is at the bottom of the post.</p>
 
     <!-- Getting Started -->
   <h2>Getting Started</h2>
@@ -46,17 +47,10 @@
     <div class="panel-body">
       <div class="row">
           <div class="col-md-8">
-            <ol start="1">
-              <li>To launch Terminal press <kbd>Super</kbd>, type 'terminal' and press <kbd>Enter</kbd>.</li>
-            </ol>
-            <p>Terminal will be launched with the current directory as you home directory. Let's dissect the command prompt.</p>
+            <p>To launch Terminal press <kbd>Super</kbd>, type 'terminal' and press <kbd>Enter</kbd>.</p>
+            <p>Terminal will be launched with the current directory as your home directory. Let's dissect the command prompt.</p>
             <p>
-              <span class="chart-color-one">karl</span>
-              <span class="chart-color-two">@</span>
-              <span class="chart-color-three">karl-g3</span>
-              <span class="chart-color-four">:</span>
-              <span class="chart-color-five">~</span>
-              <span class="chart-color-six">$</span>
+              <span class="chart-color-one">karl</span> <span class="chart-color-two">@</span> <span class="chart-color-three">karl-g3</span> <span class="chart-color-four">:</span> <span class="chart-color-five">~</span> <span class="chart-color-six">$</span>
             </p>
             <table>
               <tr>
@@ -81,12 +75,12 @@
               </tr>
               <tr>
                 <td class="chart-color-six">$</td>
-                <td>Indicates commands will be executed with your privildeges and not super user privilidges (which would be indicated with '#').
+                <td>Indicates commands will be executed with your privildeges and not super user privilidges (which would be indicated with '#'). This is explained in more detail below.</td>
               </tr>
             </table>
           </div>
           <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"></a>
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"></a>
           </div>
       </div>
     </div>
@@ -103,14 +97,18 @@
             <p>If you have the screen real estate then open Terminal & Files side-by-side so that as you type commands into Terminal you can see the changes in Files.</p>
           </div>
           <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/002.workspace.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/002.workspace.png"></a>
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/002.workspace.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/002.workspace.png"></a>
           </div>
       </div>
     </div>
   </div>
 
+  <p class="ke-callout ke-callout-info">
+    The file manager in GNOME is simply called "Files".
+  </p>
+
   <!-- ls command -->
-  <h2>The First Command "ls"</h2>
+  <h2>The First Command: "ls"</h2>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3>"ls Command"</h3>
@@ -120,10 +118,10 @@
           <div class="col-md-8">
             <pre>$ ls</pre>
             <p>This will show the contents of you home (~) directory.</p>
-            <p>You can add options to the ls command. The most common are -l and -a</p>
+            <p>You can add options to the ls command. The most common are -l and -a.</p>
           </div>
           <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/003.ls.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/003.ls.png"></a>
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/003.ls.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/003.ls.png"></a>
           </div>
       </div>
       <div class="row">
@@ -132,16 +130,16 @@
           <p>"-l" (lower case L) shows a more detailed list view of the directory contents. We will analyze the parts of this detail shortly.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/004.ls-l.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/004.ls-l.png"></a>
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/004.ls-l.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/004.ls-l.png"></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-8">
           <pre>$ ls -la</pre>
-          <p>"-a" shows hidden files.</p>
+          <p>"-a" shows hidden files. The filename of hidden files starts with a period.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/005.ls-la.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/005.ls-la.png"></a>
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/005.ls-la.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/005.ls-la.png"></a>
         </div>
       </div>
     </div>
@@ -149,17 +147,16 @@
 
   <div class="ke-callout ke-callout-warning">
     <h4>Permissions</h4>
-    In explaining the output of the <code>ls</code> command I will go through a long explanation of Linux permissions. If you have never been exposed to this before it is likely you will not fully understand it. Worry not, it takes some time and review of different explanations to fully comprehend. Give the section a read and then move on. Conqure Linx permisisons another day.
+    In explaining the output of the <code>ls</code> command I will go through a long explanation of Linux permissions. If you have never been exposed to this before it is likely you will not fully understand it. Worry not, it takes some time and review of different explanations to fully comprehend. Give the section a read and then move on. Conquer Linux permissions another day.
   </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
       <h2><code>ls -l</code>, <code>ls -la</code> Output explained</h2>
-      For the first 10 characters, the individual characters have the following meaning
     </div>
     <div class="panel-body">
       <h3>Definitions</h3>
-      <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece. Some of the individual characters have specific meaning as list below.</p>
+      <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using '-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt' as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below.</p>
       <table>
         <tr>
           <th>Character</th>
@@ -179,6 +176,10 @@
           <td>When in the first position it indicates that the item is a directory (aka folder)</td>
         </tr>
         <tr>
+          <td>l</td>
+          <td>(lower case L) When in the first position indicates the item is a symbolic link.</td>
+        </tr>
+        <tr>
           <td>r</td>
           <td>Read permission. The user can see and open the file.</td>
         </tr>
@@ -190,23 +191,10 @@
           <td>x</td>
           <td>Execute permission. The user can execute the file it is a program or other executible.</td>
         </tr>
-        <tr>
-          <td>l</td>
-          <td>Symbolic link.</td>
-        </tr>
       </table>
       <h3>Output Parts</h3>
 
-      <span class="chart-color-one">-</span>
-      <span class="chart-color-two">rw-</span>
-      <span class="chart-color-three">rw-</span>
-      <span class="chart-color-four">r--</span>
-      <span class="chart-color-five">1</span>
-      <span class="chart-color-six">karl</span>
-      <span class="chart-color-seven">karl</span>
-      <span class="chart-color-eight">0</span>
-      <span class="chart-color-nine">May 28 08:50</span>
-      <span class="chart-color-ten">test1.txt</span><br><br>
+      <span class="chart-color-one">-</span> <span class="chart-color-two">rw-</span> <span class="chart-color-three">rw-</span> <span class="chart-color-four">r--</span> <span class="chart-color-five">1</span> <span class="chart-color-six">karl</span> <span class="chart-color-seven">karl</span> <span class="chart-color-eight">0</span> <span class="chart-color-nine">May 28 08:50</span> <span class="chart-color-ten">test1.txt</span><br><br>
 
       <table>
         <tr>
@@ -228,7 +216,7 @@
   </div>
 
   <p class="ke-callout ke-callout-warning">
-    It is confusing to have a user named 'karl' and a group named 'karl' in the example. I'll try to clear that up below. If after that it is still causing confusion, leave a comment and I'll find a better approach.
+    It is potentially confusing to have a user named 'karl' and a group named 'karl' in the example. However, that is what Ubuntu does, it creates a group with the same name as the user for each users.
   </p>
   <div class="panel panel-default">
     <!-- Default panel contents -->
@@ -236,16 +224,16 @@
       <h2>Explanation of Output Parts</h2>
     </div>
     <div class="panel-body">
-      <p>Characters 2 through 10 are groups of 3. Each group of 3 applies to a specific type of system user. Possible values for the positions with a group of 3 are:</p>
+      <p>Characters 2 through 10 are groups of 3. Each group of 3 applies to a specific type of system user. Possible values for the positions within a group of 3 are:</p>
       <table>
         <tr>
-          <td>Position 1 of 3</td><td>"r" for read or "-" for 'does not have read premission'</td>
+          <td>Position 1 of 3</td><td>"r" for read or "-" for 'does not have read permission'</td>
         </tr>
         <tr>
           <td>Position 2 of 3</td><td>"w" for write or "-" for 'does not have write permission'</td>
         </tr>
         <tr>
-          <td>Position 3 of 3</td><td>"x" for execute of "-" for 'does not have execute permission'</td>
+          <td>Position 3 of 3</td><td>"x" for execute or "-" for 'does not have execute permission'</td>
         </tr>
       </table>
       <table>
@@ -253,13 +241,13 @@
           <th>Ref</th><th>Part</th><th>Meaning</th>
         </tr>
         <tr>
-          <td>A</td><td class="chart-color-one">-</td><td>"-" (hyphen) indicates it is a file and not a directory. This position could also be "d" for directory. There are other designators that can exist in this position. See the references at bottom of post for more detail.</td>
+          <td>A</td><td class="chart-color-one">-</td><td>"-" (hyphen) indicates it is a file and not a directory. This position could also be "d" for directory. There are other designators that can exist in this position. See the references at bottom of this post for more detail.</td>
         </tr>
         <tr>
           <td>B</td><td class="chart-color-two">rw-</td><td>The first grouping of three (characters 2-4) is the permissions for the user. In this case user karl has read & write but not execute.</td>
         </tr>
         <tr>
-          <td>C</td><td class="chart-color-three">rw-</td><td>The second grouping of three (characters 5-7) is the permissions for the group. In this case, same as previous, the group karl has read & write but not execute.</td>
+          <td>C</td><td class="chart-color-three">rw-</td><td>The second grouping of three (characters 5-7) is the permissions for the group owner. In this case, same as previous, the group karl has read & write but not execute.</td>
         </tr>
         <tr>
           <td>D</td><td class="chart-color-four">r--</td><td>The third grouping is the permissions for everyone else. In this case everyone other than user karl and members of the group karl, have read but not write and not execute.</td>
@@ -268,13 +256,13 @@
           <td>E</td><td class="chart-color-five">1</td><td>The number of links to this file. An explanation of this is out of scope for this post.</td>
         </tr>
         <tr>
-          <td>F</td><td class="chart-color-six">karl</td><td>"Owner" of the item who will be an individual user account, in this case I am logged-in as karl.</td>
+          <td>F</td><td class="chart-color-six">karl</td><td>The user who is the "Owner" of the item. It will be an individual user account. In this case I am logged-in as karl.</td>
         </tr>
         <tr>
-          <td>G</td><td class="chart-color-seven">karl</td><td>"Group owner" of the file or item which will be a group. In this case no group owns the file so karl is listed even though it is not a group.</td>
+          <td>G</td><td class="chart-color-seven">karl</td><td>"Group owner". There are many groups on your Ubuntu GNOME machine and one of them is named with your user name.</td>
         </tr>
         <tr>
-          <td>H</td><td class="chart-color-eight">0</td><td>This size of the item. This is an empty text file so this is showing as zero.</td>
+          <td>H</td><td class="chart-color-eight">0</td><td>This size of the item. This is an empty text file so it is showing as zero.</td>
         </tr>
         <tr>
           <td>I</td><td class="chart-color-nine">May 28 08:50</td><td>The date & time.</td>
@@ -286,6 +274,27 @@
     </div>
   </div>
 
+  <h2>Let's begin the exercises</h2>
+
+  <!-- $ clear -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ clear</code> Clear Terminal</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Sometimes Terminal is full of text and it is confusing. You can clear the Terminal with the <code>$ clear</code> command.</p>
+          <pre>$ ls -l<br>$ clear</pre>
+          <p>To see the previously used commands press <kbd>up-arrow</kbd>.</p>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- $ mkdir -->
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -294,15 +303,22 @@
     <div class="panel-body">
       <div class="row">
           <div class="col-md-8">
-            <p>Make directory named 'workspace'</p>
+            <p>Make a directory named 'workspace'</p>
             <pre>$ mkdir workspace</pre></li>
             <p>Show the new directory in Terminal</>
             <pre>$ ls -l</pre>
-            <p>Look for the new 'workspace' directory in Files</p>
           </div>
           <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"></a>
+            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.0.showworkspacedir.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.0.showworkspacedir.png"></a>
           </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Look for the new 'workspace' directory in Files</p>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"></a>
+        </div>
       </div>
     </div>
   </div>
@@ -314,64 +330,72 @@
     </div>
     <div class="panel-body">
       <div class="row">
-          <div class="col-md-8">
-            <p>Change directory to 'workspace'</p>
-            <pre>$ cd workspace</pre>
-            <p>???????/Not sure what goes here??????????</p>
-            <pre>$ ls -l</pre>
-          </div>
-          <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"></a>
-          </div>
-          <div class="col-md-8">
-            <p>Let's make another directory for the files we will be creating.</p>
-            <pre>$ mkdir samplefiles</pre>
-            One last time for practice.
-            <pre>$ ls -l</pre>
-            <p>Change to 'samplefiles'</p>
-            <pre>$ cd samplefiles</pre>
-          </div>
-          <div class="col-md-8">
-            <p>So far each <code>$ cd</code> command has not started with with a '/'. This works because we are navigating within the same branch of the directory hierarchy, i.e., our 'home' directory (aka '~'). Let's navigate to a different root branch of the hierarchy using '/'.</p>
-            <p>On the left-hand side of Files, click on 'Computer'. You will now see all the root directories.</p>
-          </div>
-          <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/007.rootdirectories.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/007.rootdirectories.png"></a>
-          </div>
-          <div class="col-md-8">
-            <p>If you are not in 'workspace/samplefiles' then navigate there.</p>
-            <pre>$ cd workspace/samplefiles</pre>
-            <p>Confirm your current root directory is 'home' (aka "~"), then try to go to another root directory without preceeding the directory name with '/'. This produces an error.</p>
-            <pre>$ cd etc/calendar</pre>
-            <p>Now do the same but preceed the command with '/'.</p>
-            <pre>$ cd /etc/calendar</pre>
-          </div>
-          <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"></a>
-          </div>
-          <div class="col-md-8">
-            <p>Here are some other things you can do with <code>$ cd</code>.</p>
-            <p>Go to your home directory from anywhere.</p>
-            <pre>$ cd</pre>
-            <p>Navigate multiple directories at once.</p>
-            <pre>$ cd workspace/samplefiles</pre>
-            <p>Here is a quick way to get back to your home directory.</p>
-            <pre>$ cd</pre>
-            <p>Go up one level.</p>
-            <p>First go back to '../samplefiles'.</p>
-            <pre>$ cd workspace/samplefiles</pre>
-            <p>Now up one level</p>
-            <pre>$ cd ..</pre>
-            <p>Go up 2 levels.</p>
-            <p>First go back to '../samplefiles'.</p>
-            <pre>$ cd workspace/samplefiles</pre>
-            <pre>$ cd workspace/samplefiles</pre>
-            <p>Now up two levels.</p>
-            <pre>$ cd ../../</pre>
-          </div>
-          <div class="col-md-4">
-            <!-- needed to preserve shap -->
-          </div>
+        <div class="col-md-8">
+          <p>Change directory to 'workspace'</p>
+          <pre>$ cd workspace</pre>
+          <p>Listing the contents of the directory will show it as empty.</p>
+          <pre>$ ls -l</pre>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.01.emptyworkspacedir.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.01.emptyworkspacedir.png"></a>
+        </div>
+      </div> <!-- row -->
+      <div class="row">
+        <div class="col-md-8">
+          <p>Let's make another directory for the files we will be creating.</p>
+          <pre>$ mkdir samplefiles</pre>
+          One last time for practice. Keep doing this for each change so you can see the results.
+          <pre>$ ls -l</pre>
+          <p>Change to 'samplefiles'</p>
+          <pre>$ cd samplefiles</pre>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div> <!-- row -->
+      <div class="row">
+        <div class="col-md-8">
+          <p>So far each <code>$ cd</code> command has not started with with a '/'. This works because we are navigating within the same branch of the directory hierarchy, i.e., our 'home' directory (aka '~'). Let's navigate to a different root branch of the hierarchy using '/'.</p>
+          <p>On the left-hand side of Files, click on 'Computer'. You will now see all the root directories.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/007.rootdirectories.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/007.rootdirectories.png"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>If you are not in 'workspace/samplefiles' then navigate there.</p>
+          <pre>$ cd workspace/samplefiles</pre>
+          <p>Confirm your current root directory is 'home' (aka "~"), then try to go to another root directory without preceding the directory name with '/'. This produces an error.</p>
+          <pre>$ cd etc/calendar</pre>
+          <p>Now do the same but preced the command with '/'.</p>
+          <pre>$ cd /etc/calendar</pre>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Here are some other things you can do with <code>$ cd</code>.</p>
+          <p>Go to your home directory from anywhere.</p>
+          <pre>$ cd</pre>
+          <p>Navigate multiple directories at once.</p>
+          <pre>$ cd workspace/samplefiles</pre>
+          <p>Go up one level.</p>
+          <p>First go back to '../samplefiles'.</p>
+          <pre>$ cd workspace/samplefiles</pre>
+          <p>Now up one level</p>
+          <pre>$ cd ..</pre>
+          <p>Go up 2 levels.</p>
+          <p>First go back to '../samplefiles'.</p>
+          <pre>$ cd workspace/samplefiles</pre>
+          <p>Now up two levels.</p>
+          <pre>$ cd ../../</pre>
+        </div>
+        <div class="col-md-4">
+          <!-- needed to preserve shap -->
+        </div>
       </div>
     </div>
   </div>
@@ -382,43 +406,50 @@
       <h3><code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code> Creating Files</h3>
     </div>
     <div class="panel-body">
-      <div class="col-md-8">
-        <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods.</p>
-        <p>Overall I love GNOME. However, one of my fustrations with it is that you can not right-click in Files to create a new document. I'm sure there is a way to fix that and finding it is on my to do list.</p>
-        <p>Most of the time I create files from within a text editor. I currently use <a href="https://atom.io">Atom</a>. Knowing how to create files from the command line is useful but you can decide what workflow works for you best.</p>
-        <p><b>gEdit</b> - is a common text editor that comes with Ubuntu.</p>
-        <p>The fillowing command will launch gEdit with a new file open. Make sure you are in '~/workspace/samplefiles' (remember '~' is 'home')</p>
-        <pre>$ gedit page1.html</pre>
-        <p>Type the below into page1.html</p>
-        <pre>&lt;h1&gt;page1.html&lt;/h1&gt;</pre>
-        <p>Close gEdit and check-out page1.html in Files</p>
-        <p>Using Terminal look in '~/workspace/samplefiles' for page1.html. Remember, that is <code>$ ls -l</code>.</p>
-      </div>
-      <div class="col-md-4">
-        <!-- empty -->
-      </div>
-      <div class="col-md-8">
-        <p><b>'>' Redirection</b> - You can read-up on redirection on your own. For now I'll just note that normally output will go to the screen but you can 'redirect' it using '&gt;'. First lets try to print something without redirection.</p>
-        <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;'</pre>
-        <p>That printed to the screen. Now lets redirect it to a file.</p>
-        <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;' > page2.html</pre>
-        <p>View the file in Files and then in Terminal</p>
-        <p>Open the file with FireFox</p>
-        <pre>$ firefox page2.html</pre>
-      </div>
-      <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/009.firefoxpage2.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/009.firefoxpage2.png"></a>
-      </div>
-      <div class="col-md-8">
-        <p>You can also create empty files with redirection</p>
-        <pre>$ > page3.html</pre>
-        <p><code>$ touch</code> - <b>touch</b> is an easy way to create empty new files with the command line. It is also used to change the date/time of a file.</p>
-        <pre>$ touch file1.css</pre>
-      </div>
-      <div class="col-md-4">
-        <!-- empty -->
-
-      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods.</p>
+          <p>Overall I love GNOME. However, one of my frustrations with it is that you can not right-click in Files to create a new document. I'm sure there is a way to fix that and finding it is on my to do list.</p>
+          <p>Most of the time I create files from within a text editor. I currently use <a href="https://atom.io">Atom</a>. Knowing how to create files from the command line is useful but you can decide what workflow works best for you.</p>
+          <p><b>gedit</b> - is a common text editor that comes with Ubuntu.</p>
+          <p>Make sure you are in '~/workspace/samplefiles'. If not then execute the below command. (remember '~' means 'home')</p>
+          <pre>$ cd ~/workspace/samplefiles</pre>
+          <p>The following command will launch gedit with a new file open. </p>
+          <pre>$ gedit page1.html</pre>
+          <p>Type the below into page1.html</p>
+          <pre>&lt;h1&gt;page1.html&lt;/h1&gt;</pre>
+          <p>Save (<kbd>Ctrl+s</kbd>) the file and quit (<kbd>Ctrl+q</kbd>) gedit. Then check-out page1.html in Files</p>
+          <p>Using Terminal look in '~/workspace/samplefiles' for page1.html. Remember, that is <code>$ ls -l</code>.</p>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div> <!-- row -->
+      <div class="row">
+        <div class="col-md-8">
+          <p><b>'>' Redirection</b> - You can read-up on redirection on your own. For now I'll just note that normally output will go to the screen but you can 'redirect' it using '&gt;'. First lets try to print something without redirection.</p>
+          <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;'</pre>
+          <p>That printed to the screen. Now lets redirect it to a file.</p>
+          <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;' > page2.html</pre>
+          <p>View the file in Files and then in Terminal</p>
+          <p>Open the file with FireFox</p>
+          <pre>$ firefox page2.html</pre>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/009.firefoxpage2.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/009.firefoxpage2.png"></a>
+        </div>
+      </div> <!-- row -->
+      <div class="row">
+        <div class="col-md-8">
+          <p>You can also create empty files with redirection</p>
+          <pre>$ > page3.html</pre>
+          <p><code>$ touch</code> - <b>touch</b> is an easy way to create new empty files with the command line. It is also used to change the date/time of a file.</p>
+          <pre>$ touch file1.css</pre>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div> <!-- row -->
     </div>
   </div>
 
@@ -428,98 +459,161 @@
       <h3><code>$ rm</code> - Removing files and folders</h3>
     </div>
     <div class="panel-body">
-      <div class="col-md-8">
-        <p>There is a <code>rmdir</code> command but I don't find it necessary. You can remove (aka delete) any file or folder using the <code>rm</code> command along with a couple of options: <code>-r</code> for 'recursize' and <code>-f</code> for force.</p>
-        <p><code>-r</code> (recursive) will drill down the directory structure and remove everything below the specified node</p>
-        <p><code>-f</code> (force) ignores nonexistent files, missing operands and never prompts the user. What that really means is it will silently go about removing things and not present any cautions or other information to you.</p>
-        <p>Follow these steps to learn how <code>rm</code> works</p>
-        <pre>$ cd ~/workspace/samplefiles<br>$ mkdir emptydir<br>$ mkdir nonemptydir<br>$ cd nonemptydir<br>$ > file1.txt<br>$ > file2.txt<br>$ mkdir innerdir<br>cd ..</pre>
-        <p>Now that our sample data is setup, let's try removing some stuff</p>
-        <p><code>rm</code> by itself will not work for an empty or non-empty directory. <code>rmdir</code> will work for both empty but not non-empty directories. I'll show you how to do both with one command.</p>
-        <p>Let's try <code>rm</code> to see what happens.</p>
-        <pre>$ rm emptydir<br>$ rm nonemptydir</pre>
-        <p>Now try <code>-f</code> wihtout <code>-r</code>.</p>
-        <pre>$ rm -f emptydir<br>$ rm -f nonemptydir</pre>
-        <p>That doesn't work either. However, in both cases, <code>-r</code> will.</p>
-        <pre>$ rm -r emptydir<br>$ rm -r nonemptydir</pre>
-      </div>
-      <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"></a>
-      </div>
-      <div class="col-md-8">
-        <p><code>rm</code> also works on files.</p>
-        <pre>$ cd ~/workspace/samplefiles<br>$ > rmfile1.txt<br>$ rm rmfile1.txt</pre>
-      </div>
-      <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/012.rmfile.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/012.rmfile.png"></a>
-      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>There is a <code>rmdir</code> command but I don't find it necessary. You can remove (aka delete) any file or directory using the <code>rm</code> command along with a couple of options: <code>-r</code> for 'recursive' and <code>-f</code> for force.</p>
+          <p><code>-r</code> (recursive) will drill down the directory structure and remove everything below the specified node</p>
+          <p><code>-f</code> (force) ignores nonexistent files, missing operands and never prompts the user. What that really means is it will silently go about removing things and not present any warnings or other information to you.</p>
+          <p>Follow these steps to learn how <code>rm</code> works</p>
+          <pre>$ cd ~/workspace/samplefiles<br>$ mkdir emptydir<br>$ mkdir nonemptydir<br>$ cd nonemptydir<br>$ > file1.txt<br>$ > file2.txt<br>$ mkdir innerdir<br>cd ..</pre>
+          <p>Now that our sample data is setup, let's try removing some stuff.</p>
+          <p><code>rm</code> by itself will not work for an empty or non-empty directory. <code>rmdir</code> will work for empty but not non-empty directories. I'll show you how to do both with one command.</p>
+          <p>Let's try <code>rm</code> to see what happens.</p>
+          <pre>$ rm emptydir<br>$ rm nonemptydir</pre>
+          <p>Now try <code>-f</code> without <code>-r</code>.</p>
+          <pre>$ rm -f emptydir<br>$ rm -f nonemptydir</pre>
+          <p>That doesn't work either. However, in both cases, <code>-r</code> will.</p>
+          <pre>$ rm -r emptydir<br>$ rm -r nonemptydir</pre>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"></a>
+        </div>
+      </div> <!-- row -->
+      <div class="row">
+        <div class="col-md-8">
+          <p><code>rm</code> also works on files.</p>
+          <pre>$ cd ~/workspace/samplefiles<br>$ > rmfile1.txt<br>$ rm rmfile1.txt</pre>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div> <!-- row -->
     </div>
-  </div>
+  </div> <!-- panel -->
 
   <h2><code>$ sudo</code></h2>
   <blockquote>
     <b>sudo</b> (superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system. Sudo also logs all commands and arguments.
     <cite>Source: <a href="http://searchenterpriselinux.techtarget.com/definition/sudo">TechTarget</a></cite>
   </blockquote>
-  <div class="col-md-8">
-    <p>So far we have been working with files owned by the currently log-in user (you). If you want to work with files and directories that you don't own you need to use <b>sudo</b>. Let's create both a directory and a file with <code>sudo</code> and then view the results.</p>
-    <pre>$ cd ~/workspace/samplefiles<br>$ sudo mkdir sudorootfiles<br>$ sudo > sudorootfile.txt<br>$ ls -l</pre>
+
+  <!-- $ sudo -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ suo</code> - Superuser Do</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>So far we have been working with files owned by the currently log-in user (you). If you want to work with files and directories that you don't own you need to use <b>sudo</b>. Let's create both a directory and a file with <code>sudo</code> and then view the results.</p>
+          <pre>$ cd ~/workspace/samplefiles<br>$ sudo mkdir sudorootdir</pre>
+          <p>You will be prompted for your password, the same one you log in with.</p>
+          <p>You can't use <code>$ sudo > ...</code> so we will use touch to create the file.</p>
+          <pre>$ sudo touch sudorootfile.txt</pre>
+
+          <p>Performing a directory listing will show that both the Owner and Group are 'root' which is the super user.</p>
+          <pre>$ ls -l</pre>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Also look in Files. For both sudorootdir and sudorootfile.txt you will see a lock icon. This means that they are 'read-only' to you. They are 'read/write' to root.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>You can remove sudorootdir and sudorootfile.txt without <code>sudo</code> but you will be prompted to confirm. Let's try on sudorootdir.</p>
+          <pre>$ rm sudorootdir</pre>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>However, if you try to edit sudorootfile.txt without <code>sudo</code> you will not be able to save it because it is read-only to you.</p>
+          <pre>$ gedit sudorootfile.txt</pre>
+          <p>Make a change to the file contents and then <kbd>Ctrl+q</kbd>.</p>
+          <p>As you can see in the accompanying picture, 1) the titlebar says [Read-Only], 2) the Save button is disabled and 3) when you quit you are offered Save As... instead of Save</p>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Now let's give that a try in a real life scenario which you will meet later if you are following the series when creating a virtual host.</p>
+          <pre>$ gedit /etc/hosts</pre>
+          <p>Note that the file is read-only.</p>
+          <pre>Press <kbd>Ctrl+q</kbd><br><br>$ sudo gedit /etc/hosts</pre>
+          <p>Now the file is read/write.</p>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-    <p>You will be prompted for your password, the same one you log in with.</p>
-    <p>Performing a directory listing will show that both the Owner and Group are 'root' which is the super user</p>
-    <pre>$ cd ls -l</pre>
+  <h2>Changing Owner, Group & Permissions</h2>
+  <p>Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enourmous.</p>
+  <!-- $ rm -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ chown</code> - Change Owner & <code>$ chgrp</code> Change Group</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Setup sample files</p>
+          <pre>$ sudo touch rootfile.txt<br>$ sudo mkdir rootdir<br>ls -l</pre>
+          <p>You can see that Owner and Group Owner are both 'root'.</p>
+          <p>In the below lines, use your user name in place of <i>userName</i>.</p>
+          <pre>$ sudo chown <i>userName</i> rootfile.txt<br>$ ls -l</pre>
+          <p>Owner has been change to your user name</p>
+          <pre>$ sudo chgrp <i>userName</i> rootfile.txt<br>$ ls -l</pre>
+          <p>Group Owner has been change to your user name</p>
+          <p>You can change both at the same time</p>
+          <pre>$ sudo chown <i>userName</i>:<i>userName</i> rootdir<br>$ ls -l</pre>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-4">
-    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"></a>
-  </div>
-  <div class="col-md-8">
-    <p class="ke-callout ke-callout-warning">
-      I left the error messages in the above window on purpose. They appear whenever you launch gEdit form Terminal. I assume there is a fix for it but I have been using gedit for years and have just lived with the errors with no ill-effect.
-    </p>
-    <p>Also look in Files. For both sudorootdir and sudorootfile.txt you will see a lock icon. This means that they are 'read-only' to you. They are 'read/write' to root.</p>
-  </div>
-  <div class="col-md-4">
-    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"></a>
-  </div>
-  <div class="col-md-8">
-    <p>You can remove sudorootdir and sudorootfile.txt without <code>sudo</code> but you will be prompted to confirm. Let's try on sudorootdir.</p>
-    <pre>$ rm sudorootdir</pre>
-  </div>
-  <div class="col-md-4">
-    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"></a>
-  </div>
-  <div class="col-md-8">
-    <p>However, if you try to edit sudorootfile.txt without <code>sudo</code> you will not be able to save it because it is read-only to you.</p>
-    <pre>$ gedit sudorootfile.txt</pre>
-    <p>Make a change to the file contents and then <kbd>Ctrl+q</kbd>.</p>
-    <p>As you can see in the accompaning picture, 1) the titlebar says [Read-Only], 2) the Save button is disabled and 3) when you quit you are offered Save As... instead of Save</p>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><code>$ chmod</code> - Change Permissions</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>You can also change permissions using letters or numbers. Numbers are quicker, but letters are easier if you are new to permissions, so I will use letters in this example.</p>
+          <p>First, let's setup a sample file, still wokring in ~/workspace/samplefiles.</p>
+          <pre>$ touch permissions1.txt<br>$ ls -l</pre>
+          <p>Give the owner execute permission. 'u+x' in the below command means 'add x to u' where x=execute and u=user</p>
+          <pre>$ chmod u+x permissions1.txt</pre>
+          <p>Remove execute permission from the owner. In this case 'u-x' means 'take away x (execute) from u (user)'</p>
+          <pre>$ chmod u-x permissions1.txt</pre>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/017.permissions.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/017.permissions.png"></a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-4">
-    <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"><img class="img-responsiveimg-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"></a>
-  </div>
-  <div class="col-md-4">
-    <p>Now let's give that a try in a real life scenario which you will meet later if you are following the series when creating a virtual host.</p>
-    <pre>$ gedit /etc/hosts</pre>
-    <p>Note that the file is read-only.</p>
-    <pre>Press <kbd>Ctrl+q</kbd><br><br>$ sudo gedit /etc/hosts</pre>
-    <p>Now the file is read/write.</p>
-  </div>
-  <div class="col-md-4">
-    <!-- empty -->
-  </div>
+
   <h2>Mission Accomplished</h2>
-  <p>After completing this guide you should have greater confidence when using Terminal and the command line. There are many more commands which you can explore that with the resources at the bottom of this post. Use the below cheatsheet as long as you need it and add new commands to it as you come across them.</p>
-
-
-
-
-
-sudo
-
-
-
+  <p>After completing this guide you should feel more confident when using Terminal and the command line. There are many more commands which you can explore that with the resources at the bottom of this post. Use the below cheatsheet as long as you need it and add new commands to it as you come across them.</p>
 
   <!-- Cheatsheet -->
   <h2>Linux/Ubuntu Command Line Cheetsheet</h2>
@@ -575,8 +669,6 @@ sudo
       </table>
     </div>
   </div>
-
-
 
   <h2>References</h2>
   <ol>

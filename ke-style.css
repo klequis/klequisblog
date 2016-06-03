@@ -12,34 +12,23 @@
  Text Domain:  flint-ke
 */
 
-
-
-/*
- *
- * Flint styles start here
- *
- */
-
-
-
-
-
 /*
  *
  * Karl's styles below this comment.
  *
- *
+ * ke-style.css in production is named style.css
  */
 
 body {
   font-size: 1.5em;
   margin-left:10% !important;
   margin-right:10% !important;
-  background-color: #999999;
 }
 
 .img-step-figure {
   margin-top: 10px;
+  /* I'm not sure about the below change. I may need to add space to a <p> that follows an img-step-figure */
+  margin-bottom: 10px;
 }
 
 /* Common styles for all types */
