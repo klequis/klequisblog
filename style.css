@@ -118,6 +118,10 @@ div.widget_seriestoc > h4:first-of-type {
   width:50%;
 }
 
+.img-extra-sm-size {
+  width:25%;
+}
+
 .img-sm-size {
   width:50%;
 }
@@ -129,7 +133,6 @@ div.widget_seriestoc > h4:first-of-type {
 .img-icon-size {
   height:1.7em;
 }
-
 
 div.row:nth-child(2) {
   border-top-color:#ddd;
