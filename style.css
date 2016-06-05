@@ -114,12 +114,12 @@ div.widget_seriestoc > h4:first-of-type {
   margin-bottom: 8px;
 }
 
+/*
+ * Images
+ */
+
 .img-small-size {
   width:50%;
-}
-
-.img-extra-sm-size {
-  width:25%;
 }
 
 .img-sm-size {
@@ -132,6 +132,22 @@ div.widget_seriestoc > h4:first-of-type {
 
 .img-icon-size {
   height:1.7em;
+}
+
+.img-logo-in-table {
+  max-height:50px;
+  max-width: 100px;
+  /*text-align:center !important;
+  margin-left: auto;
+  margin-right: auto;*/
+}
+
+.td-img-logo {
+  text-align: center;
+}
+
+table.table-logo > tbody > tr > td {
+  vertical-align: middle;
 }
 
 div.row:nth-child(2) {
