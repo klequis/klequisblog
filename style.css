@@ -215,3 +215,7 @@ div.row + div.row {
 .chart-color-ten {
   background-color:#f0ad4e;
 }
+
+.container-fluid {
+  padding-left: 0 !important;
+}
