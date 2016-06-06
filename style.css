@@ -136,7 +136,8 @@ div.widget_seriestoc > h4:first-of-type {
 
 .img-logo-in-table {
   max-height:50px;
-  max-width: 100px;
+  max-width: 100px !important;
+  border: 0 !important;
   /*text-align:center !important;
   margin-left: auto;
   margin-right: auto;*/
