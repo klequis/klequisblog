@@ -1,4 +1,4 @@
-w<!DOCTYPE html>
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +8,18 @@ w<!DOCTYPE html>
   <title></title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="flint-style.css">
-  <link rel="stylesheet" href="ke-style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dev-style.css">
 </head>
+
 <body>
 
-
+<div class="container-fluid">
 
 <p>This guide will show you how to create a Ubuntu 16.04 Desktop virtual machine. It is part of the series <a href="http://trivalleyhobby.com/klequis/2016/05/04/building-a-ubuntu-16-04-development-environment/">Building a Ubuntu GNOME 16.04 Development Environment</a>. If you are following along with the series you already have Oracle VirtualBox installed and are ready to create your Ubuntu 16.04 (Desktop) virtual machine.</p>
 <p>The development environment built in this guide can be used for development with JavaScript, Node.js & PHP. In it you can host Drupal sites, WordPress sites and more.</p>
 
-<p class="ke-callout">Ubuntu 16.04 has a desktop and a server version. The desktop version is the correct one for development and general use. The server version has a simple menu-driven UI which is not very user friendly.</p>
+<p class="ke-callout">Ubuntu 16.04 has a desktop and a server version. The desktop version is the correct one for development and general use. The server version has a simple text menu-driven UI meant for general user interaction.</p>
 
 <div class="ke-callout ke-callout-warning">
   <h4>Requirements</h4>
@@ -31,146 +33,407 @@ w<!DOCTYPE html>
 
 <p>Let's get started...</p>
 
-<h2>Downloading Ubuntu GNOME 16.04</h2>
-
-<h3>Using a BitTorrent Client</h3>
-<p class="ke-callout ke-callout-warning">We will use a BitTorrent to download the
-  file. The file will download very quickly using BitTorrent. For more information,
-  <a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME">see the note on
-    ubuntu.com regarding BitTorrent</a>.</p>
-</p>
 
 
-<h3>Windows & Mac</h3>
-<p>After a little research I found that Deluge is a very popular BitTorrent Client for both Mac & Windows. Here is an article that talks about several <a href="href="http://www.macworld.co.uk/feature/mac-software/which-is-best-torrent-client-software-for-mac-3501232/>"BitTorrent clients for Mac</a>. I don't have a Mac available so I cannot provide a step-by-step for it.</p>
-<p>Here is a guide for installing Deluge on Windows and downloading the Ubuntu GNOME iso image <a href="">Installing Deluge BitTorrent on Windows</a>.</p>
 
-<h3>Ubuntu & Ubuntu GNOME</h3>
-<p>Transmission is already installed and instructions are below.</p>
-<h2>Downloading the Ubuntu GNOME Installation</h2>
-<ol start="1">
-  <li>Go to the download page for <a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME/LTS">Ubuntu GNOME 16.04 LTS</a></li>
-  <li>Under the section for Standard PC > PC 64 bit, click on the blue button that says "64 bit TORRENT FILE".</li>
-  <li>Go to your Downloads folder and locate the file ubuntu-gnome-16.04-desktop-amd64.iso.torrent.</li>
-  <li>Right-click the file and choose Open With Transmission.</li>
-  <li>Click <button class="btn btn-default btn-xs">I Agree</button>.</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/034.Transmission.png">
-</ol>
-<hr>
-<ol start="2">
-  <li>Click <button class="btn btn-default btn-xs">Open</button>.</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png">
-  <hr>
-  <li>Wait for the file to finish downloading.</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/036.Transmission.png">
-  <hr>
-</ol>
-
-
-<ol start="8">
-  <li>Launch VirtualBox.</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/001.VMVirtualBoxManager.png">
-  <hr>
-  <li>Click <button class="btn btn-default btn-xs">New</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/002.CreateVirtualMachine.png">
-  <hr>
-  <li>Enter a name.</li>
-  <li>Make Type = Linux.</li>
-  <li>Make Version = Ubuntu (64-bit).</li>
-  <li>Click <button class="btn btn-default btn-xs">Next</button></li>
-  <li>Set a conservative number of MB or GB.</li>
-  <li>Click <button class="btn btn-default btn-xs">Next</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/003.CreateVirtualMachine.png">
-  <hr>
-  <li>Click <button class="btn btn-default btn-xs">Create</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/004.CreateVirtualMachine.png">
-  <hr>
-  <li>Click <button class="btn btn-default btn-xs">Next</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/005.CreateVirtualHardDisk.png">
-  <hr>
-  <li>Click <button class="btn btn-default btn-xs">Next</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/006.CreateVirtualHardDisk.png">
-  <hr>
-  <li>Set size to 500 GB</li>
-  <li>Click <button class="btn btn-default btn-xs">Open</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/007.CreateVirtualHardDisk.png">
-  <hr>
-  <li>
-    You should be back in the VirtualBox Manager now. Make sure your new VM is selected and click <button class="btn btn-default btn-xs">Start</button> on the menu bar. The VM will start and ask you for a file. Navigate to the file you downloaded: ubuntu-gnome-16.04-desktop-amd64.iso and click <button class="btn btn-default btn-xs">Start</button>
-  </li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/008.DevBoxPowered%20Off.png">
-  <hr>
-  <li>Wait for the installation to load.</li>
-  <li>A couple of notifications will appear at the top. Once the installation is fully loaded, clear them so they are out of the way.</li>
-  <li>Click <button class="btn btn-default btn-xs">Install Ubuntu GNOME</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/009.DevBoxRunning.png">
-  <hr>
-  <li>Set the options as shown and click <button class="btn btn-default btn-xs">Continue</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/010.DevBoxRunning.png">
-  <hr>
-  <li>Set the options as shown and click <button class="btn btn-default btn-xs">Install Now</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/011.DevBoxRunning.png">
-  <hr>
-  <li>Click <button class="btn btn-default btn-xs">Continue</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/012.DevBoxRunning.png">
-  <hr>
-  <li>Make sure your time zone is correct and click <button class="btn btn-default btn-xs">Continue</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/013.DevBoxRunning.png">
-  <hr>
-  <li>Select your language and click <button class="btn btn-default btn-xs">Continue</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/014.DevBoxRunning.png">
-  <li>Provide you details. Make the computer's name short as it will appear in the command line and it is best to not use up space in that screen.</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/015.DevBoxRunning.png">
-  <hr>
-  <div class="ke-callout">OK, this is going to take about 5 minutes. If you are following my staying healthy advice
-    it is time move around. If you want to watch the installation slideshow, do it standing up and move around a bit, otherwise, go get a glass of water and have a stand-up chat with a colleague.
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Using a BitTorrent Client</h2>
   </div>
-  <li>Click <button class="btn btn-default btn-xs">Restart Now</button></li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/016.DevBoxRunning.png">
-  <hr>
-</ol>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-<div class="ke-callout ke-callout-warning">
-  <p>
-    I consistently experience a problem at this point. Either Ubuntu hangs or there is an error displayed. Either way, it doesn't load. Here is a workaround that has worked for me every time (which is 5 or 6 times now). After I clicked <button class="btn btn-default btn-xs">Restart Now</button>, everything looked good for a minute or so. Ubuntu was busy loading. However, I then got a screen full of error messages.
-  </p>
-  <p>
-    I already performed the below steps so in the screenshot you will set Ubuntu already loaded. Just pretend there is an error there.
-  </p>
-  <ol type="a">
-    <li>On the VirtualBox window, click <button class="btn btn-default btn-xs">Machine</button> then <button class="btn btn-default btn-xs">Reset</button></li>
-    <img class="img-responsive img-md-size" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/019.DevBoxRunning.png">
-    <li>Click <button class="btn btn-default btn-xs">Reset</button></li>
-    <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/020.VirtualBox-Question.png">
-  </ol>
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-md-8">
+          <p class="ke-callout ke-callout-warning">We will use a BitTorrent to download the Ubuntu GNOME installation file. The file will download very quickly using BitTorrent. For more information,
+            <a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME">see the note on ubuntu.com regarding BitTorrent
+            </a>.
+          </p>
+          <h3>BitTorrent Client for Ubuntu & Ubuntu GNOME</h3>
+          <p>Transmission is already installed and instructions are below.</p>
+          <h3>BitTorrent Client for Windows</h3>
+          <p>Here is a guide for installing Deluge on Windows and downloading the Ubuntu GNOME iso image: <a href="http://trivalleyhobby.com/klequis/installing-deluge-bittorrent-client-on-windows">Installing & Using Deluge BitTorrent on Windows</a>.</p>
+          <h3>BitTorrent Client for Mac</h3>
+          <p>I don't have a Mac available so I can't write a step-by-step for it. After a little research I found that Deluge is a very popular BitTorrent Client for both Mac. Here is an article that talks about several <a href="http://www.macworld.co.uk/feature/mac-software/which-is-best-torrent-client-software-for-mac-3501232">BitTorrent clients for Mac</a>.</p>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+    </div>
+  </div>
 </div>
-<hr>
 
-<ol start="32">
-  <li>Ubuntu should now start and look something the screenshot below.</li>
-  <li>Go ahead and login using the password you created during installation.</li>
-  <img class="img-sm-size" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/021.DevBoxRunning.png">
-</ol>
-
-<p class="ke-callout ke-callout-warning">At the moment the Ubuntu VM's desktop is likely very small. Leave this for now. We will fix it below by installing Guest Additions.</p>
-
-<h3>Welcome To The GNOME Desktop</h3>
-<p>After login is complete you should see something like screenshot #1 below.</p>
-<p>The GNOME Desktop can be a bit unsettling because there isn't much there, but worry not, it is highly customizable and we will spruce it up with some <a href="https://extensions.gnome.org/">GNOME Shell Extensions</a> in a later post.</p>
-<p>You bring-up the "Dash" for launching applications (left) and "Workspace list" (right) by pressing the left 'Super key' (aka Windows key) #2.</p>
-<p>Typing in the search box brings-up the "Overview" #3.</p>
-<div class="row">
-  <div class="col-xs-4">
-    <strong>#1. GNOME Desktop</strong>
-    <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/037.DevBox-firststart">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Downloading Ubuntu GNOME 16.04</h2>
   </div>
-  <div class="col-xs-4">
-    <strong>#2. Dash (left) & Workspace Switcher (right)</strong>
-    <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/038.DevBox-showdash.png">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="1">
+          <li>Go to the download page for <a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME/LTS">Ubuntu GNOME 16.04 LTS</a></li>
+          <li>Under the section for Standard PC > PC 64 bit, click on the blue button that says "64 bit TORRENT FILE".</li>
+          <li>Go to your Downloads folder and locate the file ubuntu-gnome-16.04-desktop-amd64.iso.torrent.</li>
+          <li>Right-click the file and choose Open With Transmission.</li>
+          <li>Click <button class="btn btn-default btn-xs">I Agree</button>.</li>
+
+        </ol>
+      </div>
+      <div class="col-md-4">
+        034
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/034.Transmission.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/034.Transmission.png" alt="transmisison client"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="2">
+          <li>Click <button class="btn btn-default btn-xs">Open</button>.</li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        035
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png" alt="torrent options"></a>
+      </div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="3">
+          <li>Wait for the file to finish downloading.</li>
+        </ol>035
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png" alt="torrent options"></a>035
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png" alt="torrent options"></a>
+      </div>
+      <div class="col-md-4">
+        036
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/036.Transmission.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/036.Transmission.png" alt="transmission"></a>
+      </div>
+    </div> <!-- row -->
   </div>
-  <div class="col-xs-4">
-    <strong>#3. Overview</strong>
-    <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/039DevBox-showoverview.png">
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Creating the Virtual Machine</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-md-8">
+          <ol start="1">
+            <li>Launch VirtualBox.</li>
+            <li>Click <button class="btn btn-default btn-xs">New</button></li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          001
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/001.VMVirtualBoxManager.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/001.VMVirtualBoxManager.png" alt="VirtualBox manager"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+          <ol start="2">
+            <li>Enter a name.</li>
+            <li>Make Type = Linux.</li>
+            <li>Make Version = Ubuntu (64-bit).</li>
+            <li>Click <button class="btn btn-default btn-xs">Next</button></li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          002
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/002.CreateVirtualMachine.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/002.CreateVirtualMachine.png" alt="name and operating system"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+          <p class="ke-callout ke-callout-warning">
+            Setting the amount of RAM is an important decision. If you give too much RAM to the guest your host may become unusably slow. For now, set a conservative amount of RAM. We will adjust this in a later step.
+          </p>
+          <ol start="3">
+            <li>Set a conservative number of MB or GB.</li>
+            <li>Click <button class="btn btn-default btn-xs">Next</button></li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          003
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/003.CreateVirtualMachine.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/003.CreateVirtualMachine.png" alt="set memory size"></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+          <ol start="9">
+            <li>Click <button class="btn btn-default btn-xs">Create</button></li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          004
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/004.CreateVirtualMachine.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/004.CreateVirtualMachine.png" alt="hard disk options"></a>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="10">
+          <li>Click <button class="btn btn-default btn-xs">Next</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        005
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/005.CreateVirtualHardDisk.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/005.CreateVirtualHardDisk.png" alt="hard disk file type"></a>
+      </div>
+    </div>
+    <div class="row">
+      <p>Using a dynamically allocated disk means that the VM will only use the hard disk space it needs. For example, you can set (see next step) the maximum size to 500 GB but if the VM only needs 10 GB that is all the space it will take-up on your host's hard drive.</p>
+      <div class="col-md-8">
+        <ol start="11">
+          <li>Click <button class="btn btn-default btn-xs">Next</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        006
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/006.CreateVirtualHardDisk.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/006.CreateVirtualHardDisk.png" alt="hard disk dynamis or fixed"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>As noted above, set a large size. I recommend doing so even if it exceeds your host's current available space. Yes, that means that you will need to monitor the VM disk space usage, but it also means that if the VM grows beyond your current free space you can easily move the VM to another, larger drive.</p>
+        <ol start="12">
+          <li>Set size to 500 GB</li>
+          <li>Click <button class="btn btn-default btn-xs">Create</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        007
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/007.CreateVirtualHardDisk.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/007.CreateVirtualHardDisk.png" alt="hard disk location and size"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Creating the Virtual Machine</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <p>You should be back in the VirtualBox Manager now.</p>
+        <ol start="1">
+          <li>Make sure your new VM is selected and click <button class="btn btn-default btn-xs">Start</button> on the menu bar.</li>
+          <li>The VM will start and ask you for a file. Navigate to the file you downloaded: ubuntu-gnome-16.04-desktop-amd64.iso and click <button class="btn btn-default btn-xs">Start</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        008
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/008.DevBoxPowered%20Off.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/008.DevBoxPowered%20Off.png" alt="select start-up disk"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="3">
+          <li>Wait for the installation to load.</li>
+          <li>A couple of notifications will appear at the top. Once the installation is fully loaded, clear them so they are out of the way.</li>
+          <li>Click <button class="btn btn-default btn-xs">Install Ubuntu GNOME</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        009
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/009.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/009.DevBoxRunning.png" alt="try or install"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="6">
+          <li>Set the options as shown and click <button class="btn btn-default btn-xs">Continue</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        010
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/010.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/010.DevBoxRunning.png" alt="preparing to install"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="7">
+          <li>Set the options as shown and click <button class="btn btn-default btn-xs">Install Now</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        011
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/011.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/011.DevBoxRunning.png" alt="installation type"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="8">
+          <li>Click <button class="btn btn-default btn-xs">Continue</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        012
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/012.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/012.DevBoxRunning.png" alt="write changes to disk?"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="9">
+          <li>Make sure your time zone is correct and click <button class="btn btn-default btn-xs">Continue</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        013
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/013.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/013.DevBoxRunning.png" alt="timezone"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="10">
+          <li>Select your language and click <button class="btn btn-default btn-xs">Continue</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        014
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/014.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/014.DevBoxRunning.png" alt="keyboard layout"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="11">
+          <p>Provide your details. Make the computer's name short as it will appear in the command line and it is best to not use up space in that screen.</p>
+          <li>Click <button class="btn btn-default btn-xs">Continue</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        015
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/015.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/015.DevBoxRunning.png" alt="user details"></a>
+        <p class="ke-callout">
+          OK, this is going to take about 5 minutes. If you are following my staying healthy advice it is time move around. If you want to watch the installation slideshow, do it standing up and move around a bit, otherwise, go get a glass of water and have a stand-up chat with a colleague.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="1">
+          <li>Click <button class="btn btn-default btn-xs">Restart Now</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        016
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/016.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/016.DevBoxRunning.png" alt="installation complete"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Work-around -->
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Work-around</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <p class="ke-callout ke-callout-warning">
+          I consistently experience a problem at this point. Either Ubuntu hangs or there is an error displayed. Either way, it doesn't load. Here is a workaround that has worked for me every time (which is 5 or 6 times now). After I clicked <button class="btn btn-default btn-xs">Restart Now</button>, everything looked good for a minute or so. Ubuntu was busy loading. However, I then got a screen full of error messages. In case this happens to you, I have include stops to correct it
+        </p>
+      </div>
+      <div class="col-md-4">
+        <!-- empty -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="2">
+          <li>On the VirtualBox window, click <button class="btn btn-default btn-xs">Machine</button> then <button class="btn btn-default btn-xs">Reset</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/019.machine.reset.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/019.machine.reset.png" alt="Machine&gt;Reset"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="4">
+          <li>Click <button class="btn btn-default btn-xs">Reset</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        020
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/020.VirtualBox-Question.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/020.VirtualBox-Question.png" alt="Reset"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Starting Ubuntu -->
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Starting Ubuntu</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <p>If you didn't get the above error you may need to go to the VirtualBox Manager and start you VM. If you did get the error, the VM should now be started and presenting the lock screen.</p>
+        <ol start="1">
+          <li>Go ahead and login using the password you created during installation.</li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        021
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/021.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/021.DevBoxRunning.png" alt="gnome lock screen"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p class="ke-callout ke-callout-warning">At the moment the Ubuntu VM's desktop is likely very small. Leave this for now. We will fix it below by installing Guest Additions.</p>
+      </div>
+      <div class="col-md-4">
+        <!-- empty -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Welcome To The GNOME Desktop</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          After login is complete you will see the GNOME desktop. It can be a bit unsettling because there isn't much there, but worry not, it is highly customizable and we will spruce it up with some <a href="https://extensions.gnome.org/">GNOME Shell Extensions</a> in the <a href="http://trivalleyhobby.com/klequis/04-intro-to-gnome">next part of this series.</a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        037
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/037.DevBox-firststart"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/037.DevBox-firststart" alt="gnome desktop"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>You bring-up the "Dash" for launching applications (left) and "Workspace list" (right) by pressing the left 'Super key' (aka Windows key).</p>
+      </div>
+      <div class="col-md-4">
+        038
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/038.DevBox-showdash.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/038.DevBox-showdash.png" alt="dash and workspaces"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>Typing in the search box brings-up the "Overview".</p>
+      </div>
+      <div class="col-md-4">
+        039
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/039DevBox-showoverview.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/039DevBox-showoverview.png" alt="overview"></a>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -180,29 +443,158 @@ w<!DOCTYPE html>
   <a href="https://en.wikipedia.org/wiki/GNOME">GNOME on Wikipedia</a>
 </p>
 
-<h2>Installing VirtualBox Guest Additions</h2>
-<p>The next thing you need to do is install VirtualBox Guest Additions, aka Extension Pack.</p>
-<ol start="1">
-  <li>From the VirtualBox Manager's menu bar, select <button class="btn btn-default btn-xs">Devices>Insert Guest Additions CD image...</button></li>
-  <li>Wait for the dialog to come up and then click <button class="btn btn-default btn-xs">Run</button></li>
-  <li>Enter you login password when prompted</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.DevBoxRunning.png">
-</ol>
-<hr>
-<ol start="3">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Installing VirtualBox Guest Additions</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <p>The next thing you need to do is install VirtualBox Guest Additions, aka Extension Pack.</p>
+        <ol start="1">
+          <li>From the VirtualBox Manager's menu bar, select <button class="btn btn-default btn-xs">Devices>Insert Guest Additions CD image...</button></li>
+          <li>Wait for the dialog to come up and then click <button class="btn btn-default btn-xs">Run</button></li>
+          <li>Enter you login password when prompted</li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        026
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.DevBoxRunning.png" alt="guest additions run"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>You will be prompted to authenticate which gives Guest Additions permission to run as super user.</p>
+        <ol start="1">
+          <li>Enter you login password and click <button class="btn btn-default btn-xs">Authenticate</button></li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        026.01
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.01.authenticate.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.01.authenticate.png" alt="guest additions run"></a>
+      </div>
+    </div>
+    <p class="ke-callout">
+      The Guest Additions installation will take 5 minutes or so so time to stand up again, get a glass of water.
+    </p>
 
-</ol>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="4">
+          <li>When the guest additions install is done there will be a message that says 'Press Return to close this window..' Press <kbd>Return</kbd>.</li>
 
-<p class="ke-callout">
-  The Guest Additions installation will take 5 minutes or so so time to stand up again, get a glass of water.
-</p>
+          <li>Restart your VM. In the top right corner of the Ubuntu windows is a small down arrow and a power button. Click the <button class="btn btn-default btn-xs">Power</button> button and press <button class="btn btn-default btn-xs">Restart</button>.</li>
+          <li>Once the VM has restarted its resolution should match the host monitors resolution instead of being small. Go to the VirtualBox menu and select <button class="btn btn-default btn-xs">View>Full-screen Mode</button> to see how it will look full-screen.</li>
+        </ol>
 
-<ol start="4">
-  <li>When the guest additions install is done there will be a message that says 'Press Return to close this window..' Press <kbd>Return</kbd>.</li>
+      </div>
+      <div class="col-md-4">
+        <!-- empty -->
+      </div>
+    </div>
+  </div>
+</div>
 
-  <li>Restart your VM. In the top right corner of the Ubuntu windows is a small down arrow and a power button. Click the <button class="btn btn-default btn-xs">Power</button> button and press <button class="btn btn-default btn-xs">Restart</button>.</li>
-  <li>Once the VM has restarted its resolution should match the host monitors resolution instead of being small. Go to the VirtualBox menu and select <button class="btn btn-default btn-xs">View>Full-screen Mode</button> to see how it will look full-screen.</li>
-</ol>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Changing the VM's Settings</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <p>At this point my VM is running pretty slow so let's change some settings to get it running faster.</p>
+        <div class="ke-callout ke-callout-warning">
+          <p>We will be giving more of your host machine's resources to the VM now. This can be tricky. If you give too much of the host's resources to the VM your host will run slow and perhaps be effectively frozen. I have only tried running Ubuntu GNOME on machines with a 4 core processor and 8 GB of RAM. If you host has a lower spec than that, allocate less, then test and increase depending on the performance of your host and guest.</p>
+          <p>I also recommend closing all applications on the host other than VirtualBox. This won't be necessary once you have things setup, but it may be helpful while you are changing the VM's RAM.
+        </div>
+        <ol start="1">
+          <li>Shut-down/Power-off the VM</li>
+          <li>In the VirtualBox Manager, make sure your VM is selected in the left pane.</li>
+          <li>Click <button class="btn btn-default btn-xs">Settings</button></li>
+          <li>Select 'General' on the left and then the ‘Advanced’ tabl on the right.</li>
+          <li>Set ‘Shared Clipboard’ & ‘Drag’n'Drop’ to ‘Bidirectional’. This will make it easier for you to move content between the host and guest.</li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        030
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/030.vmsettings-general-advanced.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/030.vmsettings-general-advanced.png" alt="Settings&gt;General&gt;Advanced"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p class="ke-callout ke-callout-warning">
+          On an 8 GB system I give 4 or 5 GB to the guest. The best advice I can give here is to make sure your host has at least 1 GB of RAM.
+        </p>
+        <ol start="6">
+          <li>Select 'System' on the left and 'Motherboard' on the right</li>
+          <li>Set the amount of RAM in MB per the above recommendation.</li>
+        </ol>
+
+      </div>
+      <div class="col-md-4">
+        031
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/031.vmsettings-system-memory.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/031.vmsettings-system-memory.png" alt="Settings&gt;System&gt;Motherboard"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ol start="7">
+          <li>Select 'System' on the left and then the 'Processor' tab</li>
+          <li>If your host computer has 2 cores, give the guest 1. If your host has 4 cores, give the guest 2.</li>
+        </ol>
+        <p class="ke-callout">When I am working exclusively on the VM it give the VM 3 of 4 cores.</p>
+      </div>
+      <div class="col-md-4">
+        032
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/032.vmsettings-system-processor.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/032.vmsettings-system-processor.png" alt="Settings&gt;Systems&gt;Processor"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p class="ke-callout ke-callout-warning">
+          Again, set a conservative number and then test.
+        </p>
+        <ol start="9">
+          <li>Select 'Display' on the left and then the 'Screen' tab on the right.</li>
+          <li>Set Video Memory to half or less of the available memory</li>
+          <li>Click <button class="btn btn-default btn-xs">OK</button> to save the settings and close the Settings dialog box.</li>
+          <li>Restart your VM</li>
+        </ol>
+      </div>
+      <div class="col-md-4">
+        033
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/033.vmsettings-display-screen.png" ><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/033.vmsettings-display-screen.png" alt="Settings&gt;Display&gt;Screen"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Installing Updates</h2>
+  </div>
+  <div class="panel-body">
+    <p> Restart your VM. There are likely some updates ready to be downloaded and installed.</p>
+    <ol>
+      <li>Press <kbd>Super</kbd></li>
+      <li>Type <kbd>update</kbd></li>
+      <li>Launch Software Updater and install any updates.</li>
+      <li>Once the updates are complete, shut down the VM</li>
+    </ol>
+    <p>Ubuntu rarely needs a restart after an update, they don't take long and you can keep working while the update installs. However, this being the first update it may take longer and need a restart. Once updating is done spend some time exploring and ENJOY!</p>
+  </div>
+</div>
+
+
+<div class="ke-callout ke-callout-warning">
+  <h4>Make a snapshot</h4>
+  Don't skip this step!!
+  Things do go wrong and not all of them are easy to correct. Creating a snapshot at the end of each major change to your VM will give you a way to go back to a state when things were working so you can try again.
+  Go to this page <a href="http://trivalleyhobby.com/klequis/2016/05/05/how-to-create-a-snapshot-with-oracle-virtualbox/">How to Create a Snapshot With Oracle VirtualBox</a> <strong>and make a snapshot now!</strong>.
+</div>
 
 <div class="ke-callout">
   <p>Since it is running inside of another machine, I don't lock my VM. I lock the host instead. To save some typing I turn-off the VM's screen locking with the below steps.</p>
@@ -214,69 +606,17 @@ w<!DOCTYPE html>
   </ol>
     <div class="row">
       <div class="col-xs-6">
-        <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/028.DevBoxRunning.png">
+        028
+        <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/028.DevBoxRunning.png" alt="privacy settings">
       </div>
       <div class="col-xs-6">
-        <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/029.DevBoxRunning.png">
+        029
+        <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/029.DevBoxRunning.png" alt="screen lock settings">
       </div>
     </div>
 
 </div>
-<hr>
 
-
-<h2>Changing the VM's Settings</h2>
-<p>At this point my VM is running pretty slow so let's change some settings to get it running faster.</p>
-<ol start="1">
-  <li>Shut-down/Power-off the VM</li>
-  <li>In the VirtualBox Manager, make sure your VM is selected in the left pane.</li>
-  <li>Click <button class="btn btn-default btn-xs">Settings</button></li>
-  <li>Select the ‘Advanced’ tab</li>
-  <li>Set ‘Shared Clipboard’ & ‘Drag’nDrop’ to ‘Bidirectional’. This will make it easier for you to move content between the host and guest.</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/030.vmsettings-general-advanced.png">
-</ol>
-<hr>
-<div class="ke-callout ke-callout-warning">
-  <p>For the next step you need to know how much memory your host computer has. If you don't know, look it up now.</p>
-  <p> I have not tested using the VM on a host with less than 8 GB of RAM. I typically give  3 or 4 GB to the guest. With 4 - 5 GB remaining minus what the host OS uses, the host is left with 2 to 3 GB free. If you host is Windows or iOS, my guess is the host needs at least 1 GB to itself. Start out low and work your way up based on the host and guest performance. To help others out, please leave you memory/RAM configurations in the comments section.</p>
-</div>
-
-<ol start="6">
-  <li>Set the amount of RAM in MB per the above recommendation.</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/031.vmsettings-system-memory.png">
-</ol>
-<hr>
-<ol start="7">
-  <li>Select 'System' on the left and then the 'Processor' tab</li>
-  <li>If your host computer has 2 cores, give the guest 1. If your host has 4 cores, give the guest 2.</li>
-  <p class="ke-callout">When I am working exclusively on the VM it I give it 3 of 4 cores</p>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/032.vmsettings-system-processor.png">
-</ol>
-<hr>
-<ol>
-  <li>Select 'Display' on the left and then the 'Screen' tab on the right.</li>
-  <li>Set Video Memory to half or less of the available memory</li>
-  <li>Click <button class="btn btn-default btn-xs">OK</button> to save the settings and close the Settings dialog box.</li>
-  <li>Restart you VM</li>
-  <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/033.vmsettings-display-screen.png">
-</ol>
-
-
-<h2>Installing Updates</h2>
-<p>There are likely some updates ready to be downloaded and installed</p>
-<ol>
-  <li>Press <kbd>Super</kbd></li>
-  <li>Type <kbd>update</kbd></li>
-  <li>Launch Software Updater and install any updates.</li>
-  <li>Once the updates are complete, shut down the VM</li>
-</ol>
-
-<div class="ke-callout ke-callout-warning">
-  <h4>Make a snapshot</h4>
-  Don't skip this step!!
-  Things do go wrong and not all of them are easy to correct. Creating a snapshot at the end of each major change to you VM will give you a way to go back to a state when things were working so you can try again.
-  Go to this page <a href="http://trivalleyhobby.com/klequis/2016/05/05/how-to-create-a-snapshot-with-oracle-virtualbox/">How to Create a Snapshot With Oracle VirtualBox</a> <strong>and make a snapshot now!</strong>.
-</div>
 
 <h2>References</h2>
 <ol>
@@ -284,9 +624,16 @@ w<!DOCTYPE html>
   <li><a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME">Downloading ubuntu GNOME</a>, ubuntu wiki.</li>
 </ol>
 
+</div> <!-- containter-fluid -->
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
