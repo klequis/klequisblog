@@ -21,7 +21,14 @@
 
 body {
   font-size: 1.5em;
+  background-color: silver;
 }
+
+.no-panel {
+  /*background-color: #ddd;*/
+  background:rgb(255,255,255);
+}
+
 
 .img-step-figure {
   margin-top: 10px;
