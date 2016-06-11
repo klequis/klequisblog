@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title></title>
+  <title>03. Create VM</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="flint-style.css">
   <link rel="stylesheet" href="style.css">
@@ -23,7 +23,7 @@
     <p>This guide will show you how to create a Ubuntu 16.04 Desktop virtual machine. It is part of the series <a href="http://trivalleyhobby.com/klequis/2016/05/04/building-a-ubuntu-16-04-development-environment/">Building a Ubuntu GNOME 16.04 Development Environment</a>. If you are following along with the series you already have Oracle VirtualBox installed and are ready to create your Ubuntu 16.04 (Desktop) virtual machine.</p>
     <p>The development environment built in this guide can be used for development with JavaScript, Node.js & PHP. In it you can host Drupal sites, WordPress sites and more.</p>
 
-    <p class="ke-callout">Ubuntu 16.04 has a desktop and a server version. The desktop version is the correct one for development and general use. The server version has a simple text menu-driven UI meant for general user interaction.</p>
+    <p class="ke-callout ke-callout-info">Ubuntu 16.04 has a desktop and a server version. The desktop version is the correct one for development and general use. The server version has a simple text menu-driven UI not meant for general user interaction.</p>
 
     <div class="ke-callout ke-callout-warning">
       <h4>Requirements</h4>
@@ -53,12 +53,25 @@
             <a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME">see the note on ubuntu.com regarding BitTorrent
             </a>.
           </p>
+          <h3>Definitions</h3>
+          <dl class="dl-horizontal">
+            <dt>BitTorrent</dt>
+            <dd>A peer-to-peer file transfer protocol for sharing large amounts of date over the Internet. When you download via BitTorrent the data comes from multiple sources and is reconstructed into one download.</dd>
+            <dt>BitTorrent Client</dt>
+            <dd>Software that runs on you computer which is used for downloading via BitTorrent.</dd>
+            <dt>Pear to pear</dt>
+            <dd>A computer network in which each computer can act as both client and server. In the context of BitTorrent, this means that each computer can be the source a single download to many other computers and can fetch a single download from many other computers. In peer-to-peer, there is not central server.</dd>
+          </dl>
+          <div class="ke-callout ke-callout-warning">
+             <h4>Is using BitTorrent safe</h4>
+             <p>Historically, there have been some cases where BitTorrent clients have installed malware. My expertise is not computer security. However, I have been using BitTorrent for many years and have not had a problem. As always, you should research software that you are installing from the Internet.</p>
+          </div>
           <h3>BitTorrent Client for Ubuntu & Ubuntu GNOME</h3>
           <p>Transmission is already installed and instructions are below.</p>
           <h3>BitTorrent Client for Windows</h3>
           <p>Here is a guide for installing Deluge on Windows and downloading the Ubuntu GNOME iso image: <a href="http://trivalleyhobby.com/klequis/installing-deluge-bittorrent-client-on-windows">Installing & Using Deluge BitTorrent on Windows</a>.</p>
           <h3>BitTorrent Client for Mac</h3>
-          <p>I don't have a Mac available so I can't write a step-by-step for it. After a little research I found that Deluge is a very popular BitTorrent Client for both Mac. Here is an article that talks about several <a href="http://www.macworld.co.uk/feature/mac-software/which-is-best-torrent-client-software-for-mac-3501232">BitTorrent clients for Mac</a>.</p>
+          <p>I don't have a Mac available so I can't write a step-by-step for it. After a little research I found that Deluge is a very popular BitTorrent Client for Mac. Here is an article that talks about several <a href="http://www.macworld.co.uk/feature/mac-software/which-is-best-torrent-client-software-for-mac-3501232">BitTorrent clients for Mac</a>.</p>
         </div>
         <div class="col-md-4">
           <!-- empty -->
@@ -85,7 +98,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/034.Transmission.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/034.Transmission.png" alt="transmisison client"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/034.Transmission.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/034.Transmission.png" alt="transmisison client"></a>
       </div>
     </div>
     <div class="row">
@@ -95,7 +108,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png" alt="torrent options"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/035.Torrent-Options.png" alt="torrent options"></a>
       </div>
     </div> <!-- row -->
     <div class="row">
@@ -105,7 +118,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/036.Transmission.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/036.Transmission.png" alt="transmission"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/036.Transmission.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/036.Transmission.png" alt="transmission"></a>
       </div>
     </div>
   </div>
@@ -125,7 +138,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/001.VMVirtualBoxManager.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/001.VMVirtualBoxManager.png" alt="VirtualBox manager"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/001.VMVirtualBoxManager.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/001.VMVirtualBoxManager.png" alt="VirtualBox manager"></a>
       </div>
     </div>
     <div class="row">
@@ -138,7 +151,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/002.CreateVirtualMachine.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/002.CreateVirtualMachine.png" alt="name and operating system"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/002.CreateVirtualMachine.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/002.CreateVirtualMachine.png" alt="name and operating system"></a>
       </div>
     </div>
     <div class="row">
@@ -152,7 +165,7 @@
           </ol>
         </div>
         <div class="col-md-4">
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/003.CreateVirtualMachine.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/003.CreateVirtualMachine.png" alt="set memory size"></a>
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/003.CreateVirtualMachine.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/003.CreateVirtualMachine.png" alt="set memory size"></a>
         </div>
     </div>
 
@@ -163,7 +176,7 @@
           </ol>
         </div>
         <div class="col-md-4">
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/004.CreateVirtualMachine.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/004.CreateVirtualMachine.png" alt="hard disk options"></a>
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/004.CreateVirtualMachine.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/004.CreateVirtualMachine.png" alt="hard disk options"></a>
         </div>
     </div>
     <div class="row">
@@ -173,18 +186,18 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/005.CreateVirtualHardDisk.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/005.CreateVirtualHardDisk.png" alt="hard disk file type"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/005.CreateVirtualHardDisk.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/005.CreateVirtualHardDisk.png" alt="hard disk file type"></a>
       </div>
     </div>
     <div class="row">
-      <p>Using a dynamically allocated disk means that the VM will only use the hard disk space it needs. For example, you can set (see next step) the maximum size to 500 GB but if the VM only needs 10 GB that is all the space it will take-up on your host's hard drive.</p>
       <div class="col-md-8">
+        <p>Using a dynamically allocated disk means that the VM will only use the hard disk space it needs. For example, you can set (see next step) the maximum size to 500 GB but if the VM only needs 10 GB that is all the space it will take-up on your host's hard drive.</p>
         <ol start="11">
           <li>Click <button class="btn btn-default btn-xs">Next</button></li>
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/006.CreateVirtualHardDisk.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/006.CreateVirtualHardDisk.png" alt="hard disk dynamis or fixed"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/006.CreateVirtualHardDisk.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/006.CreateVirtualHardDisk.png" alt="hard disk dynamis or fixed"></a>
       </div>
     </div>
     <div class="row">
@@ -196,7 +209,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/007.CreateVirtualHardDisk.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/007.CreateVirtualHardDisk.png" alt="hard disk location and size"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/007.CreateVirtualHardDisk.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/007.CreateVirtualHardDisk.png" alt="hard disk location and size"></a>
       </div>
     </div>
   </div>
@@ -218,7 +231,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/008.DevBoxPowered%20Off.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/008.DevBoxPowered%20Off.png" alt="select start-up disk"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/008.DevBoxPowered%20Off.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/008.DevBoxPowered%20Off.png" alt="select start-up disk"></a>
       </div>
     </div>
     <div class="row">
@@ -230,7 +243,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/009.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/009.DevBoxRunning.png" alt="try or install"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/009.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/009.DevBoxRunning.png" alt="try or install"></a>
       </div>
     </div>
     <div class="row">
@@ -240,7 +253,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/010.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/010.DevBoxRunning.png" alt="preparing to install"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/010.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/010.DevBoxRunning.png" alt="preparing to install"></a>
       </div>
     </div>
     <div class="row">
@@ -250,7 +263,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/011.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/011.DevBoxRunning.png" alt="installation type"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/011.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/011.DevBoxRunning.png" alt="installation type"></a>
       </div>
     </div>
     <div class="row">
@@ -260,7 +273,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/012.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/012.DevBoxRunning.png" alt="write changes to disk?"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/012.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/012.DevBoxRunning.png" alt="write changes to disk?"></a>
       </div>
     </div>
     <div class="row">
@@ -270,7 +283,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/013.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/013.DevBoxRunning.png" alt="timezone"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/013.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/013.DevBoxRunning.png" alt="timezone"></a>
       </div>
     </div>
     <div class="row">
@@ -280,7 +293,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/014.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/014.DevBoxRunning.png" alt="keyboard layout"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/014.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/014.DevBoxRunning.png" alt="keyboard layout"></a>
       </div>
     </div>
     <div class="row">
@@ -291,7 +304,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/015.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/015.DevBoxRunning.png" alt="user details"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/015.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/015.DevBoxRunning.png" alt="user details"></a>
         <p class="ke-callout">
           OK, this is going to take about 5 minutes. If you are following my staying healthy advice it is time move around. If you want to watch the installation slideshow, do it standing up and move around a bit, otherwise, go get a glass of water and have a stand-up chat with a colleague.
         </p>
@@ -304,7 +317,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/016.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/016.DevBoxRunning.png" alt="installation complete"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/016.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/016.DevBoxRunning.png" alt="installation complete"></a>
       </div>
     </div>
   </div>
@@ -334,7 +347,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/019.machine.reset.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/019.machine.reset.png" alt="Machine&gt;Reset"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/019.machine.reset.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/019.machine.reset.png" alt="Machine&gt;Reset"></a>
       </div>
     </div>
     <div class="row">
@@ -344,7 +357,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/020.VirtualBox-Question.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/020.VirtualBox-Question.png" alt="Reset"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/020.VirtualBox-Question.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/020.VirtualBox-Question.png" alt="Reset"></a>
       </div>
     </div>
   </div>
@@ -365,7 +378,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/021.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/021.DevBoxRunning.png" alt="gnome lock screen"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/021.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/021.DevBoxRunning.png" alt="gnome lock screen"></a>
       </div>
     </div>
     <div class="row">
@@ -393,7 +406,7 @@
         </p>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/037.DevBox-firststart"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/037.DevBox-firststart" alt="gnome desktop"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/037.DevBox-firststart"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/037.DevBox-firststart" alt="gnome desktop"></a>
       </div>
     </div>
     <div class="row">
@@ -401,7 +414,7 @@
         <p>You bring-up the "Dash" for launching applications (left) and "Workspace list" (right) by pressing the left 'Super key' (aka Windows key).</p>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/038.DevBox-showdash.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/038.DevBox-showdash.png" alt="dash and workspaces"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/038.DevBox-showdash.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/038.DevBox-showdash.png" alt="dash and workspaces"></a>
       </div>
     </div>
     <div class="row">
@@ -409,7 +422,7 @@
         <p>Typing in the search box brings-up the "Overview".</p>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/039DevBox-showoverview.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/039DevBox-showoverview.png" alt="overview"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/039DevBox-showoverview.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/039DevBox-showoverview.png" alt="overview"></a>
       </div>
     </div>
 
@@ -438,7 +451,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.DevBoxRunning.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.DevBoxRunning.png" alt="guest additions run"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.DevBoxRunning.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.DevBoxRunning.png" alt="guest additions run"></a>
       </div>
     </div>
     <div class="row">
@@ -449,7 +462,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.01.authenticate.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.01.authenticate.png" alt="guest additions run"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.01.authenticate.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/026.01.authenticate.png" alt="guest additions run"></a>
       </div>
     </div>
     <p class="ke-callout">
@@ -495,7 +508,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/030.vmsettings-general-advanced.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/030.vmsettings-general-advanced.png" alt="Settings&gt;General&gt;Advanced"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/030.vmsettings-general-advanced.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/030.vmsettings-general-advanced.png" alt="Settings&gt;General&gt;Advanced"></a>
       </div>
     </div>
     <div class="row">
@@ -510,7 +523,7 @@
 
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/031.vmsettings-system-memory.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/031.vmsettings-system-memory.png" alt="Settings&gt;System&gt;Motherboard"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/031.vmsettings-system-memory.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/031.vmsettings-system-memory.png" alt="Settings&gt;System&gt;Motherboard"></a>
       </div>
     </div>
     <div class="row">
@@ -522,7 +535,7 @@
         <p class="ke-callout">When I am working exclusively on the VM it give the VM 3 of 4 cores.</p>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/032.vmsettings-system-processor.png"><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/032.vmsettings-system-processor.png" alt="Settings&gt;Systems&gt;Processor"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/032.vmsettings-system-processor.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/032.vmsettings-system-processor.png" alt="Settings&gt;Systems&gt;Processor"></a>
       </div>
     </div>
     <div class="row">
@@ -538,7 +551,7 @@
         </ol>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/033.vmsettings-display-screen.png" ><img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/033.vmsettings-display-screen.png" alt="Settings&gt;Display&gt;Screen"></a>
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/033.vmsettings-display-screen.png" ><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/033.vmsettings-display-screen.png" alt="Settings&gt;Display&gt;Screen"></a>
       </div>
     </div>
   </div>
@@ -579,10 +592,10 @@
   </ol>
     <div class="row">
       <div class="col-xs-6">
-        <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/028.DevBoxRunning.png" alt="privacy settings">
+        <img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/028.DevBoxRunning.png" alt="privacy settings">
       </div>
       <div class="col-xs-6">
-        <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/029.DevBoxRunning.png" alt="screen lock settings">
+        <img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/029.DevBoxRunning.png" alt="screen lock settings">
       </div>
     </div>
 
@@ -595,7 +608,7 @@
   <li><a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME">Downloading ubuntu GNOME</a>, ubuntu wiki.</li>
 </ol>
 
-</div> <!-- containter-fluid -->
+</div> <!-- container-fluid -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

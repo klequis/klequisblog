@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title></title>
+  <title>05. command line</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="flint-style.css">
   <link rel="stylesheet" href="style.css">
@@ -16,12 +16,8 @@
 
 <div class="container-fluid">
   <p>If you already know how to use the command line you can skip this guide. If you are new to the command line read on.</p>
-
   <p>Are you wondering how well you need to know the command line to effectively develop applications on Linux? The more you know the better, but you can get started with some basic commands and learn more over time.</p>
-
   <p>As a developer using Linux there are things you will need to do with the command line. You need to get comfortable with it. Following the exercises below will help you get there. It will give you the skills you need to complete the remainder of this <a href="#">series</a> and provide you with a foundation you can build on.</p>
-
-
   <div class="ke-callout ke-callout-warning">
     <p>Where ever you see <code>$ </code> type what follows it into terminal.</p>
     <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see it, paying careful attention to every character, especially spaces and capitalization.</p>
@@ -31,13 +27,23 @@
     <ol>
       <li>Everything you do in Terminal is case sensitive. If something doesn't work be sure to double check the case.</li>
       <li>You can open multiple tabs in terminal by pressing <kbd>Ctrl-t</kbd>.</li>
-      <li>Spaces in file names require quotes. It is easiest to not put spaces in your file names.</li>
-      <li>You can see and navigate all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typeing and many typos.
+      <li>Spaces in file names require quotes. It is easiest to not use spaces in your file names.</li>
+      <li>You can see all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typing and many typos.
     </ol>
   </div>
 
   <h2>Use a Cheetsheet</h2>
   <p>It will help to have a cheatsheet of commands. This can be a text file or it can go into a program such as Evernote or OneNote. Keep it simple so you can add to and refer to it quickly. A cheatsheet listing of all the commands used in this guide is at the bottom of the post.</p>
+
+  <h2>Definitions</h2>
+  <dl class="dl-horizontal">
+   	<dt>Terminal</dt>
+   	<dd>An application that gives you command line access to the operating system.</dd>
+    <dt>Command prompt</dt>
+   	<dd>A symbol displayed which indicates the computer is ready for input. For Ubuntu, the command prompt symbol is <code>$</code>.</dd>
+   	<dt>Command line</dt>
+   	<dd>Everything you enter to the right of the command prompt.</dd>
+  </dl>
 
     <!-- Getting Started -->
   <h2>Getting Started</h2>
@@ -47,42 +53,52 @@
     </div>
     <div class="panel-body">
       <div class="row">
-          <div class="col-md-8">
-            <p>In Ubuntu GNOME you access the command line via a application named Terminal. To launch Terminal press <kbd>Super</kbd>, type 'terminal' and press <kbd>Enter</kbd>.</p>
-            <p>Terminal will be launched with the current directory as your home directory. Let's dissect the command prompt.</p>
-            <p>
-              <span class="chart-color-one">karl</span> <span class="chart-color-two">@</span> <span class="chart-color-three">karl-g3</span> <span class="chart-color-four">:</span> <span class="chart-color-five">~</span> <span class="chart-color-six">$</span>
-            </p>
-            <table>
-              <tr>
-                <td class="chart-color-one">karl</td>
-                <td>User name</td>
-              </tr>
-              <tr>
-                <td class="chart-color-two">@</td>
-                <td>"at"</td>
-              </tr>
-              <tr>
-                <td class="chart-color-three">karl-g3</td>
-                <td>Machine/computer name</td>
-              </tr>
-              <tr>
-                <td class="chart-color-four">:</td>
-                <td>"colon"</td>
-              </tr>
-              <tr>
-                <td class="chart-color-five">~</td>
-                <td>"tilda" is a short-hand for "home"</td>
-              </tr>
-              <tr>
-                <td class="chart-color-six">$</td>
-                <td>Indicates commands will be executed with your privildeges and not super user privilidges (which would be indicated with '#'). This is explained in more detail below.</td>
-              </tr>
-            </table>
-          </div>
-          <div class="col-md-4">
-            <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"></a>
-          </div>
+        <div class="col-md-8">
+          <p>In Ubuntu GNOME you access the command line via an application named Terminal. To launch Terminal press <kbd>Super</kbd>, type 'terminal' and press <kbd>Enter</kbd>.</p>
+          <p>Terminal will be launched with the current directory as your home directory. Let's dissect the command prompt.</p>
+          <p>
+            <span class="chart-color-one">karl</span> <span class="chart-color-two">@</span> <span class="chart-color-three">karl-g3</span> <span class="chart-color-four">:</span> <span class="chart-color-five">~</span> <span class="chart-color-six">$</span>
+          </p>
+          <table>
+            <tr>
+              <td class="chart-color-one">karl</td>
+              <td>User name</td>
+            </tr>
+            <tr>
+              <td class="chart-color-two">@</td>
+              <td>Just "at"</td>
+            </tr>
+            <tr>
+              <td class="chart-color-three">karl-g3</td>
+              <td>Machine/computer name</td>
+            </tr>
+            <tr>
+              <td class="chart-color-four">:</td>
+              <td>Just a "colon"</td>
+            </tr>
+            <tr>
+              <td class="chart-color-five">~</td>
+              <td>"tilda" is a short-hand for your "home" director</td>
+            </tr>
+            <tr>
+              <td class="chart-color-six">$</td>
+              <td>Indicates commands will be executed with your privildeges and not super user privilidges (which would be indicated with '#'). This is explained in more detail below.</td>
+            </tr>
+          </table>
+          <p>'karl@karl-g3:~$' means the user is 'karl', the machine name is 'karl-g3', the current directory is '~' (which is short for /home/karl) and the system is ready for input '$'.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.terminal.png"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Using the command to change directory <code>$ cd Downloads</code> changes the current directory to /home/karl/Downloads. Note that 'Downloads' directory name is capitalized and it must be so on the command line as well.</p>
+
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.01.cdtodownloads.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/001.01.cdtodownloads.png"></a>
+        </div>
       </div>
     </div>
   </div>
@@ -118,8 +134,8 @@
       <div class="row">
           <div class="col-md-8">
             <pre>$ ls</pre>
-            <p>This will show the contents of you home (~) directory.</p>
-            <p>You can add options to the ls command. The most common are -l and -a.</p>
+            <p>This command will show the contents of the current directory.</p>
+            <p>You can add options to the ls command to change the output. The most common are -l and -a.</p>
           </div>
           <div class="col-md-4">
             <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/003.ls.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/003.ls.png"></a>
@@ -157,7 +173,7 @@
     </div>
     <div class="panel-body">
       <h3>Definitions</h3>
-      <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using '-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt' as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below.</p>
+      <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using <b>'-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt'</b> as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below. Although it is potentially confusing haveing a user named karl and a group named karl, Ubuntu creates a group for each user with same name as the users login name.</p>
       <table>
         <tr>
           <th>Character</th>
@@ -190,7 +206,7 @@
         </tr>
         <tr>
           <td>x</td>
-          <td>Execute permission. The user can execute the file it is a program or other executible.</td>
+          <td>Execute permission. The user can execute the file if it is a program or other executible. In Linux, all folders must have execute.</td>
         </tr>
       </table>
       <h3>Output Parts</h3>
@@ -213,18 +229,6 @@
           <td><span class="chart-color-ten">Filename</span></td>
         </tr>
       </table>
-    </div>
-  </div>
-
-  <p class="ke-callout ke-callout-warning">
-    It is potentially confusing to have a user named 'karl' and a group named 'karl' in the example. However, that is what Ubuntu does, it creates a group with the same name as the user for each users.
-  </p>
-  <div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading">
-      <h2>Explanation of Output Parts</h2>
-    </div>
-    <div class="panel-body">
       <p>Characters 2 through 10 are groups of 3. Each group of 3 applies to a specific type of system user. Possible values for the positions within a group of 3 are:</p>
       <table>
         <tr>
@@ -276,7 +280,6 @@
   </div>
 
   <h2>Let's begin the exercises</h2>
-
   <!-- $ clear -->
   <div class="panel panel-default">
     <div class="panel-heading">
