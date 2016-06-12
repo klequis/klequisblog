@@ -333,7 +333,7 @@
     <div class="row">
       <div class="col-md-8">
         <p class="ke-callout ke-callout-warning">
-          I consistently experience a problem at this point. Either Ubuntu hangs or there is an error displayed. Either way, it doesn't load. Here is a workaround that has worked for me every time (which is 5 or 6 times now). After I clicked <button class="btn btn-default btn-xs">Restart Now</button>, everything looked good for a minute or so. Ubuntu was busy loading. However, I then got a screen full of error messages. In case this happens to you, I have include steps to correct it
+          I consistently experience a problem at this point. Either Ubuntu hangs or there is an error displayed. Either way, it doesn't load. Here is a workaround that has worked for me every time (which is 5 or 6 times now). After I clicked <button class="btn btn-default btn-xs">Restart Now</button>, everything looked good for a minute or so. Ubuntu was busy loading. However, I then got a screen full of error messages. In case this happens to you, I have include steps to correct it.
         </p>
       </div>
       <div class="col-md-4">
@@ -429,14 +429,17 @@
   </div>
 </div>
 
-<p class="ke-callout ke-callout-warning">
-  I highly recommend taking some time at the end of this post to review the following references to get yourself familiar with the GNOME desktop. Doing so will help prepare you for the remainder of this series.<br>
-  <a href="https://help.gnome.org/users/gnome-help/stable/shell-introduction.html.en#appmenu">Introduction to GNOME</a><br>
-  <a href="https://en.wikipedia.org/wiki/GNOME">GNOME on Wikipedia</a>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p class="ke-callout ke-callout-warning">
+      I highly recommend taking some time at the end of this post to review the following references to get yourself familiar with the GNOME desktop. Doing so will help prepare you for the remainder of this series.<br>
+      <a href="https://help.gnome.org/users/gnome-help/stable/shell-introduction.html.en#appmenu">Introduction to GNOME</a><br>
+      <a href="https://en.wikipedia.org/wiki/GNOME">GNOME on Wikipedia</a>
+    </p>
+  </div>
+</div>
 
 <div class="panel panel-default">
-  <!-- Default panel contents -->
   <div class="panel-heading">
     <h2>Installing VirtualBox Guest Additions</h2>
   </div>
@@ -587,38 +590,48 @@
     <div class="ke-callout ke-callout-warning">
       <p>Don't skip this step!</p>
       <p>
-        As you are install software on your fresh new VM things can go wrong and not all of them are easy to correct. Creating a snapshot at the end of each major change to your VM will give you a way to go back to a state when things were working so you can try again. Go to this page <a href="http://trivalleyhobby.com/klequis/2016/05/05/how-to-create-a-snapshot-with-oracle-virtualbox/">How to Create a Snapshot With Oracle VirtualBox</a> <strong>and make a snapshot now!</strong>.
+        As you are install software on your fresh new VM things can go wrong and not all of them are easy to correct. Creating a snapshot at the end of each major change to your VM will give you a way to go back to a state when things were working so you can try again. Go to this page <a href="http://trivalleyhobby.com/klequis/2016/05/05/how-to-create-a-snapshot-with-oracle-virtualbox/">How to Create a Snapshot With Oracle VirtualBox</a> <strong>and make a snapshot now!</strong>
       </p>
     </div>
   </div>
 </div>
 
-<div class="ke-callout ke-callout-info">
-  <p>Since it is running inside of another machine, I don't lock my VM. I lock the host instead. To save some typing I turn-off the VM's screen locking with the below steps.</p>
-  <ol type="a">
-    <li>Log in if you have not already done so.</li>
-    <li>Press the <kbd>Super</kbd> key and type Settings.</li>
-    <li>Click <button class="btn btn-default btn-xs">Privacy</button>.</li>
-    <li>Set Screen Lock to Off.</li>
-  </ol>
-    <div class="row">
-      <div class="col-xs-6">
-        <img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/028.DevBoxRunning.png" alt="privacy settings">
+<div class="panel panel-default">
+  <div class="panel-body">
+      <div class="ke-callout ke-callout-info">
+        <h2>A side note on passwords</h2>
+        <p>Since it is running inside of another machine, I don't lock my VM. I lock the host instead. To save some typing I turn-off the VM's screen locking with the below steps.</p>
+        <p>As I noted above, I use a short & simple password on my VMs. You might be tempted to have no password at all. However, that would change how you used the machine a lot. For example, when you use 'sudo' on the command line there would be no password, nor a password for installing applications. I think that change in the experience of using Linux is a negative for learning.</p>
+        <ol type="a">
+          <li>Log in if you have not already done so.</li>
+          <li>Press the <kbd>Super</kbd> key and type Settings.</li>
+          <li>Click <button class="btn btn-default btn-xs">Privacy</button>.</li>
+          <li>Set Screen Lock to Off.</li>
+        </ol>
+          <div class="row">
+            <div class="col-xs-6">
+              <img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/028.DevBoxRunning.png" alt="privacy settings">
+            </div>
+            <div class="col-xs-6">
+              <img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/029.DevBoxRunning.png" alt="screen lock settings">
+            </div>
+          </div>
       </div>
-      <div class="col-xs-6">
-        <img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/029.DevBoxRunning.png" alt="screen lock settings">
-      </div>
-    </div>
-
+  </div>
 </div>
 
-
-<h2>References</h2>
-<ol>
-  <li><a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME/LTS">Ubuntu GNOME 16.04 LTS</a>, ubuntu wiki.</li>
-  <li><a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME">Downloading ubuntu GNOME</a>, ubuntu wiki.</li>
-</ol>
-
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>References</h2>
+  </div>
+  <div class="panel-body">
+    <ol>
+      <li><a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME/LTS">Ubuntu GNOME 16.04 LTS</a>, ubuntu wiki.</li>
+      <li><a href="https://wiki.ubuntu.com/UbuntuGNOME/GetUbuntuGNOME">Downloading ubuntu GNOME</a>, ubuntu wiki.</li>
+    </ol>
+  </div>
+</div>
 </div> <!-- container-fluid -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
