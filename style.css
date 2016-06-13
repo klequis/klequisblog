@@ -70,12 +70,14 @@ body {
 }
 .ke-callout-warning {
   border-left-color: #ffe202;
+  background-color: white;
 }
 .ke-callout-warning h4 {
   color: #aa6708;
 }
 .ke-callout-info {
   border-left-color: #1b809e;
+  background-color: white;
 }
 .ke-callout-info h4 {
   color: #1b809e;
