@@ -30,13 +30,13 @@
   <p>Are you wondering how well you need to know the command line to effectively develop applications on Linux? The more you know the better, but you can get started with some basic commands and learn more over time.</p>
   <p>As a developer using Linux there are things you will need to do with the command line. You need to get comfortable with it. Following the exercises below will help you get there. It will give you the skills you need to complete the remainder of this <a href="#">series</a> and provide you with a foundation you can build on.</p>
   <div class="ke-callout ke-callout-warning">
-    <p>Where ever you see <code>$ </code> type what follows it into terminal.</p>
-    <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see it, paying careful attention to every character, especially spaces and capitalization.</p>
+    <p>Wherever you see <code>$ </code> type what follows it into terminal.</p>
+    <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see, paying careful attention to every character, especially spaces and capitalization.</p>
   </div>
 
   <div class="ke-callout ke-callout-warning">
     <ol>
-      <li>Everything you do in Terminal is case sensitive. If something doesn't work be sure to double check the case.</li>
+      <li>Everything you do in Terminal is case sensitive. If something doesn't work, be sure to double check the case.</li>
       <li>You can open multiple tabs in terminal by pressing <kbd>Ctrl-t</kbd>.</li>
       <li>Spaces in file names require quotes. It is easiest to not use spaces in your file names.</li>
       <li>You can see all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typing and many typos.
@@ -54,6 +54,10 @@
    	<dd>A symbol displayed which indicates the computer is ready for input. For Ubuntu, the command prompt symbol is <code>$</code>.</dd>
    	<dt>Command line</dt>
    	<dd>Everything you enter to the right of the command prompt.</dd>
+    <dt>User</dt>
+    <dd>'User' can be a name representing a person who uses the computer or an abstract user such as 'cdrom', which is a group containing users who can use the computer's CD-ROM.</dd>
+    <dt>Superuser</dt>
+    <dd>A special account/user who is the ultimate administrator. The superuser can make any and all changes to the system including destroying it.</dd>
   </dl>
 </div>
 </div>
@@ -90,11 +94,11 @@
           </tr>
           <tr>
             <td class="chart-color-five">~</td>
-            <td>"tilda" is a short-hand for your "home" director</td>
+            <td>"tilda" is a short-hand for your "home" directory. My home directory is /home/karl.</td>
           </tr>
           <tr>
             <td class="chart-color-six">$</td>
-            <td>Indicates commands will be executed with your privildeges and not super user privilidges (which would be indicated with '#'). This is explained in more detail below.</td>
+            <td>Indicates commands will be executed with your privileges and not the superuser's privileges (which would be indicated with '#'). This is explained in more detail below.</td>
           </tr>
         </table>
         <p>'karl@karl-g3:~$' means the user is 'karl', the machine name is 'karl-g3', the current directory is '~' (which is short for /home/karl) and the system is ready for input '$'.</p>
@@ -105,7 +109,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>Using the command to change directory <code>$ cd Downloads</code> changes the current directory to /home/karl/Downloads. Note that 'Downloads' directory name is capitalized and it must be so on the command line as well.</p>
+        <p>Using the command to change directory <code>$ cd Downloads</code> changes the current directory to /home/karl/Downloads. Note that the 'Downloads' directory name is capitalized and it must be so on the command line as well.</p>
 
       </div>
       <div class="col-md-4">
@@ -137,10 +141,12 @@
 </p>
 
 <!-- ls command -->
-<h2>The First Command: "ls"</h2>
+
 <div class="panel panel-default">
+
   <div class="panel-heading">
-    <h3>"ls Command"</h3>
+    <h2>The First Command: "ls"</h2>
+    <h2><code>$ ls</code></h2>
   </div>
   <div class="panel-body">
     <div class="row">
@@ -155,8 +161,8 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <pre>$ ls -l</pre>
         <p>"-l" (lower case L) shows a more detailed list view of the directory contents. We will analyze the parts of this detail shortly.</p>
+        <pre>$ ls -l</pre>
       </div>
       <div class="col-md-4">
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/004.ls-l.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/004.ls-l.png"></a>
@@ -164,8 +170,8 @@
     </div>
     <div class="row">
       <div class="col-md-8">
+        <p>"-a" shows hidden files and directories. The filename of hidden files & directories starts with a period.</p>
         <pre>$ ls -la</pre>
-        <p>"-a" shows hidden files. The filename of hidden files starts with a period.</p>
       </div>
       <div class="col-md-4">
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/005.ls-la.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/005.ls-la.png"></a>
@@ -184,8 +190,9 @@
     <h2><code>ls -l</code>, <code>ls -la</code> Output explained</h2>
   </div>
   <div class="panel-body">
-    <h3>Definitions</h3>
-    <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using <b>'-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt'</b> as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below. Although it is potentially confusing haveing a user named karl and a group named karl, Ubuntu creates a group for each user with same name as the users login name.</p>
+    <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using <b>'-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt'</b> as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below. Although it is potentially confusing haveing a user named karl and a group named karl, Ubuntu creates a group for each user with the same name as the users login name.</p>
+    <p>A <b>user</b> is assigned privileges which are the right to perform an action on a computer. 'Login' is the right to log in. 'Read' is the right to read (aka view/see) a file, directory or other object on the computer.</p>
+    <p>A <b>group</b> is a container of users. Members of the group are given privileges. Ubuntu comes with a set of default groups. Groups can be created, deleted and renamed. Users and privileges can be added to and removed from a group.
     <table>
       <tr>
         <th>Character</th>
@@ -196,13 +203,13 @@
           -  (hyphen)
         </td>
         <td>
-          When in the first position it indicates that the item is a file.<br>
+          When in the first position '-' indicates that the item is a file.<br>
           When in any of the following 9 positions it means 'the permission is not granted'.
         </td>
       </tr>
       <tr>
         <td>d</td>
-        <td>When in the first position it indicates that the item is a directory (aka folder)</td>
+        <td>When in the first position it indicates that the item is a directory (aka folder).</td>
       </tr>
       <tr>
         <td>l</td>
@@ -218,7 +225,7 @@
       </tr>
       <tr>
         <td>x</td>
-        <td>Execute permission. The user can execute the file if it is a program or other executible. In Linux, all folders must have execute.</td>
+        <td>Execute permission. The user can execute the file as a program or other executible. In Linux, all folders must have execute.</td>
       </tr>
     </table>
     <h3>Output Parts</h3>
@@ -228,9 +235,9 @@
     <table>
       <tr>
         <td><span class="chart-color-one">Filetype</span></td>
-        <td><span class="chart-color-two">Owner permissions</span></td>
-        <td><span class="chart-color-three">Group permissions</span></td>
-        <td><span class="chart-color-four">Other permissions</span></td>
+        <td><span class="chart-color-two">Owner's permissions</span></td>
+        <td><span class="chart-color-three">Group's permissions</span></td>
+        <td><span class="chart-color-four">Other's permissions</span></td>
         <td><span class="chart-color-five">Link count</span></td>
       </tr>
       <tr>
@@ -264,7 +271,7 @@
         <td>B</td><td class="chart-color-two">rw-</td><td>The first grouping of three (characters 2-4) is the permissions for the user. In this case user karl has read & write but not execute.</td>
       </tr>
       <tr>
-        <td>C</td><td class="chart-color-three">rw-</td><td>The second grouping of three (characters 5-7) is the permissions for the group owner. In this case, same as previous, the group karl has read & write but not execute.</td>
+        <td>C</td><td class="chart-color-three">rw-</td><td>The second grouping of three (characters 5-7) is the permissions for the group owner. In this case the group karl has read & write but not execute.</td>
       </tr>
       <tr>
         <td>D</td><td class="chart-color-four">r--</td><td>The third grouping is the permissions for everyone else. In this case everyone other than user karl and members of the group karl, have read but not write and not execute.</td>
@@ -273,13 +280,13 @@
         <td>E</td><td class="chart-color-five">1</td><td>The number of links to this file. An explanation of this is out of scope for this post.</td>
       </tr>
       <tr>
-        <td>F</td><td class="chart-color-six">karl</td><td>The user who is the "Owner" of the item. It will be an individual user account. In this case I am logged-in as karl.</td>
+        <td>F</td><td class="chart-color-six">karl</td><td>The user who is the "Owner" of the item. It will be an individual user account. In this case I am logged-in as karl and kar is the owner.</td>
       </tr>
       <tr>
         <td>G</td><td class="chart-color-seven">karl</td><td>"Group owner". There are many groups on your Ubuntu GNOME machine and one of them is named with your user name.</td>
       </tr>
       <tr>
-        <td>H</td><td class="chart-color-eight">0</td><td>This size of the item. This is an empty text file so it is showing as zero.</td>
+        <td>H</td><td class="chart-color-eight">0</td><td>This size of the item. This is an empty text file and the number is rounded, so it is showing as zero.</td>
       </tr>
       <tr>
         <td>I</td><td class="chart-color-nine">May 28 08:50</td><td>The date & time.</td>
@@ -294,7 +301,7 @@
 
 <!-- $ clear -->
 <div class="panel panel-default">
-  <h2>Let's begin the exercises</h2>
+  <h2>Let's begin the exercises</h2><br>
   <div class="panel-heading">
     <h3><code>$ clear</code> Clear Terminal</h3>
   </div>
@@ -303,7 +310,7 @@
       <div class="col-md-8">
         <p>Sometimes Terminal is full of text and it is confusing. You can clear the Terminal with the <code>$ clear</code> command.</p>
         <pre>$ ls -l<br>$ clear</pre>
-        <p>To see the previously used commands press <kbd>up-arrow</kbd>.</p>
+        <p>Use <kbd>up-arrow</kbd> navigate back through previous commands, and then <kbd>down-arrow</kbd> to navigate forward.</p>
       </div>
       <div class="col-md-4">
         <!-- empty -->
@@ -320,7 +327,7 @@
   <div class="panel-body">
     <div class="row">
         <div class="col-md-8">
-          <p>Make a directory named 'workspace'</p>
+          <p>Make a directory named 'workspace'.</p>
           <pre>$ mkdir workspace</pre>
           <p>Show the new directory in Terminal</>
           <pre>$ ls -l</pre>
@@ -331,7 +338,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>Look for the new 'workspace' directory in Files</p>
+        <p>Look for the new 'workspace' directory in Files.</p>
       </div>
       <div class="col-md-4">
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/006.mkdir.png"></a>
@@ -348,7 +355,7 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
-        <p>Change directory to 'workspace'</p>
+        <p>Change directory to 'workspace'.</p>
         <pre>$ cd workspace</pre>
         <p>Listing the contents of the directory will show it as empty.</p>
         <pre>$ ls -l</pre>
@@ -363,7 +370,7 @@
         <pre>$ mkdir samplefiles</pre>
         One last time for practice. Keep doing this for each change so you can see the results.
         <pre>$ ls -l</pre>
-        <p>Change to 'samplefiles'</p>
+        <p>Change to 'samplefiles'.</p>
         <pre>$ cd samplefiles</pre>
       </div>
       <div class="col-md-4">
@@ -383,9 +390,9 @@
       <div class="col-md-8">
         <p>If you are not in 'workspace/samplefiles' then navigate there.</p>
         <pre>$ cd workspace/samplefiles</pre>
-        <p>Confirm your current root directory is 'home' (aka "~"), then try to go to another root directory without preceding the directory name with '/'. This produces an error.</p>
+        <p>Confirm your current root directory is ~/workspace/samplefiles, then try to go to another root directory without preceding the directory name with '/'. This produces an error.</p>
         <pre>$ cd etc/calendar</pre>
-        <p>Now do the same but preced the command with '/'.</p>
+        <p>Now do the same but precede the command with '/'.</p>
         <pre>$ cd /etc/calendar</pre>
       </div>
       <div class="col-md-4">
@@ -420,12 +427,12 @@
 <!-- -->
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3><code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code> Creating Files</h3>
+    <h3>Creating Files <code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code></h3>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
-        <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods.</p>
+        <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods to create files.</p>
         <p>Overall I love GNOME. However, one of my frustrations with it is that you can not right-click in Files to create a new document. I'm sure there is a way to fix that and finding it is on my to do list.</p>
         <p>Most of the time I create files from within a text editor. I currently use <a href="https://atom.io">Atom</a>. Knowing how to create files from the command line is useful but you can decide what workflow works best for you.</p>
         <p><b>gedit</b> - is a common text editor that comes with Ubuntu.</p>
@@ -436,7 +443,7 @@
         <p>Type the below into page1.html</p>
         <pre>&lt;h1&gt;page1.html&lt;/h1&gt;</pre>
         <p>Save (<kbd>Ctrl+s</kbd>) the file and quit (<kbd>Ctrl+q</kbd>) gedit. Then check-out page1.html in Files</p>
-        <p>Using Terminal look in '~/workspace/samplefiles' for page1.html. Remember, that is <code>$ ls -l</code>.</p>
+        <p>Using Terminal and the <code>$ ls -l</code> command, look in '~/workspace/samplefiles' for page1.html.</p>
       </div>
       <div class="col-md-4">
         <!-- empty -->
@@ -448,7 +455,7 @@
         <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;'</pre>
         <p>That printed to the screen. Now lets redirect it to a file.</p>
         <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;' > page2.html</pre>
-        <p>View the file in Files and then in Terminal</p>
+        <p>View the file in Files and then in Terminal.</p>
         <p>Open the file with FireFox</p>
         <pre>$ firefox page2.html</pre>
       </div>
@@ -485,7 +492,7 @@
         <pre>$ cd ~/workspace/samplefiles<br>$ mkdir emptydir<br>$ mkdir nonemptydir<br>$ cd nonemptydir<br>$ > file1.txt<br>$ > file2.txt<br>$ mkdir innerdir<br>cd ..</pre>
         <p>Now that our sample data is setup, let's try removing some stuff.</p>
         <p><code>rm</code> by itself will not work for an empty or non-empty directory. <code>rmdir</code> will work for empty but not non-empty directories. I'll show you how to do both with one command.</p>
-        <p>Let's try <code>rm</code> to see what happens.</p>
+        <p>Let's try <code>rm</code> to see what happens. If a command fails an error is printed out. If a command succeeds nothing is printed out. Perform each command in terminal.</p>
         <pre>$ rm emptydir<br>$ rm nonemptydir</pre>
         <p>Now try <code>-f</code> without <code>-r</code>.</p>
         <pre>$ rm -f emptydir<br>$ rm -f nonemptydir</pre>
@@ -580,7 +587,7 @@
 <!-- $ rm -->
 <div class="panel panel-default">
   <h2>Changing Owner, Group & Permissions</h2>
-  <p>Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enourmous.</p>
+  <p>Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enorrmous.</p>
   <div class="panel-heading">
     <h3><code>$ chown</code> - Change Owner & <code>$ chgrp</code> Change Group</h3>
   </div>
