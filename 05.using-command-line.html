@@ -485,45 +485,69 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
-        <p>There is a <code>rmdir</code> command but I don't find it necessary. You can remove (aka delete) any file or directory using the <code>rm</code> command along with a couple of options: <code>-r</code> for 'recursive' and <code>-f</code> for force.</p>
+        <p>There is a <code>rmdir</code> command but I don't find it necessary. You can remove (aka delete) any file or directory using the <code>rm</code> command along with a the option <code>-r</code> for 'recursive'. We will also discuss <code>-f</code> for force.</p>
         <p><code>-r</code> (recursive) will drill down the directory structure and remove everything below the specified node</p>
-        <p><code>-f</code> (force) ignores nonexistent files, missing operands and never prompts the user. What that really means is it will silently go about removing things and not present any warnings or other information to you.</p>
-        <p>Follow these steps to learn how <code>rm</code> works</p>
-        <pre>$ cd ~/workspace/samplefiles<br>$ mkdir emptydir<br>$ mkdir nonemptydir<br>$ cd nonemptydir<br>$ > file1.txt<br>$ > file2.txt<br>$ mkdir innerdir<br>cd ..</pre>
-        <p>Now that our sample data is setup, let's try removing some stuff.</p>
-        <p><code>rm</code> by itself will not work for an empty or non-empty directory. <code>rmdir</code> will work for empty but not non-empty directories. I'll show you how to do both with one command.</p>
-        <p>Let's try <code>rm</code> to see what happens. If a command fails an error is printed out. If a command succeeds nothing is printed out. Perform each command in terminal.</p>
-        <pre>$ rm emptydir<br>$ rm nonemptydir</pre>
-        <p>Now try <code>-f</code> without <code>-r</code>.</p>
-        <pre>$ rm -f emptydir<br>$ rm -f nonemptydir</pre>
-        <p>That doesn't work either. However, in both cases, <code>-r</code> will.</p>
-        <pre>$ rm -r emptydir<br>$ rm -r nonemptydir</pre>
-      </div>
-      <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/011.rmfolder.png"></a>
-      </div>
-    </div> <!-- row -->
-    <div class="row">
-      <div class="col-md-8">
-        <p><code>rm</code> also works on files.</p>
-        <pre>$ cd ~/workspace/samplefiles<br>$ > rmfile1.txt<br>$ rm rmfile1.txt</pre>
-      </div>
+        <p><code>-f</code> (force) ignores nonexistent files, missing operands and never prompts the user. What that really means is it will silently go about removing things and not present any warnings or other information to you. I'm tempted to say you should be sure you know what you are deleting before using <code>-f</code> but the truth is, if you are unsure you should not delete anything until you are, and once you are <code>-f</code> will supress messages you don't need to see.</p>
       <div class="col-md-4">
         <!-- empty -->
       </div>
-    </div> <!-- row -->
-  </div>
-</div> <!-- panel -->
+    <div class="row">
+      <div class="col-md-8">
+        <p>Let's setup sample files for these exercises. First, clean-up the existing /samplefiles directory.</p>
+        <pre>$ cd ~/workspace<br>$ rm -rf samplefiles</pre>
+        <pre>$ mkdir samplefiles<br>$ touch file1.txt<br>$ mkdir emptydir<br>$ mkdir non-emptydir<br>$ cd non-emptydir<br>$ touch file2.txt<br>$ touch file3.txt<br>$ mkdir innerdir<br>$ cd ..</pre>
+        <p>Take a moment to explore your new files and directories.</p>
+      </div>
+      <div class="col-md-4">
+        021
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/021.mksamplefiles.png"><img class="img-responsive img-step-figure" alt="make sample files" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/021.mksamplefiles.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>Issue the ls -l command after each step so you can see what changes.</p>
+        <p>Remove file1.txt.</p>
+        <pre>$ rm file1.txt<br>$ ls -l</pre>
+        <p><code>$ rm</code> without <code>-r</code> cannot delete a directory. Try it.</p>
+        <pre>$ rm emptydir</pre>
+        <p>Adding <code>-r</code> will make it work</p>
+        <pre>$ rm -r emptydir<br>$ rm -r non-emptydir<br>$ ls -l</pre>
+      </div>
+      <div class="col-md-4">
+        022
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/022.rmfiledir.png"><img class="img-responsive img-step-figure" alt="removing files and directories" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/022.rmfiledir.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>Now let's see how <code>-f</code> works. First create 2 files that will be read-only to you. ('sudo' will be explained in the next section.)</p>
+        <pre>$ sudo touch file4-root.txt<br>$ sudo touch file5-root.txt<br>$ ls -l</pre>
+        <p>Note that the files are owned by 'root root'. In this case, your permissions are the last group of 3 (everyone else) which are 'r--' meaning read, no write and no execute.</p>
+      </div>
+      <div class="col-md-4">
+        023
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/023.mkrootfiles.png"><img class="img-responsive img-step-figure" alt="creating read-only files" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/023.mkrootfiles.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>If you use <code>$ rm</code> without <code>-r</code> you will be asked to confirm you want to delete the file. If you use <code>-r</code> you will not be asked.</p>
+        <pre>$ rm file4-root.txt<br>$ rm -f file5-root.txt</pre>
+      </div>
+      <div class="col-md-4">
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/024.rmrootfiles.png"><img class="img-responsive img-step-figure" alt="deleting read-only files" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/024.rmrootfiles.png"></a>
+      </div>
+    </div>
 
-  <!-- $ sudo -->
+<!-- $ sudo -->
 <div class="panel panel-default">
-  <h2><code>$ sudo</code></h2>
+  <h2>$ sudo - "Superuser Do"</h2><br>
   <blockquote>
     <b>sudo</b> (superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system. Sudo also logs all commands and arguments.
     <cite>Source: <a href="http://searchenterpriselinux.techtarget.com/definition/sudo">TechTarget</a></cite>
   </blockquote>
   <div class="panel-heading">
-    <h3><code>$ sudo</code> - Superuser Do</h3>
+    <h2><code>$ sudo</code></h2>
   </div>
   <div class="panel-body">
     <div class="row">
@@ -533,52 +557,88 @@
         <p>You will be prompted for your password, the same one you log in with.</p>
         <p>You can't use <code>$ sudo > ...</code> so we will use touch to create the file.</p>
         <pre>$ sudo touch sudorootfile.txt</pre>
-
         <p>Performing a directory listing will show that both the Owner and Group are 'root' which is the super user.</p>
         <pre>$ ls -l</pre>
+        <p>Examining the permissions for the file sudorootfile.txt, 'rw-r--r--', we see:</p>
+        <table>
+          <tr>
+            <td>rw-</td><td>User 'root' has read and write but not execute.</td>
+          </tr>
+          <tr>
+            <td>r--</td><td>Group 'root' has read but not write nor execute.</td>
+          </tr>
+          <tr>
+            <td>r--</td><td>Everyone else (includes you) has the same as group 'root', i.e., read but not write nor execute.</td>
+          </tr>
+        </table>
+        <p>Examining the permission sfor the directory 'sudorootdir', 'rwxr-xr-x', we see:</p>
+        <p><small>(Remember, execute is required on all folders)</small></p>
+        <table>
+          <tr>
+            <td>rwx</td><td>User 'root' has read, write & execute.</td>
+          </tr>
+          <tr>
+            <td>r-x</td><td>Group 'root' has read & execute but not write./td>
+          </tr>
+            <td>r-x</td><td>Everyone else (includes you) has the same as group 'root', i.e., read & execute but not write.</td>
+          <tr>
+        </table>
       </div>
       <div class="col-md-4">
+        013
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>Also look in Files. For both sudorootdir and sudorootfile.txt you will see a lock icon. This means that they are 'read-only' to you. They are 'read/write' to root.</p>
+        <p>Also look in Files. Both sudorootdir and sudorootfile.txt have a lock icon which means they are 'read-only' to you. However,they are 'read/write' to root.</p>
       </div>
       <div class="col-md-4">
+        014
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>You can remove sudorootdir and sudorootfile.txt without <code>sudo</code> but you will be prompted to confirm. Let's try on sudorootdir.</p>
-        <pre>$ rm sudorootdir</pre>
+        <p>If you right-click on the file or directory and choose <button class="btn btn-default btn-xs">Properties</button> and then the Permissions tab, you can see the permissions in a not-cryptic fashion.</p>
       </div>
       <div class="col-md-4">
+        014.01
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.01.properties.png"><img class="img-responsive img-step-figure" alt="Properties&gt;Permissions" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.01.properties.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>You can remove sudorootdir and sudorootfile.txt without <code>sudo</code> but you will be prompted to confirm.</p>
+        <pre>$ rm sudorootdir</pre>
+        <p>Using <code>sudo</code> will work without asking.</p>
+        <pre>$ sudo rm sudorootfile.txt</pre>
+      </div>
+      <div class="col-md-4">
+        015
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>However, if you try to edit sudorootfile.txt without <code>sudo</code> you will not be able to save it because it is read-only to you.</p>
-        <pre>$ gedit sudorootfile.txt</pre>
-        <p>Make a change to the file contents and then <kbd>Ctrl+q</kbd>.</p>
-        <p>As you can see in the accompanying picture, 1) the titlebar says [Read-Only], 2) the Save button is disabled and 3) when you quit you are offered Save As... instead of Save</p>
+        <p>Now let's use sudo in a real-life situation you will encounter as a web designer or developer. In a later part of this series you will learn how to create a virtual host. Part of that process is editing the 'hosts' file which is owned by root. First we will try to edit the file without <code>sudo</code>.</p>
+        <pre>$ gedit /etc/hosts</pre>
+        <p>Add a space or any other non-destructive change. We will not saving the file so it is safe. Press <kbd>Ctrl+q</kbd> to start closing the file (don't save it!). Note that the file is read-only as show in the title bar and when you try to close the file. <b>Close the file without saving it.</b></p>
       </div>
       <div class="col-md-4">
+        016
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>Now let's give that a try in a real life scenario which you will meet later if you are following the series when creating a virtual host.</p>
-        <pre>$ gedit /etc/hosts</pre>
-        <p>Note that the file is read-only.</p>
-        <pre>Press <kbd>Ctrl+q</kbd><br><br>$ sudo gedit /etc/hosts</pre>
-        <p>Now the file is read/write.</p>
+        <p>Now re-open the file using <code>sudo</code>.</p>
+        <pre>$ sudo gedit /etc/hosts</pre>
+        <p>Make the same edit and begin closing the file (don't save it). Observe that the file is now read/write. <b>Close the file without saving it</b>.</p>
       </div>
       <div class="col-md-4">
-        <!-- empty -->
+        016.01
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.01.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.01.sudo.png"></a>
       </div>
     </div>
   </div>
@@ -589,26 +649,51 @@
   <h2>Changing Owner, Group & Permissions</h2>
   <p>Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enorrmous.</p>
   <div class="panel-heading">
-    <h3><code>$ chown</code> - Change Owner & <code>$ chgrp</code> Change Group</h3>
+    <h3><code>$ chown</code> - Change Owner & <code>$ chgrp</code> - Change Group</h3>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
         <p>Setup sample files</p>
-        <pre>$ sudo touch rootfile.txt<br>$ sudo mkdir rootdir<br>ls -l</pre>
+        <pre>$ sudo touch rootfile.txt<br>$ sudo mkdir rootdir<br>$ ls -l</pre>
         <p>You can see that Owner and Group Owner are both 'root'.</p>
+      </div>
+      <div class="col-md-4">
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/030.permissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/030.permissions.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
         <p>In the below lines, use your user name in place of <i>userName</i>.</p>
         <pre>$ sudo chown <i>userName</i> rootfile.txt<br>$ ls -l</pre>
         <p>Owner has been change to your user name</p>
+      </div>
+      <div class="col-md-4">
+        031
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/031.chown.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/031.chown.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>Now change the group.</p>
         <pre>$ sudo chgrp <i>userName</i> rootfile.txt<br>$ ls -l</pre>
-        <p>Group Owner has been change to your user name</p>
+        <p>Group Owner has been change to your user name.</p>
+      </div>
+      <div class="col-md-4">
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/032.chgrp.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/032.chgrp.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
         <p>You can change both at the same time</p>
         <pre>$ sudo chown <i>userName</i>:<i>userName</i> rootdir<br>$ ls -l</pre>
       </div>
       <div class="col-md-4">
-        <!-- empty -->
+        033
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/033.changeboth.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/033.changeboth.png"></a>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -619,16 +704,33 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
-        <p>You can also change permissions using letters or numbers. Numbers are quicker, but letters are easier if you are new to permissions, so I will use letters in this example.</p>
-        <p>First, let's setup a sample file, still wokring in ~/workspace/samplefiles.</p>
-        <pre>$ touch permissions1.txt<br>$ ls -l</pre>
+        <p>You can change permissions using letters or numbers. Numbers are quicker, but letters are easier if you are new to permissions, so I will use letters in this example.</p>
+        <p>First, let's setup a sample file, still wokring in ~/workspace/samplefiles. We will use a command with '*' which is called a wildcard. It will delete everything in the current directory.</p>
+        <pre>$ rm -r *<br>$ touch permissions1.txt<br>$ ls -l</pre>
+      </div>
+      <div class="col-md-4">
+        034
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/034.changepermissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/034.changepermissions.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
         <p>Give the owner execute permission. 'u+x' in the below command means 'add x to u' where x=execute and u=user</p>
         <pre>$ chmod u+x permissions1.txt</pre>
+      </div>
+      <div class="col-md-4">
+        035
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/035.changepermissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/035.changepermissions.png"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
         <p>Remove execute permission from the owner. In this case 'u-x' means 'take away x (execute) from u (user)'</p>
         <pre>$ chmod u-x permissions1.txt</pre>
       </div>
       <div class="col-md-4">
-        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/017.permissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/017.permissions.png"></a>
+        036
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/036.changepermissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/036.changepermissions.png"></a>
       </div>
     </div>
   </div>
@@ -638,7 +740,8 @@
     <h2>Mission Accomplished</h2>
   </div>
   <div class="panel-body">
-    <p>After completing this guide you should feel more confident when using Terminal and the command line. There are many more commands which you can explore that with the resources at the bottom of this post. Use the below cheatsheet as long as you need it and add new commands to it as you come across them.</p>
+    <p>After completing this guide you should feel more confident when using Terminal and the command line. It might be worth going through it a second time.</p>
+    <p>There are many more commands which you can explore with the resources at the bottom of this post. Use the below cheatsheet as long as you need it and add new commands to it as you come across them.</p>
 
   </div>
 </div>
@@ -713,6 +816,7 @@
   </div>
   <div class="panel-body">
     <ol>
+      <li><a href="https://help.ubuntu.com/community/UsingTheTerminal">UsingTheTerminal</a>, Ubuntu, Official Documentation.</li>
       <li><a href="https://en.wikipedia.org/wiki/Redirection_%28computing%29"> Redirection (computing)</a>, Wikipedia.</li>
 
       <li><a href="http://unix.stackexchange.com/questions/159672/how-to-create-a-simple-txt-text-file-using-terminal">How to create a simple .txt (text) file using terminal?</a>, StackExchange: Unix & Linux discussion forum.</li>
