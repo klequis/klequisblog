@@ -490,6 +490,7 @@
       <div class="col-md-4">
         <!-- empty -->
       </div>
+    </div>
     <div class="row">
       <div class="col-md-8">
         <p>Let's setup sample files for these exercises. First, clean-up the existing /samplefiles directory.</p>
@@ -498,7 +499,6 @@
         <p>Take a moment to explore your new files and directories.</p>
       </div>
       <div class="col-md-4">
-        021
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/021.mksamplefiles.png"><img class="img-responsive img-step-figure" alt="make sample files" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/021.mksamplefiles.png"></a>
       </div>
     </div>
@@ -513,7 +513,6 @@
         <pre>$ rm -r emptydir<br>$ rm -r non-emptydir<br>$ ls -l</pre>
       </div>
       <div class="col-md-4">
-        022
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/022.rmfiledir.png"><img class="img-responsive img-step-figure" alt="removing files and directories" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/022.rmfiledir.png"></a>
       </div>
     </div>
@@ -524,7 +523,6 @@
         <p>Note that the files are owned by 'root root'. In this case, your permissions are the last group of 3 (everyone else) which are 'r--' meaning read, no write and no execute.</p>
       </div>
       <div class="col-md-4">
-        023
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/023.mkrootfiles.png"><img class="img-responsive img-step-figure" alt="creating read-only files" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/023.mkrootfiles.png"></a>
       </div>
     </div>
@@ -537,6 +535,8 @@
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/024.rmrootfiles.png"><img class="img-responsive img-step-figure" alt="deleting read-only files" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/024.rmrootfiles.png"></a>
       </div>
     </div>
+  </div>
+</div>
 
 <!-- $ sudo -->
 <div class="panel panel-default">
@@ -584,7 +584,6 @@
         </table>
       </div>
       <div class="col-md-4">
-        013
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/013.sudo.png"></a>
       </div>
     </div>
@@ -593,7 +592,6 @@
         <p>Also look in Files. Both sudorootdir and sudorootfile.txt have a lock icon which means they are 'read-only' to you. However, they are 'read/write' to root.</p>
       </div>
       <div class="col-md-4">
-        014
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.sudo.png"></a>
       </div>
     </div>
@@ -602,7 +600,6 @@
         <p>If you right-click on the file or directory and choose <button class="btn btn-default btn-xs">Properties</button> and then the Permissions tab, you can see the permissions in a not-cryptic fashion.</p>
       </div>
       <div class="col-md-4">
-        014.01
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.01.properties.png"><img class="img-responsive img-step-figure" alt="Properties&gt;Permissions" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/014.01.properties.png"></a>
       </div>
     </div>
@@ -614,7 +611,6 @@
         <pre>$ sudo rm sudorootfile.txt</pre>
       </div>
       <div class="col-md-4">
-        015
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/015.sudo.png"></a>
       </div>
     </div>
@@ -625,7 +621,6 @@
         <p>Add a space or any other non-destructive change. We will not saving the file so it is safe. Press <kbd>Ctrl+q</kbd> to start closing the file (don't save it!). Note that the file is read-only as show in the title bar and when you try to close the file. <b>Close the file without saving it.</b></p>
       </div>
       <div class="col-md-4">
-        016
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.sudo.png"></a>
       </div>
     </div>
@@ -636,7 +631,6 @@
         <p>Make the same edit and begin closing the file (don't save it). Observe that the file is now read/write. <b>Close the file without saving it</b>.</p>
       </div>
       <div class="col-md-4">
-        016.01
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.01.sudo.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/016.01.sudo.png"></a>
       </div>
     </div>
@@ -668,7 +662,6 @@
         <p>Owner has been change to your user name.</p>
       </div>
       <div class="col-md-4">
-        031
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/031.chown.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/031.chown.png"></a>
       </div>
     </div>
@@ -688,7 +681,6 @@
         <pre>$ sudo chown <i>userName</i>:<i>userName</i> rootdir<br>$ ls -l</pre>
       </div>
       <div class="col-md-4">
-        033
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/033.changeboth.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/033.changeboth.png"></a>
       </div>
     </div>
@@ -708,7 +700,6 @@
         <pre>$ rm -r *<br>$ touch permissions1.txt<br>$ ls -l</pre>
       </div>
       <div class="col-md-4">
-        034
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/034.changepermissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/034.changepermissions.png"></a>
       </div>
     </div>
@@ -718,7 +709,6 @@
         <pre>$ chmod u+x permissions1.txt</pre>
       </div>
       <div class="col-md-4">
-        035
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/035.changepermissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/035.changepermissions.png"></a>
       </div>
     </div>
@@ -728,7 +718,6 @@
         <pre>$ chmod u-x permissions1.txt</pre>
       </div>
       <div class="col-md-4">
-        036
         <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/036.changepermissions.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0531.using-terminal/036.changepermissions.png"></a>
       </div>
     </div>
