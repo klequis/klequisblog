@@ -14,14 +14,6 @@
 
 <body>
 
-<div class="ke-callout ke-callout-danger">
-  <ul>
-    <li>pending spelling</li>
-    <li>pending punctuation</li>
-  </ul>
-</div>
-
-
 <div class="container-fluid">
   <div class="panel panel-default">
     <div class="panel-body">
@@ -29,6 +21,11 @@
   <p>If you already know how to use the command line you can skip this guide. If you are new to the command line read on.</p>
   <p>Are you wondering how well you need to know the command line to effectively develop applications on Linux? The more you know the better, but you can get started with some basic commands and learn more over time.</p>
   <p>As a developer using Linux there are things you will need to do with the command line. You need to get comfortable with it. Following the exercises below will help you get there. It will give you the skills you need to complete the remainder of this <a href="#">series</a> and provide you with a foundation you can build on.</p>
+  <div class="ke-callout ke-callout-danger">
+    <p>There is a way to avoid using the command line most of the time. I am strongly biased against using it but I'm writing this series to inform, not indoctrinate, so here it is.</p>
+    <pre>sudo nautilus</pre>
+    <p>Using this command will open Files with root privileges. It is very powerful and dangerous as you can change pretty much everything, even things that will destroy your system. I don't use it and I advise you to learn to use the command line and gain the understanding of the Ubuntu OS that comes with it.</p>
+  </div>
   <div class="ke-callout ke-callout-warning">
     <p>Wherever you see <code>$ </code> type what follows it into terminal.</p>
     <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see, paying careful attention to every character, especially spaces and capitalization.</p>
@@ -43,7 +40,7 @@
     </ol>
   </div>
 
-  <h2>Use a Cheetsheet</h2>
+  <h2>Use a Cheatsheet</h2>
   <p>It will help to have a cheatsheet of commands. This can be a text file or it can go into a program such as Evernote or OneNote. Keep it simple so you can add to and refer to it quickly. A cheatsheet listing of all the commands used in this guide is at the bottom of the post.</p>
 
   <h2>Definitions</h2>
@@ -56,6 +53,8 @@
    	<dd>Everything you enter to the right of the command prompt.</dd>
     <dt>User</dt>
     <dd>'User' can be a name representing a person who uses the computer or an abstract user such as 'cdrom', which is a group containing users who can use the computer's CD-ROM.</dd>
+    <dt>Group</dt>
+    <dd>A container that holds one or more users. Groups have a set of permissions and when a user is added to the group they get those permissions.</dd>
     <dt>Superuser</dt>
     <dd>A special account/user who is the ultimate administrator. The superuser can make any and all changes to the system including destroying it.</dd>
   </dl>
@@ -190,7 +189,7 @@
     <h2><code>ls -l</code>, <code>ls -la</code> Output explained</h2>
   </div>
   <div class="panel-body">
-    <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using <b>'-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt'</b> as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below. Although it is potentially confusing haveing a user named karl and a group named karl, Ubuntu creates a group for each user with the same name as the users login name.</p>
+    <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using <b>'-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt'</b> as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below. Although it is potentially confusing having a user named karl and a group named karl, Ubuntu creates a group for each user with the same name as the users login name.</p>
     <p>A <b>user</b> is assigned privileges which are the right to perform an action on a computer. 'Login' is the right to log in. 'Read' is the right to read (aka view/see) a file, directory or other object on the computer.</p>
     <p>A <b>group</b> is a container of users. Members of the group are given privileges. Ubuntu comes with a set of default groups. Groups can be created, deleted and renamed. Users and privileges can be added to and removed from a group.
     <table>
@@ -225,7 +224,7 @@
       </tr>
       <tr>
         <td>x</td>
-        <td>Execute permission. The user can execute the file as a program or other executible. In Linux, all folders must have execute.</td>
+        <td>Execute permission. The user can execute the file as a program or other executable. In Linux, all folders must have execute.</td>
       </tr>
     </table>
     <h3>Output Parts</h3>
@@ -329,7 +328,7 @@
         <div class="col-md-8">
           <p>Make a directory named 'workspace'.</p>
           <pre>$ mkdir workspace</pre>
-          <p>Show the new directory in Terminal</>
+          <p>Show the new directory in Terminal.</p>
           <pre>$ ls -l</pre>
         </div>
         <div class="col-md-4">
@@ -436,13 +435,13 @@
         <p>Overall I love GNOME. However, one of my frustrations with it is that you can not right-click in Files to create a new document. I'm sure there is a way to fix that and finding it is on my to do list.</p>
         <p>Most of the time I create files from within a text editor. I currently use <a href="https://atom.io">Atom</a>. Knowing how to create files from the command line is useful but you can decide what workflow works best for you.</p>
         <p><b>gedit</b> - is a common text editor that comes with Ubuntu.</p>
-        <p>Make sure you are in '~/workspace/samplefiles'. If not then execute the below command. (remember '~' means 'home')</p>
+        <p>Make sure you are in '~/workspace/samplefiles'. If not then execute the below command. (remember '~' means 'home').</p>
         <pre>$ cd ~/workspace/samplefiles</pre>
         <p>The following command will launch gedit with a new file open. </p>
         <pre>$ gedit page1.html</pre>
-        <p>Type the below into page1.html</p>
+        <p>Type the below into page1.html.</p>
         <pre>&lt;h1&gt;page1.html&lt;/h1&gt;</pre>
-        <p>Save (<kbd>Ctrl+s</kbd>) the file and quit (<kbd>Ctrl+q</kbd>) gedit. Then check-out page1.html in Files</p>
+        <p>Save (<kbd>Ctrl+s</kbd>) the file and quit (<kbd>Ctrl+q</kbd>) gedit. Then check-out page1.html in Files.</p>
         <p>Using Terminal and the <code>$ ls -l</code> command, look in '~/workspace/samplefiles' for page1.html.</p>
       </div>
       <div class="col-md-4">
@@ -456,7 +455,7 @@
         <p>That printed to the screen. Now lets redirect it to a file.</p>
         <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;' > page2.html</pre>
         <p>View the file in Files and then in Terminal.</p>
-        <p>Open the file with FireFox</p>
+        <p>Open the file with FireFox.</p>
         <pre>$ firefox page2.html</pre>
       </div>
       <div class="col-md-4">
@@ -465,7 +464,7 @@
     </div> <!-- row -->
     <div class="row">
       <div class="col-md-8">
-        <p>You can also create empty files with redirection</p>
+        <p>You can also create empty files with redirection.</p>
         <pre>$ > page3.html</pre>
         <p><code>$ touch</code> - <b>touch</b> is an easy way to create new empty files with the command line. It is also used to change the date/time of a file.</p>
         <pre>$ touch file1.css</pre>
@@ -486,7 +485,7 @@
     <div class="row">
       <div class="col-md-8">
         <p>There is a <code>rmdir</code> command but I don't find it necessary. You can remove (aka delete) any file or directory using the <code>rm</code> command along with a the option <code>-r</code> for 'recursive'. We will also discuss <code>-f</code> for force.</p>
-        <p><code>-r</code> (recursive) will drill down the directory structure and remove everything below the specified node</p>
+        <p><code>-r</code> (recursive) will drill down the directory structure and remove everything below the specified node.</p>
         <p><code>-f</code> (force) ignores nonexistent files, missing operands and never prompts the user. What that really means is it will silently go about removing things and not present any warnings or other information to you. I'm tempted to say you should be sure you know what you are deleting before using <code>-f</code> but the truth is, if you are unsure you should not delete anything until you are, and once you are <code>-f</code> will supress messages you don't need to see.</p>
       <div class="col-md-4">
         <!-- empty -->
@@ -510,7 +509,7 @@
         <pre>$ rm file1.txt<br>$ ls -l</pre>
         <p><code>$ rm</code> without <code>-r</code> cannot delete a directory. Try it.</p>
         <pre>$ rm emptydir</pre>
-        <p>Adding <code>-r</code> will make it work</p>
+        <p>Adding <code>-r</code> will make it work.</p>
         <pre>$ rm -r emptydir<br>$ rm -r non-emptydir<br>$ ls -l</pre>
       </div>
       <div class="col-md-4">
@@ -571,7 +570,7 @@
             <td>r--</td><td>Everyone else (includes you) has the same as group 'root', i.e., read but not write nor execute.</td>
           </tr>
         </table>
-        <p>Examining the permission sfor the directory 'sudorootdir', 'rwxr-xr-x', we see:</p>
+        <p>Examining the permissions for the directory 'sudorootdir', 'rwxr-xr-x', we see:</p>
         <p><small>(Remember, execute is required on all folders)</small></p>
         <table>
           <tr>
@@ -591,7 +590,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>Also look in Files. Both sudorootdir and sudorootfile.txt have a lock icon which means they are 'read-only' to you. However,they are 'read/write' to root.</p>
+        <p>Also look in Files. Both sudorootdir and sudorootfile.txt have a lock icon which means they are 'read-only' to you. However, they are 'read/write' to root.</p>
       </div>
       <div class="col-md-4">
         014
@@ -647,14 +646,14 @@
 <!-- $ rm -->
 <div class="panel panel-default">
   <h2>Changing Owner, Group & Permissions</h2>
-  <p>Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enorrmous.</p>
+  <p>Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enormous.</p>
   <div class="panel-heading">
     <h3><code>$ chown</code> - Change Owner & <code>$ chgrp</code> - Change Group</h3>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
-        <p>Setup sample files</p>
+        <p>Setup sample files.</p>
         <pre>$ sudo touch rootfile.txt<br>$ sudo mkdir rootdir<br>$ ls -l</pre>
         <p>You can see that Owner and Group Owner are both 'root'.</p>
       </div>
@@ -666,7 +665,7 @@
       <div class="col-md-8">
         <p>In the below lines, use your user name in place of <i>userName</i>.</p>
         <pre>$ sudo chown <i>userName</i> rootfile.txt<br>$ ls -l</pre>
-        <p>Owner has been change to your user name</p>
+        <p>Owner has been change to your user name.</p>
       </div>
       <div class="col-md-4">
         031
@@ -685,7 +684,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>You can change both at the same time</p>
+        <p>You can change both at the same time.</p>
         <pre>$ sudo chown <i>userName</i>:<i>userName</i> rootdir<br>$ ls -l</pre>
       </div>
       <div class="col-md-4">
@@ -705,7 +704,7 @@
     <div class="row">
       <div class="col-md-8">
         <p>You can change permissions using letters or numbers. Numbers are quicker, but letters are easier if you are new to permissions, so I will use letters in this example.</p>
-        <p>First, let's setup a sample file, still wokring in ~/workspace/samplefiles. We will use a command with '*' which is called a wildcard. It will delete everything in the current directory.</p>
+        <p>First, let's setup a sample file, still working in ~/workspace/samplefiles. We will use a command with '*' which is called a wildcard. It will delete everything in the current directory.</p>
         <pre>$ rm -r *<br>$ touch permissions1.txt<br>$ ls -l</pre>
       </div>
       <div class="col-md-4">
@@ -715,7 +714,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>Give the owner execute permission. 'u+x' in the below command means 'add x to u' where x=execute and u=user</p>
+        <p>Give the owner execute permission. 'u+x' in the below command means 'add x to u' where x=execute and u=user.</p>
         <pre>$ chmod u+x permissions1.txt</pre>
       </div>
       <div class="col-md-4">
@@ -725,7 +724,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <p>Remove execute permission from the owner. In this case 'u-x' means 'take away x (execute) from u (user)'</p>
+        <p>Remove execute permission from the owner. In this case 'u-x' means 'take away x (execute) from u (user)'.</p>
         <pre>$ chmod u-x permissions1.txt</pre>
       </div>
       <div class="col-md-4">
@@ -805,7 +804,7 @@
   </div>
   <div class="panel-body">
     <ol>
-      <li><a href="https://help.ubuntu.com/community/FilePermissions">Understanding and Using File Permissions</a>, Ubuntu, Official Documentation.</li>
+      <li><a href="https://help.ubuntu.com/community/FilePermissions">Understanding and Using File Permissions</a>, Ubuntu, Official Documentation</li>
     </ol>
   </div>
 </div>
@@ -817,17 +816,17 @@
   <div class="panel-body">
     <ol>
       <li><a href="https://help.ubuntu.com/community/UsingTheTerminal">UsingTheTerminal</a>, Ubuntu, Official Documentation.</li>
-      <li><a href="https://en.wikipedia.org/wiki/Redirection_%28computing%29"> Redirection (computing)</a>, Wikipedia.</li>
+      <li><a href="https://en.wikipedia.org/wiki/Redirection_%28computing%29"> Redirection (computing)</a>, Wikipedia</li>
 
-      <li><a href="http://unix.stackexchange.com/questions/159672/how-to-create-a-simple-txt-text-file-using-terminal">How to create a simple .txt (text) file using terminal?</a>, StackExchange: Unix & Linux discussion forum.</li>
+      <li><a href="http://unix.stackexchange.com/questions/159672/how-to-create-a-simple-txt-text-file-using-terminal">How to create a simple .txt (text) file using terminal?</a>, StackExchange: Unix & Linux discussion forum</li>
 
-      <li><a href="http://manpages.ubuntu.com/manpages/precise/man1/ls.1.html">Ubuntu manuals.</a></li>
+      <li><a href="http://manpages.ubuntu.com/manpages/precise/man1/ls.1.html">Ubuntu manuals</a></li>
 
-      <li><a href="http://www.tecmint.com/15-basic-ls-command-examples-in-linux/">15 Basic 'ls' Command Examples in Linux</a>, Tecmint.com.</li>
+      <li><a href="http://www.tecmint.com/15-basic-ls-command-examples-in-linux/">15 Basic 'ls' Command Examples in Linux</a>, Tecmint.com</li>
 
-      <li><a href="https://wiki.archlinux.org/index.php/users_and_groups">Users and groups</a>, archlinux.</li>
+      <li><a href="https://wiki.archlinux.org/index.php/users_and_groups">Users and groups</a>, archlinux</li>
 
-      <li><a href="http://www.gnu.org/software/coreutils/manual/html_node/">GNU Coreutils</a>, GNU Operating System.</li>
+      <li><a href="http://www.gnu.org/software/coreutils/manual/html_node/">GNU Coreutils</a>, GNU Operating System</li>
     </ol>
   </div>
 </div>
