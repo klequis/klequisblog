@@ -72,7 +72,6 @@
   </div>
 </div>
 
-
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">
@@ -83,10 +82,11 @@
         <div class="col-md-8">
           <ol>
             <li>Using Files (i.e., the file manager) go to your Downloads directory.</li>
-           	<li>Right-click the downloaded file (currently named virtualbox-5.0_5.0.20-106931-Ubuntu-xenial_amd64.deb) and choose Open With Software Install</li>
-           	<li>Enter your password when prompted</li>
+           	<li>Right-click the downloaded file (currently named virtualbox-5.0_5.0.20-106931-Ubuntu-xenial_amd64.deb) and choose <button class="btn btn-default btn-xs">Open With Software Install</button>.</li>
+            <li>In Software, click <button class="btn btn-default btn-xs">Install</button>.</li>
+           	<li>Enter your password when prompted.</li>
            	<li>Wait for the installation to complete before proceeding.</li>
-           	<li>Use the below command to make sure you get updates
+           	<li>Use the below command to make sure you get updates. (I suggest you copy/paste it.)
             <pre><code>$ sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" &gt;&gt; /etc/apt/sources.list.d/virtualbox.list'</code></pre></li>
            	<li>Download the Oracle public key so that Software Install trusts the installation<pre><code>$ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -</code></pre></li>
             <li>Launch VirtualBox and check it out! You are ready to begin building your first Ubuntu GNOME virtual machine.</li>
@@ -98,6 +98,22 @@
     </div>
   </div>
 </div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h2>Make a Snapshot</h2>
+  </div>
+  <div class="panel-body">
+    <div class="ke-callout ke-callout-warning">
+      <p>Don't skip this step!</p>
+      <p>
+        As you are install software on your fresh new VM things can go wrong and not all of them are easy to correct. Creating a snapshot at the end of each major change to your VM will give you a way to go back to a state when things were working so you can try again. Go to this page <a href="http://trivalleyhobby.com/klequis/2016/05/05/how-to-create-a-snapshot-with-oracle-virtualbox/">How to Create a Snapshot With Oracle VirtualBox</a> <strong>and make a snapshot now!</strong>
+      </p>
+    </div>
+  </div>
+</div>
+
 
 <div class="panel panel-default">
   <div class="panel-heading">
