@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>05. command line</title>
+  <title>10. virtual host</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="flint-style.css">
   <link rel="stylesheet" href="style.css">
@@ -52,6 +52,7 @@
           </ol>
         </div>
         <div class="col-md-4">
+          pic.001
           <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.create-virtual-host/001.directorystructure.png" />
         </div>
 
@@ -59,6 +60,26 @@
     </div>
   </div>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create a folder for the site</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <pre>$ cd ~/workspace<br>$ mkdir helloworld</pre>
+          Create the site.
+          <pre>$ cd helloworld<br>$ gedit index.html</pre>
+          <p>Enter the text</p>
+          <pre>&lt;h3&gt;Hello World&lt;/h3&gt;</pre>
+          <p>Save and close the file.</p>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -81,24 +102,6 @@
     </div>
   </div>
 
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Enable the new site and restart Apache</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <pre><code>$ sudo a2ensite helloworld.conf
-          $ sudo systemctl restart apache2</code></pre>
-        </div>
-        <div class="col-md-4">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="panel panel-default">
     <div class="panel-heading">
       <h2>Create a domain entry for the new host/site</h2>
@@ -113,6 +116,7 @@
           Save and close the hosts file
         </div>
         <div class="col-md-4">
+          pic.003 (domain entry)
 
         </div>
       </div>
@@ -121,22 +125,15 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Create a folder for the site</h2>
+      <h2>Enable the new site and restart Apache</h2>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <pre><code>$ cd ~/workspace
-          $ mkdir helloworld</code></pre>
-          Create the site
-          <pre><code>$ cd helloworld
-          $ pluma index.html</code></pre>
-          c. Enter the text
-          <pre><code>&lt;h3&gt;Hello World&lt;/h3&gt;</code></pre>
-          Save and close the file
+          <pre>$ sudo a2ensite helloworld.conf<br>$ sudo systemctl restart apache2</pre>
         </div>
         <div class="col-md-4">
-
+          pic.004 (helloworld.html)
         </div>
       </div>
     </div>
@@ -153,7 +150,7 @@
             <li>Open your browser</li>
             <li>In the address bar enter "helloworld.localhost"</li>
           </ol>
-          The page should appear as below.
+          <p>The page should appear as shown in the picture.</p>
           <img class="img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0503.createvirtualhost/helloworld.png" />
           <div class="ke-callout ke-callout-warning">
           <h4>Forbidden</h4>
@@ -174,7 +171,7 @@
     </div>
     <div class="panel-body">
       <ol>
-        <li>https://httpd.apache.org/docs/current/vhosts/, The Apache Software Foundation</li>
+        <li><a href="https://httpd.apache.org/docs/current/vhosts/">, The Apache Software Foundation</a></li>
       </ol>
     </div>
   </div>
