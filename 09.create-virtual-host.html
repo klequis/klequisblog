@@ -24,11 +24,164 @@
     </ul>
   </div>
 
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>You can have multiple websites on you development machine hosted by the single Apache instance. You have already seen the default virtual host when <a href="http://trivalleyhobby.com/klequis/?p=85&preview=true">Installing Apache 7</a>. For each site you want to create you need to create a <i>Virtual Host</i>.</p>
+
+      <blockquote>
+        <b>Virtual Host</b> - The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com) on a single machine. Virtual hosts can be "IP-based", meaning that you have a different IP address for every web site, or "name-based", meaning that you have multiple names running on each IP address. The fact that they are running on the same physical server is not apparent to the end user.
+        <cite>The Apache Software Foundation</cite>
+      </blockquote>
+      <p>Follow the steps below to create a virtual host.</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Brief Explanation of Directory Structure</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>The 'sites-available' directory contains all the virtual hosts in your dev environment. Virtual hosts in /sites-available may or may not be enabled. To enable a virtual host the command <code>$ a2ensite</code> is used to create a symbolic link in /sites-enabled that points back to the virtual host (.conf file) in /sites-available. The /sites-enabled folder contains all the sites that are currently <i>enabled</i>. To create a virtual host, you first create a .conf file in /sites-available and then execute <code>$ a2ensite</code> to create the link to it in /sites-enabled.</p>
+          <ol>
+            <li>/sites-available contains all the virtual host files.</li>
+            <li>/sites-enabled contains links to virtual host files in /sites-available. If a file in /sites-available is linked to /sites-enabled the site is enabled. If it is not linked, the site is not enabled.</li>
+            <li>000-default.conf is the default site that was setup by the Apache installation.</li>
+            <li>000-default.conf in /sites-enabled is a link to the file of the same name in /sites-available. You can tell it is a link by the first letter of its listing, 'l' in 'lrwxrwxrwx' means 'symbolic link'.</li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          <img src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.create-virtual-host/001.directorystructure.png" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Creating a Virtual Host</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          In Terminal, switch to the 'sites-available' directory
+          <pre><code>$ cd /etc/apache2/sites-available</code></pre>
+          Create a new document named 'helloworld.conf'
+          <pre><code>$ sudo pluma helloworld.conf</code></pre>
+          <p>Make the contents of the file as below.</p>
+          <pre>&lt;VirtualHost *:80&gt;<br>  ServerName helloworld.localhost<br>  DocumentRoot /home/karl/workspace/helloworld<br>  &lt;Directory "/home/karl/workspace/Functions/helloworld"&gt;<br>    Options FollowSymLinks<br>    AllowOverride All<br>    Require all granted<br>  &lt;/Directory&gt;<br>&lt;/VirtualHost&gt;</pre>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Enable the new site and restart Apache</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <pre><code>$ sudo a2ensite helloworld.conf
+          $ sudo systemctl restart apache2</code></pre>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create a domain entry for the new host/site</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+
+          <pre><code>$ sudo -i pluma /etc/hosts</code></pre>
+          Below the list of domains that starts with "127.0.0.1 localhost", enter the below line
+          <pre><code>127.0.0.1    helloworld.localhost</code></pre>
+          Save and close the hosts file
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create a folder for the site</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <pre><code>$ cd ~/workspace
+          $ mkdir helloworld</code></pre>
+          Create the site
+          <pre><code>$ cd helloworld
+          $ pluma index.html</code></pre>
+          c. Enter the text
+          <pre><code>&lt;h3&gt;Hello World&lt;/h3&gt;</code></pre>
+          Save and close the file
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Launch the site</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <ol>
+            <li>Open your browser</li>
+            <li>In the address bar enter "helloworld.localhost"</li>
+          </ol>
+          The page should appear as below.
+          <img class="img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0503.createvirtualhost/helloworld.png" />
+          <div class="ke-callout ke-callout-warning">
+          <h4>Forbidden</h4>
+          Did you get an error page that said 'Forbidden'? I have struggled with this since my very first virtual host a long time ago and have never been able to figure out why it happens. If you know the solution please put it in a comment.
+
+          The solution is to <b>restart you virtual machine</b>. According to everything I have read you should not need to do this, but it works.
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>References</h2>
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li>https://httpd.apache.org/docs/current/vhosts/, The Apache Software Foundation</li>
+      </ol>
+    </div>
+  </div>
 
 
 
-
-</div>
+</div> <!-- containter-fluid -->
 
 
 
@@ -38,5 +191,5 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 
-</div> <!-- containter-fluid -->
+
 </body>
