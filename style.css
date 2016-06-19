@@ -21,14 +21,13 @@
 
 body {
   font-size: 1.5em;
-  background-color: silver;
+  background-color: #f4f4f4;
 }
 
 .no-panel {
   /*background-color: #ddd;*/
   background:rgb(255,255,255);
 }
-
 
 .img-step-figure {
   margin-top: 10px;
@@ -88,25 +87,25 @@ blockquote {
   font-size: 1.0em;
   background-color: white;
   /*border-left: 5px solid #eee;
-  #eeeeee
-  #d6d6d6
-  #bebebe
-  #a6a6a6
-  #8e8e8e
-  #777777
-  #5f5f5f
-  #474747
-  #2f2f2f
-  #171717
-  #000000
-  */
+-  #eeeeee
+-  #d6d6d6
+-  #bebebe
+-  #a6a6a6
+-  #8e8e8e
+-  #777777
+-  #5f5f5f
+-  #474747
+-  #2f2f2f
+-  #171717
+-  #000000
+-  */
   border-left: 5px solid #bebebe;
   padding-bottom: 35px;
 }
-
 blockquote cite {
   padding-top:2.0em;
 }
+
 
 .seriesbox {
   display: none;
@@ -119,7 +118,10 @@ blockquote cite {
   border-left-width: 5px;
   border-radius: 3px;
   border-left-color: #999999;
-  background:rgba(230,230,230,0.5);
+  /*background:rgba(230,230,230,0.5);*/
+  /*background-color: white;*/
+  background: white !important;
+  background-color: white !important;
   font-size:0.9em;
 }
 
