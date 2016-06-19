@@ -64,6 +64,7 @@ body {
 /* Variations */
 .ke-callout-danger {
   border-left-color: #ce4844;
+  background-color: white;
 }
 .ke-callout-danger h4 {
   color: #ce4844;
