@@ -14,31 +14,23 @@
 
 <body>
 
-  <div class="container-fluid">
-    <div class="ke-callout ke-callout-danger">
-      <ul>
-        <li>complete text</li>
-        <li>pending read out-loud</li>
-        <li>pending spelling</li>
-        <li>pending punctuation</li>
-      </ul>
-    </div>
-  </div>
+<div class="container-fluid">
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>Apache is a free web server. According to W3Tech', Apache is the second most widely used web server at 33.7%. Third place goes to Microsoft IIS with 9.2%.</p>
-      <p>This guide tells you how to install Apache on Ubuntu 16.04 for use as a development web server</p>
+      <p>This guide tells you how to install Apache on Ubuntu 16.04 for use as a development web server.</p>
+      <p>Apache is a free web server. According to <a href="https://w3techs.com/technologies/overview/web_server/all">W3Tech</a>, Apache is the most widely used web server at 52.3% of all web servers they track. Second is Nginx at 30.4% and then Microsoft IIS at 12.0%. Even if these numbers are scewed in some way, it is clear that Apache is widely used.</p>
+
 
       <!--more-->
 
-      <p>For this tutorial we will be using the command line from Terminal. Each command that you need to enter will start with '$'. Type the command exactly as shown and then press enter. If prompted with something like 'continue (y/n)' enter 'y' and press enter. Enter the commands one at a time.</p>
-      <p>All of the commands will start with 'sudo'. This gives the command the ability to make system wide changes using superuser priviledges (aka 'root') so that the command has permission to make all necessary changes.</p>
+      <p>For this tutorial we will be using the command line from Terminal. Each command that you need to enter will start with '$'. Type the command exactly as shown and then press enter. If prompted with something like 'continue (y/n)' enter 'y' and press enter. Enter the commands one at a time and wait for the command to complete before starting on the next step.</p>
+      <p>All of the commands will start with 'sudo'. This gives the command the ability to make system wide changes using superuser privileges (aka 'root') so that the command has permission to make all necessary changes.</p>
     </div>
   </div>
   <div class="ke-callout ke-callout-danger">
     <h4>WARNING</h4>
-    <p>The below instructions are for setting-up Apache for use on a development machine that is not deployed to or exposed to the internet. If you want to install Apache on a machine that is exposed to the internet see <a href="https://httpd.apache.org/">Apache HTTP SERVER PROJECT</a>.</p>
+    <p>The below instructions are for setting-up Apache for use on a development machine that is not deployed to or exposed to the internet. If you want to install Apache on a machine that is exposed to the internet, do not follow this guide, see <a href="https://httpd.apache.org/">Apache HTTP SERVER PROJECT</a> for complete instructions.</p>
   </div>
 
   <div class="panel panel-default">
@@ -52,34 +44,24 @@
           <pre>$ sudo apt install apache2</pre>
           <p>Test you installation with this command.</p>
           <pre>$ sudo systemctl status apache2</pre>
-          <p>Press <kbd>q</kbd> to exit the status screen</p>
+          <p>Press <kbd>q</kbd> to exit the status screen.</p>
         </div>
         <div class="col-md-4">
-          pic.001
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/001.apache2status.png"><img class="image-responsive image-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/001.apache2status.png"/></a>
-
-
-
-
-        </div>
       </div>
+    </div>
       <div class="row">
         <div class="col-md-8">
-          <p>As an additional test we will launch the 'Apache2 Ubuntu Default Page'. Open your web browser and navigate to http://localhost. If installation was successful you will see a page as shown.</p>
+          <p>As an additional test we will launch the 'Apache2 Ubuntu Default Page'. Open your web browser and navigate to http://localhost. You should see a web page as shown in the picture.</p>
         </div>
         <div class="col-md-4">
-          pic.002
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/002.apach2defaultpage.png"><img class="image-responsive image-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/002.apach2defaultpage.png"/></a>
-
         </div>
       </div>
       <div class="ke-callout ke-callout-info">
         <p>If Apache didn't pass the above tests, use these commands and then try opening localhost in the browser again.</p>
         <pre>$ sudo systemctl enable apache2<br>$ sudo systemctl start apache2</pre>
       </div>
-    </div>
-
-
     </div>
   </div>
 
@@ -90,22 +72,22 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>Since this is a development mahcine that will not be accessible from the internet, we can make a few changes to the configuration that will make it easier to work with. <i>Do not make this instance of Apache accessbile over the internet as it is not properly secured.</i></p>
+          <p>Since this is a development machine that will not be accessible from the internet, we can make a few changes to the configuration that will make it easier to work with. <i>Do not make this instance of Apache accessible over the internet as it is not properly secured.</i></p>
           <p> Open the 'envvars' configuration file.</p>
-          <pre>$ sudo i- gedit /etc/apache2/envvars</pre>
+          <pre>$ sudo -i gedit /etc/apache2/envvars</pre>
           <p>To make Apache run under your account, change the user on the below two lines. The picture shows the lines edited to have my user name.</p>
           <pre>export APACHE_RUN_USER=<i>yourUserName</i><br>export APACHE_RUN_GROUP=<i>yourUserName</i></pre>
           <p>Finally, we need to enable the Rewrite module.</p>
           <pre>$ sudo a2enmod rewrite<br>$ sudo systemctl restart apache2</pre>
         </div>
         <div class="col-md-4">
-          pic.003
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/003.envvars.edit.png"><img class="image-responsive image-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/003.envvars.edit.png"/></a>
         </div>
     </div>
   </div>
 
   <div class="ke-callout ke-callout-info">
-    <p>OK, that is it. Apache is fully installed and ready to be used for development. But wait, you only have the default site. To create your first website, see this post <a href="#">Creating a VirtualHost (aka website)</a></p>
+    <p>OK. That's it. Apache is fully installed and ready to be used for development. Given the complexity of functionality it provides, that was a comparatively short install. But wait, you only have the default site. To create your first website, see the next part of this series, <a href="#">Creating a VirtualHost (aka creating a website)</a>.</p>
   </div>
 
 
