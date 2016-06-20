@@ -15,112 +15,109 @@
 
 <div class="container-fluid">
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <p>There are many ways to build a development environment and the developer's preference and needs will differ. For a developer in a large corporation having a web server running on his/her local machine is often not allowed, whereas a freelancer will need a local web server and a lot more. The following post is how I create a development environment that works for me. It may not be suitable for you.</p>
-    <br>
-    <blockquote>A good development environment can make you more productive. A poor one will rob you of your sleep.
-    <cite>klequis - from experience</cite>
-    </blockquote>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>There are many ways to build a development environment and the developer's preference and needs will differ. For a developer in a large corporation having a web server running on his/her local machine is often not allowed, whereas a freelancer will need a local web server and a lot more. The following post is how I create a development environment that works for me. It may not be suitable for you.</p>
+      <br>
+      <blockquote>A good development environment can make you more productive. A poor one will rob you of your sleep.
+      <cite>klequis - from experience</cite>
+      </blockquote>
 
-    <h2>Types of Development Supported</h2>
+      <h2>Types of Development Supported</h2>
 
-    <p>JavaScript, Node.js, WordPress, Drupal & probably other things that I don't do.</p>
-    <h2>Technologies & Tools</h2>
-    <p>VirtualBox, Ubuntu, GNOME, Apache, PHP, MySQL, Atom, Node.js, Git, FileZilla, Meld, GIMP, Shutter, Chromium, GitHub</p>
-    <p>All these tools have a free / community version except for Sublime Text which has a trial period. As of this writing, Sublime's trial period has no end date.</p>
+      <p>JavaScript, Node.js, WordPress, Drupal & probably other things that I don't do.</p>
+      <h2>Technologies & Tools</h2>
+      <p>VirtualBox, Ubuntu, GNOME, Apache, PHP, MySQL, Atom, Node.js, Git, FileZilla, Meld, GIMP, Shutter, Chromium, GitHub</p>
+      <p>All these tools have a free / community version except for Sublime Text which has a trial period. As of this writing, Sublime's trial period has no end date.</p>
 
-    <h2>Technologies & Tools Detail</h2>
-    <table class="table table-logo">
-      <tr>
-        <td class="td-img-logo"><a href="https://www.virtualbox.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/vbox-logo.svg" alt="virtualbox logo"></a></td><td>Oracle Virtualbox</td><td>Virtualization software</td>
-      </tr>
+      <h2>Technologies & Tools Detail</h2>
+      <table class="table table-logo">
         <tr>
-          <td class="td-img-logo"><a href="https://ubuntu.com"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/ubuntu_orange_hex.svg" alt="ubuntu logo"></a></td><td>Ubuntu 16.04</td><td>Linux operating system</td>
+          <td class="td-img-logo"><a href="https://www.virtualbox.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/vbox-logo.svg" alt="virtualbox logo"></a></td><td>Oracle Virtualbox</td><td>Virtualization software</td>
         </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://www.gnome.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/gnome-logo.png" alt="gnome logo"></a></td><td>GNOME</td><td>Linux desktop environment</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="http://www.apache.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/apache-logo.svg" alt="apache logo"></a></td><td>Apache</td><td>Web server</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="http://php.net/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/php-logo.png" alt="php logo"></a></td><td>PHP 7.0.6</td><td>Scripting language for web development. Both Wordpress and Drupal are built with PHP</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://www.mysql.com/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL</td><td>Database server</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://atom.io/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/atom-logo.png" alt="atom logo"></a></td><td>Atom</td><td>A hackable text editor for the 21st Century</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://nodejs.org/en/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/nodejs-logo.png" alt="node.js logo"></a></td><td>Node.js</td><td>Open-source, cross-platform runtime environment for developing server-side Web applications with JavaScript</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://git-scm.com/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/git-logo.png" alt="git logo"></a></td><td>Git</td><td>Distributed version control system (VCS)</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://filezilla-project.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/filezilla-logo.png" alt="filezilla logo"></a></td><td>FileZilla</td><td>FTP application</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="http://meldmerge.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/meld-logo.svg" alt="meld logo"></a></td><td>Meld</td><td>Visual diff and merge tool targeted at developers</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://www.gimp.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/gimp-logo.svg" alt="gimp logo"></a></td><td>GIMP</td><td>Cross-platform image editor available for GNU/Linux, OS X, windows and more </td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="http://shutter-project.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/shutter-logo.svg" alt="shutter logo"></a></td><td>Shutter</td><td>Feature-rich screenshot program for Linux based OSs</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://www.mysql.com/products/workbench/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL Workbench</td><td>Database design, creation and manipulation</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://www.chromium.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/chromium-logo.svg" alt="chromium logo"></a></td><td>Chromium</td><td>Open-source browser for Google Chrome</td>
-        </tr>
-        <tr>
-          <td class="td-img-logo"><a href="https://github.com/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/github-logo.png" alt="github logo"></a></td><td>GitHub</td><td>Web-based Git repository hosting service</td>
-        </tr>
-      </table>
-      <h2>Important Notes</h2>
-      <ol>
-        <li>This guide is for a development machine running inside a virtual box that will not accept web request except from localhost. It installs Apache under the users local account which gives it privileges that a web server exposed to the internet should not have. If you are like me, your production site is hosted and the web server will be setup and secured by the hosting company. You will develop your site on your local machine and move the final/updated site to the hosted/production environment. Given this arrangement, running Apache under your local account is safe.</li>
-        <li>The below process will allow you to build your sites in your home directory (/home/workspace) which is more accessible than the default which is /var/www/html.</li>
-        <li>Don't ignore errors! After executing a command, scan the resulting output for error messages. If any are found, research the solution and ensure the problem is fixed before proceeding to the next step.</li>
-        <li>Make snapshots: One advantage to a virtual machine is that you can save its current configuration/state in snapshots. If you make a change to the machine that doesn't work out and you can't correct it, you can simply go back to one of your snapshots and the change will be undone.
-        <li>If you are not accustom to a Unix/Linux environment remember - <strong>everything is case sensitive.</strong></li>
-        <li>All steps that begin with '$' are to be typed into terminal.</li>
-        <li>The instructions are largely a pictorial. Match your installation UI to the picture. Be sure to read any text above a picture before attempting that step. Some of it is crucial.</li>
-      </ol>
-      <h2>Contents</h2>
-      <ol>
-        <li><a href="#">Building a Ubuntu GNOME 16.04 Development Machine (This page)</a></li>
-        <li><a href="#">Installing VirtualBox on Ubuntu GNOME 16.04</a></li>
-        <li><a href="#">Creating a Ubuntu GNOME 16.04 Virtual Machine</a></li>
-        <li><a href="#">Intro to GNOME</a></li>
-        <li><a href="#">Using the Command Line</a></li>
-        <li><a href="#">Installing Developer Tools</a></li>
-          <ul>
-              <li>Atom</li>
-              <li>FileZilla</li>
-              <li>Meld</li>
-              <li>GIMP</li>
-              <li>Shutter</li>
-              <li>Chromium</li>
-          </ul>
-        <li><a href="#">Installing Apache 7</a></li>
-        <li><a href="#">Installing PHP 7.0.6</a></li>
-        <li><a href="#">Creating a Virtual Host</a></li>
-        <li><a href="#">Installing MySQL (coming soon)</a></li>
-        <li><a href="#">Installing MySQL Workbench (coming soon)</a></li>
-        <li><a href="#">Installing Node.js (coming soon)</a></li>
-        <li><a href="#">Using Git & GitHub (coming soon)</a></li>
-      </ol>
+          <tr>
+            <td class="td-img-logo"><a href="https://ubuntu.com"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/ubuntu_orange_hex.svg" alt="ubuntu logo"></a></td><td>Ubuntu 16.04</td><td>Linux operating system</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://www.gnome.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/gnome-logo.png" alt="gnome logo"></a></td><td>GNOME</td><td>Linux desktop environment</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="http://www.apache.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/apache-logo.svg" alt="apache logo"></a></td><td>Apache</td><td>Web server</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="http://php.net/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/php-logo.png" alt="php logo"></a></td><td>PHP 7.0.6</td><td>Scripting language for web development. Both Wordpress and Drupal are built with PHP</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://www.mysql.com/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL</td><td>Database server</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://atom.io/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/atom-logo.png" alt="atom logo"></a></td><td>Atom</td><td>A hackable text editor for the 21st Century</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://nodejs.org/en/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/nodejs-logo.png" alt="node.js logo"></a></td><td>Node.js</td><td>Open-source, cross-platform runtime environment for developing server-side Web applications with JavaScript</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://git-scm.com/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/git-logo.png" alt="git logo"></a></td><td>Git</td><td>Distributed version control system (VCS)</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://filezilla-project.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/filezilla-logo.png" alt="filezilla logo"></a></td><td>FileZilla</td><td>FTP application</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="http://meldmerge.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/meld-logo.svg" alt="meld logo"></a></td><td>Meld</td><td>Visual diff and merge tool targeted at developers</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://www.gimp.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/gimp-logo.svg" alt="gimp logo"></a></td><td>GIMP</td><td>Cross-platform image editor available for GNU/Linux, OS X, windows and more </td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="http://shutter-project.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/shutter-logo.svg" alt="shutter logo"></a></td><td>Shutter</td><td>Feature-rich screenshot program for Linux based OSs</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://www.mysql.com/products/workbench/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL Workbench</td><td>Database design, creation and manipulation</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://www.chromium.org/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/chromium-logo.svg" alt="chromium logo"></a></td><td>Chromium</td><td>Open-source browser for Google Chrome</td>
+          </tr>
+          <tr>
+            <td class="td-img-logo"><a href="https://github.com/"><img class="img-logo-in-table" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0604.logos/github-logo.png" alt="github logo"></a></td><td>GitHub</td><td>Web-based Git repository hosting service</td>
+          </tr>
+        </table>
+        <h2>Important Notes</h2>
+        <ol>
+          <li>This guide is for a development machine running inside a virtual box that will not accept web request except from localhost. It installs Apache under the users local account which gives it privileges that a web server exposed to the internet should not have. If you are like me, your production site is hosted and the web server will be setup and secured by the hosting company. You will develop your site on your local machine and move the final/updated site to the hosted/production environment. Given this arrangement, running Apache under your local account is safe.</li>
+          <li>The below process will allow you to build your sites in your home directory (/home/workspace) which is more accessible than the default which is /var/www/html.</li>
+          <li>Don't ignore errors! After executing a command, scan the resulting output for error messages. If any are found, research the solution and ensure the problem is fixed before proceeding to the next step.</li>
+          <li>Make snapshots: One advantage to a virtual machine is that you can save its current configuration/state in snapshots. If you make a change to the machine that doesn't work out and you can't correct it, you can simply go back to one of your snapshots and the change will be undone.
+          <li>If you are not accustom to a Unix/Linux environment remember - <strong>everything is case sensitive.</strong></li>
+          <li>All steps that begin with '$' are to be typed into terminal.</li>
+          <li>The instructions are largely a pictorial. Match your installation UI to the picture. Be sure to read any text above a picture before attempting that step. Some of it is crucial.</li>
+        </ol>
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#">Building a Ubuntu GNOME 16.04 Development Machine (This page)</a></li>
+          <li><a href="#">Installing VirtualBox on Ubuntu GNOME 16.04</a></li>
+          <li><a href="#">Creating a Ubuntu GNOME 16.04 Virtual Machine</a></li>
+          <li><a href="#">Intro to GNOME</a></li>
+          <li><a href="#">Using the Command Line</a></li>
+          <li><a href="#">Installing Developer Tools</a></li>
+            <ul>
+                <li>Atom</li>
+                <li>FileZilla</li>
+                <li>Meld</li>
+                <li>GIMP</li>
+                <li>Shutter</li>
+                <li>Chromium</li>
+            </ul>
+          <li><a href="#">Installing Apache 7</a></li>
+          <li><a href="#">Creating a Virtual Host</a></li>
+          <li><a href="#">Installing PHP 7.0.6</a></li>
+          <li><a href="#">Installing MySQL (coming soon)</a></li>
+          <li><a href="#">Installing MySQL Workbench (coming soon)</a></li>
+          <li><a href="#">Installing Node.js (coming soon)</a></li>
+          <li><a href="#">Using Git & GitHub (coming soon)</a></li>
+        </ol>
     </div> <!-- panel-body -->
   </div> <!-- panel-default -->
 </div> <!-- container-fluid -->
-
-
-</div> <!-- containter-fluid -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
