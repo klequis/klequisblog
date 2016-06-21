@@ -1,0 +1,52 @@
+Possible
+--------------------
+<p><b>We will be insalling the LAMP stack on our Ubuntu machine. There are x parts to LAMP which are covered in the following guides 1, 2, 3, ... Maybe this should be a separate guide? <code>$ apt-get update</code>. How about a firewall https://www.evernote.com/Home.action#n=aa6f7dfa-514d-4719-954a-914addd13312&ses=1&sh=5&sds=5&x=fire&</b></p>
+
+
+
+
+Outline
+-------------------------
+0. Prerequisites
+> $ sudo apt-get update
+
+https://www.unixmen.com/how-to-install-lamp-stack-on-ubuntu-16-04/
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
+1. Install Apache - DONE
+> HTTPD - Apache2 Web Server: https://help.ubuntu.com/lts/serverguide/httpd.html
+>
+
+2. Install MySQL - DONE
+> MySQL: https://help.ubuntu.com/lts/serverguide/mysql.html
+
+3. Install PHP 7
+> PHP - Scripting Language: https://help.ubuntu.com/lts/serverguide/php.html
+
+	What about PHP 5?
+
+4. Install phpMyAdmin
+> phpMyAdmin: https://help.ubuntu.com/lts/serverguide/phpmyadmin.html
+? Do I need to create a virtual host for phpMyAdmin?
+> http://stackoverflow.com/questions/36929854/how-to-install-phpmyadmin-on-ubuntu-16-04?lq=1
+> NGNIX install for reference: https://laracasts.com/discuss/channels/general-discussion/phpmyadmin-with-php7
+
+
+5. Log into phpMyAdmin
+
+
+6. Advanced Web Server Configuration (home web server)
+> http://unix.stackexchange.com/questions/108878/how-to-connect-to-a-guest-vm-from-the-host-system
+> http://askubuntu.com/questions/237461/how-do-i-access-ubuntu-server-running-in-virtualbox-from-outside
+
+
+Reading
+---------------------
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu
+
+https://www.linode.com/docs/websites/lamp/lamp-on-ubuntu-14-04
+
+https://www.howtoforge.com/tutorial/install-apache-with-php-and-mysql-on-ubuntu-16-04-lamp/
+
+
+Future
+Wordpress: https://help.ubuntu.com/lts/serverguide/wordpress.html

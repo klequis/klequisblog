@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>10. MySql</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="flint-style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dev-style.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <div class="ke-callout ke-callout-danger">
+    <ul>
+      <li>complete text</li>
+      <li>pending read out-loud</li>
+      <li>pending spelling</li>
+      <li>pending punctuation</li>
+    </ul>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This guide will show you how to install MySQL. MySQL is a database server. In it you can create and query databases. The latest version of MySQL is version 5.7.13.</p>
+    </div>
+  </div>
+  <div class="ke-callout ke-callout-danger">
+    These instructions are for a machine that has never had any version of MySQL installed on it. If your machine already has MySQL installed, do not follow these instructions. Consult the <a href="http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">MySQL installation documentation</a>.
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Preperation</h2>
+    </div>
+    <div class="panel-body">
+      <p>This is the xxx part of the series SERIESNAME. If you have been following the series your machine is ready for installation and you have only one thing to prepare - the password you will use for the MySQL root user.</p>
+      <p>The root user us the 'superuser' for MySQL. The root user can make any and all changes to any of the databases you instance of MySQL will host. Since your development machine, as built following this series, will not be accessible from the internet, the complexity of the password is not important. It is there for two reasons: 1) to make sure you think about it when working as root and 2) to give you the full experience of working with a database server which includes setting and using passwords.</p>
+      <p>It is possible to configure MySQL with 'blank' as the password but please don't</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Installation</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        You only need one command?
+        > decide your root password, keep it short and easy
+        > sudo apt install mysql-server pic.001
+      </div>
+      <div class="col-md-4">
+        pic.001
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        > password for root user "karl", write it down pic.002
+        >> press tab to navigate the UI
+      </div>
+      <div class="col-md-4">
+        pic.002
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        > repeat the password pic.003
+      </div>
+      <div class="col-md-4">
+        pic.003
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        > When installation is complete test MySql with
+        >> sudo netstat -tap | grep mysql pic.004
+        >> Output will look like the picture but some numbers may be different
+      </div>
+      <div class="col-md-4">
+        pic.004
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        >> If this fails, run the below command and then try again
+        >> sudo systemctl restart mysql.service
+      </div>
+      <div class="col-md-4">
+        <!-- empty -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+Securing - should I do this?
+$ sudo mysql_secure_installation
+You will be given the choice to change the MySQL root password, remove anonymous user accounts, disable root logins outside of localhost, and remove test databases. It is recommended that you answer yes to these options. You can read more about the script in the MySQL Reference Manual.
+
+
+
+
+Other commands
+> To see your version: $ mysql --version
+> Check status: $ service mysql status
+> Start MySql: $ sudo service mysql start
+> Stop MySql: $ sudo service mysql stop
+> Extended version information: $ mysqladmin -p -u root version
+
+> Reset root password
+https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
+** try this one: http://askubuntu.com/questions/489098/unable-to-reset-root-password-of-mysql
+>> sudo dpkg-reconfigure mysql-server-5.5 (?dpkg)
+
+References
+MySQL 5.7 Reference Manual: http://dev.mysql.com/doc/refman/5.7/en/
+See Also
+MySQL Tutorial: http://dev.mysql.com/doc/refman/5.7/en/tutorial.html
+
+
+
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</div> <!-- containter-fluid -->
+</body>
