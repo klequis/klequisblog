@@ -98,7 +98,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>There is one more bit of Apache configuration we need to do. This was not done in the post on installing Apache as you only need to make this change if you are creating your sites in a directory other than /var/www. Since we will be creating our sites in /home/workspace, we need to tell Apache it is OK to serve web pages from this location.</p>
+          <p>There is one more bit of Apache configuration we need to do. This is not part of makeing a virtual host and you will not need to do this again on this machine. It was not done in the post on installing Apache as you only need to make this change if you are creating your sites in a directory other than /var/www. Since we will be creating our sites in /home/workspace, we need to tell Apache it is OK to serve web pages from this location.</p>
           <p>Open apache2.conf.</p>
           <pre>$ sudo gedit /etc/apache2/apache2.conf</pre>
           <p>Look for "&lt;Directory /var/www/&gt;"</p>
