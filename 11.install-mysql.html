@@ -27,13 +27,14 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>This guide will show you how to install MySQL. MySQL is a database server. In it you can create and query databases. The latest version of MySQL is version 5.7.13.</p>
+      <p>This guide will show you how to install MySQL Server and Client. MySQL Server is the database engine and storage. MySQL Client is a command line application that communicates with MySQL Server. Using MySQL client you can create database objects, issue queries and much more. a database server. In it you can create and query databases.</p>
+      <p>If you want to use a GUI based client for managing the database, we will be installing phpMyAdmin later in <a href="#">this series</a>.</p>
+      <p>We will be installing the latest version of MySQL which as of this writing in June 2016 is 5.7.13.</p>
+      <div class="ke-callout ke-callout-danger">
+        These instructions are for a machine that has never had any version of MySQL installed on it. If your machine already has MySQL installed, do not follow these instructions. Consult the <a href="http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">MySQL installation documentation</a>.
+      </div>
     </div>
   </div>
-  <div class="ke-callout ke-callout-danger">
-    These instructions are for a machine that has never had any version of MySQL installed on it. If your machine already has MySQL installed, do not follow these instructions. Consult the <a href="http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">MySQL installation documentation</a>.
-  </div>
-
   <div class="panel panel-default">
     <div class="panel-heading">
       <h2>Preperation</h2>
@@ -52,45 +53,48 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-8">
-        You only need one command?
-        > decide your root password, keep it short and easy
-        > sudo apt install mysql-server pic.001
+        <p>To install MySQL Server & Client, execute the below command. Since the command does not specify a version number, the most recent version will be installed.</p>
+        <pre>sudo apt install mysql-server</pre>
       </div>
       <div class="col-md-4">
         pic.001
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/001.mysql.install.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/001.mysql.install.png" alt="install mysql pic01"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        > password for root user "karl", write it down pic.002
-        >> press tab to navigate the UI
+        <p> Enter the password you created for the root user. Use tab to navigate to 'OK' and press enter.</p>
       </div>
       <div class="col-md-4">
         pic.002
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/002.mysql.pwd01.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/002.mysql.pwd01.png" alt="enter password"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        > repeat the password pic.003
+        <p>Re-enter your password.</p>
       </div>
       <div class="col-md-4">
         pic.003
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/003.mysql.pwd02.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/003.mysql.pwd02.png" alt="confirm password"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        > When installation is complete test MySql with
-        >> sudo netstat -tap | grep mysql pic.004
-        >> Output will look like the picture but some numbers may be different
+        <p>When installation is complete test MySql with the below command. This command may take a while to execute.</p>
+        <p>The output will look like the picture but some numbers may be different.</p>
+        <pre>sudo netstat -tap | grep mysql</pre>
+        <p>If the above command fails, try restarting MySQL with the below command and then try it again.</p>
+        <pre>sudo systemctl restart mysql.service</pre>
       </div>
       <div class="col-md-4">
         pic.004
+        <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/004.mysql.status.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/004.mysql.status.png" alt="mysql status"></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        >> If this fails, run the below command and then try again
-        >> sudo systemctl restart mysql.service
+
       </div>
       <div class="col-md-4">
         <!-- empty -->
@@ -99,31 +103,52 @@
   </div>
 </div>
 
-
-
-Securing - should I do this?
+<h2>Securing - should I do this?</h2>
 $ sudo mysql_secure_installation
 You will be given the choice to change the MySQL root password, remove anonymous user accounts, disable root logins outside of localhost, and remove test databases. It is recommended that you answer yes to these options. You can read more about the script in the MySQL Reference Manual.
 
 
 
 
-Other commands
-> To see your version: $ mysql --version
-> Check status: $ service mysql status
-> Start MySql: $ sudo service mysql start
-> Stop MySql: $ sudo service mysql stop
-> Extended version information: $ mysqladmin -p -u root version
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Other Useful MySQL Commands</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <p>There are many MySQL commands which you can lear from the <a href="http://dev.mysql.com/doc/refman/5.7/en/">MySQL documentation</a>. Here are a few to get you started.</p>
+      <p>Check the MySQL version</p>
+      <pre>$ mysql --version</pre>
+      <p>Extended MySQL version information</p>
+      <pre>$ mysqladmin -p -u root version</pre>
+      <p>Check MySQL Server status</p>
+      <pre>$ service mysql status</pre>
+      <p>Stop MySql</p>
+      <pre>$ sudo systemctl stop mysql.service</pre>
+      <p>Start MySql</p>
+      <pre>$ sudo systemctl start mysql.service</pre>
+    </div>
+  </div>
+</div>
 
-> Reset root password
-https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
-** try this one: http://askubuntu.com/questions/489098/unable-to-reset-root-password-of-mysql
->> sudo dpkg-reconfigure mysql-server-5.5 (?dpkg)
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Reseting Root Password</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <p>I tried three different methods for resetting the root password and none of them worked. I look again for a method that works but in the mean time, put your password somewere safe!</p>
+    </div>
+  </div>
+</div>
 
 References
 MySQL 5.7 Reference Manual: http://dev.mysql.com/doc/refman/5.7/en/
 See Also
 MySQL Tutorial: http://dev.mysql.com/doc/refman/5.7/en/tutorial.html
+
+
+
 
 
 
