@@ -20,7 +20,7 @@
     <ul>
       <li>complete text</li>
       <li>pending read out-loud</li>
-      <li>pending spelling</li>
+      <li><b>pending spelling</b></li>
       <li>pending punctuation</li>
     </ul>
   </div>
@@ -28,8 +28,8 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <p>LAMP stands for <b>L</b>inux, <b>A</b>pache, <b>M</b>ySQL & <b>P</b>HP. It is a software stack comprised completely of free and open-source software. <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">Wikipedia has an excellent article</a> that is not too long, so take a minor detour, give it a read, and then come back.</p>
-      <p>LAMP provides you with a web server to host your sites, a database to store your data and the PHP scripting language. It is an excellent environment for WordPress, Durpal and any other PHP system.</p>
-      <p class="ke-callout ke-callout-info">As noted in the introduction to <a href="http://trivalleyhobby.com/klequis/?p=378&preview=true">this series</a> the development environment we are building will work for the technologies just mentioned as well as Node.js and JavaScript. These technologies are installed later in this series.</p>
+      <p>LAMP provides you with a web server to host your sites, a database to store your data and the PHP scripting language. It is an excellent environment for WordPress, Durpal and many other PHP based systems.</p>
+      <p class="ke-callout ke-callout-info">As noted in the introduction to <a href="http://trivalleyhobby.com/klequis/01-building-a-ubuntu-gnome-16-04-development-machine">this series</a>, the development environment we are building will work for the technologies just mentioned as well as Node.js and JavaScript. These technologies are installed later in this series.</p>
     </div>
   </div>
 
@@ -39,10 +39,15 @@
       <p>First run the below command to make sure you have the latest list of packages and dependencies.</p>
       <pre>$ sudo apt-get update</pre>
       <h2>Decide Your Passwords</h2>
-      <p>You will need two passwords, one for Apache and another for MySQL. Both of these will be for what is called the root user (aka SuperUser). These are very powerful accounts that if not used carefully can do damage to your Apache or MySQL installation. If you were building a machine that was accessible from the public internet it would be important to have very strong passwords. However, the development machine you are building will run inside of VirtualBox and unless you specifically configure VirtualBox to do otherwise, the machine will not be accessible to the public internet, your LAN (e.g., home/work network) nor even the machine it is hosted on. Therefore, it is save to have a simple and short password. 4 letters will do.</p>
-      <p>You may be tempted to have no password at all but this will change how things are configured. If you do it this way you may find when deployed, your site/applications doesn't work now that it is running where a password is required. Use a password and get used to it.</p>
+      <p>You will need two passwords, one for Apache and another for MySQL. Both of these will be for what is called the root user (aka SuperUser). These are very powerful accounts that if not used carefully can do damage to your Apache or MySQL installation. If you were building a machine that was accessible from the public internet it would be important to have very strong passwords. However, the development machine you are building will run inside of VirtualBox and unless you specifically configure VirtualBox to do otherwise, the machine will not be accessible to the public internet, your LAN (e.g., home/work network) nor even the machine it is hosted on. Therefore, it is safe to have a simple and short password. 4 characters will do, and simple to type because you will do so often.</p>
+      <p>You may be tempted to have no password at all but this will change how some things are done and may cost you some rework when you try to deploy to production.</p>
       <p>So decide you passwords now and write them down somewhere safe. While they can be changed if you loose them, it will use time that could be spent more productively.</p>
-
+      <p>You will need two passwords. It is OK for reasons explaind above if they are the same:</p>
+      <ol>
+        <li>MySQL password</li>
+        <li>phpMyAdmin password</li>
+      </ol>
+      <p>With that out of the way, we are ready to install LAMP on our Virtual Machine.</p>
     </div>
   </div>
 
