@@ -25,21 +25,91 @@
     </ul>
   </div>
 
-<p>This guide will show you how to install WordPress on you GNOME Ubuntu development machine.</p>
-<p class="ke-callout ke-callout-danger">Do not put WordPress configured in ths way on a machine which is accessibl from the internet as it would be compromised quickly. This configuration is only for a development machine which cannot be reached from the intenet.</p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This guide will show you how to install WordPress on your GNOME Ubuntu development machine.</p>
+    </div>
+  </div>
+  <p class="ke-callout ke-callout-danger">Do not put WordPress configured in ths way on a machine which is accessibl from the internet as it would be compromised quickly. This configuration is only for a development machine which cannot be reached from the intenet.</p>
 
-Create a Database User
-<p>If you already have a database user you want to use you can skip this step. If you only have root then follow the steps below to create a new user. </p>
-<p class="ke-callout ke-callout-danger">Don't use root. Sure, on this database server which is isolated by VirtualBox and likely your router it should not be a problem. However, it is such a bad practice that it should never be done.</p>
-> Log into phpMyAdmin using root
-> Click on the 'User accounts' tab. pic.001.useraccounts.png
-> Click on 'Add user account'. pic.002.click.adduser.png
-> Fill in the 'User name'. I use my name: 'karl' and a simple 4 character password. Again, if this were a production database I would use a less obvious user name and a strong password. pic.003.login.info.png
-> Leave both options under 'Database for user account' unchecked. pic.004.db.for.user.acct.png
-> Under 'Global privileges' mark 'Check all' selected.
-> At the bottom of the page click <button class="btn btn-default btn-xs">Go</button>.
-> To test the new user, log out of phpMyAdmin and then log back in with the new user.
-<p class="ke-callout ke-callout-warning">It is important to test the new users. If 10 steps from now something doesn't work you won't know if it is what you just did or if your user is not setup properly. Test everything you can as soon as you can.</p>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create a Database User</h2>
+    </div>
+    <div class="panel-body">
+      <p>If you already have a database user you want to use you can skip this step. If you only have root then follow the steps below to create a new user. </p>
+      <p class="ke-callout ke-callout-danger">Don't use root. Sure, on this database server which is isolated by VirtualBox and likely your router it should not be a problem. However, it is such a bad practice that it should never be done.</p>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Log into phpMyAdmin using root</p>
+          <p>Click on the 'User accounts' tab.</p>
+        </div>
+        <div class="col-md-4">
+          pic.001.useraccounts.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/001.useraccounts.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/001.useraccounts.png" alt="user accounts"></a>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Click on 'Add user account'.</p>
+        </div>
+        <div class="col-md-4">
+          pic.002.click.adduser.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/002.click.adduser.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/002.click.adduser.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Fill in the 'User name'. I use my name: 'karl' and a simple 4 character password. Again, if this were a production database I would use a less obvious user name and a strong password.</p>
+        </div>
+        <div class="col-md-4">
+          pic.003.login.info.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/003.login.info.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/003.login.info.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Leave both options under 'Database for user account' unchecked.</p>
+        </div>
+        <div class="col-md-4">
+          pic.004.db.for.user.acct.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/004.db.for.user.acct.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/004.db.for.user.acct.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Under 'Global privileges' mark 'Check all' selected.</p>
+          <p>At the bottom of the page click <button class="btn btn-default btn-xs">Go</button>.</p>
+        </div>
+        <div class="col-md-4">
+          pic.005.global.privileges.png
+  	      <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/005.global.privileges.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/005.global.privileges.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h4>Test the New User</h4>
+          <p>To test the new user, log out of phpMyAdmin and then log back in with the new user.</p>
+          <p class="ke-callout ke-callout-warning">It is important to test the new users. If 10 steps from now something doesn't work you won't know if it is what you just did or if your user is not setup properly. Test everything you can as soon as you can.</p>
+        </div>
+        <div class="col-md-4">
+  	      <!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
 
 Create database
 > Click New in the left pane
