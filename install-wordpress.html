@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>**05. title**</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="flint-style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dev-style.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <div class="ke-callout ke-callout-danger">
+    <ul>
+      <li>complete text</li>
+      <li>pending read out-loud</li>
+      <li>pending spelling</li>
+      <li>pending punctuation</li>
+    </ul>
+  </div>
+
+<p>This guide will show you how to install WordPress on you GNOME Ubuntu development machine.</p>
+<p class="ke-callout ke-callout-danger">Do not put WordPress configured in ths way on a machine which is accessibl from the internet as it would be compromised quickly. This configuration is only for a development machine which cannot be reached from the intenet.</p>
+
+Create a Database User
+<p>If you already have a database user you want to use you can skip this step. If you only have root then follow the steps below to create a new user. </p>
+<p class="ke-callout ke-callout-danger">Don't use root. Sure, on this database server which is isolated by VirtualBox and likely your router it should not be a problem. However, it is such a bad practice that it should never be done.</p>
+> Log into phpMyAdmin using root
+> Click on the 'User accounts' tab. pic.001.useraccounts.png
+> Click on 'Add user account'. pic.002.click.adduser.png
+> Fill in the 'User name'. I use my name: 'karl' and a simple 4 character password. Again, if this were a production database I would use a less obvious user name and a strong password. pic.003.login.info.png
+> Leave both options under 'Database for user account' unchecked. pic.004.db.for.user.acct.png
+> Under 'Global privileges' mark 'Check all' selected.
+> At the bottom of the page click <button class="btn btn-default btn-xs">Go</button>.
+> To test the new user, log out of phpMyAdmin and then log back in with the new user.
+<p class="ke-callout ke-callout-warning">It is important to test the new users. If 10 steps from now something doesn't work you won't know if it is what you just did or if your user is not setup properly. Test everything you can as soon as you can.</p>
+
+Create database
+> Click New in the left pane
+> Fill in the 'Database name' and click <button class="btn btn-default btn-xs">Create</button>. pic.006.new.database.png
+> You will see the new database in the left pane.
+
+Download Wordpress
+Go to https://wordpress.org/download and click on the blue 'Download WordPress x.x.x' button in the top right of the page. pic.007.dwnld.wp.png.
+
+Extract
+<p class="ke-callout ke-callout-warning">If you are new to setting-up websites it might be best to use the same folder name as I will below. This can help make configuration easier. I will be referring to the folder by the name I use.</p>
+> Right-click on the downloaded file and choose 'Extract Here'. This will create a 'wordpress directory' pic.008.extract.wp.png.
+> Move the extracted 'wordpress' directory to ~/workspace/
+> Rename ~/workspace/wordpress to ~/workspace/wptutorial or a name of your choosing.
+
+Setup wp-config.php
+> Inside the /wptutorial directory find the file 'wp-config-sample.php' and make a copy of it.
+> Rename the copied file 'wp-config.php'.
+> Open wp-config.php in gedit.
+> Change DB_NAME to the name you have your new database.
+> Change DB_USER to the name of your new user.
+> Change DB_PASSWORD to the password for your new user.
+> Note that DB_HOST is already set to 'localhost'.
+pic.009.wp-config.defaults.png
+pic.010.wp-config.new.values.png
+> Save and close the file.
+
+Create a Virtual Host for Wordpress
+<p>Detailed instructions on how to create a virtual host can be found <a href="#"> here</a>.
+
+cd /etc/apache2/sites-available
+sudo cp phpinfopage.conf wptutorial.conf
+sudo gedit wptutorial.conf
+sudo gedit /etc/hosts
+sudo a2ensite wptutorial.conf
+sudo systemctl restart apache2
+
+
+
+
+
+Run the installation script. It should be in the root of wordpress directory
+
+
+<h2>References</h2>
+<ol>
+  <li>https://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install</li>
+  <li>https://codex.wordpress.org/Editing_wp-config.php</li>
+</ol>
+
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</div> <!-- containter-fluid -->
+</body>
