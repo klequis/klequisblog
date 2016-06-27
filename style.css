@@ -33,6 +33,9 @@ body {
   margin-top: 10px;
   /* I'm not sure about the below change. I may need to add space to a <p> that follows an img-step-figure */
   margin-bottom: 10px;
+  /* To get pictures to center */
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /* Common styles for all types */
