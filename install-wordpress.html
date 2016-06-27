@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>**05. title**</title>
+  <title>Install WordPress</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="flint-style.css">
   <link rel="stylesheet" href="style.css">
@@ -42,7 +42,7 @@
       <p class="ke-callout ke-callout-danger">Don't use root. Sure, on this database server which is isolated by VirtualBox and likely your router it should not be a problem. However, it is such a bad practice that it should never be done.</p>
       <div class="row">
         <div class="col-md-8">
-          <p>Log into phpMyAdmin using root</p>
+          <p>Log into phpMyAdmin using root.</p>
           <p>Click on the 'User accounts' tab.</p>
         </div>
         <div class="col-md-4">
@@ -62,7 +62,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>Fill in the 'User name'. I use my name: 'karl' and a simple 4 character password. Again, if this were a production database I would use a less obvious user name and a strong password.</p>
+          <p>Fill in the 'User name'. I use my name: 'karl' and a simple 4 character password. If this were a production database I would use a less obvious user name and a strong password.</p>
         </div>
         <div class="col-md-4">
           pic.003.login.info.png
@@ -90,7 +90,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <h4>Test the New User</h4>
+          <h3>Test the New User</h3>
           <p>To test the new user, log out of phpMyAdmin and then log back in with the new user.</p>
           <p class="ke-callout ke-callout-warning">It is important to test the new users. If 10 steps from now something doesn't work you won't know if it is what you just did or if your user is not setup properly. Test everything you can as soon as you can.</p>
         </div>
@@ -102,70 +102,176 @@
   </div>
 
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create database</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Click New in the left pane.</p>
+          <p>Fill in the 'Database name' and click <button class="btn btn-default btn-xs">Create</button>.</p>
+          <p>You will see the new database in the left pane.</p>
+        </div>
+        <div class="col-md-4">
+          pic.006.new.database.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/006.new.database.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/006.new.database.png" alt="click add user"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Download Wordpress, Extract It and Move to /Workspace</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Go to https://wordpress.org/download and click on the blue 'Download WordPress x.x.x' button in the top right of the page body.</p>
+        </div>
+        <div class="col-md-4">
+          pic.007.dwnld.wp.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/007.dwnld.wp.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/007.dwnld.wp.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p class="ke-callout ke-callout-warning">If you are new to setting-up websites it might be best to use the same folder name as I will below. This can help make following the configuration steps easier. I will be referring to the folder by the name I use.</p>
+          <p>Right-click on the downloaded file and choose 'Extract Here'. This will create a 'wordpress directory'.</p>
+          <p>Move the extracted 'wordpress' directory to ~/workspace/</p>
+          <p>Rename ~/workspace/wordpress to ~/workspace/wptutorial or a name of your choosing.</p>
+        </div>
+        <div class="col-md-4">
+  	       pic.008.extract.wp.png
+           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/008.extract.wp.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/008.extract.wp.png" alt="click add user"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Edit wp-config.php</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Inside the /wptutorial directory find the file 'wp-config-sample.php' and make a copy of it.</p>
+          <p>Rename the copied file 'wp-config.php'.</p>
+          <p>Open wp-config.php in gedit.</p>
+          <p>Change DB_NAME to the name of your new database.</p>
+          <p>Change DB_USER to the name of your new user.</p>
+          <p>Change DB_PASSWORD to the password for your new user.</p>
+          <p>Note that DB_HOST is already set to 'localhost'.</p>
+          <p>Save and close the file.</p>
+        </div>
+        <div class="col-md-4">
+          pic.009.wp-config.defaults.png
+          <b>Default settings</b>
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/009.wp-config.defaults.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/009.wp-config.defaults.png" alt="click add user"></a>
+          pic.010.wp-config.new.values.png
+          <b>New settings</b>
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/010.wp-config.new.values.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/010.wp-config.new.values.png" alt="click add user"></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create a Virtual Host for Wordpress</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p class="ke-callout ke-callout-info">Detailed instructions on how to create a virtual host can be found <a href="#"> here</a>.</p>
+          <p>Copy phpinfopage.conf to wptutorial.cong</p>
+          <pre>$ cd /etc/apache2/sites-available<br>$ sudo cp phpinfopage.conf wptutorial.conf</pre>
+          <p>Open wptutorial.conf and change each isntance of 'phpinfopage' to 'wptutorial'. The file should be exactly as shown in the picture.</p>
+          <pre>$ sudo gedit wptutorial.conf</pre>
+        </div>
+        <div class="col-md-4">
+          pic.010.01.wptutorial.conf.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/010.01.wptutorial.conf.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/010.01.wptutorial.conf.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Open /etc/hosts and make an entry for the new virtual host.</p>
+          <pre>$ sudo gedit /etc/hosts</pre>
+          <p>Enter the line below.</p>
+          <pre>127.0.0.1    wptutorial.localhost</pre>
+        </div>
+        <div class="col-md-4">
+          pic.010.02.hosts.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/010.02.hosts.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/010.02.hosts.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Enable the new host and restart Apache.</p>
+          <pre>$ sudo a2ensite wptutorial.conf<br>$ sudo systemctl restart apache2</pre>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Run the WordPress Installation Script</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Open http://wptutorial.localhost/wp-admin/install.php</p>
+          <p>Select your language and click <button class="btn btn-default btn-xs">Continue</button>.</p>
+          <p>Fill-in the requested information. The Install Wordpress button is not enabled until you enter a strong password or 'Confirm use of weak password'.</p>
+          <p>Click <button class="btn btn-default btn-xs">Install WordPress</button>.</p>
+        </div>
+        <div class="col-md-4">
+          pic.012.welcome.information.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/012.welcome.information.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/012.welcome.information.png" alt="click add user"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Click <button class="btn btn-default btn-xs">Log in</button>.</p>
+        </div>
+        <div class="col-md-4">
+          pic.013.success.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/013.success.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/013.success.png" alt="click add user"></a>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-8">
+          <p>Enter your username and password, then click <button class="btn btn-default btn-xs">Log in</button>.<p>
+        </div>
+        <div class="col-md-4">
+          pic.014.login.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wrodpress/014.login.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-wordpress/014.login.png" alt="click add user"></a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="ke-callout ke-callout-info">
+    <h2>Congratulations - WordPress is installed!</h2>
+  </div>
 
+  <h2>References</h2>
+  <ol>
+    <li><a href="https://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install">Installing Wordpress</a>, WordPress Codex</li>
+    <li><a href="https://codex.wordpress.org/Editing_wp-config.php">Editing wp-config.php</a>, WordPress Codex</li>
+  </ol>
 
-
-
-Create database
-> Click New in the left pane
-> Fill in the 'Database name' and click <button class="btn btn-default btn-xs">Create</button>. pic.006.new.database.png
-> You will see the new database in the left pane.
-
-Download Wordpress
-Go to https://wordpress.org/download and click on the blue 'Download WordPress x.x.x' button in the top right of the page. pic.007.dwnld.wp.png.
-
-Extract
-<p class="ke-callout ke-callout-warning">If you are new to setting-up websites it might be best to use the same folder name as I will below. This can help make configuration easier. I will be referring to the folder by the name I use.</p>
-> Right-click on the downloaded file and choose 'Extract Here'. This will create a 'wordpress directory' pic.008.extract.wp.png.
-> Move the extracted 'wordpress' directory to ~/workspace/
-> Rename ~/workspace/wordpress to ~/workspace/wptutorial or a name of your choosing.
-
-Setup wp-config.php
-> Inside the /wptutorial directory find the file 'wp-config-sample.php' and make a copy of it.
-> Rename the copied file 'wp-config.php'.
-> Open wp-config.php in gedit.
-> Change DB_NAME to the name you have your new database.
-> Change DB_USER to the name of your new user.
-> Change DB_PASSWORD to the password for your new user.
-> Note that DB_HOST is already set to 'localhost'.
-pic.009.wp-config.defaults.png
-pic.010.wp-config.new.values.png
-> Save and close the file.
-
-Create a Virtual Host for Wordpress
-<p>Detailed instructions on how to create a virtual host can be found <a href="#"> here</a>.
-
-cd /etc/apache2/sites-available
-sudo cp phpinfopage.conf wptutorial.conf
-sudo gedit wptutorial.conf
-sudo gedit /etc/hosts
-sudo a2ensite wptutorial.conf
-sudo systemctl restart apache2
-open http://wptutorial.localhost/wp-admin/install.php
-Select your language and click <button class="btn btn-default btn-xs">Continue</button>. pic.001.select.language.png
-Fill-in the requested information. The Install Wordpress button is not enabled until you enter a strong password or 'Confirm use of weak password'.
-Click <button class="btn btn-default btn-xs">Install WordPress</button>.pic.012.welcome.information.png
-Click <button class="btn btn-default btn-xs">Log in</button>. 013.success.png
-Enter your username and password, then click <button class="btn btn-default btn-xs">Log in</button>. pic.014.login.png
-That's it! WordPress is installed.
-
-
-
-
-
-<h2>References</h2>
-<ol>
-  <li>https://codex.wordpress.org/Installing_WordPress#Famous_5-Minute_Install</li>
-  <li>https://codex.wordpress.org/Editing_wp-config.php</li>
-</ol>
-
-</div>
-
+</div> <!-- container-fluid -->
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
