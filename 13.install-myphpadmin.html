@@ -33,7 +33,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>To start installation, execute the below comand.</p>
+          <p>To install phpMyAdmin you need to install three packages: phpmyadmin itself, php-mbstring and php-gettext. Execute the following command to install all three.</p>
           <pre>sudo apt-get install phpmyadmin php-mbstring php-gettext</pre>
           <p>Enter 'y' when prompted and press <kbd>Enter</kbd>.</p>
         </div>
@@ -44,8 +44,9 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>You will be asked to select either apache2 or lighttpd. Select apache2 by making sure the red rectangle is in the box for apache 2 and then press <kbd>Space</kbd> to mark it as selected.</p>
-          <p>Use your arrow keys to move the red rectangel between apache2 and lighttpd if needed. Use <kbd>Tab</kbd> to move to the <button class="btn btn-default btn-xs">Ok</button> and then press <kbd>Enter</kbd> to continue.</p>
+          <p>In the installation UI a red rectangle indicates which part of the UI has focus.  Use the <kbd>Arrow</kbd> keys to move between items in the list box containing 'apache2', and 'lighttpd' and use <kbd>Tab</kbd> to move from the list to the <button class="btn btn-default btn-xs">Ok</button> button.</p>
+          <p>Make sure the red rectangle is on 'apache2' and press <kbd>Space</kbd> to select it.</p>
+          <p>Press <kbd>Tab</kbd> to move focus to the <button class="btn btn-default btn-xs">Ok</button> and then press <kbd>Enter</kbd>.</p>
         </div>
         <div class="col-md-4">
           pic.002.select.web.server.png
@@ -63,8 +64,8 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>In this step you will provide a password for phpMyAdmin to use to access MySQL. The phpMyAdmin installation will create a MySQL user named 'phpmyadmin' which will use the password you provide to log in.</p>
-          <p>Again, as I have mentioned earlier in this series, this is a Virtual Machine that cannot be accessed from the internet or ever its host, so you can be real simple with the password. I use the same 4 character password that I use for MySQL.</p>
+          <p>In this step you are asked to provide a password that phpMyAdmin will use to access MySQL. The phpMyAdmin installation will create a new MySQL user named 'phpmyadmin' which will use the password you provide to log into MySQL.</p>
+          <p>As I have mentioned earlier in this series, this is a Virtual Machine that cannot be accessed from the internet or ever its host, so you can be use a simple password. I use the same 4 character password that I use for the MySQL root account.</p>
         </div>
         <div class="col-md-4">
           pic.004.mysql.password.png
@@ -90,7 +91,8 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>Open a browser and navigate to http://localhost/phpmyadmin</p>
+          <p>There are two ways to launch phpMyAdmin. You can open a browser and navigate to http://localhost/phpmyadmin. phpMyAdmin can also be launched like an GNOME application by pressing <kbd>Super</kbd> and typing 'phpmyadmin'. phpMyAdmin will appear like any other installed application but when launched simply opens a browser and navigates to http://localhost/phpmyadmin.</p>
+          <p>Launch phpMyAdmin using either method.</p>
           <p>Log in with 'root' as the username and the password you created when isntalling MySQL</p>
         </div>
         <div class="col-md-4">
@@ -111,6 +113,22 @@
   </div>
 </div> <!-- containter-fluid -->
 
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>References</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <ol>
+        <li><a href="https://www.phpmyadmin.net/docs/">phpMyAdmin</a>, Ubuntu Official Documentation</li>
+        <li><a href="https://help.ubuntu.com/lts/serverguide/phpmyadmin.html">phpMyAdmin Documentation</a></li>
+    </ol>
+    </div>
+  </div>
+</div>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
