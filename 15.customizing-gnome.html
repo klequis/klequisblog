@@ -1,7 +1,333 @@
-You could waste a lot of time on this ...
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Customize GNOME</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="flint-style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dev-style.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <div class="ke-callout ke-callout-danger">
+    <ul>
+      <li>complete text</li>
+      <li>pending read out-loud</li>
+      <li>pending spelling</li>
+      <li>pending punctuation</li>
+    </ul>
+  </div>
 
 
-2 Monitor Setup
+  <p>GNOME is very customizable and you could waste a lot of time making it look the way you want. I guess 'waste' isn't really right for everyone, a designer or usability person might be very interested in how the UI can be changed. Whichever way you want to look at it, you can sink more or less time into it.</p>
+  <p>Below are instructions for ways I customize my machine to make it more livable for me. The changes are not interdependent so you can choose to do any number of these.</p>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Using 2 or More Monitors</h2>
+    </div>
+    <p>This first task is not a GNOME customization but this seems like a good place to put it anyway. If you have more than one Monitor and are doing development on your VM you will want the VM to use both monitors as working across two machines (host and VM) is combersome and lot's of extra clicks. Follow these steps to setup 2 monitors. I have never tried to use more than 2 but it looks like the steps are the same.</p>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>In the VirtualBox Manager, make sure the VM is 'Powered Off'.</p>
+          <p>Go to <button class="btn btn-default btn-xs">Settings</button>&gt;<button class="btn btn-default btn-xs">Display</button> and set the 'Monitor Count' to 2.</p>
+          <p>Press <button class="btn btn-default btn-xs">OK</button>.</p>
+          <p>Power on the VM.</p>
+          <p>Next you need to enable the second monitor. Go to the VirtualBox menu on the VM's window, and select <button class="btn btn-default btn-xs">View</button>&gt;<button class="btn btn-default btn-xs">Virtual Screen 2</button>&gt;<button class="btn btn-default btn-xs">Enable</button>.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/053.enable.2nd.monitor.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/053.enable.2nd.monitor.png" alt="enable second monitor"></a>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <p>It is possible at this point that as you move you mouse between monitors it gets stuck. This is because the left monitor is right and the right is left, or at least Ubuntu thinks so. Here is how to fix it:</p>
+            <p>Right-click on the desktop and click <button class="btn btn-default btn-xs">Display Settings</button>.</p>
+            <p>Click <button class="btn btn-default btn-xs">Arrange Combined Displays</button>.</p>
+            <p>Drag the monitors to switch their position.</p>
+          </div>
+          <div class="col-md-4">
+            <!-- empty -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Enable Dark Theme & Change Background</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <p>If you are like me you don't like a bright white screen in your eyes for hours on end. GNOME allows you to quickly darken things up.
+        <h3>Global Dark Theme</h3>
+        <div class="col-md-8">
+          <p>Open "Tweak Tool".</p>
+          <p>Select the Appearance tab.</p>
+          <p>Set 'Global Dark Theme' to 'ON'.</p>
+          <p>Changes will take effect as you close and reopen applications.</p>
+        </div>
+        <div class="col-md-4">
+          pic.001.tweaktool.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/001.tweaktool.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/001.tweaktool.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Change Background</h3>
+        <div class="col-md-8">
+          <p>Right-click on the desktop and choose <button class="btn btn-default btn-xs">Change Background...</button></p>
+          <p>Click on the picture captioned "Background"</p>
+          <p>You can choose between Wallpapers, Pictures and Colors. If you as into dark as my try the grayscale leaves with dark background.</p>
+        </div>
+        <div class="col-md-4">
+          pic.002.select.background.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/002.select.background.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/002.select.background.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Using GNOME Shell Extensions</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Setup FireFox</h3>
+          <p>Go to <a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a></p>
+          <p>From this page you can search for and then isntall extensions. However, as indicated by the red notice at the top of the page, we need to install a FireFox addon first.</p>
+          <p>On the bar at the top of the page click <button class="btn btn-default btn-xs">Allow</button>. A dialog will pop-up. Click <button class="btn btn-default btn-xs">Allow and Remember</button>.</p>
+          <p>Refresh the page and the red message should go away.</p>
+          <p>If for any reason the above doesn't work, go to the hamburger menu at the top left of FireFox and select Add-ons. Search for 'GNOME Shell Extensions' and enable it.</p>
+        </div>
+        <div class="col-md-4">
+          pic.003.gnome.shell.ext.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/003.gnome.shell.ext.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/003.gnome.shell.ext.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-4">
+          pic.004.allow.addon.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/004.allow.addon.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/004.allow.addon.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Installing a Shell Extension</h3>
+          <p>The steps below show how to enable the Dash to Dock extension. The table below lists other extensions that I find useful. Use the same steps to install them.</p>
+          <p>Select Extensions at the top of the page.<p>
+          <p>Search for 'Dash to Dock'.</p>
+          <p>Click on Dash to Dock</p>
+        </div>
+        <div class="col-md-4">
+          pic.005.dashtodock.install.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/005.dashtodock.install.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/005.dashtodock.install.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Click 'On' next to Dash to Dock</p>
+        </div>
+        <div class="col-md-4">
+          pic.006.turnon.dashtodock.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/006.turnon.dashtodock.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/006.turnon.dashtodock.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>A modal pop-up will appear, click <button class="btn btn-default btn-xs">Install</button>.</p>
+        </div>
+        <div class="col-md-4">
+          pic.007.dwnldinstall.dashtodock.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/007.dwnldinstall.dashtodock.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/007.dwnldinstall.dashtodock.png" alt="**alt**"></a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Open 'Tweak Tool' and click on the 'Extensions' tab.</p>
+          <p>Click on the gear button.</p>
+        </div>
+        <div class="col-md-4">
+          pic.008.dashtodock.settings.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/008.dashtodock.settings.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/008.dashtodock.settings.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>Explore the available settings to make Dash to Dock work the way you prefer.</p>
+          <p>Not all of the GNOME Shell Extensions have settings, but many of them do, and the settings can be quite extensive. Be sure to explore!</p>
+        </div>
+        <div class="col-md-4">
+          pic.009.dashtodock.settings.opened.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/009.dashtodock.settings.opened.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/009.dashtodock.settings.opened.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h3>List of Other Useful Extensions</h3>
+          <p>These are the other extensions I have installed on my machine. There are many more that you may find useful. Feel free to add them to the post comments.</p>
+          <table>
+            <tr>
+              <th>Extension Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>AlternateTab</td>
+              <td>By default, GNOME will group windows for each application in the Alt-Tab UI with a drop-down arrow to get to individual windows. I find this creates stressfull finger gymnastics. AlternateTab ungroups the individual windows.</td>
+            </tr>
+            <tr>
+              <td>Harddisk</td>
+              <td>Shows harddisk activity in the top bar.</td>
+            </tr>
+            <tr>
+              <td>Launch new instance</td>
+              <td>By default, if an application is already running and you go to the Dash and click on the application, GNOME will bring the running instance will be brought to the top of the z-order. This extension changes that so a new instance is launched.</td>
+            </tr>
+            <tr>
+              <td>PutWindows</td>
+              <td>Provides many options for managing windows including keyboard shortcuts, windows sizes, selecting windows and more.</td>
+            </tr>
+            <tr>
+              <td>Recent(Item)s</td>
+              <td>Puts an icon in the top bar with a dropdown containing a list of recent files. I have it configured so that <kbd>Super-f</kbd> activates it.</td>
+            </tr>
+            <tr>
+              <td>Service Panel</td>
+              <td>Puts and icon with dropdown in the top bar which shows the state of various services such as a web server and MySQL.</td>
+            </tr>
+            <tr>
+              <td>User Themes</td>
+              <td>Allows you to put a shell theme in ~/.themes. Putting themes here makes it available for the current user instead of all users of the machine.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+      <div class="ke-callout ke-callout-info">
+        <h4>Opinion</h4>
+        <p>Different people have different perferences. I certaintly have mine. However, I think people largely prefer what they are used to and it can be tempting to install Extensions that make GNOME more Windows like or more Mac like. I suggest you don't do that. GNOME is different and it is really quite good. Spend some time learning how to navigate GNOME, especially how to do so using the keyboard as this is one of its strengths. Most keyboard shortcuts are customizable and we will be doing some of that in this post. Give GNOME's approch a couple of months. If you still don't like it then customize to suite you.</p>
+      </div>
+    </div>
+  </div>
+
+
+START=======================================================
+KEYBOARD
+Use right super rather than left super for overview / desktop switching
+Tweek>Keyboard and Mouse, set 'Switch between overview and desktop' to "Right super'
+<p>Part of the Settings application is keyboard settings. You can launch it quickly by pressing <kbd>Super</kbd> and typing 'keyboard'</p>
+<p>It is easy to over-look the message at the bottome of the screen that says '...press <kbd>Backspace</kbd> to clear'. Doing so will disable the shortcut</p>
+<p>Some of the extensions you install will have conflicting keyboard short-cuts. If you are setting a short-cut in an extension, be sure to disable it here. To avoid conflicts, I'm consiering disabeling all shortcuts I'm not using. I probably will, but I haven't done so yet.</p>
+
+-----------------------------
+Tweak Tool
+> Appearance tab
+>> Global Dark Theme = ON
+> Keyboard and Mouse
+>> Switch between overview and desktop = Right super
+>> Show location of pointer = ON
+> Top var
+>> Show date = checked
+> Windows tab
+>> Titlebar Buttons Maximize = ON
+>> Titlebar Buttons Minimize = ON
+
+Settings
+=============
+Online Accounts
+----------------
+> setup
+
+Displays
+---------------
+> done already above
+
+Keyboard
+-----------------
+> Shortcuts - above
+
+Printers
+----------------
+> Color>Outmode>Black Only Grayscale
+
+Details
+---------------
+Default Applications - I use the default
+
+Firewall Configuration
+------------------------
+> Status = ON
+> Incomming = Deny
+> Outgoing = Allow
+
+Sharing - maybe skip
+-------------
+> Title bar = OFF
+> Personal File Sharing = OFF
+> Screen Sharing = ON
+
+
+
+
+Snow location of Pointer
+Tweek>Keyboard and Mouse>Show location of pointer 'ON'
+
+
+
+Increase mouse pointer size
+> Find a cursor you like on gnome-look.org
+> Download the package and unzip it
+> Launch Files $ sudo nautilus
+> Copy the cursor theme's folder to /usr/share/icons
+> Open the Tweak Tool
+> Appearance > Cursor = nameOfYourTheme
+> Open dConf Editor
+>> Search (ctrl+f) for cursor-size
+>> Adjust size (was 24 I made it 60)
+
+Change toolbar-icons-size to small (search in dCOnf Editor for 'toolbar-icons-size and set to small
+
+Install Chromium Dark Reader extension to save your eyes
+
+END===========================================================
+
+
+Enable user shell themes (do you need to?)
+FireFox manage extensions
+Setup online accounts
+Show location of pointer
+Use Super right
+Increase mouse pointer size
+Change toolbar-icons-size to small
+Install Chromium Dark Reader
+
+Setup online accounts
+> Settings>Online Accounts
+Instll Synaptic Package Manager
+
+Delete Games
+AisleRiot Solitaire
+Mahjongg
+Mines
+Sudoku
+
 
 
 Change Super from left to right
@@ -19,3 +345,20 @@ Set Files Preferences
 6. Set all 3 drop-downs to 'None'
 7. Select the Preview tab
 8. Set 'Show thumbnails' to 'Always'
+
+
+  References
+  https://extensions.gnome.org/about/, GNOME Extensions, Abut
+
+</div> <!-- container-fluid -->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</div> <!-- containter-fluid -->
+</body>
