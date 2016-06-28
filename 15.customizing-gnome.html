@@ -214,6 +214,10 @@
               <td>User Themes</td>
               <td>Allows you to put a shell theme in ~/.themes. Putting themes here makes it available for the current user instead of all users of the machine.</td>
             </tr>
+            <tr>
+              <td>No Toplef Hot Corner</td>
+              <td>I really hate it when I move my mouse to the top left of the screen to click on something and the Overview pops-up. This extension turns off the 'hot corner'. Since the the <kbd>Super</kbd> does the same thing, the hot corner isn't needed.</td>
+            </tr>
           </table>
         </div>
         <div class="col-md-4">
@@ -230,64 +234,207 @@
 
 START=======================================================
 KEYBOARD
-Use right super rather than left super for overview / desktop switching
-Tweek>Keyboard and Mouse, set 'Switch between overview and desktop' to "Right super'
-<p>Part of the Settings application is keyboard settings. You can launch it quickly by pressing <kbd>Super</kbd> and typing 'keyboard'</p>
-<p>It is easy to over-look the message at the bottome of the screen that says '...press <kbd>Backspace</kbd> to clear'. Doing so will disable the shortcut</p>
-<p>Some of the extensions you install will have conflicting keyboard short-cuts. If you are setting a short-cut in an extension, be sure to disable it here. To avoid conflicts, I'm consiering disabeling all shortcuts I'm not using. I probably will, but I haven't done so yet.</p>
 
------------------------------
-Tweak Tool
-> Appearance tab
->> Global Dark Theme = ON
-> Keyboard and Mouse
->> Switch between overview and desktop = Right super
->> Show location of pointer = ON
-> Top var
->> Show date = checked
-> Windows tab
->> Titlebar Buttons Maximize = ON
->> Titlebar Buttons Minimize = ON
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Settings</h2>
+    </div>
+    <div class="panel-body">
+      <p class="ke-callout ke-callout-warning">Some of the extensions you install will have conflicting keyboard short-cuts and you can end-up with two short-cuts that do the same thing. As I'm writing this post I resolved conflicts by disabling everthing I don't use and then making a list of all the active short-cuts and actions. Some of these changes will not be evident in the screenshots.</p>
 
-Settings
-=============
-Online Accounts
-----------------
-> setup
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Online Accounts</h3>
+          <p>Set them up</p>
+        </div>
+        <div class="col-md-4">
 
-Displays
----------------
-> done already above
-
-Keyboard
------------------
-> Shortcuts - above
-
-Printers
-----------------
-> Color>Outmode>Black Only Grayscale
-
-Details
----------------
-Default Applications - I use the default
-
-Firewall Configuration
-------------------------
-> Status = ON
-> Incomming = Deny
-> Outgoing = Allow
-
-Sharing - maybe skip
--------------
-> Title bar = OFF
-> Personal File Sharing = OFF
-> Screen Sharing = ON
+        </div>
+      </div>
 
 
+      <div class="row">
+        <div class="col-md-8">
+          Printers
+          ----------------
+          > Color>Outmode>Black Only Grayscale
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
 
 
-Snow location of Pointer
-Tweek>Keyboard and Mouse>Show location of pointer 'ON'
+      <div class="row">
+        <div class="col-md-8">
+          Displays
+          ---------------
+          > done already above
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          Keyboard
+          -----------------
+          > Shortcuts - above
+          <p>It is easy to over-look the message at the bottome of the screen that says '...press <kbd>Backspace</kbd> to clear'. Doing so will disable the shortcut</p>
+
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          Details
+          ---------------
+          Default Applications - I use the default
+
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          Firewall Configuration
+          ------------------------
+          > Status = ON
+          > Incomming = Deny
+          > Outgoing = Allow
+
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Tweak Tool</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          > Appearance tab
+          >> Global Dark Theme = ON
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          > Keyboard and Mouse
+          >> Switch between overview and desktop = Right super
+          >> Show location of pointer = ON
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          > Top Bar
+          >> Show date = checked
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          > Windows tab
+          >> Titlebar Buttons Maximize = ON
+          >> Titlebar Buttons Minimize = ON
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          Keyboard and Mouse
+          ------------------
+          > Switch between overview and desktop = Super right
+          > Show location of pointer = ON
+
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          Windows
+          ----------
+          Titlebar Buttons > Maximize = ON
+          Titlebar Buttons > Minimize = ON
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          Snow location of Pointer
+          Tweek>Keyboard and Mouse>Show location of pointer 'ON'
+
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Extension Settings</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          Extensions
+          =============
+          Put windows
+          ------------
+          > Main>Always use multiple widths/heights ON
+          > Keyboard shortcuts pic.010.putwindows.kbd.shortcuts.png
+
+          RecentItems
+          ------------
+          > pic.011.recentitems.settings.png
+
+        </div>
+        <div class="col-md-4">
+  	       <!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
 
 
@@ -309,17 +456,6 @@ Install Chromium Dark Reader extension to save your eyes
 END===========================================================
 
 
-Enable user shell themes (do you need to?)
-FireFox manage extensions
-Setup online accounts
-Show location of pointer
-Use Super right
-Increase mouse pointer size
-Change toolbar-icons-size to small
-Install Chromium Dark Reader
-
-Setup online accounts
-> Settings>Online Accounts
 Instll Synaptic Package Manager
 
 Delete Games
@@ -327,14 +463,6 @@ AisleRiot Solitaire
 Mahjongg
 Mines
 Sudoku
-
-
-
-Change Super from left to right
-1. open Tweak Tool
-2. Select the Keyboard and Mouse table
-3. Change 'Switch between overview and desktop' to 'Right super'
-
 
 Set Files Preferences
 1. Click Files on the top bar and then Preferences
