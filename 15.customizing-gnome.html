@@ -25,16 +25,20 @@
     </ul>
   </div>
 
-
-  <p>GNOME is very customizable and you could waste a lot of time making it look the way you want. I guess 'waste' isn't really right for everyone, a designer or usability person might be very interested in how the UI can be changed. Whichever way you want to look at it, you can sink more or less time into it.</p>
-  <p>Below are instructions for ways I customize my machine to make it more livable for me. The changes are not interdependent so you can choose to do any number of these.</p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>GNOME is very customizable and you can waste a lot of time making it look the way you want. I guess 'waste' isn't really the right word for everyone. A designer or usability person might be very interested in how the UI can be changed. Whichever way you want to look at it, you can sink more or less time into it.</p>
+      <p>Below are the ways that I customize my machine to make it more livable for me. The changes are not interdependent so you can choose to do any number of these.</p>
+    </div>
+  </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
       <h2>Using Multiple Monitors</h2>
     </div>
-    <p>This first task is not a GNOME customization but this seems like a good place to put it anyway. If you have more than one Monitor and are doing development on your VM you will want the VM to use both monitors as working across two machines (host and VM) is combersome and lot's of extra clicks. Follow these steps to setup 2 monitors. I have never tried to use more than 2 but it looks like the steps are the same.</p>
+
     <div class="panel-body">
+      <p>This first task is not a GNOME customization, but this seems like a good place to put it anyway. If you have more than one monitor and are doing development on your VM, you will want the VM to use both monitors as working across two machines (host and VM) is cumbersome and lot's of extra clicks. Follow these steps to setup multiple monitors. I have never tried to use more than two monitors, but the process should be the same.</p>
       <div class="row">
         <div class="col-md-8">
           <p>In the VirtualBox Manager, make sure the VM is 'Powered Off'.</p>
@@ -44,18 +48,35 @@
           <p>Next you need to enable the second monitor. Go to the VirtualBox menu on the VM's window, and select <button class="btn btn-default btn-xs">View</button>&gt;<button class="btn btn-default btn-xs">Virtual Screen 2</button>&gt;<button class="btn btn-default btn-xs">Enable</button>.</p>
         </div>
         <div class="col-md-4">
+          053.enable.2nd.monitor.png
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/053.enable.2nd.monitor.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0521.creatingvmgnome/053.enable.2nd.monitor.png" alt="enable second monitor"></a>
         </div>
-        <div class="row">
-          <div class="col-md-8">
-            <p>It is possible at this point that as you move you mouse between monitors it gets stuck. This is because the left monitor is right and the right is left, or at least Ubuntu thinks so. Here is how to fix it:</p>
-            <p>Right-click on the desktop and click <button class="btn btn-default btn-xs">Display Settings</button>.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>It is possible at this point that as you move you mouse between monitors it gets stuck. This is because the left monitor is right and the right is left, or at least Ubuntu thinks so. Here is how to fix it.</p>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Right-click on the desktop and click <button class="btn btn-default btn-xs">Display Settings</button>.</p>
             <p>Click <button class="btn btn-default btn-xs">Arrange Combined Displays</button>.</p>
-            <p>Drag the monitors to switch their position.</p>
+        </div>
+        <div class="col-md-4">
+          pic.019.displays.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/019.displays.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/019.displays.png" alt="enable second monitor"></a>
           </div>
-          <div class="col-md-4">
-            <!-- empty -->
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Drag the monitors to switch their position.</p>
+        </div>
+        <div class="col-md-4">
+          pic.020.arrange.displays.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/020.arrange.displays.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/020.arrange.displays.png" alt="enable second monitor"></a>
         </div>
       </div>
     </div>
@@ -66,10 +87,10 @@
       <h2>Enable Dark Theme & Change Background</h2>
     </div>
     <div class="panel-body">
+      <p>If you are like me you don't like a bright white screen in your eyes for hours on end. GNOME allows you to quickly darken things up.
       <div class="row">
-        <p>If you are like me you don't like a bright white screen in your eyes for hours on end. GNOME allows you to quickly darken things up.
-        <h3>Global Dark Theme</h3>
         <div class="col-md-8">
+          <h3>Global Dark Theme</h3>
           <p>Open "Tweak Tool".</p>
           <p>Select the Appearance tab.</p>
           <p>Set 'Global Dark Theme' to 'ON'.</p>
@@ -82,17 +103,18 @@
       </div>
 
       <div class="row">
-        <h3>Change Background</h3>
         <div class="col-md-8">
+          <h3>Change Background</h3>
           <p>Right-click on the desktop and choose <button class="btn btn-default btn-xs">Change Background...</button></p>
           <p>Click on the picture captioned "Background"</p>
-          <p>You can choose between Wallpapers, Pictures and Colors. If you as into dark as my try the grayscale leaves with dark background.</p>
+          <p>You can choose between Wallpapers, Pictures and Colors. If you are as into dark as I am, try the grayscale leaves with dark background.</p>
         </div>
         <div class="col-md-4">
           pic.002.select.background.png
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/002.select.background.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/002.select.background.png" alt="**alt**"></a>
         </div>
       </div>
+      <p class="ke-callout ke-callout-info">Do you want more darkness? If so, install the Chromium extension Dark Reader.</p>
     </div>
   </div>
 
@@ -101,14 +123,18 @@
       <h2>Using GNOME Shell Extensions</h2>
     </div>
     <div class="panel-body">
+      <p>Shell Extension are a powerful way to modify the GNOME desktop. Follow along below, and then go explore the <a href="https://extensions.gnome.org/">list of extensions</a> to find those that are most helpful to you.
       <div class="row">
         <div class="col-md-8">
           <h3>Setup FireFox</h3>
-          <p>Go to <a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a></p>
-          <p>From this page you can search for and then isntall extensions. However, as indicated by the red notice at the top of the page, we need to install a FireFox addon first.</p>
-          <p>On the bar at the top of the page click <button class="btn btn-default btn-xs">Allow</button>. A dialog will pop-up. Click <button class="btn btn-default btn-xs">Allow and Remember</button>.</p>
-          <p>Refresh the page and the red message should go away.</p>
-          <p>If for any reason the above doesn't work, go to the hamburger menu at the top left of FireFox and select Add-ons. Search for 'GNOME Shell Extensions' and enable it.</p>
+          <p>When you first point FireFox at the Extensions page there will be a red error message at the top. This is fixed by installing a FireFox add-on.</p>
+          <ol>
+            <li>Go to <a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a> from which you can search the list of extensions.</li>
+            <li>On the bar at the top of the page click <button class="btn btn-default btn-xs">Allow</button>.</li>
+            <li>A dialog will pop-up. Click <button class="btn btn-default btn-xs">Allow and Remember</button>.</li>
+            <li>Refresh the page and the red message should go away.</li>
+          </ol>
+          <p class="ke-callout ke-callout-warning">If for any reason the above doesn't work, go to the hamburger menu at the top left of FireFox and select Add-ons. Search for 'GNOME Shell Extensions' and enable it.</p>
         </div>
         <div class="col-md-4">
           pic.003.gnome.shell.ext.png
@@ -124,14 +150,20 @@
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/004.allow.addon.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/004.allow.addon.png" alt="**alt**"></a>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-8">
           <h3>Installing a Shell Extension</h3>
-          <p>The steps below show how to enable the Dash to Dock extension. The table below lists other extensions that I find useful. Use the same steps to install them.</p>
+          <p>The steps below show how to enable the Dash to Dock extension. following that is a table that lists other extensions that I find useful. Use the same steps to install them.</p>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
           <p>Select Extensions at the top of the page.<p>
           <p>Search for 'Dash to Dock'.</p>
-          <p>Click on Dash to Dock</p>
+          <p>Click on Dash to Dock.</p>
         </div>
         <div class="col-md-4">
           pic.005.dashtodock.install.png
@@ -140,7 +172,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>Click 'On' next to Dash to Dock</p>
+          <p>Click 'On' next to Dash to Dock.</p>
         </div>
         <div class="col-md-4">
           pic.006.turnon.dashtodock.png
@@ -149,7 +181,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>A modal pop-up will appear, click <button class="btn btn-default btn-xs">Install</button>.</p>
+          <p>A modal pop-up will appear. Click <button class="btn btn-default btn-xs">Install</button>.</p>
         </div>
         <div class="col-md-4">
           pic.007.dwnldinstall.dashtodock.png
@@ -188,7 +220,7 @@
             </tr>
             <tr>
               <td>AlternateTab</td>
-              <td>By default, GNOME will group windows for each application in the Alt-Tab UI with a drop-down arrow to get to individual windows. I find this creates stressfull finger gymnastics. AlternateTab ungroups the individual windows.</td>
+              <td>By default, GNOME will group windows for each application in the Alt-Tab UI with a drop-down arrow to get to individual windows. I find this creates stressful finger gymnastics. AlternateTab un-groups the individual windows.</td>
             </tr>
             <tr>
               <td>Harddisk</td>
@@ -226,21 +258,17 @@
       </div>
       <div class="ke-callout ke-callout-info">
         <h4>Opinion</h4>
-        <p>Different people have different perferences. I certaintly have mine. However, I think people largely prefer what they are used to and it can be tempting to install Extensions that make GNOME more Windows like or more Mac like. I suggest you don't do that. GNOME is different and it is really quite good. Spend some time learning how to navigate GNOME, especially how to do so using the keyboard as this is one of its strengths. Most keyboard shortcuts are customizable and we will be doing some of that in this post. Give GNOME's approch a couple of months. If you still don't like it then customize to suite you.</p>
+        <p>Different people have different preferences. I certainly have mine. However, I think people largely prefer what they are used to and it can be tempting to install Extensions that make GNOME more Windows like or more Mac like. I suggest you don't do that. GNOME is different and it is really quite good. Spend some time learning how to navigate GNOME, especially how to do so using the keyboard as this is one of its strengths. Most keyboard shortcuts are customizable and we will be doing some of that in this post. Give GNOME's approach a couple of months. If you still don't like it then customize to suite you.</p>
       </div>
     </div>
   </div>
-
-
-START=======================================================
-KEYBOARD
 
   <div class="panel panel-default">
     <div class="panel-heading">
       <h2>Settings</h2>
     </div>
     <div class="panel-body">
-      <p class="ke-callout ke-callout-warning">Some of the extensions you install will have conflicting keyboard short-cuts and you can end-up with two short-cuts that do the same thing. As I'm writing this post I resolved conflicts by disabling everthing I don't use and then making a list of all the active short-cuts and actions. Some of these changes will not be evident in the screenshots.</p>
+      <p class="ke-callout ke-callout-warning">Some of the extensions you install will have conflicting keyboard short-cuts and you can end-up with two short-cuts that do the same thing. As I'm writing this post I resolved conflicts by disabling everything I don't use and then making a list of all the active short-cuts and actions. Some of these changes will not be evident in the screenshots.</p>
 
       <!-- Online Accounts -->
       <div class="row">
@@ -266,7 +294,7 @@ KEYBOARD
 
       <div class="row">
         <div class="col-md-8">
-          <p>Enter your gmail account and click ,,,Next</p>
+          <p>Enter your Gmail account and click <button class="btn btn-default btn-xs">Next</button>.</p>
         </div>
         <div class="col-md-4">
           pic.014.signinto.google.usr.png
@@ -276,7 +304,7 @@ KEYBOARD
 
       <div class="row">
         <div class="col-md-8">
-          <p>Enter your password and click ,,,Sign In</p>
+          <p>Enter your password and click <button class="btn btn-default btn-xs">Sign In</button>.</p>
         </div>
         <div class="col-md-4">
           pic.015.signinto.google.pwd.png
@@ -286,7 +314,7 @@ KEYBOARD
 
       <div class="row">
         <div class="col-md-8">
-          <p>Scroll down and click ,,,Allow</p>
+          <p>Scroll down and click <button class="btn btn-default btn-xs">Allow</button></p>
         </div>
         <div class="col-md-4">
           pic.016.allow.google.png
@@ -296,7 +324,7 @@ KEYBOARD
 
       <div class="row">
         <div class="col-md-8">
-          <p>Your online accout is setup.</p>
+          <p>Your online account is setup.</p>
         </div>
         <div class="col-md-4">
           pic.017.onlineacct.done.png
@@ -308,21 +336,16 @@ KEYBOARD
       <div class="row">
         <div class="col-md-8">
           <h3>Printers</h3>
-          <p>Color>Outmode>Black Only Grayscale.</p>
+          <p>I'll jsut quickly mention that GNOME provides a nice UI to printer options. I was dismayed when I learned that my inkjet printer was using color ink to print grayscale. I set two defaults here:
+          <ol>
+            <li>Color &gt; Output Mode = Black Only Grayscale</li>
+            <li>Image Quality &gt; Print Quality = Draft.</li>
+          </ol>
+          <p>Most of my printing is for my own use so draft quality is good enough.</p>
         </div>
         <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div>
-
-      <!-- Displays -->
-      <div class="row">
-        <div class="col-md-8">
-          <h3>Displays</h3>
-          <p>first point.</p>
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
+          pic.018.printers.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/018.printers.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/018.printers.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -330,12 +353,15 @@ KEYBOARD
       <div class="row">
         <div class="col-md-8">
           <h3>Keyboard</h3>
-          > Shortcuts - above
-          <p>It is easy to over-look the message at the bottome of the screen that says '...press <kbd>Backspace</kbd> to clear'. Doing so will disable the shortcut</p>
+          <p> As I mentioned above, to avoid conflicts, it is best to disable all shortcuts you don't think you will use. You can always enable it later.</p>
+          <p>If you are a serious keyboard user, and there are advantages to being one, you will want to make a list of your keyboard shortcuts. This will allow you to get an organized and memorable set of shortcuts, as well as be a source if you should need to build a new machine.</p>
+          <p>Start in Settings &gt; Keyboard on the 'Shortcuts' tab. If you are using PutWindows it is especially important to disable everything on the Windows tab.</p>
+          <p class="ke-callout ke-callout-warning">It is easy to over-look the message at the bottom of the screen that says '...press <kbd>Backspace</kbd> to clear'. Doing so will disable the shortcut</p>
 
         </div>
         <div class="col-md-4">
-          <!-- empty -->
+          pic.021.keyboard.shortcuts.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/021.keyboard.shortcuts.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/021.keyboard.shortcuts.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -343,11 +369,16 @@ KEYBOARD
       <div class="row">
         <div class="col-md-8">
           <h3>Details</h3>
-          <p>Default Applications - I use the default</p>
-
+          <p>In Settings &gt; Details you can see:</p>
+          <ol>
+            <li>An overview of your machine.</li>
+            <li>Default applications for calendar, mail, etc.</li>
+            <li>Removable media options.</li>
+          </ol>
         </div>
         <div class="col-md-4">
-          <!-- empty -->
+          pic.022.details.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/022.details.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/022.details.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -355,13 +386,23 @@ KEYBOARD
       <div class="row">
         <div class="col-md-8">
           <h3>Firewall Configuration</h3>
-          > Status = ON
-          > Incomming = Deny
-          > Outgoing = Allow
+          <p>As mentioned previously, VirtualBox has already secured your VM. However, I include the firewall configuration here for those who are using Ubuntu as the host.</p>
+          <p>There is more to configuring a firewall than I can cover in this post. However, I'll discuss the main configuration options</p>
+          <p><b>Profile</b>: If you have a laptop you can have different settings for Home, Public and Office. For most people, on profile should be enough.</p>
+          <p><b>Status:</b> 'ON/Off' - turn it ON.</p>
+          <p><b>Incoming:</b> <b>Set this to 'Deny'</b>. If you were configuring a web server that needed to be accessible from the internet or intranet you would set this to 'Allow', <b>but don't!</b> We want our development machine as isolated as possible, so set this to 'Deny'. Doing so will result in all incoming requests being denied</p>
+          <p><b>Outgoing:</b> <b>Set this to 'Allow'</b>. This is request from your browser to the outside world. You need this to access the internet.</p>
+          <h4>Summary of Settings</h4>
+          <ul>
+            <li>Status = ON</li>
+            <li>Incoming = Deny</li>
+            <li>Outgoing = Allow</li>
+          <ul>
 
         </div>
         <div class="col-md-4">
-          <!-- empty -->
+          pic.022.01.firewall.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/022.01.firewall.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/022.01.firewall.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -379,189 +420,51 @@ KEYBOARD
       <!-- Appearance tab -->
       <div class="row">
         <div class="col-md-8">
-          <h3>Appearance tab</h3>
-          >> Global Dark Theme = ON
+          <p>We have already see the Tweak Tool when setting the Global Dark Theme and working with extension settings. There is a lot more you can do with Tweak. It is well worth a few minutes of exploration.</p>
         </div>
         <div class="col-md-4">
-
-        </div>
-      </div>
-
-      <!-- Keyboard and Mouse -->
-      <div class="row">
-        <div class="col-md-8">
-          <h3>Keyboard and Mouse</h3>
-          >> Switch between overview and desktop = Right super
-          >> Show location of pointer = ON
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div>
-
-      <!-- Top Bar -->
-      <div class="row">
-        <div class="col-md-8">
-          <h3>Top Bar</h3>
-          >> Show date = checked
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div>
-
-      <!-- Windows tab -->
-      <div class="row">
-        <div class="col-md-8">
-          <h3>Windows tab</h3>
-          >> Titlebar Buttons Maximize = ON
-          >> Titlebar Buttons Minimize = ON
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div>
-
-      <!-- Keybard and Mouse -->
-      <div class="row">
-        <div class="col-md-8">
-          <h3>Keyboard and Mouse</h3>
-          ------------------
-          > Switch between overview and desktop = Super right
-          > Show location of pointer = ON
-
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
+          pic.023.tweaktool.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/023.tweaktool.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/023.tweaktool.png" alt="**alt**"></a>
         </div>
       </div>
 
       <!-- Windows -->
       <div class="row">
         <div class="col-md-8">
-          <h3>Windows</h3>
-          ----------
-          Titlebar Buttons > Maximize = ON
-          Titlebar Buttons > Minimize = ON
+          <h3>Minimize and Maximize Buttons!!</h3>
+          <p>You likely have already noticed and been frustrated by the lack of minimize and maximize buttons in GNOME. The good news is you can turn them on.
         </div>
         <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div>
-
-      <!-- Show location of Pointer -->
-      <div class="row">
-        <div class="col-md-8">
-          <h3>Snow location of Pointer</h3>
-          Tweek>Keyboard and Mouse>Show location of pointer 'ON'
-
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Extensions -->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Extension Settings</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          Extensions
-          =============
-          Put windows
-          ------------
-          > Main>Always use multiple widths/heights ON
-          > Keyboard shortcuts pic.010.putwindows.kbd.shortcuts.png
-
-          RecentItems
-          ------------
-          > pic.011.recentitems.settings.png
-
-        </div>
-        <div class="col-md-4">
-  	       <!-- empty -->
+          pic.024.tweak.windows.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/024.tweak.windows.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/024.tweak.windows.png" alt="**alt**"></a>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- Increase Pouse Pointer Size -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Increase Pouse Pointer Size</h2>
+      <h2>Increase Mouse / Pointer Size</h2>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-
-          > Find a cursor you like on gnome-look.org
-          > Download the package and unzip it
-          > Launch Files $ sudo nautilus
-          > Copy the cursor theme's folder to /usr/share/icons
-          > Open the Tweak Tool
-          > Appearance > Cursor = nameOfYourTheme
-          > Open dConf Editor
-          >> Search (ctrl+f) for cursor-size
-          >> Adjust size (was 24 I made it 60)
-
+          <p>There are many, many mouse/cursor themes available. One good site is  <a href="https://www.gnome-look.org">GNOME-LOOK.ORG</a>. Look under 'Mouse Themes' for one that appeals to you. Some of them say 'Multisized' and some do not. My guess is that you need to pick a multi-sized one, but I have not checked this out. For this example, I'm going to use a fun one named <a href="https://www.gnome-look.org/content/show.php/Ultimate+Serie+for+right+handed?content=164300">Ultimate-Black</a>. You need to have a Dropbox account to download it.</p>
+          <p class="ke-callout ke-callout-info">Dropbox is very useful tool for moving files between guest and host machines. While you can setup folders that are shared between the guest and host, I find Dropbox most convenient.</p>
+          <p>Download the package and unzip it.</p>
+          <p>Launch Files using the <code>-i</code> option. <code>-i</code> will open Files as root.</p>
+          <pre>$ sudo -i nautilus</pre>
+          <p>Copy the cursor theme's folder to /usr/share/icons.</p>
+          <p>Open the Tweak Tool</p>
+          <p>In the Appearance tab, set Cursor = Ultimate-Black (or the name of you theme if you are using a different one).</p>
+          <p>Open dConf Editor and search (ctrl+f) for cursor-size.</p>
+          <p>Double-click on the value to change it. You can set the size to 24, 32, 40, 48, 56 or 64.</p>
         </div>
         <div class="col-md-4">
-  	      <!-- empty -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Toolbar-icons-size Small</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          Change toolbar-icons-size to small (search in dCOnf Editor for 'toolbar-icons-size and set to small
-        </div>
-        <div class="col-md-4">
-  	      <!-- empty -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Install Chromium Dark Reader extension to save your eyes</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-
-        </div>
-        <div class="col-md-4">
-  	<!-- empty -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Instll Synaptic Package Manager</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-
-        </div>
-        <div class="col-md-4">
-  	<!-- empty -->
+          pic.025.dconf.cursor-size.png
+  	      <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/025.dconf.cursor-size.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/025.dconf.cursor-size.png" alt="**alt**"></a>
         </div>
       </div>
     </div>
@@ -574,22 +477,52 @@ KEYBOARD
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-
-          1. Click Files on the top bar and then Preferences
-          2. Set 'View new folders using:' to List view
-          3. Set Sort folders before files = True
-          4. Set Show hidden and backup files = True
-          5. Select the Display tab
-          6. Set all 3 drop-downs to 'None'
-          7. Select the Preview tab
-          8. Set 'Show thumbnails' to 'Always'
-
+          <p>Finally, check-out the many options for Files. I made the below changes to suit my preference.</p>
+          <ul>
+            <li>Views: View new folders using = List view</li>
+            <li>Views: Sort folders before files = Checked</li>
+            <li>Views: Show hidden and backup files = Checked</li>
+            <li>Display: Set all 3 drop-downs to 'None'</li>
+            <li>Preview: Show thumbnails = Always</li>
+          </ul>
         </div>
         <div class="col-md-4">
-  	<!-- empty -->
+          <!-- empty -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          pic.026.files-views.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/026.files-views.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/026.files-views.png" alt="**alt**"></a>
+        </div>
+        <div class="col-md-4">
+          pic.027.files-behavior.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/027.files-behavior.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/027.files-behavior.png" alt="**alt**"></a>
+        </div>
+        <div class="col-md-4">
+          pic.028.files-display.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/028.files-display.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/028.files-display.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          pic.029.files-listcolumns.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/029.files-listcolumns.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/029.files-listcolumns.png" alt="**alt**"></a>
+        </div>
+        <div class="col-md-4">
+          pic.030.files-preview.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/030.files-preview.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/customize-gnome/030.files-preview.png" alt="**alt**"></a>
+        </div>
+        <div class="col-md-4">
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="ke-callout ke-callout-info">
+    <h4>All Done!</h4>
+    <p>That was another long one but I suspect it is much longer to write than it is to ready, so I hope you found some interesting ways in which to customize GNOME and make it more your own.</p>
   </div>
 
   <div class="panel panel-default">
@@ -597,24 +530,15 @@ KEYBOARD
       <h2>References</h2>
     </div>
     <div class="panel-body">
-
-      https://extensions.gnome.org/about/, GNOME Extensions, Abut
+      <ol>
+        <li><a href="https://extensions.gnome.org/about/">About</a>, GNOME Extensions</li>
+        <li><a href="https://help.ubuntu.com/community/Gufw">Gufw</a>, Ubuntu Official Documentation</li>
+        <li><a href="https://www.gnome-look.org/content/show.php/Ultimate+Serie+for+right+handed?content=164300">Ultimate Serie for right handed</a>, GNOME-LOOK.ORG, Marcus Haro</li>
+      <ol>
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
 </div> <!-- container-fluid -->
-
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
