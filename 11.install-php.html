@@ -24,59 +24,121 @@
     </ul>
   </div>
 
-<p>This guide will show you how to isntall PHP. PHP is a server-side scripting language originally designed for web development but has been adapted to command line scripting and desktop (GUI) applications. We will only be installing the website server-side scripting capabilities.</p>
-<p>PHP is a hugely popular. By one estimation it is used on over 80% of websites using server-side programming languages. Given the difficulty of data collection, this number may not be accurate, but even if it is off by 20%, it is clear that PHP is very popular.</p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This guide will show you how to isntall PHP. PHP is a server-side scripting language originally designed for web development but has been adapted to command line scripting and desktop (GUI) applications. We will only be installing the website server-side scripting capabilities.</p>
+      <p>PHP is a hugely popular. By one estimation it is used on over 80% of websites using server-side programming languages. Given the difficulty of data collection, this number may not be accurate, but even if it is off by 20%, it is clear that PHP is very popular.</p>
+    </div>
+  </div>
 
-<h2>Install PHP</h2>
-<p>Open Terminal and execute the below commands</p>
-<pre>$ sudo apt-get install php libapache2-mod-php php-pear php-mysql</pre>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Install PHP</h2>
+    </div>
+    <div class="panel-body">
+      <p>Open Terminal and execute the below commands</p>
+      <pre>$ sudo apt-get install php libapache2-mod-php php-pear php-mysql</pre>
+      <p>Restart Apache so that the new modules will be loaded.</p>
+      <pre>$ sudo systemctl restart apache2</pre>
+      <p>Check out your version.</p>
+      <pre>$ php -v</pre>
+      pic.001.php.version.png
 
-<p>Restart Apache so that the new modules will be loaded.</p>
-<pre>$ sudo systemctl restart apache2</pre>
-<p>Check out your version.</p>
-<pre>$ php -v</pre> pic.001.php.version.png
+
+    </div>
+  </div>
+
+<a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/001.php.versionnum.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/001.php.versionnum.png" alt="dome alt"></a>
+
+<a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/001.php.versionnum.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/001.php.versionnum.png" alt="**dom alt 02**"></a>
+
+<a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/001.phpversion.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/001.phpversion.png" alt="**dom alt 02**"></a>
 
 
 
-<h2>Create a PHP-Info Site</h2>
-<p>In a previous post we created a simple Hello World website using the command line. This time, just to provide a different experience, we will do it using a mix of command line and Files. I will provide the instructions for creating the virtual host in brief. If you get stuck, refer to the full post <a href="#">da da da</a>.</p>
-<p>We need to take a quick diversion as newer versions of Files don't provide a way of creating a file from within Files. Follow the steps in <a href="#">this post</a> and then come back.</p>
-<p>Open Files and navigate to Home > workspace</p>
-<p>Create a directory named "phpinfopage".</p>pic.002.create.phpinfopage.dir.png
-<p>Inside the directory phpinfopage, create a file named phpinfopage.php</p>
-<p>Right-click phpinfopage.php and choose <btn>Open With gedit</btn>.</p>
-<p>Enter the below text</p>
-<pre>&lt;?php<br>phpinfo();<br>?&gt;</pre>   pic.003.phpinfopage.contents.png
-<p>Save and close the file.</p>
-<p>Previously we created the virtual host file from scratch. This time we will copy the existing file and modify it. See <a href="#">post</a> if you don't already have this file.</p>
-<p>Execute these commands</p>
-<pre>$ cd /etc/apache2/sites-available<br>$ sudo cp helloworld.conf phpinfopage.conf<br>$ sudo gedit phpinfopage.conf</pre>
-<p>Edit the file to appear as the picture, replacing 'Karl' with your user name & 'helloworld' with 'phpinfopage'.</p>
-<p>Save and close the file.</p>
-<pre>$ sudo -i gedit /etc/hosts</pre>
-<p>Add the below line.</p>
-<pre>127.0.0.1       phpinfopage.localhost</pre>
-<p>Close and save the file.</p> pic.004.hostfile.entry.png
-<p>Enable the new site and restart Apache.</p>
-<pre>sudo a2ensite phpinfopage.conf<br>sudo systemctl restart apache2</pre>
-<p>Open a browser and enter this URL.</p>
-<pre>http://phpinfopage.localhost</pre>
-<p>The resulting page should like like the screenshot. There is a lot of information on this page. Take a look to see what is there.</p> pic.005.phpinfopage.png
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create a PHP-Info Site</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>In a previous post we created a simple Hello World website using the command line. This time, just to provide a different experience, we will do it using a mix of command line and Files. I will provide the instructions for creating the virtual host in brief. If you get stuck, refer to the full post <a href="http://trivalleyhobby.com/klequis/2016/05/04/creating-a-virtualhost/">Creating a Virtual Host</a>.</p>
+          <p class="ke-callout ke-callout-info">You may want to take a quick diversion as newer versions of Files don't provide a way of creating a file from within Files. Follow the steps in <a href="http://trivalleyhobby.com/klequis/2016/07/01/adding-a-new-document-menu-to-the-files-nautilus-right-click-menu/">Adding a "New Document" Menu To The Files (Nautilus) Right-Click Menu</a> and then come back.</p>
+          <p>Open Files and navigate to Home > workspace</p>
+          <p>Create a directory named "phpinfopage".</p>
+        </div>
+        <div class="col-md-4">
+  	      pic.002.create.phpinfopage.dir.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/002.create.phpinfopage.dir.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/002.create.phpinfopage.dir.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Inside the directory phpinfopage, create a file named phpinfopage.php</p>
+          <p>Right-click phpinfopage.php and choose <btn>Open With gedit</btn>.</p>
+          <p>Enter the below text</p>
+          <pre>&lt;?php<br>phpinfo();<br>?&gt;</pre>
+        </div>
+        <div class="col-md-4">
+          pic.003.phpinfopage.contents.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/003.phpinfopage.contents.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/003.phpinfopage.contents.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Save and close the file.</p>
+          <p>Previously we created the virtual host file from scratch. This time we will copy the existing file and modify it. See <a href="#">post</a> if you don't already have this file.</p>
+          <p>Execute these commands</p>
+          <pre>$ cd /etc/apache2/sites-available<br>$ sudo cp helloworld.conf phpinfopage.conf<br>$ sudo gedit phpinfopage.conf</pre>
+          <p>Edit the file to appear as the picture, replacing 'Karl' with your user name & 'helloworld' with 'phpinfopage'.</p>
+          <p>Save and close the file.</p>
+          <pre>$ sudo -i gedit /etc/hosts</pre>
+          <p>Add the below line.</p>
+          <pre>127.0.0.1       phpinfopage.localhost</pre>
+          <p>Close and save the file.</p>
+        </div>
+        <div class="col-md-4">
+          pic.004.hostfile.entry.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/004.hostfile.entry.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/004.hostfile.entry.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Enable the new site and restart Apache.</p>
+          <pre>sudo a2ensite phpinfopage.conf<br>sudo systemctl restart apache2</pre>
+          <p>Open a browser and enter this URL.</p>
+          <pre>http://phpinfopage.localhost</pre>
+          <p>The resulting page should like like the screenshot. There is a lot of information on this page. Take a look to see what is there.</p>
+        </div>
+        <div class="col-md-4">
+          pic.005.phpinfopage.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/005.phpinfopage.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/005.phpinfopage.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="ke-callout ke-callout-info">
+        <p>Did you get the Apache2 Ubuntu Default Page or an error instead of the PHPInfo page? It is very likely you made a typo. Things like restarting you machine, using a different browser or clearing history/cookies should not be necessary but over the four years I have been doing this I frequently encounter problems and one of these things fixes it. In fact, I just had the situation where my PHPInfo page would not work in FireFox but did in Chromium. When I cleared history, etc. in FireFox it worked there as weel. So, the page is not loading, try the following:</p>
+        <ul>
+          <li>Go through all of the steps again looking for a typo.</li>
+          <li>If you didn't find a typo, try restarting you machine.</li>
+          <li>If you are using FireFox try Chromium or the other way around.</li>
+          <li>Clear all browsing history, cookies ..., everthing. Then try again.</li>
+        </ul>
+      </div>
 
-<div class="ke-callout ke-callout-info">
-  <p>Did you get the Apache2 Ubuntu Default Page or an error instead of the PHPInfo page? It is very likely you made a typo. Things like restarting you machine, using a different browser or clearing history/cookies should not be necessary but over the four years I have been doing this I frequently encounter problems and one of these things fixes it. In fact, I just had the situation where my PHPInfo page would not work in FireFox but did in Chromium. When I cleared history, etc. in FireFox it worked there as weel. So, the page is not loading, try the following:</p>
-  <ul>
-    <li>Go through all of the steps again looking for a typo.</li>
-    <li>If you didn't find a typo, try restarting you machine.</li>
-    <li>If you are using FireFox try Chromium or the other way around.</li>
-    <li>Clear all browsing history, cookies ..., everthing. Then try again.</li>
-  </ul>
-</div>
+    </div>
+  </div>
 
-<h2>References</h2>
-<ol>
-  <li><a href="https://help.ubuntu.com/community/ApacheMySQLPHP#Installing_Apache_2">ApacheMySQLPHP</a>, Ubuntu Official Documentation</li>
-</ol>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>References</h2>
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li><a href="https://help.ubuntu.com/community/ApacheMySQLPHP#Installing_Apache_2">ApacheMySQLPHP</a>, Ubuntu Official Documentation</li>
+      </ol>
+    </div>
+  </div>
 
 </div> <!-- containter-fluid -->
 
@@ -85,7 +147,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
 
 </body>
