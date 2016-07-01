@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>New Document Shortcut</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="flint-style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dev-style.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This post will show you how to add a 'New Document' menu to the Files (aka Nautilus) right click menu.</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>I frequently create new files from within Files (aka Nautilus). However, Ubuntu Gnome does not come with this functionality. Fortunately, it is easy to implement.</p>
+          <p>To check if you need to do this, open Files to a location where you have permission to create files. Your Home/Documents directory is a good choice. Right-click and see if New Document appears on the context menu. As you can see it does not in the screenshot. Even if you have a New Document shortcut already, you can add different file types if desired.</p>
+        </div>
+        <div class="col-md-4">
+          pic.001.no.new.doc.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/newdoc-r-click/001.no.new.doc.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/newdoc-r-click/001.no.new.doc.png" alt="**alt**">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>I'm going to create 3 file types for the 3 types of files I use most often: .txt, .html & .php.</p>
+          <p>Open Terminal and execute the below commands.</p>
+          <pre>$ cd ~/Templates<br>$ touch Text.txt HTML.html PHP.php</pre>
+          <p>As you can see in the screenshot, you now have the option to create 3 file types. Add more as you require.</p>
+
+        </div>
+        <div class="col-md-4">
+          pic.002.has.new.doc.png
+          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/newdoc-r-click/002.has.new.doc.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/newdoc-r-click/002.has.new.doc.png" alt="**alt**">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
