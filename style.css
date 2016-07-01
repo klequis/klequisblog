@@ -110,6 +110,7 @@ blockquote cite {
   padding-top:2.0em;
 }
 
+/*
 
 .seriesbox {
   display: none;
@@ -122,8 +123,6 @@ blockquote cite {
   border-left-width: 5px;
   border-radius: 3px;
   border-left-color: #999999;
-  /*background:rgba(230,230,230,0.5);*/
-  /*background-color: white;*/
   background: white !important;
   background-color: white !important;
   font-size:0.9em;
@@ -145,6 +144,7 @@ div.widget_seriestoc > h4:first-of-type {
   font-size: 24px;
   margin-top: 27px;
 }
+*/
 
 .entry-content fieldset {
   margin-bottom:20px;
