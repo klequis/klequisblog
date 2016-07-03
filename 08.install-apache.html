@@ -19,7 +19,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <p>This guide tells you how to install Apache on Ubuntu 16.04 for use as a development web server.</p>
-      <p>Apache is a free web server. According to <a href="https://w3techs.com/technologies/overview/web_server/all">W3Tech</a>, Apache is the most widely used web server at 52.3% of all web servers they track. Second is Nginx at 30.4% and then Microsoft IIS at 12.0%. Even if these numbers are scewed in some way, it is clear that Apache is widely used.</p>
+      <p>Apache is a free web server. According to <a href="https://w3techs.com/technologies/overview/web_server/all">W3Tech</a>, Apache is the most widely used web server at 52.3% of all web servers they track. Second is Nginx at 30.4% and then Microsoft IIS at 12.0%. Even if these numbers are skewed to some extent, it is clear that Apache is widely used.</p>
 
 
       <!--more-->
@@ -75,7 +75,7 @@
           <p>Since this is a development machine that will not be accessible from the internet, we can make a few changes to the configuration that will make it easier to work with. <i>Do not make this instance of Apache accessible over the internet as it is not properly secured.</i></p>
           <p> Open the 'envvars' configuration file.</p>
           <pre>$ sudo -i gedit /etc/apache2/envvars</pre>
-          <p>To make Apache run under your account, change the user on the below two lines. The picture shows the lines edited to have my user name.</p>
+          <p>To make Apache run under your account, find the two lines shown in the picture and replace the user name 'www-data' with your user name. The picture shows the lines edited to have my user name.</p>
           <pre>export APACHE_RUN_USER=<i>yourUserName</i><br>export APACHE_RUN_GROUP=<i>yourUserName</i></pre>
           <p>Finally, we need to enable the Rewrite module.</p>
           <pre>$ sudo a2enmod rewrite<br>$ sudo systemctl restart apache2</pre>
@@ -83,8 +83,11 @@
         <div class="col-md-4">
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/003.envvars.edit.png"><img class="image-responsive image-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.install-apache/003.envvars.edit.png"/></a>
         </div>
+      </div>
     </div>
   </div>
+
+  <p  class="ke-callout ke-callout-info">You may notice the message that says to use 'service apache2 restart' and not 'systemctl restart apache2'. Using systemctl is simply a new way of issuing the command. The old way still works for now but won't forever so it is best to start using 'systemctl' now.</p>
 
   <div class="ke-callout ke-callout-info">
     <p>OK. That's it. Apache is fully installed and ready to be used for development. Given the complexity of functionality it provides, that was a comparatively short install. But wait, you only have the default site. To create your first website, see the next part of this series, <a href="http://trivalleyhobby.com/klequis/2016/05/04/creating-a-virtualhost/">Creating a VirtualHost</a> (aka creating a website).</p>

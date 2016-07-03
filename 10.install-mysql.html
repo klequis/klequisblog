@@ -16,18 +16,15 @@
 
 <div class="container-fluid">
 
-  <div class="ke-callout ke-callout-danger">
-    <ul>
-      <li>complete text</li>
-      <li>pending read out-loud</li>
-      <li>pending spelling</li>
-      <li>pending punctuation</li>
-    </ul>
-  </div>
-
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>This guide will show you how to install MySQL Server and Client. MySQL Server is the database engine and storage. MySQL Client is a command line application that communicates with MySQL Server. Using MySQL client you can create database objects, issue queries and much more. a database server. In it you can create and query databases.</p>
+      <p>This guide will show you how to install MySQL Server and Client.</p>
+      <dl class="dl-horizontal">
+        <dt>MySQL Server</dt>
+        <dd>MySQL Server is the database engine and storage.</dd>
+        <dt>MySQL Client</dt>
+        <dd>MySQL Client is a command line application that communicates with MySQL Server. Using MySQL client you can create database objects, issue queries and much more.</dd>
+      </dl>
       <p>If you want to use a GUI based client for managing the database, we will be installing phpMyAdmin later in <a href="http://trivalleyhobby.com/klequis/2016/06/06/01-building-a-ubuntu-gnome-16-04-development-machine/">this series</a>.</p>
       <p>We will be installing the latest version of MySQL which as of this writing in June 2016 is 5.7.13.</p>
       <div class="ke-callout ke-callout-danger">
@@ -41,9 +38,9 @@
       <h2>Preperation</h2>
     </div>
     <div class="panel-body">
-      <p>This is the xxx part of the series SERIESNAME. If you have been following the series your machine is ready for installation and you have only one thing to prepare - the password you will use for the MySQL root user.</p>
-      <p>The root user us the 'superuser' for MySQL. The root user can make any and all changes to any of the databases you instance of MySQL will host. Since your development machine, as built following this series, will not be accessible from the internet, the complexity of the password is not important. It is there for two reasons: 1) to make sure you think about it when working as root and 2) to give you the full experience of working with a database server which includes setting and using passwords.</p>
-      <p>It is possible to configure MySQL with 'blank' as the password but please don't</p>
+      <p>This is part ten of the series <a href="http://trivalleyhobby.com/klequis/2016/06/06/01-building-a-ubuntu-gnome-16-04-development-machine/">Building a Ubuntu GNOME 16.04 Development Machine</a>. If you have been following the series your machine is ready for MySQL installation. Make sure you have the password you created in <a href="http://trivalleyhobby.com/klequis/2016/07/01/07-introduction-to-lamp/">Introduction to LAMP</a>.</p>
+      <p>The root user us the 'superuser' for MySQL. The root user can make any and all changes to any of the databases you instance of MySQL will host. Since your development machine, as built following this series, will not be accessible from the internet, the complexity of the password is not important. It is there for two reasons: 1) to make sure you think about it when working as root and 2) to give you the full experience of working with a database server which includes setting and entering passwords.</p>
+      <p>It is possible to configure MySQL with 'blank' as the password but please don't.</p>
     </div>
   </div>
 
@@ -56,9 +53,9 @@
         <div class="col-md-8">
           <p>To install MySQL Server & Client, execute the below command. Since the command does not specify a version number, the most recent version will be installed.</p>
           <pre>sudo apt install mysql-server</pre>
+          <p>Enter 'y' when prompted.</p>
         </div>
         <div class="col-md-4">
-          pic.001
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/001.mysql.install.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/001.mysql.install.png" alt="install mysql pic01"></a>
         </div>
       </div>
@@ -67,7 +64,6 @@
           <p> Enter the password you created for the root user. Use tab to navigate to 'OK' and press enter.</p>
         </div>
         <div class="col-md-4">
-          pic.002
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/002.mysql.pwd01.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/002.mysql.pwd01.png" alt="enter password"></a>
         </div>
       </div>
@@ -76,7 +72,6 @@
           <p>Re-enter your password.</p>
         </div>
         <div class="col-md-4">
-          pic.003
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/003.mysql.pwd02.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/003.mysql.pwd02.png" alt="confirm password"></a>
         </div>
       </div>
@@ -89,7 +84,6 @@
           <pre>sudo systemctl restart mysql.service</pre>
         </div>
         <div class="col-md-4">
-          pic.004
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/004.mysql.status.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-mysql/004.mysql.status.png" alt="mysql status"></a>
         </div>
       </div>
@@ -101,16 +95,17 @@
       <h2>Other Useful MySQL Commands</h2>
     </div>
     <div class="panel-body">
-      <p>There are many MySQL commands which you can lear from the <a href="http://dev.mysql.com/doc/refman/5.7/en/">MySQL documentation</a>. Here are a few to get you started.</p>
-      <p>Check the MySQL version</p>
+      <p>There are many MySQL commands which you can learn from the <a href="http://dev.mysql.com/doc/refman/5.7/en/">MySQL documentation</a>. Here are a few to get you started.</p>
+      <p>Check the MySQL version.</p>
       <pre>$ mysql --version</pre>
-      <p>Extended MySQL version information</p>
+      <p>Extended MySQL version information.</p>
       <pre>$ mysqladmin -p -u root version</pre>
-      <p>Check MySQL Server status</p>
+      <p>Check MySQL Server status.</p>
+      <p>(Press 'q' to exit status.)</p>
       <pre>$ service mysql status</pre>
-      <p>Stop MySql</p>
+      <p>Stop MySql.</p>
       <pre>$ sudo systemctl stop mysql.service</pre>
-      <p>Start MySql</p>
+      <p>Start MySql.</p>
       <pre>$ sudo systemctl start mysql.service</pre>
     </div>
   </div>
@@ -120,7 +115,7 @@
       <h2>Reseting Root Password</h2>
     </div>
     <div class="panel-body">
-      <p>I tried three different methods for resetting the root password and none of them worked. I look again for a method that works but in the mean time, put your password somewere safe!</p>
+      <p>I tried three different methods for resetting the root password and none of them worked. It is best to put your password somewere safe!</p>
     </div>
   </div>
 

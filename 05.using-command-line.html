@@ -18,42 +18,47 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <p><b>Using command line, commands with parameters is an essential part of writing code. Are you setting up dev machine for wordpress or like or are you are developer</b></p>
       <p>If you already know how to use the command line you can skip this guide. If you are new to the command line read on.</p>
       <p>Are you wondering how well you need to know the command line to effectively develop applications on Linux? The more you know the better, but you can get started with some basic commands and learn more over time.</p>
       <h2>Why Use the Command Line?</h2>
       <p>That is a good question because in most cases GNOME Ubuntu has a GUI way of doing things. I have two reasons for saying you should learn to use the command line. 1) When you look for how to do something in Linux the answer almost always shows you how to do it with the command line. Check out some of the links in the References section for examples of that. 2) Everyone else on Linux is using it.</p>
       <p>You may not think the second reason is not a very good one and on a kind of gut level I agree with you. However, I have yet to meet a developer who could not use the command line and I think from the perspective of managing how other's view your developer skills, you should be comfortable with the command line. What other's think of your software development skills matters a lot when you want to find a work or get a promotion.</p>
-      <div class="ke-callout ke-callout-danger">
-        <p>There is a way to avoid using the command line most of the time. I am strongly biased against using it but I'm writing this series to inform, not indoctrinate, so here it is.</p>
-        <pre>sudo nautilus</pre>
-        <p>Using this command will open Files with root privileges. It is very powerful and dangerous as you can change pretty much everything, even things that will destroy your system. I don't use it and I advise you to learn to use the command line and gain the understanding of the Ubuntu OS that comes with it.</p>
-      </div>
-      <div class="ke-callout ke-callout-warning">
-        <p>Wherever you see <code>$ </code> type what follows it into terminal.</p>
-        <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see, paying careful attention to every character, especially spaces and capitalization.</p>
-      </div>
-
-      <div class="ke-callout ke-callout-warning">
-        <ol>
-          <li>Everything you do in Terminal is case sensitive. If something doesn't work, be sure to double check the case.</li>
-          <li>You can open multiple tabs in terminal by pressing <kbd>Ctrl-t</kbd>.</li>
-          <li>Spaces in file names require quotes. It is easiest to not use spaces in your file names.</li>
-          <li>You can see all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typing and many typos.
-        </ol>
-      </div>
-
       <h2>Use a Cheatsheet</h2>
       <p>It will help to have a cheatsheet of commands. This can be a text file or it can go into a program such as Evernote or OneNote. Keep it simple so you can add to and refer to it quickly. A cheatsheet listing of all the commands used in this guide is at the bottom of the post.</p>
+    </div>
+  </div>
 
+  <div class="ke-callout ke-callout-danger">
+    <p>There is a way to avoid using the command line most of the time. I am strongly biased against using it but I'm writing this series to inform, not indoctrinate, so here it is.</p>
+    <pre>sudo nautilus</pre>
+    <p>Using this command will open Files with root privileges. It is very powerful and dangerous as you can change pretty much everything, even things that will destroy your system. I don't use it and I advise you to learn to use the command line and gain the understanding of the Ubuntu OS that comes with it.</p>
+  </div>
+  <div class="ke-callout ke-callout-warning">
+    <p>Wherever you see <code>$ </code> type what follows it into terminal.</p>
+    <p>For example, if you see <code>$ ls -la</code>, you type into terminal "ls -la" exactly as you see, paying careful attention to every character, especially spaces and capitalization.</p>
+  </div>
+
+  <div class="ke-callout ke-callout-warning">
+    <ol>
+      <li>Everything you do in Terminal is case sensitive. If something doesn't work, be sure to double check the case.</li>
+      <li>You can open multiple tabs in terminal by pressing <kbd>Ctrl-t</kbd>.</li>
+      <li>Spaces in file names require quotes. It is easiest to not use spaces in your file names.</li>
+      <li>You can see all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typing and many typos.
+    </ol>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
       <h2>Definitions</h2>
+    </div>
+    <div class="panel-body">
       <dl class="dl-horizontal">
-       	<dt>Terminal</dt>
-       	<dd>An application that gives you command line access to the operating system.</dd>
+        <dt>Terminal</dt>
+        <dd>An application that gives you command line access to the operating system.</dd>
         <dt>Command prompt</dt>
-       	<dd>A symbol displayed which indicates the computer is ready for input. For Ubuntu, the command prompt symbol is <code>$</code>.</dd>
-       	<dt>Command line</dt>
-       	<dd>Everything you enter to the right of the command prompt.</dd>
+        <dd>A symbol displayed which indicates the computer is ready for input. For Ubuntu, the command prompt symbol is <code>$</code>.</dd>
+        <dt>Command line</dt>
+        <dd>Everything you enter to the right of the command prompt.</dd>
         <dt>User</dt>
         <dd>'User' can be a name representing a person who uses the computer or an abstract user such as 'cdrom', which is a group containing users who can use the computer's CD-ROM.</dd>
         <dt>Group</dt>
@@ -124,7 +129,7 @@
   <!-- Setup your windows -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>Setup your windows</h3>
+      <h2>Setup your windows</h2>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -147,8 +152,7 @@
   <div class="panel panel-default">
 
     <div class="panel-heading">
-      <h2>The First Command: "ls"</h2>
-      <h2><code>$ ls</code></h2>
+      <h2>The First Command: <code>$ ls</code></h2>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -303,13 +307,13 @@
 
   <!-- $ clear -->
   <div class="panel panel-default">
-    <h2>Let's begin the exercises</h2><br>
     <div class="panel-heading">
-      <h3><code>$ clear</code> Clear Terminal</h3>
+      <h2><code>$ clear</code> Clear Terminal</h2>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
+          <p>Let's begin the exercises.</p>
           <p>Sometimes Terminal is full of text and it is confusing. You can clear the Terminal with the <code>$ clear</code> command.</p>
           <pre>$ ls -l<br>$ clear</pre>
           <p>Use <kbd>up-arrow</kbd> navigate back through previous commands, and then <kbd>down-arrow</kbd> to navigate forward.</p>
@@ -324,7 +328,7 @@
   <!-- $ mkdir -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3><code>$ mkdir</code> Make Directory</h3>
+      <h2><code>$ mkdir</code> Make Directory</h2>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -352,7 +356,7 @@
   <!-- $ cd -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3><code>$ cd</code> Change Directory</h3>
+      <h2><code>$ cd</code> Change Directory</h2>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -429,7 +433,7 @@
   <!-- -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>Creating Files <code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code></h3>
+      <h2>Creating Files <code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code></h2>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -482,7 +486,7 @@
     <!-- $ rm -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3><code>$ rm</code> - Removing files and folders</h3>
+      <h2><code>$ rm</code> - Removing files and folders</h2>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -490,6 +494,7 @@
           <p>There is a <code>rmdir</code> command but I don't find it necessary. You can remove (aka delete) any file or directory using the <code>rm</code> command along with a the option <code>-r</code> for 'recursive'. We will also discuss <code>-f</code> for force.</p>
           <p><code>-r</code> (recursive) will drill down the directory structure and remove everything below the specified node.</p>
           <p><code>-f</code> (force) ignores nonexistent files, missing operands and never prompts the user. What that really means is it will silently go about removing things and not present any warnings or other information to you. I'm tempted to say you should be sure you know what you are deleting before using <code>-f</code> but the truth is, if you are unsure you should not delete anything until you are, and once you are <code>-f</code> will supress messages you don't need to see.</p>
+        </div>
         <div class="col-md-4">
           <!-- empty -->
         </div>
@@ -507,7 +512,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>Issue the ls -l command after each step so you can see what changes.</p>
+          <p>Issue the <code>ls -l</code> command after each step so you can see what changes.</p>
           <p>Remove file1.txt.</p>
           <pre>$ rm file1.txt<br>$ ls -l</pre>
           <p><code>$ rm</code> without <code>-r</code> cannot delete a directory. Try it.</p>
@@ -543,17 +548,16 @@
 
   <!-- $ sudo -->
   <div class="panel panel-default">
-    <h2>$ sudo - "Superuser Do"</h2><br>
-    <blockquote>
-      <b>sudo</b> (superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system. Sudo also logs all commands and arguments.
-      <cite>Source: <a href="http://searchenterpriselinux.techtarget.com/definition/sudo">TechTarget</a></cite>
-    </blockquote>
     <div class="panel-heading">
       <h2><code>$ sudo</code></h2>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
+          <blockquote>
+            <b>sudo</b> (superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system. Sudo also logs all commands and arguments.
+            <cite>Source: <a href="http://searchenterpriselinux.techtarget.com/definition/sudo">TechTarget</a></cite>
+          </blockquote>
           <p>So far we have been working with files owned by the currently log-in user (you). If you want to work with files and directories that you don't own you need to use <b>sudo</b>. Let's create both a directory and a file with <code>sudo</code> and then view the results.</p>
           <pre>$ cd ~/workspace/samplefiles<br>$ sudo mkdir sudorootdir</pre>
           <p>You will be prompted for your password, the same one you log in with.</p>
@@ -642,14 +646,13 @@
 
   <!-- $ rm -->
   <div class="panel panel-default">
-    <h2>Changing Owner, Group & Permissions</h2>
-    <p>Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enormous.</p>
     <div class="panel-heading">
-      <h3><code>$ chown</code> - Change Owner & <code>$ chgrp</code> - Change Group</h3>
+      <h2><code>$ chown</code> - Change Owner & <code>$ chgrp</code> - Change Group</h2>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
+          <p class="ke-callout ke-callout-info">Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enormous.</p>
           <p>Setup sample files.</p>
           <pre>$ sudo touch rootfile.txt<br>$ sudo mkdir rootdir<br>$ ls -l</pre>
           <p>You can see that Owner and Group Owner are both 'root'.</p>
@@ -692,7 +695,7 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3><code>$ chmod</code> - Change Permissions</h3>
+      <h2><code>$ chmod</code> - Change Permissions</h2>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -739,7 +742,7 @@
   <!-- Cheatsheet -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>Linux Command Cheatsheet</h3>
+      <h2>Linux Command Cheatsheet</h2>
     </div>
     <div class="panel-body">
       <table class="table">

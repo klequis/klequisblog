@@ -19,7 +19,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <p>This guide will show you how to install PHP. PHP is a server-side scripting language originally designed for web development but has been adapted to command line scripting and desktop (GUI) applications. We will only be installing the website server-side scripting capabilities.</p>
-      <p>PHP is a hugely popular. By one estimation it is used on over 80% of websites using server-side programming languages. Given the difficulty of data collection, this number may not be accurate, but even if it is off by 20%, it is clear that PHP is very popular.</p>
+      <p>PHP is hugely popular. By one estimation it is used on over 80% of websites using server-side programming languages. Given the difficulty of data collection, this number may not be accurate, but even if it is off by 20%, it is clear that PHP is very popular.</p>
     </div>
   </div>
 
@@ -52,7 +52,7 @@
       <div class="row">
         <div class="col-md-8">
           <p>In a previous post we created a simple Hello World website using the command line. This time, just to provide a different experience, we will do it using a mix of command line and Files. I will provide the instructions for creating the virtual host in brief. If you get stuck, refer to the full post <a href="http://trivalleyhobby.com/klequis/2016/05/04/creating-a-virtualhost/">Creating a Virtual Host</a>.</p>
-          <p class="ke-callout ke-callout-info">You may want to take a quick diversion as newer versions of Files don't provide a way of creating a file from within Files. Follow the steps in <a href="http://trivalleyhobby.com/klequis/2016/07/01/adding-a-new-document-menu-to-the-files-nautilus-right-click-menu/">Adding a "New Document" Menu To The Files (Nautilus) Right-Click Menu</a> and then come back.</p>
+          <p class="ke-callout ke-callout-info">You may want to take a quick diversion as newer versions of Files doesn't provide a way of creating a file from within Files. Follow the steps in <a href="http://trivalleyhobby.com/klequis/2016/07/01/adding-a-new-document-menu-to-the-files-nautilus-right-click-menu/">Adding a "New Document" Menu to the Files (Nautilus) Right-Click Menu</a> and then come back.</p>
           <p>Open Files and navigate to Home > workspace</p>
           <p>Create a directory named "phpinfopage".</p>
         </div>
@@ -76,11 +76,22 @@
       <div class="row">
         <div class="col-md-8">
           <p>Save and close the file.</p>
-          <p>Previously we created the virtual host file from scratch. This time we will copy the existing file and modify it. See <a href="#">post</a> if you don't already have this file.</p>
+          <p>Previously we created the virtual host file from scratch. This time we will copy the existing file and modify it. See <a href="http://trivalleyhobby.com/klequis/2016/05/04/creating-a-virtualhost/">Creating a Virtual Host</a> if you don't already have this file.</p>
+          <p>You need root access to edit files in /sites-available. Therefore, we will use the command line.</p>
           <p>Execute these commands</p>
           <pre>$ cd /etc/apache2/sites-available<br>$ sudo cp helloworld.conf phpinfopage.conf<br>$ sudo gedit phpinfopage.conf</pre>
           <p>Edit the file to appear as the picture, replacing 'Karl' with your user name & 'helloworld' with 'phpinfopage'.</p>
           <p>Save and close the file.</p>
+
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
           <pre>$ sudo -i gedit /etc/hosts</pre>
           <p>Add the below line.</p>
           <pre>127.0.0.1       phpinfopage.localhost</pre>
@@ -91,6 +102,7 @@
           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/004.hostfile.entry.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/install-php/004.hostfile.entry.png" alt="**alt**"></a>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-8">
           <p>Enable the new site and restart Apache.</p>
