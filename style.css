@@ -86,6 +86,11 @@ body {
   color: #1b809e;
 }
 
+.ke-callout-goal {
+  border-left-color: #008000;
+  background-color: white;
+}
+
 blockquote {
   font-size: 1.0em;
   background-color: white;
