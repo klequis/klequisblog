@@ -88,6 +88,9 @@
         <div class="col-md-4">
         </div>
       </div>
+      <p class="ke-callout ke-callout-info">
+        Apache default configuration requires that the defulat page is named index.html, index.cgi, index.pl, index.php, index.xhtml or index.htm. When you launch the site Apache is looking for a page with one of these names. If it doesn't find one, it displays an error.
+      </p>
     </div>
   </div>
 
@@ -207,6 +210,17 @@
             href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.create-virtual-host/006.index.html.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/0619.create-virtual-host/006.index.html.png" alt="editing apache2.conf" />
           </a>
         </div>
+      </div>
+      <div class="ke-callout ke-callout-warning">
+        <h4>Didn't work?</h4>
+        <p>Did you get the Apache2 Ubuntu Default Page or an error instead of the PHPInfo page? It is very likely a typo is to blame.<p>
+        <p>The other remedies listed below should not be necessary, but over the four years I have been working with Apache on Ubuntu I have needed to do one or more of them many times. If fact, while writing this guide my phpInfo site worked in Chrome but not FireFox and clearing everything (history, cookies, etc.) fixed it.</p>
+        <ul>
+          <li>Go through all of the steps again looking for a typo.</li>
+          <li>If you didn't find a typo, try restarting you machine.</li>
+          <li>If you are using FireFox try Chromium or the other way around.</li>
+          <li>Clear all browsing history, cookies ..., everything. Then try again.</li>
+        </ul>
       </div>
     </div>
   </div>
