@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>**title**</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="flint-style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dev-style.css">
+</head>
+
+<body>
+
+
+/*
+ *
+ *
+ * It seems I didn't need this after all. I had a bad Atom isntallation. I reinstalled and atom was listed under addition applicaztions so all is good.
+ * If I want to do this in the future this article may hold the answer: https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles
+ *
+ */
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+
+  <div class="ke-callout ke-callout-danger">
+    <ul>
+      <li>complete text</li>
+      <li>pending read out-loud</li>
+      <li>pending spelling</li>
+      <li>pending punctuation</li>
+    </ul>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This guide will show you how to create a shortcut for an application that does not appear in the context (i.e., right-click) menu under Open With or Open With &gt; Other Application... Although the process below is not very hard, this is one area where I wish there was a simplier and quicker method. Fortunately, the majority of applications installed create their own. Unfortunately Atom text editor did not, so I use that in this example.</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Title</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Create a new file named 'atom.desktop' in /usr/share/applications.</p>
+          <pre>$ sudo gedit /usr/share/applications/atom.desktop</pre>
+          <p>Paste the below text into the new file.</p>
+          <pre>[Desktop Entry]<br>Name=Atom<br>Comment=A hackable text editor for the 21st Century.<br>GenericName=Text Editor<br>Exec=/usr/share/atom/atom %U<br>Icon=atom<br>Type=Application<br>StartupNotify=true<br>Categories=GNOME;GTK;Utility;TextEditor;Development;<br>MimeType=text/plain;</pre>
+          <p>Save and close the file.</p>
+          <p>Right click on a file, a .txt or .html would be a good choice, and try to open it with Atom</p>
+        </div>
+        <div class="col-md-4">
+  	<!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+[Desktop Entry]
+Name=Atom
+Comment=A hackable text editor for the 21st Century.
+GenericName=Text Editor
+Exec=/usr/share/atom/atom %U
+Icon=atom
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;TextEditor;Development;
+MimeType=text/plain;
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
