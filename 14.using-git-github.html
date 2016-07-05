@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>14.command line</title>
+  <title>14.git github</title>
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="flint-style.css">
   <link rel="stylesheet" href="style.css">
@@ -21,16 +21,287 @@
       <li>pending read out-loud</li>
       <li>pending spelling</li>
       <li>pending punctuation</li>
+      <li>Remove picture comments</li>
+      <li>Remove this list</li>
     </ul>
   </div>
 
+
+<div class="panel panel-default">
+
+  <h2>Using Git with GitHub</h2>
+
+  <div class="panel-body">
+    <p>This guide will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used it before. There is a very good online book ffor using Git. If you are new to Git, reading the first three chapters will be well worth the time. See the See Also section at the bottom of the post.</p>
+    <p>There are different ways you can create a repository and work with it. The process below is one possible process and one that I think it is easy for a new Git/GitHub user to follow and learn.</p>
+    <p class="ke-callout ke-callout-info">I will be using the email account demoacct.klequis@gmail.com for this guide. When following along, replace this email address with yours. Please note that all email sent to this account is automatically deleted without review.</p>
+  </div>
+</div>
+
+
 https://help.ubuntu.com/lts/serverguide/git.html
 
-sudo apt-get update
-sudo apt install git
-git config --global user.name "Your Name"
-git config --global user.email "youremail@domain.com"
-git config --list
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Installing Git</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          sudo apt-get update
+          sudo apt install git
+        </div>
+        <div class="col-md-4">
+  	      pic.001.install.git.png
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Configuring Git</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          git config --global user.name "Your Name"
+          git config --global user.email "youremail@domain.com"
+          git config --list
+        </div>
+        <div class="col-md-4">
+  	      pic.002.git.config.png
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Setup GitHub</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Go to <a href="https://github.com">github.com</a> and create an account.</p>
+          <p>Once you verify your email address you will be redirected to a new page. Click the <button class="btn btn-default btn-xs">Start a project</button>.</p>
+          <p>
+        </div>
+        <div class="col-md-4">
+  	       pic.003.github.start.project
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p class="ke-callout ke-callout-warning">
+            I am going to create a repository named 'git-github-tutorial'. You can give your's any name you prefer or use the same name as me. However, in the steps below I will refer to 'git-github-tutorial' which you should replace with your repository name.
+          </p>
+          <p>Fill in a repository name.</p>
+          <p>Make it public. Creating a private repository requires a paid account.</p>
+          <p>Check 'Initialize this repository with a README'. All projects should have a readme.md file regardless of how simple the project or readme is.</p>
+        </div>
+        <div class="col-md-4">
+          pic.004.github.create.repository.png
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Using Git With GitHub</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h3>BLASTING THROUGH</h3>
+          <p>We are going to 'clone' the repository in GitHub to our local machine. Git will create a directory with the name of the repository. So that Git will create this in ~/workspace, switch to that directory now.</p>
+          <pre>cd ~/workspace</pre>
+          <p>Switch back to your browser. If you are not still on your repository's home page, go there now.</p>
+          <p>Click the green <button class="btn btn-default btn-xs">Clone or download</button> button, then click the small clipboard icon which will copy the repository's URL to the clipboard.</p>
+        </div>
+        <div class="col-md-4">
+          pic.005.github.copyurl.png
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>In Terminal, execute the below command to create a local copy of the repository. After typing 'git clone ' you can right-click on the terminal window and paste the URL.</p>
+          <pre>$ git clone <i>yourURL</i>
+        </div>
+        <div class="col-md-4">
+        	pic.006.git.clone.png
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>To check the status of your repository execute the below command.</p>
+          <pre>$ git status</pre>
+          <p>Link many specialized subjects, Git has its own vocabulary and understanding Git well enough to make use of it requires that you learn it. Here is what some of the words & phrases in the 'git status' results mean:
+          <dl class="dl-horizontal">
+            <dt>master</dt>
+            <dd>Git is linke a tree. You can create branches to you tree. The default branch is called 'master'. Look at your GitHub home page and find the dropdown that says "Branch: master"</dd>
+            <dt>origin</dt>
+            <dd>'orign' is a name has associated with the repository on your local machine. As we will see later, it holds the URL to the repository on GitHub.</dd>
+            <dd>'nothing to commit'</dd>
+            <dt>In a semple sense this means, you have nothing ready to make permenant in the repository. In Git language it says you have nothing in the repository's staging area</dt>
+            <dt>'working directory is clean'</dt>
+            <dd>This means there is nothing in your project's directory that is not already in the Git repository on you local machine.</dd>
+          </dl>
+          <p class="ke-callout ke-callout-info">Note that the status message only tells you about the state of the repository on you local machine, it says nothing about the repository on GitHub.</p>
+        </div>
+        <div class="col-md-4">
+          pic.007.git.status.png
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Wroking with Your Project</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
+        </div>
+        <div class="col-md-4">
+  	       <!-- empty -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Open Files and navigate to ~/workspace. Right-click on /git-github-tutorial and choose 'Open with Atom'. If Atom is not in the list click <button class="btn btn-default btn-xs">View All Applications</button>, then select Atom. Atom will open the folder a display all the project's files and folders.</p>
+          <p>So far the project structure is very simple. You can see the README.md file you created when creating the repository on GitHub and there is a .git directory which is a hidden folder containing the Git files.</p>
+
+        </div>
+        <div class="col-md-4">
+          pic.008.project.in.atom.png
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>Let's add a file to the project and then to Git.</p>
+          <p>In Atom, right-click on the project directory and choose <button class="btn btn-default btn-xs">New file</button>.</p>
+          <p>Make the file contents as show as below.</p>
+          <pre>&lt;h1&gt;Using Git with GitHub&lt;/h1&gt;<br>&lt;p class="green-text"&gt;This is some green text.&lt;/p&gt;<br>&lt;p class="blue-text"&gt;Some blue text here.&lt;/p&gt;</pre>
+        </div>
+        <div class="col-md-4">
+          pic.pp9.new.file.in.project.png
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Here are some definitions to help with the next step. These are 'plain-language' definitions, not official Git definitions.</p>
+          <dl class="dl-horizontal">
+            <dt>Untracked</dt>
+            <dd>An untracked file has never been added to Git.</dd>
+            <dt>Committed</dt>
+            <dd>A file that has been put into Git using <code>$ git commit</code></dd>
+            <dt>Staged</dt>
+            <dd>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on a new file or a perviously committed file that has been since been changed.</dd>
+          </dl>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <h3><code>$ git status</code></h3>
+          <p>Switch to Terminal and make you current directory ~/workspace/git-github-tutorial.</p>
+          <pre>$ cd ~/workspace/git-github-tutorial</pre>
+          <p>Check your repositories status when the below command></p>
+          <pre>$ git status</pre>
+          <p>Here is a view of words and phrases in the status</p>
+          <dl class="dl-horizontal">
+            <dt>Your branch is up-to-date with 'origin/master'</dt>
+            <dd>While you have added a file to the project directory you have not added the file to the local Git repository so in fact the local and GitHub repositories are still the same.</dd>
+            <dt>Untracked files</dt>
+            <dd>index.html has not been added to Git yet so it is called 'untracked'</dd>
+            <dt>nothing added to commit</dt>
+            <dd>As you will see and do in a moment, 'commit' or 'committed' means 'has been added to Git'.
+
+        </div>
+        <div class="col-md-4">
+          pic.010.git.status.png
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <h3><code>$ git add</code></h3>
+        </div>
+        <div class="col-md-4">
+          <!-- empty -->
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+Git GUI Tools
+https://git-scm.com/downloads/guis
+
+
+
+
+
+
+
+Case 3: Merge project files on you local machine & already in Git with project files already in Git
+This is not the right way to do it.
+Create the repository on GitHub
+Copy the repositories URL
+$ git config --global user.name "YOUR NAME"
+$ git config --global user.email "YOUR EMAIL ADDRESS"
+Explicitly add a remote
+Syntax: git remote add <shortname> <url>
+$ git remote add ubuntuvm https://github.com/klequis/create-ubuntu-vm.git
+Show Your Remote(s)
+git$ git remote
+$ git remote -v
+To merge the repository with what is local (need to do this or the 'push' will be rejected
+pull is a shorthand that executes both fetch and merge
+Syntax: git pull [options] [<repository> [<refspec>…​]]
+<repository> the name of a remote
+E.g., $ git pull ubuntuvm master
+git will ask for an extended comment
+"git push"
+Syntax: git push [remote-name] [branch-name]
+We are currently using the "master" branch
+Git the requited information
+$ git status - will tell you which branch you are on
+$ git remote -v will tell you the remote name and the URL for push
+$ git push ubuntuvm master
+Go to the GitHub page. You should see all the project's files and folders there
+To recursively add all the project files and folders
+$ git add --all
+Also -v which shows the URLs that Git has stored for the shortname
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>See Also</h2>
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li><a href="https://git-scm.com/documentation">Git documentation</a>, git-scm.com</li>
+        <li><a href="https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf">Git Cheat Sheet</a>, GitHub</li>
+        <li><a href="https://git-scm.com/docs">Git Reference Manual</a>, git-scm.com</li>
+      </ol>
+    </div>
+  </div>
+
+
 
 </div>
 
