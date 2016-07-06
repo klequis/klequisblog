@@ -47,10 +47,7 @@ body {
   border-radius: 3px;
   border-left-color: #999999;
 }
-.ke-callout h4 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
+
 .ke-callout p:last-child {
   margin-bottom: 0;
 }
@@ -68,9 +65,16 @@ body {
   border-left-color: #ce4844;
   background-color: white;
 }
+
+.ke-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
 .ke-callout-danger h4 {
   color: #ce4844;
 }
+
 .ke-callout-warning {
   border-left-color: #ffe202;
   background-color: white;
@@ -89,6 +93,10 @@ body {
 .ke-callout-goal {
   border-left-color: #008000;
   background-color: white;
+}
+
+.ke-callout-goal h4 {
+  color: #008000;
 }
 
 blockquote {
