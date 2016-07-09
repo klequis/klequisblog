@@ -551,34 +551,40 @@ https://git-scm.com/downloads/guis
 
 
 Case 3: Merge project files on you local machine & already in Git with project files already in Git
-This is not the right way to do it.
-Create the repository on GitHub
-Copy the repositories URL
-$ git config --global user.name "YOUR NAME"
-$ git config --global user.email "YOUR EMAIL ADDRESS"
-Explicitly add a remote
-Syntax: git remote add <shortname> <url>
-$ git remote add ubuntuvm https://github.com/klequis/create-ubuntu-vm.git
-Show Your Remote(s)
-git$ git remote
-$ git remote -v
-To merge the repository with what is local (need to do this or the 'push' will be rejected
-pull is a shorthand that executes both fetch and merge
-Syntax: git pull [options] [<repository> [<refspec>…​]]
-<repository> the name of a remote
-E.g., $ git pull ubuntuvm master
-git will ask for an extended comment
-"git push"
-Syntax: git push [remote-name] [branch-name]
-We are currently using the "master" branch
-Git the requited information
-$ git status - will tell you which branch you are on
-$ git remote -v will tell you the remote name and the URL for push
-$ git push ubuntuvm master
-Go to the GitHub page. You should see all the project's files and folders there
-To recursively add all the project files and folders
-$ git add --all
-Also -v which shows the URLs that Git has stored for the shortname
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Pushing to GitHub <code>$ git push</code></h2>
+  </div>
+  <div class="panel-body">
+    Explicitly add a remote
+    Syntax: git remote add <shortname> <url>
+    $ git remote add ubuntuvm https://github.com/klequis/create-ubuntu-vm.git
+    Show Your Remote(s)
+    git$ git remote
+    $ git remote -v
+    To merge the repository with what is local (need to do this or the 'push' will be rejected
+    pull is a shorthand that executes both fetch and merge
+    Syntax: git pull [options] [<repository> [<refspec>…​]]
+    <repository> the name of a remote
+    E.g., $ git pull ubuntuvm master
+    git will ask for an extended comment
+    "git push"
+    Syntax: git push [remote-name] [branch-name]
+    We are currently using the "master" branch
+    Git the requited information
+    $ git status - will tell you which branch you are on
+    $ git remote -v will tell you the remote name and the URL for push
+    $ git push ubuntuvm master
+    Go to the GitHub page. You should see all the project's files and folders there
+    To recursively add all the project files and folders
+    $ git add --all
+    Also -v which shows the URLs that Git has stored for the shortname
+
+
+  </div>
+</div>
+
 
   <div class="panel panel-default">
     <div class="panel-heading">
