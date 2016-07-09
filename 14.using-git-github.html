@@ -341,8 +341,67 @@
 
     </div>
   </div>
+<!--
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>So far we have created a simple website **make sure you have** and made use of Git to get an overview of basic Git functionalty. In the sections that follow we go into detail on the 4 commands used so far as well as <code>$ git push</code> which will be next.</p>
+    </div>
+  </div>
+-->
+
+  <div class="ke-callout ke-callout-info">
+    <h2>Commands in Detail</h2>
+    <p>So far we have created a simple website **make sure you have** and made use of Git to get an overview of basic Git functionalty. In the sections that follow we go into detail on the 4 commands used so far as well as <code>$ git push</code> which will be next.</p>
+  </div>
 
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Pushing to GitHub <code>$ git push</code></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>To move you files to GitHub use <code>$ git push</code>. We will first push our project changes to GitHub and then dive into an explanation of doing so.</p>
+          <p>Execute the below command.</p>
+          <pre>$git push origin master</pre>
+          <p>When prompted, enter you GitHub user name and password.</p>
+          <p>That's it, your chnages are already in the GitHub repository! Take a look at your project's GitHub page to confirm the files are added.</p>
+          <p>Someone recently sent around an articale that said to people writing tutorials, 'Never say anything is simple'. I think this is great advice. After you have done something complex enough to fully understand it, it does seem simple. But if you are new to something as complex and non-intuitive as Git it isn't simple at all. So I am not going to say <code>$ git push</code> is simple. I will say that if you put aside the need to understand what it did, using <code>$ git push</code> to move changes to GitHub was pretty easy. It is only one command to remember and if you are feeling confused I think it is worth taking a moment to realize that we only used 3 commands, add, commit and push.</p>
+        </div>
+        <div class="col-md-4">
+          pic.015.01.git.push.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>Let's take a closer look at <code>$ git push</code> and its output.</p>
+
+          *outline**
+            $ git push origin master
+            Master is branch ... know already
+            origin is the name of remote
+            Remote, explain 'remote'
+            url's - make clear that they are the git hub repository url's and compare them to the actual url's to make sure you are correct.
+            3 objects
+            master -> master from local master to remote master
+          */outline**
+          <p>To understand origin you need to understand 'remote'. Remote refers to the repository on GitHub. Execute the below command.</p>
+          <pre>$ git remote -v</pre>
+          <p>Given the results in the screenshot it appears that 'origin' is a name for something that holds a URL, and it is. It is the name of the Git repository on GitHub, but not the name you gave it. Git assigned this name when you did the clone. You can change it if you want to but for the moment there is no need to.</p>
+          <p>You'll note that there is 'fetch' and 'push'. These are the URLs that Git will use to fetch data from and push data to GitHub.</p>
+          <h4>master -&gt; master</h4>
+          <p>This means we move date from the master branch in our local repository to the master branch on the remote repository (i.e., the repository on GitHub).</p>
+        </div>
+        <div class="col-md-4">
+          pic.016.01.git.remote.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
 ===================================================
 
       <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
@@ -456,44 +515,7 @@
     </div>
   </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Pushing to GitHub</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <p>To move you files to GitHub use <code>$ git push</code>. We will first push our project changes to GitHub and then dive into an explanation of doing so.</p>
-          <p>Execute the below command.</p>
-          <pre>$git push origin master</pre>
-          <p>When prompted, enter you GitHub user name and password.</p>
-          <p>That's it, your chnages are already in the GitHub repository!</p>
-        </div>
-        <div class="col-md-4">
-          pic.015.01.git.push.png
-          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png" alt="**alt**"></a>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-8">
-          <h3><code>$ git push</code> Explained</h3>
-          <p>Someone recently sent around an articale that said to people writing tutorials, 'Never say anything is simple'. I think this is great advice. After you have done something complex enough to fully understand it, it does seem simple. But if you are new to something as complex and non-intuitive as Git it isn't simple at all. So I am not going to say <code>$ git push</code> is simple. I will say that if you put aside the need to understand what it did, using <code>$ git push</code> to move changes to GitHub was pretty easy. It is only one command to remember and if you are feeling confused I think it is worth taking a moment to realize that we only used 3 commands, add, commit and push.</p>
-          <h4>'origin' and 'remote'</code></h4>
-          <p>To understand origin you need to understand 'remote'. Remote refers to the repository on GitHub. Execute the below command.</p>
-          <pre>$ git remote -v</pre>
-          <p>Given the results in the screenshot it appears that 'origin' is a name for something that holds a URL, and it is. It is the name of the Git repository on GitHub, but not the name you gave it. Git assigned this name when you did the clone. You can change it if you want to but for the moment there is no need to.</p>
-          <p>You'll note that there is 'fetch' and 'push'. These are the URLs that Git will use to fetch data from and push data to GitHub.</p>
-          <h4>master -&gt; master</h4>
-          <p>This means we move date from the master branch in our local repository to the master branch on the remote repository (i.e., the repository on GitHub).</p>
-        </div>
-        <div class="col-md-4">
-          pic.016.01.git.remote.png
-          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png" alt="**alt**"></a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="ke-callout ke-callout-goal">
     <h4>Congratulations - you are now using Git & GitHub</h4>
