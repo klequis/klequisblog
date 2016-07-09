@@ -10,11 +10,15 @@
   <link rel="stylesheet" href="flint-style.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dev-style.css">
+  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+
 </head>
 
 <body>
 
 <div class="container-fluid">
+
+
   <div class="ke-callout ke-callout-danger">
     <ul>
       <li>complete text</li>
@@ -26,17 +30,40 @@
     </ul>
   </div>
 
-<h2>Using Git with GitHub Quick Start</h2>
+  <h2>Using Git with GitHub Quick Start</h2>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <p>This guide will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used it before. There is a very good <b>free</b> online book for using Git. If you are new to Git, reading at least the first three chapters will be well worth your time. See the 'See Also' section at the bottom of the post for a link to the book.</p>
-    <p>There are different ways you can create a Git repository and work with it. The process below is one possible process, and one that I think it is easy for a new Git/GitHub user to follow and learn from. Long-term, this is not the way to use Git. As I mention at the end of this tutorial, there is much more to Git and more to learn before you can effectively manage the software life-cycle and collaborate with other developers.</p>
-    <p class="ke-callout ke-callout-info">I will be using the email account demoacct.klequis@gmail.com for this guide. When following along, replace this email address with yours. Please note that all email sent to this account is automatically deleted without review.</p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This guide will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used it before. There is a very good <b>free</b> online book for using Git. If you are new to Git, reading at least the first three chapters will be well worth your time. See the 'See Also' section at the bottom of the post for a link to the book.</p>
+      <p>There are different ways you can create a Git repository and work with it. The Git/GitHub workflow in this tutorial is one possible process, and one that I think it is easy for a new Git/GitHub user to follow and learn from. Long-term, this is not the way to use Git. As I mention at the end of this tutorial, there is much more to Git and more to learn before you can effectively manage the software life-cycle and collaborate with other developers.</p>
+      <h2>Is Git is Hard?</h2>
+      <p>Once you understand the basics of Git it will no longer seem hard. This tutorial will get you on you way. We will use only **five** Git commands to accomplish a complete Git workflow. The commands are:</p>
+      <pre>$ git clone<br>$ git status<br>$ git add<br>$ git commit<br>$ git push</pre>
 
+      <h2>Branching</h2>
+      <p>I left branching out of this tutorial in order to keep it simple. If you were working solo you <i>could</i> use Git without branching, but I don't recommend it. Branching is one of Git's most powerful features and you should set about learing it as soon as you are comfortable with the concepts in this turotial. See the links at the bottom of the page for resources to learn from.<p>
+
+      <p class="ke-callout ke-callout-info">I will be using the email account demoacct.klequis@gmail.com for this guide. When following along, replace this email address with yours. Please note that all email sent to this account is automatically deleted without review.</p>
+    </div>
   </div>
-</div>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Contents</h2>
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li>Installing Git</li>
+        <li>Configuring Git</li>
+        <li>Setup GitHub</li>
+        <li>Using Git with GitHub</li>
+        <li>Definitions</li>
+        <li>Document Life-cycle</li>
+        <li>**********************</li>
+        <li>**********************</li>
+        <li>Pushing to GitHub</li>
+    </div>
+  </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -49,7 +76,7 @@
         </div>
         <div class="col-md-4">
   	      pic.001.install.git.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png" alt="**alt**"></a>
         </div>
       </div>
     </div>
@@ -66,7 +93,7 @@
         </div>
         <div class="col-md-4">
   	      pic.002.git.config.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png" alt="**alt**"></a>
         </div>
       </div>
     </div>
@@ -85,7 +112,7 @@
         </div>
         <div class="col-md-4">
   	       pic.003.github.start.project.png
-           <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png" alt="**alt**"></a>
+           <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png" alt="**alt**"></a>
         </div>
       </div>
       <div class="row">
@@ -99,7 +126,7 @@
         </div>
         <div class="col-md-4">
           pic.004.github.create.repository.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png" alt="**alt**"></a>
         </div>
       </div>
     </div>
@@ -120,7 +147,7 @@
         </div>
         <div class="col-md-4">
           pic.005.github.copyurl.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/005.github.copyurl.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/005.github.copyurl.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/005.github.copyurl.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/005.github.copyurl.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -131,7 +158,7 @@
         </div>
         <div class="col-md-4">
         	pic.006.git.clone.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/006.git.clone.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/006.git.clone.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/006.git.clone.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/006.git.clone.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -155,37 +182,178 @@
         </div>
         <div class="col-md-4">
           pic.007.git.status.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/007.git.status.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/007.git.status.png" alt="**alt**"></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Wroking with Your Project</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <p>I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
-        </div>
-        <div class="col-md-4">
-  	       <!-- empty -->
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/007.git.statu.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/007.git.status.png" alt="**alt**"></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>Open Files and navigate to ~/workspace. Right-click on /git-github-tutorial and choose 'Open with Atom'. If Atom is not in the list click <button class="btn btn-default btn-xs">View All Applications</button>, then select Atom. Atom will open the folder a display all the project's files and folders.</p>
+          <p>As a way of seeing what <code>$ git clone</code> put on your local machine, let's open the project directory with Atom.</p>
+          <p>Open Files and navigate to ~/workspace. Right-click on /git-github-tutorial and choose 'Open with Atom'. If Atom is not in the list click <button class="btn btn-default btn-xs">View All Applications</button>, then select Atom. Atom will open the folder and display all the project's files and folders. As you can see, this is identical to what you put in GitHub.</p>
           <p>So far the project structure is very simple. You can see the README.md file you created when creating the repository on GitHub and there is a .git directory which is a hidden folder containing the Git files.</p>
 
         </div>
         <div class="col-md-4">
           pic.008.project.in.atom.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/008.project.in.atom.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/008.project.in.atom.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/008.project.in.atom.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/008.project.in.atom.png" alt="**alt**"></a>
         </div>
       </div>
+      <p class="ke-callout ke-callout-warning">We will cover how to move changes made to the local repository back to GitHub later in this post.</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Definitions</h2>
+    </div>
+    <div class="panel-body">
+      <p>Here are some definitions to help with the next steps.</p>
+      <dl class="dl-horizontal">
+        <dt>Working Directory</dt>
+        <dd>'Working directory' is used to refer to files in the project's folder that are currently in a state other than committed. It contains all the files from one version of the project. In our example, the working directory is ~/workspace/git-github-tutorial. It is also the project's root directory.</dd>
+        <dt>Staging Area</dt>
+        <dd>The 'staging area' is not actually an 'area'. It is a file that tracks files that have been added to the staging area with <code>$ git add</code>.</p></dd>
+        <dt>Untracked (file)</dt>
+        <dd>An untracked is a file in the working directory that has not been added to Git.</dd>
+        <dt>Tracked (file)</dt>
+        <dd>A tracked file is a file that has been added to the Git repository with <code>$ git add</code>.</dd>
+        <dt>Staged (file)</dt>
+        <dd>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on an untracked or modified file.</dd>
+        <dt>Committed (file)</dt>
+        <dd>A staged file that has moved to a committed state by using <code>$ git commit</code>.</dd>
+        <dt>Modified (file)</dt>
+        <dd>A modified file is a tracked file that has been changed since it was last committed.</dd>
+        <dt>Repository ("repo")</dt>
+        <dd>A repository can be thought of as a Git database. It is a complete copy of your project with all history.
+        <dt>Local Repository</dt>
+        <dd>The 'local repository' is on your local machine in a /.git directory. In our example the repository is ~/workspace/git-github-tutorial/.git. The '.' before 'git' in .git means it is a hidden directory. To see it using Terminal, use <code>$ ls -la</code> where -a means 'show hidden files'.</dd>
+        <dt>Remote Repository</dt>
+        <dd>The remote repsitory is a repository on a remote server. In our example, the remote repository is the one we created on GitHub. GitHub is not the only place where a remote repository can reside.</dd>
+      </dl>
+      <table id="git-structure">
+        <tr>
+          <td class="git-structure-td-left git-structure-red">Wroking Directory<br>(~/workspace/git-git-hub-tutorial)</td>
+          <td class="git-structure-td-right git-structure-red">- Untracked files are red<br>- Tracked but modified files are red</td>
+        </tr>
+        <tr class="tbl-row-spacer">
+        </tr>
+        <tr>
+          <td class="git-structure-td-left git-structure-green">Staging Area<br>(is really a file)</td>
+          <td class="git-structure-td-right git-structure-green">- Staged files are green</td>
+        </tr>
+        <tr class="tbl-row-spacer">
+        </tr>
+        <tr>
+          <td class="git-structure-td-left git-structure-black">Local Repository<br>(~/workspace/git-github-tutorial/.git)</td>
+          <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
+        </tr>
+        <tr class="tbl-row-spacer">
+        </tr>
+        <tr>
+          <td class="git-structure-td-left git-structure-black">GitHub Repository<br>(https://github.com/demoacct-klequis/git-github-tutorial.git)</td>
+          <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Document Life-cycle</h2>
+    </div>
+    <div class="panel-body">
+      <p>We will be using the commands <code>$ git add</code> & <code>$ git commit</code> to move the files through their life-cycle. Don't worry about what the commands mean just yet. I'll go into them in more detail later.</p>
+      <table class="git-lifecycle">
+        <tr>
+          <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Untracked</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
+        </tr>
+      </table>
+      <table class="git-lifecycle">
+        <tr>
+          <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Modified</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
+        </tr>
+      </table>
+      <ul>
+        <li>In the output of <code>$ git add</code> modified and untracked files are in red text.</li>
+        <li>When you add a new file to the working directory it is an 'untracked' file.</li>
+        <li>When you modify a previously committed file it becomes 'modified'.</li>
+        <li>When you include a modified or untracked file in the <code>$ git add</code> command it becomes 'staged'.</li>
+        <li>When the <code>$ git commit</code> command is executed, all staged files become committed. Commited files are not show in the output of <code>$ git status</code>.</li>
+      </ul>
+
+      <p>Let's setup some files to explore the various states.</p>
+      <p>In Terminal, make sure the current directory is ~/workspace/git-github-tutorial and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
+      <pre>$ cd ~/workspace/git-github-tutorial<br>$ echo '&lt;h3&gt;index.html&lt;/h3&gt;' &gt; index.html<br>$ mkdir css<br>$ > css/style.css</pre>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>To see the state of the files you have committed, execute these two commands in Terminal</p>
+          <pre>$ git status<br>$ git status css/</pre>
+          <p>index.html, style.css and the directory /css are all untracked so they are in red text.</p>
+        </div>
+        <div class="col-md-4">
+          pic.017.01.post.git.clone.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/017.01.post.git.clone.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/017.01.post.git.clone.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Add index.html to the staging area.</p>
+          <pre>$ git add index.html<br>$ git status</pre>
+          <p>Now that it is 'staged', index.html is in green text. /css and everthing below it are still untracked.</p>
+        </div>
+        <div class="col-md-4">
+          pic.018.01.git.add.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/018.01.git.add.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/018.01.git.add.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Add all the untracked files and folders to the staging area</p>
+          <pre>$ git add --all<br>$ git status</pre>
+          <p>All untracked files are now in the staging area. Git will also keep track of the directory structure so that style.css will be in the /css directory.</p>
+        </div>
+        <div class="col-md-4">
+          pic.019.01.git.addall.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/019.01.git.addall.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/019.01.git.addall.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>When you use <code>$ git commit</code> all files in the staging area are committed.</p>
+          <pre>$ git commit -m "initial commit"<br>$ git status</pre>
+          <p>-m means 'message'. You should add a message that describes what changes are being commited to every commit. It is a common convention when committing files for the first time to use the comment 'initial commit'.</p>
+          <p>As you can see, committed files do not show in the <code>$ git status</code> output.</p>
+        </div>
+        <div class="col-md-4">
+          pic.020.01.git.commit.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/020.01.git.commit.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/020.01.git.commit.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+===================================================
+
+      <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
+
+
+
+
+
+
+      <!--
+
 
       <div class="row">
         <div class="col-md-8">
@@ -196,25 +364,10 @@
         </div>
         <div class="col-md-4">
           pic.009.new.file.in.project.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/009.new.file.in.project.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/009.new.file.in.project.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/009.new.file.in.project.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/009.new.file.in.project.png" alt="**alt**"></a>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-8">
-          <p>Here are some definitions to help with the next step. These are 'plain-language' definitions, not official Git definitions.</p>
-          <dl class="dl-horizontal">
-            <dt>Untracked</dt>
-            <dd>An untracked file has never been added to Git.</dd>
-            <dt>Committed</dt>
-            <dd>A file that has been put into Git using <code>$ git commit</code></dd>
-            <dt>Staged</dt>
-            <dd>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on a new file or a perviously committed file that has been since been changed.</dd>
-          </dl>
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div>
+    -->
 
       <div class="row">
         <div class="col-md-8">
@@ -235,7 +388,7 @@
         </div>
         <div class="col-md-4">
           pic.010.git.status.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -248,7 +401,7 @@
         </div>
         <div class="col-md-4">
           pic.011.git.add.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -262,7 +415,7 @@
         </div>
         <div class="col-md-4">
           pic.012.git.commit.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -286,7 +439,7 @@
         </div>
         <div class="col-md-4">
           pic.013.git.commit.closer.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -297,7 +450,7 @@
         </div>
         <div class="col-md-4">
           pic.014.three.insertions.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/014.three.insertions.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/014.three.insertions.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/014.three.insertions.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/014.three.insertions.png" alt="**alt**"></a>
         </div>
       </div>
     </div>
@@ -318,7 +471,7 @@
         </div>
         <div class="col-md-4">
           pic.015.01.git.push.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png" alt="**alt**"></a>
         </div>
       </div>
 
@@ -336,7 +489,7 @@
         </div>
         <div class="col-md-4">
           pic.016.01.git.remote.png
-          <a href="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="http://trivalleyhobby.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png" alt="**alt**"></a>
         </div>
       </div>
     </div>
