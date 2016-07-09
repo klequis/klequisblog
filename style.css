@@ -272,3 +272,69 @@ div.row + div.row {
 .container-fluid {
   padding-left: 0 !important;
 }
+
+/* table git-structure */
+#git-structure td {
+  vertical-align: middle;
+}
+.tbl-row-spacer {
+  height: 10px;
+  border-color: none;
+}
+
+.git-structure-td-left {
+  text-align: center;
+  border: 1.0px solid;
+  border-right-width: 5px;
+  border-radius: 3px;
+}
+td.git-structure-td-left.git-structure-red {
+  border-color: red;
+}
+td.git-structure-td-left.git-structure-green {
+  border-color: green;
+}
+td.git-structure-td-left.git-structure-black {
+  border-color: black;
+}
+
+.git-structure-td-right {
+  text-align: left;
+  border: none;
+}
+
+table.git-lifecycle {
+  /*width:70%;*/
+  max-width: 450px;
+}
+table.git-lifecycle td {
+  vertical-align: middle;
+  /*background-color: orange;*/
+  /*text-align: left;*/
+  /*padding: 0px;*/
+  width:1%;
+  border:none;
+}
+
+table.git-lifecycle td i {
+  vertical-align: middle;
+}
+
+.lifecycle-new {
+  color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.lifecycle-staged {
+  color: green;
+}
+
+.lifecycle-committed {
+
+}
+
+.td-align-center {
+  align-items: center;
+  text-align: center;
+}
