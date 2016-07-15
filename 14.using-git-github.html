@@ -34,7 +34,7 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>This guide will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used it before. There is a very good <b>free</b> online book for using Git. If you are new to Git, reading at least the first three chapters will be well worth your time. See the 'See Also' section at the bottom of the post for a link to the book.</p>
+      <p>This guide will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used Git before. There is a very good <b>free</b> online book for using Git. If you are new to Git, reading at least the first three chapters will be well worth your time. See the 'See Also' section at the bottom of the post for a link to the book.</p>
       <p>There are different ways you can create a Git repository and work with it. The Git/GitHub workflow in this tutorial is one possible process, and one that I think it is easy for a new Git/GitHub user to follow and learn from. Long-term, this is not the way to use Git. As I mention at the end of this tutorial, there is much more to Git and more to learn before you can effectively manage the software life-cycle and collaborate with other developers.</p>
       <h2>Is Git is Hard?</h2>
       <p>Once you understand the basics of Git it will no longer seem hard. This tutorial will get you on you way. We will use only **five** Git commands to accomplish a complete Git workflow. The commands are:</p>
@@ -42,6 +42,11 @@
 
       <h2>Branching</h2>
       <p>I left branching out of this tutorial in order to keep it simple. If you were working solo you <i>could</i> use Git without branching, but I don't recommend it. Branching is one of Git's most powerful features and you should set about learing it as soon as you are comfortable with the concepts in this turotial. See the links at the bottom of the page for resources to learn from.<p>
+
+      <h2>Why Use the Command Line</h2>
+      <p>There are GUI/visual tools for Git and I do not in any way discourage you from using them. However, when you learn to use Git via the command line you get a fuller understanding of Git. Once you learn Git via the command line you can they adopt a visual tool, but it is very possible you will not feel the need to do so. Additionally, if you are following the **series** then you are working on a Linux machine. While you can use Linux with very little use of the command line, everywhere you go for help, for example StackExchange or Ask Ubuntu forums, the suggested solution most often envolves using the command line.</p>
+
+      <p>If you don't know how to use the command line you can still follow this tutorial. Just type in the commands exactly as show and it will work. However, the tutorial **this tutorial** is good preperation.</p>
 
       <p class="ke-callout ke-callout-info">I will be using the email account demoacct.klequis@gmail.com for this guide. When following along, replace this email address with yours. Please note that all email sent to this account is automatically deleted without review.</p>
     </div>
@@ -118,10 +123,10 @@
       <div class="row">
         <div class="col-md-8">
           <p class="ke-callout ke-callout-warning">
-            I am going to create a repository named 'git-github-tutorial'. Because I am going to be referring to 'git-github-tutorial' in the steps below it will be easiest if you use this nmae as ell. However, you can give your repository any name you prefer.
+            I am going to create a repository named 'git-github-tutorial'. You can use a different name. However, because I will be referring to 'git-github-tutorial' in the steps below it will be easier to follow the steps if you use git-github-tutorial as well.
           </p>
-          <p>Fill in a repository name.</p>
-          <p>Make it public. Creating a private repository requires a paid account.</p>
+          <p>Enter 'git-github-tutorial' as the repository name.</p>
+          <p>Keep the default of Public. Creating a private repository requires a paid account.</p>
           <p>Check 'Initialize this repository with a README'. All projects should have a readme.md file regardless of how simple the project or readme is.</p>
         </div>
         <div class="col-md-4">
@@ -167,18 +172,28 @@
           <p>To check the status of your repository execute the below command.</p>
           <pre>$ git status</pre>
           <p>Like many specialized subjects, Git has its own vocabulary and understanding Git well enough to make use of it requires that you learn its vocabulary. Here is what some of the words & phrases in the 'git status' results mean:
-          <dl class="dl-horizontal">
-            <dt>master</dt>
-            <dd>Git is like a tree. You can create branches to you tree. The default branch is called 'master'. Look at your GitHub home page and find the dropdown that says "Branch: master"</dd>
-            <dt>origin</dt>
-            <dd>'origin' is a name has associated with the repository on your local machine. As we will see later, it holds the URL to the repository on GitHub.</dd>
-            <dt>Your branch is up-to-date with 'origin/master'</dt>
-            <dd>This message means that the repository on your local machine matches the repository on GitHub. It does not mean that everthing in your project directory matches what is on GitHub. You probably need to understand 'commit' before you can understand this. So come back and read this again once you undertand 'commit'.</dd>
-            <dt>'nothing to commit'</dt>
-            <dd>In a simple sense this means, 'you have nothing ready to make permenant in the repository'. In Git language it says you have nothing in the repository's staging area.</dd>
-            <dt>'working directory is clean'</dt>
-            <dd>This means there is nothing in your project's directory that is not already in the Git repository on you local machine. It is not saying anything about the repository on GitHub.</dd>
-          </dl>
+          <table>
+            <tr>
+              <td><b>master</b></td>
+              <td>Git is like a tree. You can create branches to you tree. Each branch is a complete version of your project. The default branch is called 'master'. Look at your GitHub home page and find the dropdown that says "Branch: master".111</td>
+            </tr>
+            <tr>
+              <td><b>origin</b></td>
+              <td>'origin' is a name has associated with the repository on your local machine. As we will see later, it holds the URL to the repository on GitHub.</td>
+            </tr>
+            <tr>
+              <td><b>Your branch is up-to-date with 'origin/master'</b></td>
+              <td>This message means that the repository on your local machine matches the repository on GitHub. It does not mean that everthing in your project directory matches what is on GitHub. You probably need to understand 'commit' before you can understand this. So come back and read this again once you undertand 'commit'.</td>
+            </tr>
+            <tr>
+              <td><b>'nothing to commit'</b></td>
+              <td>In a simple sense this means, 'you have nothing ready to make permenant in the repository'. In Git language it says you have nothing in the repository's staging area.</td>
+            </tr>
+            <tr>
+              <td><b>'working directory is clean'</b></td>
+              <td>This means there is nothing in your project's directory that is not already in the Git repository on you local machine. It is not saying anything about the repository on GitHub.</td>
+            </tr>
+          </table>
         </div>
         <div class="col-md-4">
           pic.007.git.status.png
@@ -207,28 +222,48 @@
     </div>
     <div class="panel-body">
       <p>Here are some definitions to help with the next steps.</p>
-      <dl class="dl-horizontal">
-        <dt>Working Directory</dt>
-        <dd>'Working directory' is used to refer to files in the project's folder that are currently in a state other than committed. It contains all the files from one version of the project. In our example, the working directory is ~/workspace/git-github-tutorial. It is also the project's root directory.</dd>
-        <dt>Staging Area</dt>
-        <dd>The 'staging area' is not actually an 'area'. It is a file that tracks files that have been added to the staging area with <code>$ git add</code>.</p></dd>
-        <dt>Untracked (file)</dt>
-        <dd>An untracked is a file in the working directory that has not been added to Git.</dd>
-        <dt>Tracked (file)</dt>
-        <dd>A tracked file is a file that has been added to the Git repository with <code>$ git add</code>.</dd>
-        <dt>Staged (file)</dt>
-        <dd>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on an untracked or modified file.</dd>
-        <dt>Committed (file)</dt>
-        <dd>A staged file that has moved to a committed state by using <code>$ git commit</code>.</dd>
-        <dt>Modified (file)</dt>
-        <dd>A modified file is a tracked file that has been changed since it was last committed.</dd>
-        <dt>Repository ("repo")</dt>
-        <dd>A repository can be thought of as a Git database. It is a complete copy of your project with all history.
-        <dt>Local Repository</dt>
-        <dd>The 'local repository' is on your local machine in a /.git directory. In our example the repository is ~/workspace/git-github-tutorial/.git. The '.' before 'git' in .git means it is a hidden directory. To see it using Terminal, use <code>$ ls -la</code> where -a means 'show hidden files'.</dd>
-        <dt>Remote Repository</dt>
-        <dd>The remote repsitory is a repository on a remote server. In our example, the remote repository is the one we created on GitHub. GitHub is not the only place where a remote repository can reside.</dd>
-      </dl>
+      <table>
+        <tr>
+          <td><b>Working Directory</b></td>
+          <td>'Working directory' is used to refer to files in the project's folder that are currently in a state other than committed. It contains all the files from one version of the project. In our example, the working directory is ~/workspace/git-github-tutorial. It is also the project's root directory.</td>
+        </tr>
+        <tr>
+          <td><b>Staging Area</b></td>
+          <td>The 'staging area' is not actually an 'area'. It is a file that tracks files that have been added to the staging area with <code>$ git add</code>.</td>
+        </tr>
+        <tr>
+          <td><b>Untracked (file)</b></td>
+          <td>An untracked is a file in the working directory that has not been added to Git.</td>
+        </tr>
+        <tr>
+          <td><b>Tracked (file)</b></td>
+          <td>A tracked file is a file that has been added to the Git repository with <code>$ git add</code>.</td>
+        </tr>
+        <tr>
+          <td><b>Staged (file)</b></td>
+          <td>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on an untracked or modified file.</td>
+        </tr>
+        <tr>
+          <td><b>Committed (file)</b></td>
+          <td>A staged file that has moved to a committed state by using <code>$ git commit</code>.</td>
+        </tr>
+        <tr>
+          <td><b>Modified (file)</b></td>
+          <td>A modified file is a tracked file that has been changed since it was last committed.</td>
+        </tr>
+        <tr>
+          <td><b>Repository ("repo")</b></td>
+          <td>A repository can be thought of as a Git database. It is a complete copy of your project with all history.</td>
+        </tr>
+        <tr>
+          <td><b>Local Repository</b></td>
+          <td>The 'local repository' is on your local machine in a /.git directory. In our example the repository is ~/workspace/git-github-tutorial/.git. The '.' before 'git' in .git means it is a hidden directory. To see it using Terminal, use <code>$ ls -la</code> where -a means 'show hidden files'.</td>
+        </tr>
+        <tr>
+          <td><b>Remote Repository</b></td>
+          <td>The remote repsitory is a repository on a remote server. In our example, the remote repository is the one we created on GitHub. GitHub is not the only place where a remote repository can reside.</td>
+        </tr>
+      </table>
       <table id="git-structure">
         <tr>
           <td class="git-structure-td-left git-structure-red">Wroking Directory<br>(~/workspace/git-git-hub-tutorial)</td>
@@ -367,7 +402,7 @@
           <pre>$git push origin master</pre>
           <p>When prompted, enter you GitHub user name and password.</p>
           <p>That's it, your chnages are already in the GitHub repository! Take a look at your project's GitHub page to confirm the files are added.</p>
-          <p>Someone recently sent around an articale that said to people writing tutorials, 'Never say anything is simple'. I think this is great advice. After you have done something complex enough to fully understand it, it does seem simple. But if you are new to something as complex and non-intuitive as Git it isn't simple at all. So I am not going to say <code>$ git push</code> is simple. I will say that if you put aside the need to understand what it did, using <code>$ git push</code> to move changes to GitHub was pretty easy. It is only one command to remember and if you are feeling confused I think it is worth taking a moment to realize that we only used 3 commands, add, commit and push.</p>
+          <p class="ke-callout ke-callout-info">Someone recently sent around an articale that said to people writing tutorials, 'Never say anything is simple'. I think this is great advice. After you have done something complex enough to fully understand it, it does seem simple. But if you are new to something as complex and non-intuitive as Git it isn't simple at all. So I am not going to say <code>$ git push</code> is simple. I will say that if you put aside the need to understand what it did, using <code>$ git push</code> to move changes to GitHub was pretty easy. It is only one command to remember and if you are feeling confused I think it is worth taking a moment to realize that we only used 3 commands, add, commit and push.</p>
         </div>
         <div class="col-md-4">
           pic.015.01.git.push.png
@@ -378,9 +413,18 @@
       <div class="row">
         <div class="col-md-8">
           <p>Let's take a closer look at <code>$ git push</code> and its output.</p>
-
+          <table>
+            <tr>
+              <td><code>$ git push origin master</code></td>
+              <td><code>$git push</code> moves you chnages from your local machine to GitHub. 'master', as you have already seen, is the current branch you are working on. 'origin' is a 'remote' (see next definition). It is a label that contains the path to the GitHub repository.</td>
+            </tr>
+            <tr>
+              <td></code></td>
+              <td></td>
+            </tr>
+          </table>
           *outline**
-            $ git push origin master
+
             Master is branch ... know already
             origin is the name of remote
             Remote, explain 'remote'
