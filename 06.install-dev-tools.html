@@ -40,11 +40,6 @@
             <td><a href="https://www.gimp.org/">GIMP</a></td>
             <td>Gimp is an image manipulation program similar to Photoshop.</td>
           </tr>
-
-          <tr>
-            <td><a href="https://atom.io">Atom</a></td>
-            <td>Atom is a text editor that is well suited to web development.</td>
-          </tr>
           <tr>
             <td><a href="http://shutter-project.org/">Shutter</a></td>
             <td>Shutter is a feature-rich screenshot program.</td>
@@ -52,6 +47,14 @@
           <tr>
             <td><a href="https://www.chromium.org/Home">Chromium</a></td>
             <td>Chromium is a version of Google's Chrome browser that runs on Linux.</td>
+          </tr>
+          <tr>
+            <td><a href="https://atom.io">Atom</a></td>
+            <td>Atom is a text editor that is well suited to web development.</td>
+          </tr>
+          <tr>
+            <td><a href="https://git-scm.com/">Git</a></td>
+            <td>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</td>
           </tr>
         </table>
       </div>
@@ -65,16 +68,15 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Installation</h2>
+      <h2>Installing Applications With 'Software'</h2>
     </div>
     <div class="panel-body">
-      <h3>Installing Applications With 'Software'</h3>
+      <p>Some of the applications listed above are best installed using Ubuntu's visual installation program 'Software'. The below shows how to use Software to install FileZilla. Repeat the process for Meld, GIMP, Shutter & Chromium.</p>
       <ol>
         <li>Open Software.</li>
         <li>Type 'FileZilla'.</li>
         <li>Click <button class="btn btn-default btn-xs">Install</button>.</li>
-        <li>Except for Atom, repeat the above steps for each of the applications listed in the table above.</li>
-        <li>Launch each application just to be sure all went well.</li>
+        <li>Launch the application just to be sure all went well.</li>
       </ol>
     </div>
   </div>
@@ -96,6 +98,24 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
+      <h2>Installing Git</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>The easiest way to install Git is to use the command line. Execute the below commands and Git will be fully installed.</p>
+          <pre>$ sudo apt-get update<br>$ sudo apt install git</pre>
+        </div>
+        <div class="col-md-4">
+          pic.001.install.git.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
       <h2>Using Favorites</h2>
     </div>
     <div class="panel-body">
@@ -112,6 +132,8 @@
       <p>While we are here let's organize Favorites a little. For each application you will not be using frequently, right-click its icon and choose <button class="btn btn-default btn-xs">Remove from Favorites</button>.</p>
     </div>
   </div>
+
+  <p class="ke-callout ke-callout-goal">Congratulations! you just installed seven essential developer tools.</p>
 
 </div> <!-- container-fluid -->
 
