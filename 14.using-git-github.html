@@ -137,14 +137,32 @@
     </div>
   </div>
 
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Using Git With GitHub</h2>
+      <h2>Workflow</h2>
+    </div>
+    <div class="panel-body">
+      <p>We will use the following workflow</p>
+      <ol>
+        <li>$ git clone</li>
+        <li>$ git add</li>
+        <li>$ git commit</li>
+        <li>$ git push</li>
+      </ol>
+      <p>We will also make frequent use of <code>$ git status</code> while we move through the above workflow</p>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Cloning a Repository <code>$ git clone</code></h2>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <h3>BLASTING THROUGH</h3>
+          <p>we will **dkdkdkd** </p>
           <p>We are going to 'clone' the repository in GitHub to our local machine. Git will create a directory with the name of the repository. So that Git will create this in ~/workspace, switch to that directory now.</p>
           <pre>cd ~/workspace</pre>
           <p>Switch back to your browser. If you are not still on your repository's home page, go there now.</p>
@@ -171,29 +189,7 @@
         <div class="col-md-8">
           <p>To check the status of your repository execute the below command.</p>
           <pre>$ git status</pre>
-          <p>Like many specialized subjects, Git has its own vocabulary and understanding Git well enough to make use of it requires that you learn its vocabulary. Here is what some of the words & phrases in the 'git status' results mean:
-          <table>
-            <tr>
-              <td><b>master</b></td>
-              <td>Git is like a tree. You can create branches to you tree. Each branch is a complete version of your project. The default branch is called 'master'. Look at your GitHub home page and find the dropdown that says "Branch: master".111</td>
-            </tr>
-            <tr>
-              <td><b>origin</b></td>
-              <td>'origin' is a name has associated with the repository on your local machine. As we will see later, it holds the URL to the repository on GitHub.</td>
-            </tr>
-            <tr>
-              <td><b>Your branch is up-to-date with 'origin/master'</b></td>
-              <td>This message means that the repository on your local machine matches the repository on GitHub. It does not mean that everthing in your project directory matches what is on GitHub. You probably need to understand 'commit' before you can understand this. So come back and read this again once you undertand 'commit'.</td>
-            </tr>
-            <tr>
-              <td><b>'nothing to commit'</b></td>
-              <td>In a simple sense this means, 'you have nothing ready to make permenant in the repository'. In Git language it says you have nothing in the repository's staging area.</td>
-            </tr>
-            <tr>
-              <td><b>'working directory is clean'</b></td>
-              <td>This means there is nothing in your project's directory that is not already in the Git repository on you local machine. It is not saying anything about the repository on GitHub.</td>
-            </tr>
-          </table>
+          <p>The output says that everthing is up to date. We will take a closer look at the output of <code>$git status</code> below.</p>
         </div>
         <div class="col-md-4">
           pic.007.git.status.png
@@ -221,7 +217,7 @@
       <h2>Definitions</h2>
     </div>
     <div class="panel-body">
-      <p>Here are some definitions to help with the next steps.</p>
+      <p>Like many specialized subjects, Git has its own vocabulary and understanding Git well enough to make use of it requires that you learn its vocabulary. Here are some definitions to help with the next steps.</p>
       <table>
         <tr>
           <td><b>Working Directory</b></td>
@@ -263,7 +259,17 @@
           <td><b>Remote Repository</b></td>
           <td>The remote repsitory is a repository on a remote server. In our example, the remote repository is the one we created on GitHub. GitHub is not the only place where a remote repository can reside.</td>
         </tr>
+        <tr>
+          <td><b>Remote<b></td>
+          <td>A remote is a name that holds the URL to the remote repository. You can think of it as a variable that holds a string where the string is the URL to the remote repository, which in our case is GitHub</td>
+        </tr>
+        <tr>
+          <td><b>Branch</b></td>
+          <td>Git is like a tree. You can add branches to your tree. Each branch is a complete version of your project. The default branch is called 'master'. Take a look at your GitHub home page and find the dropdown that says 'Master'. Currently, your repository only has one branch, i.e., Master</td>
+        </tr>
       </table>
+      <h2>Git Areas</h2>
+      <p>There are four 'areas' that we will be working with. The first three are part of Git and are on you local machine. The fouth is GitHub. The term 'areas' is used but they are actually a combination of files and folders. For example, the 'staging area' is a file.</p>
       <table id="git-structure">
         <tr>
           <td class="git-structure-td-left git-structure-red">Wroking Directory<br>(~/workspace/git-git-hub-tutorial)</td>
@@ -383,6 +389,21 @@
     </div>
   </div>
 -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Remotes Explained</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-4">
+    <!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="ke-callout ke-callout-info">
     <h2>Commands in Detail</h2>
@@ -398,11 +419,13 @@
       <div class="row">
         <div class="col-md-8">
           <p>To move you files to GitHub use <code>$ git push</code>. We will first push our project changes to GitHub and then dive into an explanation of doing so.</p>
-          <p>Execute the below command.</p>
-          <pre>$git push origin master</pre>
+          <p>The syntax of <code>$ git push </code> is:</p>
+          <pre>git push [remote-name] [branch-name]</pre>
+          <p>Since our remote-name is 'origin' and our current branch-name is 'master', execute the push command as follows:</p>
+          <pre>$ git push origin master</pre>
           <p>When prompted, enter you GitHub user name and password.</p>
           <p>That's it, your chnages are already in the GitHub repository! Take a look at your project's GitHub page to confirm the files are added.</p>
-          <p class="ke-callout ke-callout-info">Someone recently sent around an articale that said to people writing tutorials, 'Never say anything is simple'. I think this is great advice. After you have done something complex enough to fully understand it, it does seem simple. But if you are new to something as complex and non-intuitive as Git it isn't simple at all. So I am not going to say <code>$ git push</code> is simple. I will say that if you put aside the need to understand what it did, using <code>$ git push</code> to move changes to GitHub was pretty easy. It is only one command to remember and if you are feeling confused I think it is worth taking a moment to realize that we only used 3 commands, add, commit and push.</p>
+          <p class="ke-callout ke-callout-info">It is worth taking a moment to realize that so far we have only used 3 commands, add, commit and push.</p>
         </div>
         <div class="col-md-4">
           pic.015.01.git.push.png
@@ -446,7 +469,7 @@
       </div>
     </div>
   </div>
-===================================================
+
 
       <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
 
@@ -471,15 +494,41 @@
         </div>
       </div>
     -->
-
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git status</code></h2>
+    </div>
+    <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <h3><code>$ git status</code></h3>
           <p>Switch to Terminal and make you current directory ~/workspace/git-github-tutorial.</p>
           <pre>$ cd ~/workspace/git-github-tutorial</pre>
           <p>Check your repositories status when the below command></p>
           <pre>$ git status</pre>
           <p>Here is a view of words and phrases in the status</p>
+          <p>Now let's take a closer look at <code>$ git status</code> which we executed above.</p>
+          <table>
+            <tr>
+              <td><b>master</b></td>
+              <td>Git is like a tree. You can create branches to you tree. Each branch is a complete version of your project. The default branch is called 'master'. Look at your GitHub home page and find the dropdown that says "Branch: master".111</td>
+            </tr>
+            <tr>
+              <td><b>origin</b></td>
+              <td>'origin' is a name has associated with the repository on your local machine. As we will see later, it holds the URL to the repository on GitHub.</td>
+            </tr>
+            <tr>
+              <td><b>Your branch is up-to-date with 'origin/master'</b></td>
+              <td>This message means that the repository on your local machine matches the repository on GitHub. It does not mean that everthing in your project directory matches what is on GitHub. You probably need to understand 'commit' before you can understand this. So come back and read this again once you undertand 'commit'.</td>
+            </tr>
+            <tr>
+              <td><b>'nothing to commit'</b></td>
+              <td>In a simple sense this means, 'you have nothing ready to make permenant in the repository'. In Git language it says you have nothing in the repository's staging area.</td>
+            </tr>
+            <tr>
+              <td><b>'working directory is clean'</b></td>
+              <td>This means there is nothing in your project's directory that is not already in the Git repository on you local machine. It is not saying anything about the repository on GitHub.</td>
+            </tr>
+          </table>
           <dl class="dl-horizontal">
             <dt>Your branch is up-to-date with 'origin/master'</dt>
             <dd>While you have added a file to the project directory you have not added the file to the local Git repository so in fact the local and GitHub repositories are still the same.</dd>
@@ -487,17 +536,23 @@
             <dd>index.html has not been added to Git yet so it is called 'untracked'</dd>
             <dt>nothing added to commit</dt>
             <dd>As you will see and do in a moment, 'commit' or 'committed' means 'has been added to Git'.
-
         </div>
         <div class="col-md-4">
           pic.010.git.status.png
           <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png" alt="**alt**"></a>
         </div>
       </div>
+    </div>
+  </div>
 
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git add</code></h2>
+    </div>
+    <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <h3><code>$ git add</code></h3>
           <p>To a file into the staging area use <code>$ git add</code>.</p>
           <pre>$ git add index.html<br>$ git status</pre>
           <p>You don't have to type the full file name. I'll show you some shortcuts later in this post</p>
@@ -507,10 +562,16 @@
           <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png" alt="**alt**"></a>
         </div>
       </div>
+    </div>
+  </div>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git commit</code></h2>
+    </div>
+    <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <h3><code>$ git commit</code></h3>
           <p>The next step is to commit the file. This is the final step to put the file into Git. However, note that the file will not be in GitHub yet.</p>
           <p>When you perform a commit with the next command, you are committing everything in the staging area</p>
           <pre>$ git commit -m "initial commit"</pre>
@@ -521,7 +582,15 @@
           <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png" alt="**alt**"></a>
         </div>
       </div>
+    </div>
+  </div>
 
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git commit</code></h2>
+    </div>
+    <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
           <p>Let's take a closer look at the message produced by <code>$ git commit</code>.</p>
@@ -545,6 +614,13 @@
           <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png" alt="**alt**"></a>
         </div>
       </div>
+    </div>
+  </div>
+
+> Add a remote<br>
+
+================================================================
+================================================================
 
       <div class="row">
         <div class="col-md-8">
@@ -559,6 +635,21 @@
     </div>
   </div>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Shortcuts</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-4">
+  	<!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <div class="ke-callout ke-callout-goal">
@@ -567,68 +658,6 @@
       This guide is a good learning experience and you can use its workflow to effectively work on a project. However it is not the right way to use Git. To effectively use Git in a way that allows you to manage the development life-cycle and to collaborate with other developers, you need to use 'branching'. I am currently working on a guide for branching. Subscribe to this blog to get notified when it is available.
     </p>
   </div>
-
-TOOLS
-Git Cola
-Meld
-command line v GUI
-<p>Someone told me recently that my use of the command line was old school and that people today use GUI tools. But I follow several developer groups on Google+ and and the attitued is often expressed that real developers use the command line.</p>
-<p>My own take is that you should do what work for you but ..., if you are a software developer, you should know how to use the command line. In the 25+ years since I started making software I have never met a developer who could not use the command line.</p>
-<p>For Git I do all my commits with the command line. I will look at small changes between uncommited and the last commit via command line as well. But for extensive changes or changes between to commits I use a GUI tool.</p>
-<p>Along these same lines, here is an admission: Although I do many commits per day, I don't understand everything in the <code>$ git push</code> status message. It would be nice to, and eventually I'm sure I will, but understanding everything isn't necessary to effective use Git.</p>
-
-
-Best Practices
-groups develope their own
-when working with others, make a formal agreement on how you will commit including things like branching, merging and messages
-don't walk away from your computer without committing
-make commits atomic
-
-
-Git GUI Tools
-https://git-scm.com/downloads/guis
-
-
-
-
-
-
-
-Case 3: Merge project files on you local machine & already in Git with project files already in Git
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>Pushing to GitHub <code>$ git push</code></h2>
-  </div>
-  <div class="panel-body">
-    Explicitly add a remote
-    Syntax: git remote add <shortname> <url>
-    $ git remote add ubuntuvm https://github.com/klequis/create-ubuntu-vm.git
-    Show Your Remote(s)
-    git$ git remote
-    $ git remote -v
-    To merge the repository with what is local (need to do this or the 'push' will be rejected
-    pull is a shorthand that executes both fetch and merge
-    Syntax: git pull [options] [<repository> [<refspec>…​]]
-    <repository> the name of a remote
-    E.g., $ git pull ubuntuvm master
-    git will ask for an extended comment
-    "git push"
-    Syntax: git push [remote-name] [branch-name]
-    We are currently using the "master" branch
-    Git the requited information
-    $ git status - will tell you which branch you are on
-    $ git remote -v will tell you the remote name and the URL for push
-    $ git push ubuntuvm master
-    Go to the GitHub page. You should see all the project's files and folders there
-    To recursively add all the project files and folders
-    $ git add --all
-    Also -v which shows the URLs that Git has stored for the shortname
-
-
-  </div>
-</div>
-
 
   <div class="panel panel-default">
     <div class="panel-heading">
