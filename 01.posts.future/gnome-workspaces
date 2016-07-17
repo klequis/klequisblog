@@ -1,0 +1,6 @@
+dConf Editor
+find all instances of 'workspaces-only-on-primary' and uncheck the option
+> make of list of the locations and figure out which one needs to be changed.
+You could work either way
+1) all monitors switch workspaces lots of stuff open & both monitors completely engrossed in taks.
+2) one monitor could have a single monitor VM while the other was the host, I should try this.
