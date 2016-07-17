@@ -1,0 +1,21 @@
+Some of the below information below is incorrect.
+This post can be finished by following the directions at https://codex.wordpress.org/Child_Themes
+
+
+1. Create a new folder under wp-content/themes with the name of parentTheme + -childTheme. For example, if the parent theme is named 'bluestone' you you wanted to call you child them 'flame' the full child theme name would be 'bluestone-flame'.
+2. Create file /bluestone-flame/style.css
+3. Add the following information as a comment to the top of style.css
+
+/*
+theme Name: bluestone-flame
+Theme URI: your URL
+Description: This is a child of bluestone
+Author: klequis
+Author URI: your URL , does not need to be the same as 'Theme URI'
+Template: bluestone-flame
+Version: 1.0
+*/
+
+4. Add to your style.css the line "@import url("../bluestone/style.css");" - this will bring in the styles from /bluestone/style.css so that they do not need to be repeated in your new style.css
+
+5. On your WordPress site, go to Appearance>Themes, select your new theme (bluestone-flame) and make it active (click Active)
