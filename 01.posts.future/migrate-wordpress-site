@@ -1,0 +1,6 @@
+I had one problem with the Series (name) plugin. I had one series setup before migration. After migration all posts worked except for the first post in the series which got a page not found error. I was unable to discover what caused this but the cure was to remove the post from the series, update it, view it, then put it back into the series.
+
+interconnectit / Search-Replace-DB
+https://github.com/interconnectit/Search-Replace-DB
+
+Source01: http://www.wpexplorer.com/migrating-wordpress-website/

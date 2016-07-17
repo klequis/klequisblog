@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>**title**</title>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <div class="ke-callout ke-callout-danger">
+    <ul>
+      <li>complete text</li>
+      <li>pending read out-loud</li>
+      <li>pending spelling</li>
+      <li>pending punctuation</li>
+    </ul>
+  </div>
+
+
+  This guide will show you how to install Oracle VirtualBox 5.0 on a Windows computer.
+
+  VirtualBox is free software made by Oracle Corporation. A <b>virtual machine</b> is an 'emulation' of a particular computer system. There are different types of virtual machines. VirtualBox is 'full virtualization VM' which is a complete operating system. As such, when you run a Ubuntu virtual machine on a Windows computer, you have the entire Ubuntu operating system running inside a window.
+
+  For in-depth information on virtual machines, see <a href="https://en.wikipedia.org/wiki/Virtual_machine">Wikipedia</a>.
+
+  <!--more-->
+  <h2>Definitions</h2>
+  <dl class="dl-horizontal">
+   	<dt>Host</dt>
+   	<dd>The 'host' is your computer. It is the operating system which boots when you turn on your computer. In this tutorial, the host computer is Windows 8.1.</dd>
+   	<dt>Guest</dt>
+   	<dd>The 'guest' is the computer you run inside of VirtualBox.</dd>
+   	<dt>Virtual Machine (VM)</dt>
+   	<dd>The guest is also called 'the virtual machine' and I will use these terms interchangeably.</dd>
+  </dl>
+  <div class="ke-callout ke-callout-warning">
+  <h2>Requirements</h2>
+  <ul>
+   	<li>A Windows computer.</li>
+   	<li>At least 4GB of RAM</li>
+   	<li>At least 20GB hard drive space.</li>
+   	<li>VirtualBox itself does not use much disk space, but the virtual machine you will create does. The initial virtual machine will take-up about 8GB of hard disk space. However, it will grow as you install software and otherwise use it. 20 GB is plenty to get started but it is a conservative number.</li>
+  </ul>
+  </div>
+  <p class="ke-callout ke-callout-warning">Unless otherwise noted, all options/choices must be as show in the pictures.</p>
+
+  <h2>Downloads</h2>
+  Let's get the downloading out of the way.
+  <ol>
+   	<li>Download Virtualbox from <a href="https://www.virtualbox.org">www.virtualbox.org</a>. The download link as of today is <a href="http://download.virtualbox.org/virtualbox/5.0.20/VirtualBox-5.0.20-106931-Win.exe">here</a>, but will change over time.</li>
+   	<li>Download the "VirtualBox Extension Pack" from the same page. The download link as of today is <a href="http://download.virtualbox.org/virtualbox/5.0.20/Oracle_VM_VirtualBox_Extension_Pack-5.0.20-106931.vbox-extpack">here</a>, but willchange over time.</li>
+  </ol>
+  <h2>Installing VirtualBox</h2>
+  <ol start="1">
+   	<li>Double-click VirtualBox-5.0.20-106931-Win.exe to begin the installation.</li>
+  </ol>
+
+  <hr />
+
+  <ol start="2">
+  <ol start="2">
+   	<li>Click <button class="btn btn-default btn-xs">Next</button></li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.01.png" />
+
+  <hr />
+
+  <ol start="3">
+  <ol start="3">
+   	<li>Click <button class="btn btn-default btn-xs">Next</button> again</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.02.png" />
+
+  <hr />
+
+  <ol start="4">
+  <ol start="4">
+   	<li>Select desktop and/or Quick Launch shortcuts per your preference.</li>
+   	<li>Click <button class="btn btn-default btn-xs">Next</button> again</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.03.png" />
+
+  <hr />
+
+  <ol start="6">
+  <ol start="6">
+   	<li>Although this sounds scary, press <button class="btn btn-default btn-xs">Yes</button> anyway.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.04.png" />
+
+  <hr />
+
+  <ol start="7">
+  <ol start="7">
+   	<li>Click <button class="btn btn-default btn-xs">Install</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.05.png" />
+
+  <hr />
+
+  <ol start="8">
+  <ol start="8">
+   	<li>Click <button class="btn btn-default btn-xs">Finish</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.06.png" />
+
+  <hr />
+
+  <ol start="9">
+  <ol start="9">
+   	<li>When VirtualBox launches, wait until you see this message and then click <button class="btn btn-default btn-xs">Download</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.07.png" />
+  <p class="ke-callout">I'm not sure you really needed to download the Extension Pack before starting with step 1 as I instructed, but in the event you don't get the above message you have it on hand.</p>
+  <p class="ke-callout">Without the Extension Pack installed your guest will boot/start but its screen resolution will likely be too low and you won't be able to increase it. Other features will not work as well.</p>
+
+
+  <hr />
+
+  <ol start="10">
+  <ol start="10">
+   	<li>Click <button class="btn btn-default btn-xs">Download</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.08.png" />
+
+  <hr />
+
+  <ol start="11">
+  <ol start="11">
+   	<li>Click <button class="btn btn-default btn-xs">Install</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.09.png" />
+
+  <hr />
+
+  <ol start="12">
+  <ol start="12">
+   	<li>If you see this message click <button class="btn btn-default btn-xs">Upgrade</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.10.png" />
+
+  <hr />
+
+  <ol start="13">
+  <ol start="13">
+   	<li>Read the agreement :) and then, if you agree, click <button class="btn btn-default btn-xs">I Agree</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.11.png" />
+
+  <hr />
+
+  <ol start="14">
+  <ol start="14">
+   	<li>Just wait for this one to finish.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.12.png" />
+
+  <hr />
+
+  <ol start="15">
+  <ol start="15">
+   	<li>Click <button class="btn btn-default btn-xs">OK</button>.</li>
+  </ol>
+  </ol>
+  <img class="img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0502.buildingdevenviron/vb.step.13.png" />
+
+  <hr />
+  <p class="ke-callout ke-callout-info">That's it. VirtualBox is installed and you are ready to create your first virtual machine.</p>
+
+
+  <hr />
+
+
+</div> <!-- container-fluid -->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
