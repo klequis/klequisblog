@@ -213,6 +213,10 @@ div.row:not(:first-child) {
 
 }
 
+div.row.row-no-border {
+  border-top: none;
+}
+
 
 /* Chart / Highlight Colors */
 .chart-color-one {
