@@ -326,3 +326,11 @@ p:empty {
 #recent-posts-5 > h1 {
   font-size: 1.5em;
 }
+
+@media (min-width: 768px) {
+  #menu-main-menu.nav.navbar-nav {
+    font-weight: bolder;
+    float: right;
+    /*margin-right: 327px;*/
+  }
+}
