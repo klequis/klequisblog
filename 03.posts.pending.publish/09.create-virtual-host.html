@@ -19,7 +19,6 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <p>You can have multiple websites on you development machine hosted by the single Apache instance. You have already seen the default virtual host when <a href="http://klequis.com/klequis/2016/05/04/installing-apache-7/">Installing Apache 7</a>. For each site you want to create you need to create a <i>Virtual Host</i>.</p>
-
       <blockquote>
         <b>Virtual Host</b> - The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com) on a single machine. Virtual hosts can be "IP-based", meaning that you have a different IP address for every web site, or "name-based", meaning that you have multiple names running on each IP address. The fact that they are running on the same physical server is not apparent to the end user.
         <cite>The Apache Software Foundation</cite>
@@ -47,7 +46,6 @@
         <div class="col-md-4">
           <a href="http://klequis.com/klequis/wp-content/uploads/2016/0619.create-virtual-host/001.directorystructure.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/0619.create-virtual-host/001.directorystructure.png" alt="apache directory structure" /></a>
         </div>
-
       </div>
     </div>
   </div>
@@ -57,19 +55,12 @@
       <h2>Create a folder for the site</h2>
     </div>
     <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <p>First we will create a folder for all of your development websites called 'workspace' and then each site will have its own folder inside of 'workspace'.</p>
-          <p>Create /workspace</p>
-          <pre>$ cd ~<br>$ mkdir workspace</pre>
-          <p>Now create a folder for the first website /workspace/helloworld</p>
-          <pre>$ cd workspace<br>$ mkdir helloworld</pre>
-          <p>So far we have created a folder for the site and a simple web page. However, we can't navigate to the site until we complete the steps that follow</p>
-        </div>
-        <div class="col-md-4">
-
-        </div>
-      </div>
+      <p>First we will create a folder for all of your development websites called 'workspace' and then each site will have its own folder inside of 'workspace'.</p>
+      <p>Create /workspace</p>
+      <pre>$ cd ~<br>$ mkdir workspace</pre>
+      <p>Now create a folder for the first website /workspace/helloworld</p>
+      <pre>$ cd workspace<br>$ mkdir helloworld</pre>
+      <p>So far we have created a folder for the site and a simple web page. However, we can't navigate to the site until we complete the steps that follow</p>
     </div>
   </div>
 
@@ -78,16 +69,10 @@
       <h2>Create the Site</h2>
     </div>
     <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <pre>$ cd helloworld<br>$ gedit index.html</pre>
-          <p>Enter the text</p>
-          <pre>&lt;h3&gt;Hello World&lt;/h3&gt;</pre>
-          <p>Save and close the file.</p>
-        </div>
-        <div class="col-md-4">
-        </div>
-      </div>
+      <pre>$ cd helloworld<br>$ gedit index.html</pre>
+      <p>Enter the text</p>
+      <pre>&lt;h3&gt;Hello World&lt;/h3&gt;</pre>
+      <p>Save and close the file.</p>
       <p class="ke-callout ke-callout-info">
         Apache default configuration requires that the defulat page is named index.html, index.cgi, index.pl, index.php, index.xhtml or index.htm. When you launch the site Apache is looking for a page with one of these names. If it doesn't find one, it displays an error.
       </p>
@@ -151,7 +136,6 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-
           <pre><code>$ sudo -i gedit /etc/hosts</code></pre>
           <p>Below the list of domains that starts with "127.0.0.1 localhost", enter the below line.</p>
           <pre><code>127.0.0.1    helloworld.localhost</code></pre>
@@ -235,8 +219,6 @@
       </ol>
     </div>
   </div>
-
-
 
 </div> <!-- containter-fluid -->
 

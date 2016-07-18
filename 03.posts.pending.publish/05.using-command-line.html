@@ -405,8 +405,8 @@
           <a href="http://klequis.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"><img class="img-responsive img-step-figure" alt="picture of task" src="http://klequis.com/klequis/wp-content/uploads/2016/0531.using-terminal/008.cdetccalendar.png"></a>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-8">
+
+
           <p>Here are some other things you can do with <code>$ cd</code>.</p>
           <p>Go to your home directory from anywhere.</p>
           <pre>$ cd</pre>
@@ -422,11 +422,9 @@
           <pre>$ cd workspace/samplefiles</pre>
           <p>Now up two levels.</p>
           <pre>$ cd ../../</pre>
-        </div>
-        <div class="col-md-4">
-          <!-- needed to preserve shap -->
-        </div>
-      </div>
+
+
+
     </div>
   </div>
 
@@ -436,25 +434,18 @@
       <h2>Creating Files <code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code></h2>
     </div>
     <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods to create files.</p>
-          <p>Overall I love GNOME. However, one of my frustrations with it is that you can not right-click in Files to create a new document. I'm sure there is a way to fix that and finding it is on my to do list.</p>
-          <p>Most of the time I create files from within a text editor. I currently use <a href="https://atom.io">Atom</a>. Knowing how to create files from the command line is useful but you can decide what workflow works best for you.</p>
-          <p><b>gedit</b> - is a common text editor that comes with Ubuntu.</p>
-          <p>Make sure you are in '~/workspace/samplefiles'. If not then execute the below command. (remember '~' means 'home').</p>
-          <pre>$ cd ~/workspace/samplefiles</pre>
-          <p>The following command will launch gedit with a new file open. </p>
-          <pre>$ gedit page1.html</pre>
-          <p>Type the below into page1.html.</p>
-          <pre>&lt;h1&gt;page1.html&lt;/h1&gt;</pre>
-          <p>Save (<kbd>Ctrl+s</kbd>) the file and quit (<kbd>Ctrl+q</kbd>) gedit. Then check-out page1.html in Files.</p>
-          <p>Using Terminal and the <code>$ ls -l</code> command, look in '~/workspace/samplefiles' for page1.html.</p>
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
-      </div> <!-- row -->
+      <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods to create files.</p>
+      <p>Overall I love GNOME. However, one of my frustrations with it is that you can not right-click in Files to create a new document. I'm sure there is a way to fix that and finding it is on my to do list.</p>
+      <p>Most of the time I create files from within a text editor. I currently use <a href="https://atom.io">Atom</a>. Knowing how to create files from the command line is useful but you can decide what workflow works best for you.</p>
+      <p><b>gedit</b> - is a common text editor that comes with Ubuntu.</p>
+      <p>Make sure you are in '~/workspace/samplefiles'. If not then execute the below command. (remember '~' means 'home').</p>
+      <pre>$ cd ~/workspace/samplefiles</pre>
+      <p>The following command will launch gedit with a new file open. </p>
+      <pre>$ gedit page1.html</pre>
+      <p>Type the below into page1.html.</p>
+      <pre>&lt;h1&gt;page1.html&lt;/h1&gt;</pre>
+      <p>Save (<kbd>Ctrl+s</kbd>) the file and quit (<kbd>Ctrl+q</kbd>) gedit. Then check-out page1.html in Files.</p>
+      <p>Using Terminal and the <code>$ ls -l</code> command, look in '~/workspace/samplefiles' for page1.html.</p>
       <div class="row">
         <div class="col-md-8">
           <p><b>'>' Redirection</b> - You can read-up on redirection on your own. For now I'll just note that normally output will go to the screen but you can 'redirect' it using '&gt;'. First lets try to print something without redirection.</p>
@@ -552,12 +543,12 @@
       <h2><code>$ sudo</code></h2>
     </div>
     <div class="panel-body">
+      <blockquote>
+        <b>sudo</b> (superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system. Sudo also logs all commands and arguments.
+        <cite>Source: <a href="http://searchenterpriselinux.techtarget.com/definition/sudo">TechTarget</a></cite>
+      </blockquote>
       <div class="row">
         <div class="col-md-8">
-          <blockquote>
-            <b>sudo</b> (superuser do) is a utility for UNIX- and Linux-based systems that provides an efficient way to give specific users permission to use specific system commands at the root (most powerful) level of the system. Sudo also logs all commands and arguments.
-            <cite>Source: <a href="http://searchenterpriselinux.techtarget.com/definition/sudo">TechTarget</a></cite>
-          </blockquote>
           <p>So far we have been working with files owned by the currently log-in user (you). If you want to work with files and directories that you don't own you need to use <b>sudo</b>. Let's create both a directory and a file with <code>sudo</code> and then view the results.</p>
           <pre>$ cd ~/workspace/samplefiles<br>$ sudo mkdir sudorootdir</pre>
           <p>You will be prompted for your password, the same one you log in with.</p>
@@ -650,9 +641,9 @@
       <h2><code>$ chown</code> - Change Owner & <code>$ chgrp</code> - Change Group</h2>
     </div>
     <div class="panel-body">
+      <p class="ke-callout ke-callout-info">Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enormous.</p>
       <div class="row">
         <div class="col-md-8">
-          <p class="ke-callout ke-callout-info">Because there is an excellent article with examples on the official Ubuntu help pages, I will only walk you though few brief examples. After completing the steps below, please read <a href="https://help.ubuntu.com/community/FilePermissions" >FilePermssions: Understanding and Using File Permissions</a>. The benefit to your ability to work on a Linux system will be enormous.</p>
           <p>Setup sample files.</p>
           <pre>$ sudo touch rootfile.txt<br>$ sudo mkdir rootdir<br>$ ls -l</pre>
           <p>You can see that Owner and Group Owner are both 'root'.</p>

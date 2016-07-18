@@ -102,19 +102,6 @@ body {
 blockquote {
   font-size: 1.0em;
   background-color: white;
-  /*border-left: 5px solid #eee;
--  #eeeeee
--  #d6d6d6
--  #bebebe
--  #a6a6a6
--  #8e8e8e
--  #777777
--  #5f5f5f
--  #474747
--  #2f2f2f
--  #171717
--  #000000
--  */
   border-left: 5px solid;
   padding-bottom: 35px;
   border-left-color: #1b809e;
@@ -170,7 +157,6 @@ div.widget_seriestoc > h4:first-of-type {
 /*
  * Images
  */
-
 .img-small-size {
   width:50%;
 }
@@ -191,9 +177,6 @@ div.widget_seriestoc > h4:first-of-type {
   max-height:50px;
   max-width: 100px !important;
   border: 0 !important;
-  /*text-align:center !important;
-  margin-left: auto;
-  margin-right: auto;*/
 }
 
 .td-img-logo {
@@ -204,6 +187,7 @@ table.table-logo > tbody > tr > td {
   vertical-align: middle;
 }
 
+/*
 div.row:nth-child(2) {
   border-top-color:#ddd;
   border-top-style:solid;
@@ -212,11 +196,21 @@ div.row:nth-child(2) {
 }
 
 div.row + div.row {
-  /* another option might be div.row ~ div.row */
+  /* another option might be div.row ~ div.row
   border-top-color:#ddd;
   border-top-style:solid;
   border-top-width:1px;
   padding-top:10px;
+}
+*/
+
+div.row:not(:first-child) {
+  /*background-color: green;*/
+  border-top-color:#ddd;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-top:10px;
+
 }
 
 
@@ -337,4 +331,9 @@ table.git-lifecycle td i {
 .td-align-center {
   align-items: center;
   text-align: center;
+}
+
+/* Remove empty <p> elements added by WordPress */
+p:empty {
+  display:none;
 }
