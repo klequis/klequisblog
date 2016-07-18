@@ -25,13 +25,11 @@ body {
 }
 
 .no-panel {
-  /*background-color: #ddd;*/
   background:rgb(255,255,255);
 }
 
 .img-step-figure {
   margin-top: 10px;
-  /* I'm not sure about the below change. I may need to add space to a <p> that follows an img-step-figure */
   margin-bottom: 10px;
   /* To get pictures to center */
   margin-left:auto;
@@ -110,8 +108,6 @@ blockquote cite {
   padding-top:2.0em;
 }
 
-/*
-
 .seriesbox {
   display: none;
 }
@@ -144,7 +140,6 @@ div.widget_seriestoc > h4:first-of-type {
   font-size: 24px;
   margin-top: 27px;
 }
-*/
 
 .entry-content fieldset {
   margin-bottom:20px;
@@ -187,23 +182,6 @@ table.table-logo > tbody > tr > td {
   vertical-align: middle;
 }
 
-/*
-div.row:nth-child(2) {
-  border-top-color:#ddd;
-  border-top-style:solid;
-  border-top-width:1px;
-  padding-top:10px;
-}
-
-div.row + div.row {
-  /* another option might be div.row ~ div.row
-  border-top-color:#ddd;
-  border-top-style:solid;
-  border-top-width:1px;
-  padding-top:10px;
-}
-*/
-
 div.row:not(:first-child) {
   /*background-color: green;*/
   border-top-color:#ddd;
@@ -216,7 +194,6 @@ div.row:not(:first-child) {
 div.row.row-no-border {
   border-top: none;
 }
-
 
 /* Chart / Highlight Colors */
 .chart-color-one {
@@ -302,14 +279,10 @@ td.git-structure-td-left.git-structure-black {
 }
 
 table.git-lifecycle {
-  /*width:70%;*/
   max-width: 450px;
 }
 table.git-lifecycle td {
   vertical-align: middle;
-  /*background-color: orange;*/
-  /*text-align: left;*/
-  /*padding: 0px;*/
   width:1%;
   border:none;
 }
@@ -340,4 +313,16 @@ table.git-lifecycle td i {
 /* Remove empty <p> elements added by WordPress */
 p:empty {
   display:none;
+}
+
+#seriestoc-2 > h4 {
+  font-size: 1.5em;
+}
+
+#seriestoc-2 > h1 {
+  font-size: 1.5em;
+}
+
+#recent-posts-5 > h1 {
+  font-size: 1.5em;
 }
