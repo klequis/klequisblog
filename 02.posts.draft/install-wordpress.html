@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>**title**</title>
+  <title>wordpress install</title>
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../flint-style.css">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../dev-style.css">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
 </head>
 
 
@@ -47,6 +47,7 @@
         <div class="col-md-8">
           <p>Log into phpMyAdmin using root.</p>
           <p>Click on the 'User accounts' tab.</p>
+          <p class="ke-callout ke-callout-info">If you already have a database user setup you can use it and skip this step.</p>
         </div>
         <div class="col-md-4">
           pic.001.useraccounts.png
@@ -168,7 +169,7 @@
           <p>Change DB_NAME to the name of your new database.</p>
           <p>Change DB_USER to the name of your new user.</p>
           <p>Change DB_PASSWORD to the password for your new user.</p>
-          <p>Note that DB_HOST is already set to 'localhost'.</p>
+          <p>Note that DB_HOST is already set to 'localhost'. Leave it as is.</p>
           <p>Save and close the file.</p>
         </div>
         <div class="col-md-4">
@@ -219,6 +220,8 @@
         <div class="col-md-8">
           <p>Enable the new host and restart Apache.</p>
           <pre>$ sudo a2ensite wptutorial.conf<br>$ sudo systemctl restart apache2</pre>
+          <p class="ke-callout ke-callout-info">You will see in terminal a message that instructs you to use 'service apache2 reload' to restart Apache. This is the older command that still works. I suggest you use the newer command in the event the older one gets phased-out.</p>
+
         </div>
         <div class="col-md-4">
           <!-- empty -->
