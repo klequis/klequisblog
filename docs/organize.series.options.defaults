@@ -1,0 +1,86 @@
+Series Post List Template:
+<div class="seriesbox"><div class="center">%series_icon_linked%<br />%series_title_linked%</div><ul class="serieslist-ul">%post_title_list%</ul></div>%postcontent%
+
+
+Series Post List Post Title Template:
+<li class="serieslist-li">%post_title_linked%</li>
+
+
+Series Post List Current Post Title Template:
+<li class="serieslist-li-current">%post_title%</li>
+
+
+Series Post Navigation Template:
+%postcontent%<fieldset><legend>Series Navigation</legend><span class="series-nav-left">%previous_post%</span><span class="series-nav-right">%next_post%</span></fieldset>
+
+
+Series Table of Contents listing:
+<div class="serieslist-box"><div class="imgset">%series_icon_linked%</div><div class="serieslist-content"><h2>%series_title_linked%</h2><p>%series_description%</p></div><hr style="clear: left; border: none" /></div>
+
+
+Series Meta:
+<div class="seriesmeta">This entry is part %series_part% of %total_posts_in_series% in the series %series_title_linked%</div>%postcontent%
+
+Series Meta (with excerpts):
+<div class="seriesmeta">This entry is part %series_part% of %total_posts_in_series% in the series %series_title_linked%</div>%postcontent%
+
+
+Latest Series (tags before):
+<div class="latest-series"><ul>
+
+
+Latest Series (inner tags):
+<li>%series_title_linked%</li>
+
+
+Latest Series (tags after):
+</ul></div>
+
+
+Modify 01
+****************
+Latest Series (tags before):
+<div class="latest-series"><ul>
+
+Latest Series (tags after):
+</ul></div>
+
+***********************
+
+
+<li><i class="fa-li fa fa-check-square"></i>List icons</li>
+
+
+
+
+
+
+
+
+
+
+
+**************************
+**************************
+**************************
+
+ul {
+  list-style: none;
+  /*list-style:georgian;*/
+}
+ul li:before {
+  font-family: 'FontAwesome';
+  content:'\f067';
+/*   font-size: 1.5em;
+
+   padding-right: 5px;*/
+}
+
+
+
+
+
+
+
+
+

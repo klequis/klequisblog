@@ -102,7 +102,7 @@ blockquote {
   background-color: white;
   border-left: 5px solid;
   padding-bottom: 35px;
-  border-left-color: #1b809e;
+  border-left-color: #1b809e !important;
 }
 blockquote cite {
   padding-top:2.0em;
@@ -118,7 +118,7 @@ blockquote cite {
   border: 1px solid #eee;
   border-left-width: 5px;
   border-radius: 3px;
-  border-left-color: #999999;
+  border-left-color: #1b809e;
   background: white !important;
   background-color: white !important;
   font-size:0.9em;
@@ -315,6 +315,9 @@ p:empty {
   display:none;
 }
 
+
+
+/*
 #seriestoc-2 > h4 {
   font-size: 1.5em;
 }
@@ -323,14 +326,31 @@ p:empty {
   font-size: 1.5em;
 }
 
+
 #recent-posts-5 > h1 {
   font-size: 1.5em;
+}
+*/
+
+
+
+.widget_recent_entries > h1 {
+  font-size: 1.7em;
+}
+
+.widget_latestseries > h1 {
+  font-size: 1.7em;
 }
 
 @media (min-width: 768px) {
   #menu-main-menu.nav.navbar-nav {
     font-weight: bolder;
     float: right;
-    /*margin-right: 327px;*/
   }
 }
+
+/* hold to see if needed
+#sidebar-right {
+  float: right;
+}
+*/
