@@ -49,6 +49,14 @@ Latest Series (tags after):
 
 
 <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+01: <li><i class="fa-li fa fa-check-square">%series_title_linked%</i></li>
+02: <li><i class="fa-li fa fa-check-square"></i>%series_title_linked%</li>
+    <li><i class="fa-li fa fa-square"></i>List icons</li>
+
+
+-------------------------------------------------
+--------------------------------------------------------
+----------------------------------------------------
 
 
 
@@ -60,21 +68,39 @@ Latest Series (tags after):
 
 
 
-**************************
-**************************
-**************************
 
-ul {
-  list-style: none;
-  /*list-style:georgian;*/
-}
-ul li:before {
-  font-family: 'FontAwesome';
-  content:'\f067';
-/*   font-size: 1.5em;
 
-   padding-right: 5px;*/
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
