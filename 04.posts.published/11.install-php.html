@@ -53,8 +53,8 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>In a previous post we created a simple Hello World website using the command line. This time, just to provide a different experience, we will do it using a mix of command line and Files. I will provide the instructions for creating the virtual host in brief. If you get stuck, refer to the full post <a href="http://klequis.com/klequis/2016/05/04/creating-a-virtualhost/">Creating a Virtual Host</a>.</p>
-          <p class="ke-callout ke-callout-info">You may want to take a quick diversion as newer versions of Files doesn't provide a way of creating a file from within Files. Follow the steps in <a href="http://klequis.com/klequis/2016/07/01/adding-a-new-document-menu-to-the-files-nautilus-right-click-menu/">Adding a "New Document" Menu to the Files (Nautilus) Right-Click Menu</a> and then come back.</p>
+          <p>In a previous post we created a simple Hello World website using the command line. This time, just to provide a different experience, we will do it using a mix of command line and Files. I will provide the instructions for creating the virtual host in brief. If you get stuck, refer to the full post <a href="http://klequis.com/klequis/create-virtual-host/">Creating a Virtual Host</a>.</p>
+          <p class="ke-callout ke-callout-info">You may want to take a quick diversion as newer versions of Files doesn't provide a way of creating a file from within Files. Follow the steps in <a href="http://klequis.com/klequis/newdoc-r-click/">Adding a "New Document" Menu to the Files (Nautilus) Right-Click Menu</a> and then come back.</p>
           <p>Open Files and navigate to Home &gt; workspace.</p>
           <p>Create a directory named "phpinfopage".</p>
         </div>
@@ -77,7 +77,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <p>Previously we created the virtual host file from scratch. This time we will copy the existing file and modify it. See <a href="http://klequis.com/klequis/2016/05/04/creating-a-virtualhost/">Creating a Virtual Host</a> if you don't already have this file.</p>
+          <p>Previously we created the virtual host file from scratch. This time we will copy the existing file and modify it. See <a href="http://klequis.com/klequis/create-virtual-host/">Creating a Virtual Host</a> if you don't already have this file.</p>
           <p>You need root access to edit files in /sites-available. Therefore, we will use the command line.</p>
           <p>Execute these commands.</p>
           <pre>$ cd /etc/apache2/sites-available<br>$ sudo cp helloworld.conf phpinfopage.conf<br>$ sudo gedit phpinfopage.conf</pre>

@@ -16,117 +16,118 @@
 
 <div class="container-fluid">
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <p>This tutorial will show you how to install VirtualBox 5.0 on Ubuntu.</p>
-    <p>VirtualBox is free software made by Oracle Corporation. A <b>virtual machine</b> is an 'emulation' of a particular computer system. There are different types of virtual machines. VirtualBox is a 'full virtualization VM' which is a complete operating system. As such, when you run a Ubuntu virtual machine on a Windows computer, you have the entire Ubuntu operating system running inside a window.</p>
-    <!--more-->
-    <p>For in-depth information on virtual machines, see <a href="https://en.wikipedia.org/wiki/Virtual_machine">Wikipedia</a>.</p>
-    <p class="ke-callout ke-callout-info">If you don't already have an established and backed-up location to write down information about your development environment such as passwords and database names, establish that now. Evernote and OneNote are both good choices.</p>
-    <h2>Definitions</h2>
-    <dl class="dl-horizontal">
-     	<dt>Host</dt>
-     	<dd>The 'host' is your computer. It is the operating system which boots when you turn on your computer. In this tutorial, the host computer is Windows 8.1.</dd>
-     	<dt>Guest</dt>
-     	<dd>The 'guest' is the computer you run inside of VirtualBox.</dd>
-     	<dt>Virtual Machine (VM)</dt>
-     	<dd>The guest is also called 'the virtual machine' and I will use these terms interchangeably.</dd>
-    </dl>
-    <h2>Requirements</h2>
-    <ul>
-     	<li>A computer running Ubuntu 16.04 64-bit.</li>
-     	<li>At least 4GB of RAM</li>
-     	<li>At least 20GB hard drive space.</li>
-     	<li>VirtualBox itself does not use much disk space, but the virtual machine you will create does. The initial virtual machine will take-up about 8GB of hard disk space. However, it will grow as you install software and otherwise use it. 20 GB is plenty to get started but it is a conservative number.</li>
-    </ul>
-    <p class="ke-callout ke-callout-warning">Unless otherwise noted, all options/choices must be set as show in the pictures.</p>
-    <p class="ke-callout ke-callout-warning">The Ubuntu Software Center has an install of VirtualBox. According to the reviews for that install, it is the 32-bit version. We will be using the 64-bit version by downloading it from virtualbox.org.</p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This tutorial will show you how to install VirtualBox 5.0 on Ubuntu.</p>
+      <p>VirtualBox is free software made by Oracle Corporation. A <b>virtual machine</b> is an 'emulation' of a particular computer system. There are different types of virtual machines. VirtualBox is a 'full virtualization VM' which is a complete operating system. As such, when you run a Ubuntu virtual machine on a Windows computer, you have the entire Ubuntu operating system running inside a window.</p>
+      <!--more-->
+      <p>For in-depth information on virtual machines, see <a href="https://en.wikipedia.org/wiki/Virtual_machine">Wikipedia</a>.</p>
+      <p class="ke-callout ke-callout-info">If you don't already have an established and backed-up location to write down information about your development environment such as passwords and database names, establish that now. Evernote and OneNote are both good choices.</p>
+      <h2>Definitions</h2>
+      <dl class="dl-horizontal">
+       	<dt>Host</dt>
+       	<dd>The 'host' is your computer. It is the operating system which boots when you turn on your computer. In this tutorial, the host computer is Windows 8.1.</dd>
+       	<dt>Guest</dt>
+       	<dd>The 'guest' is the computer you run inside of VirtualBox.</dd>
+       	<dt>Virtual Machine (VM)</dt>
+       	<dd>The guest is also called 'the virtual machine' and I will use these terms interchangeably.</dd>
+      </dl>
+      <h2>Requirements</h2>
+      <ul>
+       	<li>A computer running Ubuntu 16.04 64-bit.</li>
+       	<li>At least 4GB of RAM</li>
+       	<li>At least 20GB hard drive space.</li>
+       	<li>VirtualBox itself does not use much disk space, but the virtual machine you will create does. The initial virtual machine will take-up about 8GB of hard disk space. However, it will grow as you install software and otherwise use it. 20 GB is plenty to get started but it is a conservative number.</li>
+      </ul>
+      <p class="ke-callout ke-callout-warning">Unless otherwise noted, all options/choices must be set as show in the pictures.</p>
+      <p class="ke-callout ke-callout-warning">The Ubuntu Software Center has an install of VirtualBox. According to the reviews for that install, it is the 32-bit version. We will be using the 64-bit version by downloading it from virtualbox.org.</p>
+    </div>
   </div>
-</div>
 
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">
-    <h2>Download VirtualBox</h2>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-        <div class="col-md-8">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2>Download VirtualBox</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+          <div class="col-md-8">
 
-          Go to <a href="https://www.virtualbox.org">virtualbox.org</a> and download the installation for ubuntu 16.04 ("Xenial"). You will see two links labeled i386 (the 32-bit version) and AMD64 (the 64-bit version which we will be using).
-          <div class="ke-callout">
-            You should go to the download page and make sure you have the most recent download. However, the links as of today are:
-            <br>
-            <a href="http://download.virtualbox.org/virtualbox/5.0.20/virtualbox-5.0_5.0.20-106931~Ubuntu~xenial_amd64.deb">VirtualBox for Ubuntu 16.04
-            </a>
-            <br>
-            <a href="http://download.virtualbox.org/virtualbox/5.0.20/VirtualBox-5.0.20-106931-Win.exe">Virtualbox for Windows
-            </a>
+            Go to <a href="https://www.virtualbox.org">virtualbox.org</a> and download the installation for ubuntu 16.04 ("Xenial"). You will see two links labeled i386 (the 32-bit version) and AMD64 (the 64-bit version which we will be using).
+            <div class="ke-callout">
+              You should go to the download page and make sure you have the most recent download. However, the links as of today are:
+              <br>
+              <a href="http://download.virtualbox.org/virtualbox/5.0.20/virtualbox-5.0_5.0.20-106931~Ubuntu~xenial_amd64.deb">VirtualBox for Ubuntu 16.04
+              </a>
+              <br>
+              <a href="http://download.virtualbox.org/virtualbox/5.0.20/VirtualBox-5.0.20-106931-Win.exe">Virtualbox for Windows
+              </a>
+            </div>
+
           </div>
-
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
+          <div class="col-md-4">
+            <!-- empty -->
+          </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">
-    <h2>Install VirtualBox</h2>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-        <div class="col-md-8">
-          <ol>
-            <li>Using Files (i.e., the file manager) go to your Downloads directory.</li>
-           	<li>Right-click the downloaded file (currently named virtualbox-5.0_5.0.20-106931-Ubuntu-xenial_amd64.deb) and choose <button class="btn btn-default btn-xs">Open With Software Install</button>.</li>
-            <li>In Software, click <button class="btn btn-default btn-xs">Install</button>.</li>
-           	<li>Enter your password when prompted.</li>
-           	<li>Wait for the installation to complete before proceeding.</li>
-           	<li>Use the below command to make sure you get updates. (I suggest you copy/paste it.)
-            <pre><code>$ sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" &gt;&gt; /etc/apt/sources.list.d/virtualbox.list'</code></pre></li>
-           	<li>Download the Oracle public key so that Software Install trusts the installation<pre><code>$ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -</code></pre></li>
-            <li>Launch VirtualBox and check it out! You are ready to begin building your first Ubuntu GNOME virtual machine.</li>
-          </ol>
-        </div>
-        <div class="col-md-4">
-          <!-- empty -->
-        </div>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2>Install VirtualBox</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+          <div class="col-md-8">
+            <ol>
+              <li>Using Files (i.e., the file manager) go to your Downloads directory.</li>
+             	<li>Right-click the downloaded file (currently named virtualbox-5.0_5.0.20-106931-Ubuntu-xenial_amd64.deb) and choose <button class="btn btn-default btn-xs">Open With Software Install</button>.</li>
+              <li>In Software, click <button class="btn btn-default btn-xs">Install</button>.</li>
+             	<li>Enter your password when prompted.</li>
+             	<li>Wait for the installation to complete before proceeding.</li>
+             	<li>Use the below command to make sure you get updates. (I suggest you copy/paste it.)
+              <pre><code>$ sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" &gt;&gt; /etc/apt/sources.list.d/virtualbox.list'</code></pre></li>
+             	<li>Download the Oracle public key so that Software Install trusts the installation<pre><code>$ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -</code></pre></li>
+              <li>Launch VirtualBox and check it out! You are ready to begin building your first Ubuntu GNOME virtual machine.</li>
+            </ol>
+          </div>
+          <div class="col-md-4">
+            <!-- empty -->
+          </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">
-    <h2>Make a Snapshot</h2>
-  </div>
-  <div class="panel-body">
-    <div class="ke-callout ke-callout-warning">
-      <p>Don't skip this step!</p>
-      <p>
-        As you are install software on your fresh new VM things can go wrong and not all of them are easy to correct. Creating a snapshot at the end of each major change to your VM will give you a way to go back to a state when things were working so you can try again. Go to this page <a href="http://klequis.com/klequis/2016/05/05/how-to-create-a-snapshot-with-oracle-virtualbox/">How to Create a Snapshot With Oracle VirtualBox</a> <strong>and make a snapshot now!</strong>
-      </p>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2>Make a Snapshot</h2>
+    </div>
+    <div class="panel-body">
+      <div class="ke-callout ke-callout-warning">
+        <p>Don't skip this step!</p>
+        <p>
+          As you are install software on your fresh new VM things can go wrong and not all of them are easy to correct. Creating a snapshot at the end of each major change to your VM will give you a way to go back to a state when things were working so you can try again. Go to this page <a href="http://klequis.com/klequis/create-vm-snapshot">How to Create a Snapshot With Oracle VirtualBox</a> <strong>and make a snapshot now!</strong>
+        </p>
+      </div>
     </div>
   </div>
-</div>
+  <p class="ke-callout ke-callout-goal">Congratulations! VirtualBox is installed and you are ready but build your first virtual machine.</p>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>References</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>References</h2>
+    </div>
+    <div class="panel-body">
+      <ol>
+       	<li><a href="https://www.virtualbox.org/wiki/Linux_Downloads">VirtualBox download and installation page</a></li>
+       	<li>UbuntuHandbook, <a href="http://ubuntuhandbook.org/index.php/2015/07/install-virtualbox-5-0-ubuntu-15-04-14-04-12-04/">How to Install VirtualBox 5.0 Stable in Ubuntu 15.04, 14.04, 12.04</a></li>
+       	<li>ubuntu documentation, Community Help Wiki, <a href="https://help.ubuntu.com/community/VirtualBox/Installation">VirtualBox/Installation</a></li>
+      </ol>
+    </div>
   </div>
-  <div class="panel-body">
-    <ol>
-     	<li><a href="https://www.virtualbox.org/wiki/Linux_Downloads">VirtualBox download and installation page</a></li>
-     	<li>UbuntuHandbook, <a href="http://ubuntuhandbook.org/index.php/2015/07/install-virtualbox-5-0-ubuntu-15-04-14-04-12-04/">How to Install VirtualBox 5.0 Stable in Ubuntu 15.04, 14.04, 12.04</a></li>
-     	<li>ubuntu documentation, Community Help Wiki, <a href="https://help.ubuntu.com/community/VirtualBox/Installation">VirtualBox/Installation</a></li>
-    </ol>
-  </div>
-</div>
 
 
 </div> <!-- containter-fluid -->

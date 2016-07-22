@@ -28,7 +28,7 @@
         <dt>MySQL Client</dt>
         <dd>MySQL Client is a command line application that communicates with MySQL Server. Using MySQL client you can create database objects, issue queries and much more.</dd>
       </dl>
-      <p>If you want to use a GUI based client for managing the database, we will be installing phpMyAdmin later in <a href="http://klequis.com/klequis/2016/06/06/01-building-a-ubuntu-gnome-16-04-development-machine/">this series</a>.</p>
+      <p>If you want to use a GUI based client for managing the database, we will be installing phpMyAdmin later in the tutorial <a href="http://klequis.com/klequis/install-phpmyadmin/">Installing phpMyAdmin</a>.</p>
       <p>We will be installing the latest version of MySQL which as of this writing in June 2016 is 5.7.13.</p>
       <div class="ke-callout ke-callout-danger">
         These instructions are for a machine that has never had any version of MySQL installed on it. If your machine already has MySQL installed, do not follow these instructions. Consult the <a href="http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">MySQL installation documentation</a>.
@@ -41,7 +41,7 @@
       <h2>Preperation</h2>
     </div>
     <div class="panel-body">
-      <p>This is part ten of the series <a href="http://klequis.com/klequis/2016/06/06/01-building-a-ubuntu-gnome-16-04-development-machine/">Building a Ubuntu GNOME 16.04 Development Machine</a>. If you have been following the series your machine is ready for MySQL installation. Make sure you have the password you created in <a href="http://klequis.com/klequis/2016/07/01/07-introduction-to-lamp/">Introduction to LAMP</a>.</p>
+      <p>This tutorial is part of the series <a href="http://klequis.com/build-dev-env/">Building a Ubuntu GNOME 16.04 Development Machine</a>. If you have been following the series your machine is ready for MySQL installation. Make sure you have the password you created in <a href="http://klequis.com/klequis/intro-to-lamp/">Introduction to LAMP</a>.</p>
       <p>The root user us the 'superuser' for MySQL. The root user can make any and all changes to any of the databases you instance of MySQL will host. Since your development machine, as built following this series, will not be accessible from the internet, the complexity of the password is not important. It is there for two reasons: 1) to make sure you think about it when working as root and 2) to give you the full experience of working with a database server which includes setting and entering passwords.</p>
       <p>It is possible to configure MySQL with 'blank' as the password but please don't.</p>
     </div>
@@ -122,6 +122,8 @@
     </div>
   </div>
 
+  <p class="ke-callout ke-callout-goal">Congratulations! MySQL is installed and ready for use.</p>
+  
   <div class="panel panel-default">
     <div class="panel-body">
       <h2>References</h2>
