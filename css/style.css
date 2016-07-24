@@ -108,9 +108,11 @@ blockquote cite {
   padding-top:2.0em;
 }
 
+/*
 .seriesbox {
-  display: none;
+  display:none;
 }
+*/
 
 .seriesmeta {
   padding: 20px;
@@ -124,6 +126,7 @@ blockquote cite {
   font-size:0.9em;
 }
 
+/*
 div.widget_seriestoc h3 {
   display:none;
 }
@@ -135,6 +138,7 @@ div.widget_seriestoc > ul:first-of-type {
 div.widget_seriestoc > br {
   display:none;
 }
+*/
 
 div.widget_seriestoc > h4:first-of-type {
   font-size: 24px;
@@ -317,7 +321,7 @@ p:empty {
 
 
 
-/*
+
 #seriestoc-2 > h4 {
   font-size: 1.5em;
 }
@@ -330,7 +334,7 @@ p:empty {
 #recent-posts-5 > h1 {
   font-size: 1.5em;
 }
-*/
+
 
 /*
 ul {
