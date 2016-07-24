@@ -19,39 +19,26 @@
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-body">
-      <p>Things do go wrong and not all of them are easy to correct. Sometimes, the best use of your time is to go back to where you started and try again. Snaps give you this ability. Before making a significant change to your virtual machine, create a  If things go wrong you can restore the previous state and try again. Here is how you do it...</p>
+      <p>This tutorial will show you how to create a VirtualBox Virtual Machine snapshot. Things do go wrong and not all of them are easy to correct. Sometimes, the best use of your time is to go back to where you started and try again. Snapshots give you this ability. Before making a significant change to your virtual machine, create a  If things go wrong you can restore the previous state and try again. Here is how you do it...</p>
     </div>
   </div>
     <!--more-->
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">
-      <h2>Creating a Snapshot</h2>
+      <h2>Creating a VirtualBox Virtual Machine Snapshot</h2>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-         	<p>Launch VirtualBox if it is not already running.</p>
+          <p>Launch VirtualBox if it is not already running.</p>
          	<p>Close your virtual machine if it is running.</p>
-        </div>
-        <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/01.homescreen.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/01.homescreen.png"/></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <p>Click <button class="btn btn-default btn-xs">Snapshots</button> near the upper right corner.<//>
-        </div>
-        <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/02.snapshotscreen.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/02.snapshotscreen.png" /></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
+          <p>Click <button class="btn btn-default btn-xs">Snapshots</button> near the upper right corner.</p>
+          <p>The screenshot has quite a few snapshots. You may or may not have any. In most cases you will want to choose "Current State".</p>
           <p>In the toolbar above the right-hand pane, click the camera button.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/03.snapshotscreen.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/03.snapshotscreen.png" /></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/001.01.create.snapshot.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/001.01.create.snapshot.png" alt="VirtualBox Virtual Machine snapshot - create"/></a>
         </div>
       </div>
       <div class="row">
@@ -60,7 +47,7 @@
           <p>Click <button class="btn btn-default btn-xs">OK</button>.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/04.takepng"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/04.takepng" /></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/002.01.snapshot.name.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/002.01.snapshot.name.png" alt="VirtualBox Virtual Machine snapshot - name" /></a>
         </div>
       </div>
       <div class="row">
@@ -68,7 +55,7 @@
           <p>In the screenshot 'Before installing Apache (10 seconds ago)' is the  'Current State' is identical for the moment but will not be as soon as you start the virtual machine. 'Before installing Apache' is the name I gave the  VirtualBox appends the time '(10 seconds ago)' and always maintains the 'Current State' of the VM.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/05.done.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/05.done.png" /></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/003.01.current.state.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/003.01.current.state.png" alt="VirtualBox Virtual Machine snapshot - current state"/></a>
         </div>
       </div>
     </div>
@@ -85,17 +72,17 @@
           <ul>
             <li>'Restore Snapshot' will replace the current state with the snapshot - be careful!</li>
             <li>'Delete Snapshot' explains itself.</li>
-            <li>'Show Details' will give you information about the </li>
-            <li>'Clone...'' will make a copy of the  Clone is useful when you want to preserve the Current State.</li>
+            <li>'Show Details' will give you information about the snapshot.</li>
+            <li>'Clone...'' will make a copy of the VM. You can create a clone with just the current state, with all snapshots or just the currently selected snapshot.</li>
           </ul>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/06.snapshotoptions.png"><img class="img-responsive" src="http://klequis.com/klequis/wp-content/uploads/06.snapshotoptions.png" /></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/004.01.work.with.snapshots.png"><img class="img-responsive" src="http://klequis.com/klequis/wp-content/uploads/create-vm-snapshot/004.01.work.with.snapshots.png" alt="VirtualBox Virtual Machine snapshot - working with"/></a>
         </div>
       </div>
     </div>
   </div>
-  <p class="ke-callout ke-callout-goal">Done! It only takes a minute to make a snapshot and is well worth you time to do so before each configuration change to your virtual machine.<p>
+  <p class="ke-callout ke-callout-goal">Done! It only takes a minute to make a VirtualBox Virtual Machine snapshot and is well worth you time to do so before each configuration change to your virtual machine.<p>
 
 </div> <!-- container-fluid -->
 
