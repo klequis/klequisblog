@@ -40,7 +40,7 @@
           <pre>$ php -v</pre>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/001.phpversion.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/001.phpversion.png" alt="dome alt"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/001.phpversion.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/001.phpversion.png" alt="install php - php version"></a>
         </div>
       </div>
     </div>
@@ -53,13 +53,13 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>In a previous post we created a simple Hello World website using the command line. This time, just to provide a different experience, we will do it using a mix of command line and Files. I will provide the instructions for creating the virtual host in brief. If you get stuck, refer to the full post <a href="http://klequis.com/klequis/create-virtual-host/">Creating a Virtual Host</a>.</p>
+          <p>In a previous post we created a simple Hello World website using the command line. This time, just to provide a different experience, we will do it using a mix of command line and Files.</p>
           <p class="ke-callout ke-callout-info">You may want to take a quick diversion as newer versions of Files doesn't provide a way of creating a file from within Files. Follow the steps in <a href="http://klequis.com/klequis/newdoc-r-click/">Adding a "New Document" Menu to the Files (Nautilus) Right-Click Menu</a> and then come back.</p>
           <p>Open Files and navigate to Home &gt; workspace.</p>
           <p>Create a directory named "phpinfopage".</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/002.create.phpinfopage.dir.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/002.create.phpinfopage.dir.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/002.create.phpinfopage.dir.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/002.create.phpinfopage.dir.png" alt="install php - info page"></a>
         </div>
       </div>
       <div class="row">
@@ -72,12 +72,19 @@
           <p class="ke-callout ke-callout-info">The ".php" extension directs Apache to pass processing of the file to PHP.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/003.phpinfopage.contents.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/003.phpinfopage.contents.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/003.phpinfopage.contents.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/003.phpinfopage.contents.png" alt="install php - info page contents"></a>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create a PHP-Info Site</h2>
+    </div>
+    <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>Previously we created the virtual host file from scratch. This time we will copy the existing file and modify it. See <a href="http://klequis.com/klequis/create-virtual-host/">Creating a Virtual Host</a> if you don't already have this file.</p>
+          <p>Previously we created the virtual host file from scratch. This time we will copy an existing file and modify it. If you don't already have this file or need more detail instructions, see <a href="http://klequis.com/klequis/create-virtual-host/">Creating a Virtual Host</a> if you don't already have this file.</p>
           <p>You need root access to edit files in /sites-available. Therefore, we will use the command line.</p>
           <p>Execute these commands.</p>
           <pre>$ cd /etc/apache2/sites-available<br>$ sudo cp helloworld.conf phpinfopage.conf<br>$ sudo gedit phpinfopage.conf</pre>
@@ -85,10 +92,9 @@
           <p>Save and close the file.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/003.01.phpinfopage.conf.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/003.01.phpinfopage.conf.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/003.01.phpinfopage.conf.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/003.01.phpinfopage.conf.png" alt="install php - .conf file"></a>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-8">
           <p>Make an entry in the 'hosts' file.</p>
@@ -98,10 +104,9 @@
           <p>Close and save the file.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/004.hostfile.entry.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/004.hostfile.entry.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/004.hostfile.entry.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/004.hostfile.entry.png" alt="install php - hosts file"></a>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-8">
           <p>Enable the new site and restart Apache.</p>
@@ -111,7 +116,7 @@
           <p>The resulting page should like like the screenshot. There is a lot of information on this page. Take a look to see what is there.</p>
         </div>
         <div class="col-md-4">
-          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/005.phpinfopage.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/005.phpinfopage.png" alt="**alt**"></a>
+          <a href="http://klequis.com/klequis/wp-content/uploads/install-php/005.phpinfopage.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/install-php/005.phpinfopage.png" alt="install php - info page"></a>
         </div>
       </div>
     </div>
