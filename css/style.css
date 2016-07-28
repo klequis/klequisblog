@@ -342,6 +342,22 @@ ul {
 }
 */
 
+#ke_recent_posts > div > h3 {
+  margin-top:0px;
+}
+
+#ke_future_posts > div > h3 {
+  margin-top: 0px;
+}
+
+#ke_latest_series > div > h3 {
+  margin-top: 0px;
+}
+
+.widget_ke_future_posts {
+  margin-top:0px;
+}
+
 .widget_recent_entries > h1 {
   font-size: 1.7em;
 }
