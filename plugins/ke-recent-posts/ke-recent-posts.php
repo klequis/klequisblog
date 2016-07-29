@@ -12,6 +12,18 @@ add_action( 'widgets_init', function(){
      register_widget( 'KE_Widget_Recent_Posts' );
 });
 
+ if (!function_exists('write_log')) {
+    function write_log ( $log )  {
+      if ( true === WP_DEBUG ) {
+        if ( is_array( $log ) || is_object( $log ) ) {
+          error_log( print_r( $log, true ) );
+        } else {
+          error_log( $log );
+        }
+      }
+  	}
+  }
+
 class KE_Widget_Recent_Posts extends WP_Widget {
 
 
@@ -30,6 +42,8 @@ class KE_Widget_Recent_Posts extends WP_Widget {
 		if ( ! isset( $args['widget_id'] ) ) {
 			$args['widget_id'] = $this->id;
 		}
+
+		write_log('KE_Widget_Recent_Posts called');
 
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'KE Recent Posts' );
 
@@ -57,7 +71,7 @@ class KE_Widget_Recent_Posts extends WP_Widget {
 			<div class="panel-body">
 				<?php if ( $title ) {
 					//echo $args['before_title'] . $title . $args['after_title'];
-					echo '<h3>' . $title . '</h3>';
+					echo '<h4>' . $title . '</h4>';
 				} ?>
 				<ul class="fa-ul">
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>

@@ -17,11 +17,22 @@ add_action( 'widgets_init', function(){
      register_widget( 'ke_future_posts' );
 });
 
+ if (!function_exists('write_log')) {
+    function write_log ( $log )  {
+      if ( true === WP_DEBUG ) {
+        if ( is_array( $log ) || is_object( $log ) ) {
+          error_log( print_r( $log, true ) );
+        } else {
+          error_log( $log );
+        }
+      }
+  	}
+  }
+
 /**
  * Adds My_Widget widget.
  */
 class ke_future_posts extends WP_Widget {
-
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -33,6 +44,7 @@ class ke_future_posts extends WP_Widget {
 		);
 	}
 
+
 	/**
 	 * Front-end display of widget.
 	 *
@@ -42,11 +54,18 @@ class ke_future_posts extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		if ( !is_user_logged_in() ){
-    echo $args['before_widget'];
-		echo '<div id="ke_future_posts" class="panel panel-default">';
-		echo '<div class="panel-body">';
-		echo '<h3>Future Posts</h3>';
+
+		write_log('ke_future_posts called');
+
+	
+    //echo $args['before_widget'];
+    $out01 = $args['before_widget'];
+		//echo '<div id="ke_future_posts" class="panel panel-default">';
+		$out02 = '<div id="ke_future_posts" class="panel panel-default">';
+		//echo '<div class="panel-body">';
+		$out03 = '<div class="panel-body">';
+		//echo '<h3>Future Posts</h3>';
+		$out04 = '<h4>Future Posts</h4>';
 		/*
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
@@ -56,14 +75,50 @@ class ke_future_posts extends WP_Widget {
 		//echo __( 'Hello, World!', 'text_domain' );
 		//echo __( get_site_url(), 'text_domain' );
 		//echo '<p class="story_widget_readmore"><a href="' . get_permalink( $post->ID ) . '" title="Read the story, ' . $post->post_title . '">more...</a></p>';
-			echo '<p><a href="' . get_site_url() . '/register">Register</a> for updates on future posts.</p>';
+			//echo '<p><a href="' . get_site_url() . '/register">Register</a> for updates on future posts.</p>';
+			$out05 = '<p><a href="' . get_site_url() . '/register">Register</a> for updates on future posts.</p>';
 			//echo '<p><a href="' . get_site_url() . '/login">Login</a></p>';
 			//echo '<p><a href="' . get_site_url() . '/register">Register</a></p>';
 
-		echo '</div>';
-		echo '</div>';
-		echo $args['after_widget'];
+		//echo '</div>';
+		$out06 = '</div>';
+		//echo '</div>';
+		$out07 = '</div>';
+		//echo $args['after_widget'];
+		$out08 = $args['after_widget'];
+		//$out09 = <a href="#">
+
+		$font_awesome_li = '<i class="fa-li fa fa-square"></i>';
+		$future01 = '<ul class="fa-ul">';
+		$future02 = '<li>' . $font_awesome_li . '<a href="#">Using Git & GitHub</a></li>';
+		$future03 = '<li>' . $font_awesome_li . '<a href="#">Installing Node.js</a></li>';
+		$future04 = '<li>' . $font_awesome_li . '<a href="#">Installing ESLint</a></li>';
+		$future05 = '</ul>';
+
+		$debug = true;
+		if ($debug) {
+			write_log('out01: ' . $out01);
+			write_log('out02: ' . $out02);
+			write_log('out03: ' . $out03);
+			write_log('out04: ' . $out04);
+			write_log('out05: ' . $out05);
+			write_log('out06: ' . $out06);
+			write_log('out07: ' . $out07);
+			write_log('out08: ' . $out08);
 		}
+
+		echo $out01; //before_widget
+		echo $out02; //<div panel>
+		echo $out03; //<div panel>
+		echo $out04; //<h4>Future ...
+		if ( !is_user_logged_in() ){
+			
+			echo $out05; //url to register page
+		}
+		echo $future01 . $future02 . $future03 . $future04 . $future05;
+		echo $out06; //</div>
+		echo $out07; //</div>
+		echo $out08; //after_widget
 	}
 
 	/**

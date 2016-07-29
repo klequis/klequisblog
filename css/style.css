@@ -361,6 +361,7 @@ p:empty {
   margin-right:15px;
 }
 
+
 @media (min-width: 768px) {
   #menu-main-menu.nav.navbar-nav {
     font-weight: bolder;
