@@ -6,7 +6,7 @@
  * @since 2.2
 **/
 
-	if (!function_exists('write_log')) {
+  if (!function_exists('write_log')) {
     function write_log ( $log )  {
       if ( true === WP_DEBUG ) {
         if ( is_array( $log ) || is_object( $log ) ) {
@@ -39,7 +39,7 @@ class orgSeries_widget_latestseries extends WP_Widget {
 		$series_args = $args = apply_filters('widget_latestseries_args', array('hide_empty' => $hide_empty, 'orderby' => $orderby, 'number' => $number, 'order' => $order));
 		
 		$out = latest_series(false,$args);
-		
+	
 		if ( !empty( $out ) ) {
 			echo "this is it";
 			if ( $title )
@@ -131,14 +131,14 @@ class orgSeries_widget_seriestoc extends WP_Widget {
 		$out = '';
 		if ( $showseriestoc ) {
 			if ( $instance['list-type'] == 'list' ) {
-				$out .= '<ul>';
+				//$out .= '<ul>';
 				$out01 = '<ul>';
 
 				$series_args['title_li'] = '';
-				$out .= wp_list_series($series_args);
+				//$out .= wp_list_series($series_args);
 				$out02 = wp_list_series($series_args);
 
-				$out .= '</ul>';
+				//$out .= '</ul>';
 				$out03 = '</ul>';
 
 			} elseif ( $instance['list-type'] == 'dropdown' ) {
@@ -152,34 +152,80 @@ class orgSeries_widget_seriestoc extends WP_Widget {
 			if ( ( $wp_query->is_single ) && $showpostlist && $series = get_the_series() ) {
 				if ( $showseriestoc ) $out .= '<br /><br />';
 
-				$out .= get_series_posts('','widget', false, $widget_title);
+				//$out04 .= get_series_posts('','widget', false, $widget_title);
 				$out04 = get_series_posts('','widget', false, $widget_title);
 
 				}
 		}
 		
 		if ( !empty($out) ) {
-			echo $before_widget;
+			//echo $before_widget;
 			$out05 = $before_widget;
 			if ( $title )
 				//ke
 				//echo $before_title . $title . $after_title;
-				echo '<h3 class="widget-title">' . $title . '</h3>';
-				$out06 = '<h3 class="widget-title">' . $title . '</h3>';
+				//echo '<h3 class="widget-title">' . $title . '</h3>';
+				$out06 = '<h4 class="widget-title">' . $title . '</h4>';
 				//ke
 
-			echo $out;
-			echo $after_widget;
-
+			//echo $out;
+			//echo $after_widget;
 			$out07 = $after_widget;
 
-			write_log('out01: ' . $out01);
-			write_log('out02: ' . $out02);
-			write_log('out03: ' . $out03);
-			write_log('out04: ' . $out04);
-			write_log('out05: ' . $out05);
-			write_log('out06: ' . $out06);
-			write_log('out07: ' . $out07);
+			/* OUT ORDER
+			out05
+			out06
+			out01
+			out02
+			out03
+			out04
+			out07
+
+			<div class="panel panel-default">
+			  <div class="panel-body">
+
+			  </div>
+			</div>
+			*/
+			// Replacements
+			// Modify serieslist title in out04
+			$out04 = str_replace('Other posts in series:', 'Series Table of Contents', $out04);
+			//write_log('out4-new: ' . $out4);
+			$out04 = str_replace('<h3', '<h4', $out04);
+			$out04 = str_replace('</h3>', '</h4>', $out04);
+			
+
+			$debug = false;
+			if ($debug) {
+				write_log('out05: ' . $out05);
+				write_log('out06: ' . $out06);
+				write_log('out01: ' . $out01);
+				write_log('out02: ' . $out02);
+				write_log('out03: ' . $out03);
+				write_log('out04: ' . $out04);
+				write_log('out07: ' . $out07);
+			} else {
+
+				echo $out05; //aside
+					echo '<div class="panel panel-default panel-aside">';
+					  echo '<div class="panel-body panel-body-aside">';
+							echo $out06; //<h3>Series
+							echo $out01; //ul
+							echo $out02; //li
+							echo $out03; //ul
+						echo '</div>';
+					echo '</div>';
+					echo '<div class="panel panel-default panel-aside">';
+					  echo '<div class="panel-body  panel-body-aside">';
+							echo $out04; //<h4>Other ...
+						echo '</div>';
+					echo '</div>';
+				echo $out07; //aside
+			}
+
+
+
+
 
 		}
 	}
