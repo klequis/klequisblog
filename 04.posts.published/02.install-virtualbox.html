@@ -100,6 +100,19 @@
     </div>
   </div>
 
+  <div class="ke-callout ke-callout-warning">
+    <p>I ran into a problem getting Ubuntu updates and found a cure as follows.</p>
+    <p>Check if your machine is experiencing the issue.</p>
+    <pre>$ sudo apt-get update</pre>
+    <p>If you see an error similar to the below you will not be able to get VirtualBox updates.</p>
+    <pre>W: GPG error: http://download.virtualbox.org/virtualbox/debian xenial InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A2F683C52980AECF<br>W: The repository 'http://download.virtualbox.org/virtualbox/debian xenial InRelease' is not signed.<br>N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.</pre>
+    <p>To fix this, copy the key, in my case A2F683C52980AECF, and execute the below command.</p>
+    <pre>$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A2F683C52980AECF</pre>
+    <p>If it is successful, you will see a message something like this.</p>
+    <pre>Executing: /tmp/tmp.1gpNxpV8kd/gpg.1.sh --keyserver<br>keyserver.ubuntu.com<br>--recv-keys<br>A2F683C52980AECF<br>gpg: requesting key 2980AECF from hkp server keyserver.ubuntu.com<br>gpg: key 2980AECF: public key "Oracle Corporation (VirtualBox archive signing key) &lt;info@virtualbox.org&gt;" imported<br>gpg: Total number processed: 1<br>gpg:               imported: 1  (RSA: 1)</pre>
+  </div>
+
+
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">
