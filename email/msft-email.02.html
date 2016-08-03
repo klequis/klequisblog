@@ -7,89 +7,95 @@
 </head>
 
 <body style="background-color:white; margin-left:10%; margin-right:10%; border:2px solid">
-  <table style="width:100%;">
-    <tr>
-      <table style="width:100%;">
-        <tr>
-          <td style="background-color:green;">Klequis' Development Guide</td>
-        </tr>
-      </table>
-      <table style="width:100%; padding-left:2%; padding-right:2%;">
-        <tr>
-          <td style="background-color:yellow;">
-            <p>Dear Fellow Software Developers,</p>
-            <p>I am excited to announce the launch of Klequis' Development Guide, which contains tutorials targeted toward aspiring software developers. The overall goal of the site is to help new developers acquire a well rounded skill set.</p>
+  <table style="align:center;">
+    <tbody>
+      <tr>
+        <td>
+          <table style="width:100%;">
+            <tr>
+              <td style="background-color:green;">Klequis' Development Guide</td>
+            </tr>
+          </table>
+          <table style="width:80%;margin-left:15%;margin-right:15%;background-color:pink;overflow:hidden;">
+            <tr>
+              <td style="background-color:yellow;">
+                <p><b>What is it and why is it worth paying attention to</b></p>
+                <p>Dear Fellow Software Developers,</p>
+                <p>I am excited to announce the launch of Klequis' Development Guide, which contains tutorials targeted toward aspiring software developers. The overall goal of the site is to help new developers acquire a well rounded skill set.</p>
 
-            <p>The site's current content is a series focused on creating a web development environment as a virtual machine using Linux. Its configuration draws upon my experience developing in Linux over the past 3 years.</p>
-            <p>The development environment can be created on any computer: Mac, Windows or Linux. The process is described in detail, is very pictorial and has two additional post to help you become productive if Linux is new to you.</p>
+                <p>The site's current content is a series focused on creating a web development environment as a virtual machine using Linux. Its configuration draws upon my experience developing in Linux over the past 3 years.</p>
+                <p>The development environment can be created on any computer: Mac, Windows or Linux. The process is described in detail, is very pictorial and has two additional post to help you become productive if Linux is new to you.</p>
 
-            <h1>What gets installed?</h1>
-            <p>The tutorials will lead you through the process of building you development environment. It starts with installing VirtualBox and the OS for the virtual machine. This is followed by step-by-step instructions for installing the following:</p>
-            <table style="width:100;">
-              <tr>
-                <td style="width:10%"><a href="https://www.virtualbox.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/vbox-logo.svg" alt="virtualbox logo"></a></td><td>Oracle VirtualBox</td><td>Virtualization software</td>
-              </tr>
-                <tr>
-                  <td style="width:10%"><a href="https://ubuntu.com"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/ubuntu_orange_hex.svg" alt="ubuntu logo"></a></td><td>Ubuntu 16.04</td><td>Linux operating system</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://www.gnome.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/gnome-logo.png" alt="gnome logo"></a></td><td>GNOME</td><td>Linux desktop environment</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="http://www.apache.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/apache-logo.svg" alt="apache logo"></a></td><td>Apache</td><td>Web server</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="http://php.net/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/php-logo.png" alt="php logo"></a></td><td>PHP 7.0.6</td><td>Scripting language for web development. Both Wordpress and Drupal are built with PHP</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://www.mysql.com/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL</td><td>Database server</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://atom.io/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/atom-logo.png" alt="atom logo"></a></td><td>Atom</td><td>A hackable text editor for the 21st Century</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://nodejs.org/en/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/nodejs-logo.png" alt="node.js logo"></a></td><td>Node.js</td><td>Open-source, cross-platform runtime environment for developing server-side Web applications with JavaScript</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://git-scm.com/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/git-logo.png" alt="git logo"></a></td><td>Git</td><td>Distributed version control system (VCS)</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://filezilla-project.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/filezilla-logo.png" alt="filezilla logo"></a></td><td>FileZilla</td><td>FTP application</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="http://meldmerge.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/meld-logo.svg" alt="meld logo"></a></td><td>Meld</td><td>Visual diff and merge tool targeted at developers</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://www.gimp.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/gimp-logo.svg" alt="gimp logo"></a></td><td>GIMP</td><td>Cross-platform image editor available for GNU/Linux, OS X, windows and more </td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="http://shutter-project.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/shutter-logo.svg" alt="shutter logo"></a></td><td>Shutter</td><td>Feature-rich screenshot program for Linux based OSs</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://www.mysql.com/products/workbench/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL Workbench</td><td>Database design, creation and manipulation</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://www.chromium.org/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/chromium-logo.svg" alt="chromium logo"></a></td><td>Chromium</td><td>Open-source browser for Google Chrome</td>
-                </tr>
-                <tr>
-                  <td class="td-img-logo"><a href="https://github.com/"><img class="img-logo-in-table" src="http://klequis.com/klequis/wp-content/uploads/logos/github-logo.png" alt="github logo"></a></td><td>GitHub</td><td>Web-based Git repository hosting service</td>
-                </tr>
-              </table>
-            Apache (web server), PHP (scripting language )
-            <p>All the software and tools installed are free and open-source. The first 13 parts of the series are complete and cover installation of the virtual machine, Apache web server, database, PHP, phpMyAdmin and a set of key developer tools.</p>
+                <h1>What gets installed?</h1>
+                <p>The tutorials will lead you through the process of building you development environment. It starts with installing VirtualBox and the OS for the virtual machine. This is followed by step-by-step instructions for installing the following:</p>
+                <table style="table-layout:fixed;width:90%;margin-left:20px;margin-right:20px;border-collapse:collapse;">
+                  <tr style="border-top:1pt solid gray;border-bottom:1pt solid gray;">
+                    <!-- style="width:100%; height:auto;" -->
+                    <td style="width:10%;"><a href="https://www.virtualbox.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/vbox-logo.svg" alt="virtualbox logo"></a></td><td style="width:20%">Oracle VirtualBox</td><td style="width:70%;background-color:green;">Virtualization software</td>
+                  </tr>
+                    <tr>
+                      <td><a href="https://ubuntu.com"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/ubuntu_orange_hex.svg" alt="ubuntu logo"></a></td><td>Ubuntu 16.04</td><td>Linux operating system</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://www.gnome.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/gnome-logo.png" alt="gnome logo"></a></td><td>GNOME</td><td>Linux desktop environment</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="http://www.apache.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/apache-logo.svg" alt="apache logo"></a></td><td>Apache</td><td>Web server</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="http://php.net/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/php-logo.png" alt="php logo"></a></td><td>PHP 7.0.6</td><td>Scripting language for web development. Both Wordpress and Drupal are built with PHP</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://www.mysql.com/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL</td><td>Database server</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://atom.io/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/atom-logo.png" alt="atom logo"></a></td><td>Atom</td><td>A hackable text editor for the 21st Century</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://nodejs.org/en/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/nodejs-logo.png" alt="node.js logo"></a></td><td>Node.js</td><td>Open-source, cross-platform runtime environment for developing server-side Web applications with JavaScript</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://git-scm.com/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/git-logo.png" alt="git logo"></a></td><td>Git</td><td>Distributed version control system (VCS)</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://filezilla-project.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/filezilla-logo.png" alt="filezilla logo"></a></td><td>FileZilla</td><td>FTP application</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="http://meldmerge.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/meld-logo.svg" alt="meld logo"></a></td><td>Meld</td><td>Visual diff and merge tool targeted at developers</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://www.gimp.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/gimp-logo.svg" alt="gimp logo"></a></td><td>GIMP</td><td>Cross-platform image editor available for GNU/Linux, OS X, windows and more </td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="http://shutter-project.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/shutter-logo.svg" alt="shutter logo"></a></td><td>Shutter</td><td>Feature-rich screenshot program for Linux based OSs</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://www.mysql.com/products/workbench/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/mysql-logo.png" alt="mysql logo"></a></td><td>MySQL Workbench</td><td>Database design, creation and manipulation</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://www.chromium.org/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/chromium-logo.svg" alt="chromium logo"></a></td><td>Chromium</td><td>Open-source browser for Google Chrome</td>
+                    </tr>
+                    <tr>
+                      <td class="td-img-logo"><a href="https://github.com/"><img style="max-width:100%;max-height:40px;width:auto;" src="http://klequis.com/klequis/wp-content/uploads/logos/github-logo.png" alt="github logo"></a></td><td>GitHub</td><td>Web-based Git repository hosting service</td>
+                    </tr>
+                  </table>
+                Apache (web server), PHP (scripting language )
+                <p>All the software and tools installed are free and open-source. The first 13 parts of the series are complete and cover installation of the virtual machine, Apache web server, database, PHP, phpMyAdmin and a set of key developer tools.</p>
 
-            <p>Future tutorials are already being written for Node.js, build tools, linting tools, and using Git & GitHub. You can get notified when these tutorial are ready by signing-up <here>.</p>
-            <p>Please visit the site at http://klequis.com. For members of Tri-valley/East Bay Free Code Same Study Group, I will be providing help building the development environment via the groups Slack team site. If you are not already a member of the Slack team, please send me your email address via Meetup messages and I will add you to the team.</p>
-            <p>I will be very active on the site answering all question posted in comments and will help you along if you get stuck. If you have not built a development environment before or are interested in leveraging Linux for your development efforts, these tutorials will be a great start.</p>
-            <p>Yours,</p>
-            <p>Karl</p>
-            <p>Klequis' Development Guide: http://klequis.com</p>
-            <p>Facebook: https://www.facebook.com/groups/free.code.camp.sanramon/</p>
-            <p>Meetup: http://www.meetup.com/Tri-Valley-East-Bay-Free-Code-Camp-Study-Group/</p>
-          </td>
-        </tr>
-      <table>
-    </tr>
+                <p>Future tutorials are already being written for Node.js, build tools, linting tools, and using Git & GitHub. You can get notified when these tutorial are ready by signing-up <here>.</p>
+                <p>Please visit the site at http://klequis.com. For members of Tri-valley/East Bay Free Code Same Study Group, I will be providing help building the development environment via the groups Slack team site. If you are not already a member of the Slack team, please send me your email address via Meetup messages and I will add you to the team.</p>
+                <p>I will be very active on the site answering all question posted in comments and will help you along if you get stuck. If you have not built a development environment before or are interested in leveraging Linux for your development efforts, these tutorials will be a great start.</p>
+                <p>Yours,</p>
+                <p>Karl</p>
+                <p>Klequis' Development Guide: http://klequis.com</p>
+                <p>Facebook: https://www.facebook.com/groups/free.code.camp.sanramon/</p>
+                <p>Meetup: http://www.meetup.com/Tri-Valley-East-Bay-Free-Code-Camp-Study-Group/</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
   </table>
 
 
