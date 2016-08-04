@@ -91,7 +91,7 @@
           <p>Open apache2.conf.</p>
           <pre>$ sudo gedit /etc/apache2/apache2.conf</pre>
           <p>Look for "&lt;Directory /var/www/&gt;"</p>
-          <p>Below the "&lt;Directory /var/www/&gt;" section, add another section as shown below, replacing <i>userName</i> with your user name.</p>
+          <p>Below the "&lt;Directory /var/www/&gt;" section, add new section as shown below, replacing <i>userName</i> with your user name.</p>
           <p>The picture shows the change. Be sure you used your user name instead of mine.</p>
           <pre>&lt;Directory /home/<i>userName</i>/workspace&gt;<br>    Options Indexes FollowSymLinks<br>    AllowOverride All<br>    Require all granted<br>&lt;/Directory&gt;<br>ServerName localhost</pre>
         </div>
