@@ -1,0 +1,201 @@
+Kangax JavaScript Stuff
+https://kangax.github.io/
+Discussion forum: http://es-discourse.com/
+JSCritic: http://jscritic.com/ - test how well 3rd party script behaves
+ES5 & forwared Compatibility table: http://kangax.github.io/compat-table/es6/
+** AND MORE STUFF. GET REST OF LINKS AT LATER DATE **
+
+
+
+Why Terminal
+> tutorials
+> books assume you are using it
+> many tools are designed t be used with it
+> you will be limited to the limited functionality implemented in the GUI tool
+
+His Process
+------------------------
+Install Git - np
+Git installs a Bash tool. "Git Bash" should be somewhere in windows.
+"Project Root"
+All commands should be excuted from project root unless otherwise noted.
+Discuss 'relative to project root'
+$ git inti
+
+================================
+Create .gitignore with contents
+-------------------------------
+# npm debugging logs
+*.log
+# project dependencies
+node_modules
+# OSX folder attributes
+.DS_Store
+# temporary files
+*.tmp
+*~
+----------------------------------
+====================================
+
+$ git status
+$ git add .gitignore
+$ git status (not needed but his example)
+$ git commit -m "intial commit"
+create readme.md file
+$ git add .gitignore
+$ git add README.md
+$ git add -A
+Commits should be an explanation to someone else explaing you thought process (his)
+
+
+NPM
+===============================
+Use to install build tools and transcompliers
+node.js home page: https://nodejs.org/en/
+Click the vx.x.x LTS button (Recommended for Most Users)
+Installing Node will install NPM/npm
+Install node.js instructions here: https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+
+Initialize npm
+As you install modules, you’ll want to keep track of them somehow; the modules you
+install (and use) are called dependencies of your project. As your project matures,
+you’ll want a concise way to know what packages your project depends on, and npm
+does this with a file called package.json. You don’t have to create this file yourself: you
+can run npm init , and interactively answer some questions (you can simply press
+Enter for each question and accept the defaults; you can always edit the file and
+change your answers later). Go ahead and do this now, and take a look at the gener‐
+ated package.json file:
+$ npm init
+
+
+Regular v dev dependencies, install with --save or --save-dev
+$ npm install --save underscore
+(warning messages related to things you need if you are creating your own packages.
+> package.json will show underscore as a dependency. Contains all that is needed to recreate the project's (call it something - "dependencies). 
+You can delete /node_modules (the dependencies folder) and then run the below command to recreate
+$ npm install
+
+
+Install Gulp
+------------------------------
+Install globally
+$ sudo npm install -g gulp
+Install for project
+$ npm install --save-dev
+
+=================================
+Create gulpfile.js
+------------------------------
+const gulp = require('gulp');
+// Gulp dependencies go here
+gulp.task('default', function() {
+// Gulp tasks go here
+});
+------------------------------------
+====================================
+test it
+$ gulp
+
+Project Structure
+--------------------
+es6 - source
+server side code goes in /public/es6
+/dist processed code
+
+structure
+root
+	.git
+	.gitignore
+	package.json
+	/node_modules
+	/es6
+	/dist
+	/public
+		/es6
+		/dist
+
+*** He is using ES6 v React v ES& - I don't understand this stuff but React is part of FCC so need to. Here is the text
+We make these settings
+local to our project, as it is conceivable that we’ll want to use ES6 on one project,
+React on another, and ES7 (or some other variant) on another.
+WHAT IS REACT
+*****
+
+Install ES6 transforms
+$ npm --save-dev bable-preset-es2015
+
+=======================================
+Create .bablerc in root with contnets
+--------------------------------------
+{ "presets": ["es215"] }
+
+
+Install "gulp-babel"
+--------------------
+$npm install --save-dev gulp-babel
+
+=======================================
+Create gulpfile.js
+-------------------------------------
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+gulp.task('default', function() {
+// Node source
+gulp.src("es6/**/*.js")
+.pipe(babel())
+.pipe(gulp.dest("dist"));
+// browser source
+gulp.src("public/es6/**/*.js")
+.pipe(babel())
+.pipe(gulp.dest("public/dist"));
+});
+-----------------------------------
+Explanation of file
+Gulp uses the concept of a pipeline to do its work. We start off by telling Gulp what
+files we’re interested in: src("es6/**/*.js") . You might be wondering about the ** ;
+that’s a wildcard for “any directory, including subdirectories.” So this source filter will
+pick up all .js files in es6, and any subdirectories thereof, no matter how deep. Then
+we pipe those source files to Babel, which is what transforms them from ES6 to ES5.
+The final step is to pipe the compiled ES5 to its destination, the dist directory. Gulp
+will preserve the names and directory structure of your source files. For example, the
+file es6/a.js will be compiled to dist/a.js, and es6/a/b/c.js will be compiled to dist/a/b/
+c.js. We repeat the same process for the files in our public/es6 directory.
+
+Give it a test run
+----------------------
+Create /es6/test.js
+contents
+------------------------------
+// es6 feature: block-scoped "let" declaration
+const sentences = [
+{ subject: 'JavaScript', verb: 'is', object: 'great' },
+{ subject: 'Elephants', verb: 'are', object: 'large' },
+];
+// es6 feature: object destructuring
+function say({ subject, verb, object }) {
+// es6 feature: template strings
+console.log(`${subject} ${verb} ${object}`);
+}
+// es6 feature: for..of
+for(let s of sentences) {
+say(s);
+}
+
+----------------------------------------
+Create copy of file in public/es6
+can change 'sentences' array to make differt
+
+$ gulp
+look in /public/dist. You will see a test.js file in both places, look in the file and see how it differs from the ES6 equivalent
+
+Run the es6 code directly
+$ node es6/test.js
+
+Run the ES5 file
+$ node dist/test.js
+
+Next: Add dist and public/dist to .gitignore
+
+Linting
+
+
