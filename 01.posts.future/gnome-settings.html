@@ -5,132 +5,214 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>**title**</title>
+  <title>gnome settings</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/flint-style.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/dev-style.css">
+
 </head>
 
 <body>
 
 <div class="container-fluid">
 
-  <div class="ke-callout ke-callout-danger">
-    <ul>
-      <li>complete text</li>
-      <li>pending read out-loud</li>
-      <li>pending spelling</li>
-      <li>pending punctuation</li>
-    </ul>
-  </div>
-
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>This blog etc ...</p>
+      <p>This post is a list of all the custom GNOME settings I use and represents my preference for how I want the desktop to behave. Your preference may differ, but the below settings can make a good starting point to build upon. GNOME out of the box offers many useful settings and you can achieve much finer control by using Shell Extensions.</p>
+      <p>The below lists of settings assumes all the Shell Extensions listed in <a href="http://klequis.com/klequis/customizing-gnome/">Customizing GNOME</a> have been installed.</p>
     </div>
   </div>
-
-
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Settings>Keyboard>Shortcuts</h2>
+      <h2>Settings <i class="fa fa-chevron-right ke-chevron-sm" aria-hidden="true"></i> Keyboard <i class="fa fa-chevron-right ke-chevron-sm" aria-hidden="true"></i> Shortcuts</h2>
     </div>
     <div class="panel-body">
+
       <div class="row">
         <div class="col-md-8">
-          <h3>Launchers</h3>
-          <p>Use defaults.</p>
-          <h3>Navigation</h3>
-          <p>All settings are disabled except:</p>
-          <ul>
-            <li>Switch applications = Alt+tab</li>
-          </ul>
-          <h3>ScreenShots</h3>
-          <p>Use defaults.</p>
-          <h3>Sound and  Media</h3>
-          <p>Use defaults.</p>
-          <h3>System</h3>
-          <p>Use PutWindows for window management, therefore, all disabled except for:</p>
-          <ul>
-            <li>Show the run command = Alt+F2</li>
-            <li>Logout = Ctrl+Alt+Delete</li>
-            <li>Lock screen = Super+L</li>
-          </ul>
-          <h3>Typing</h3>
-          <p>All disabled.</p>
-          <h3>Universial Access</h3>
-          <p>All disabled.</p>
-          <h3>Windows</h3>
-          <p>All disabled.</p>
-          <h3>Custom Shortcuts</h3>
-          <p>None</p>
-
+          <table>
+            <tr>
+              <td>Launchers</td>
+              <td>Use defaults</td>
+            </tr>
+            <tr>
+              <td>Navigation</td>
+              <td>All other settings = Disabled</td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td>Switch applications = Alt+tab</td>
+            </tr>
+            <tr>
+              <td>ScreenShots</td>
+              <td>Use defaults</td>
+            <tr>
+            <tr>
+              <td>Sound and  Media</td>
+              <td>Use defaults</td>
+            </tr>
+            <tr>
+              <td>System</td>
+              <td>Show the run command = Alt+F2</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Logout = Ctrl+Alt+Delete</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Lock screen = Super+L</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Use PutWindows for window management, therefore, all disabled except for:</td>
+            </tr>
+            <tr>
+              <td>Typing</td>
+              <td>All disabled</td>
+            </tr>
+            <tr>
+              <td>Universal Access</td>
+              <td>All disabled</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td>All disabled</td>
+            </tr>
+            <tr>
+              <td>Custom Shortcuts</td>
+              <td>None</td>
+            </tr>
+          </table>
         </div>
         <div class="col-md-4">
-  	       pic.001.01.settings.keyboard.navigation.png
+           <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/001.00.settings.keyboard.navigation.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/001.00.settings.keyboard.navigation.png" alt="GNOME settings - Keyboard navigation"></a>
         </div>
       </div>
     </div>
   </div>
 
   <div class="panel panel-default">
-  	  <div class="panel-heading">
-  	    <h2>Tweak Tool>Keyboard & Mouse</h2>
-  	  </div>
-  	  <div class="panel-body">
-  	    <div class="row">
-          <h3>Tweak>Keyboard and Mouse</h3>
-          <p>All default.</p>
+	  <div class="panel-heading">
+	    <h2>Tweak Tool>Keyboard & Mouse</h2>
+	  </div>
+	  <div class="panel-body">
+	    <div class="row">
+        <div class="col-md-8">
           <p class="ke-callout ke-callout-danger">This is a note for the host machine. If <b>Mouse>Show location of pointer</b> is set to 'ON' for the host machine, the host will capture the right control key and the guest will not receive it. This means all <kbd>Right-Ctrl+</kbd> combinations like copy and paste will not work on the guest.</p>
-
-          <h3>Top Bar</h3>
-          <ul>
-            <li>Clock>Show date = checked</li>
-          </ul>
-
-          <h3>Typing</h3>
-          <p>Keep all defaults.</p>
-
-          <h3>Windows</h3>
-          <ul>
-            <li>Titlebar Buttons>Maximize = ON</li>
-            <li>Titlebar Buttons>Minimize = ON</li>
-          </ul>
-  	    </div>
-  	  </div>
-  	</div>
-
-
-  
-
-
-
-
-
-
-  PutWindows
-  Key combinations are comfortable when using the right Super key. If you are using the left Super key you may want to change these.
-  Picture Main
-  Picture Width & Height
-  Picture Keyboard Shortcuts
-  Move Focus
-  Applications
-
-  /home/karl/workspace/klequisblog/images/gnome-settings/001.01.putwindows.main.png
-  /home/karl/workspace/klequisblog/images/gnome-settings/002.01.putwindows.widthandheight.png
-  /home/karl/workspace/klequisblog/images/gnome-settings/003.01.putwindows.keyboardshortcuts.png
-  /home/karl/workspace/klequisblog/images/gnome-settings/004.01.putwindows.movefocus.png
-  /home/karl/workspace/klequisblog/images/gnome-settings/005.01.putwindows.applications.png
-
-  Recent(item)s
-  Super+f
+          <table>
+            <tr>
+              <td>Tweak>Keyboard and Mouse</td>
+              <td>All default.</td>
+            </tr>
+            <tr>
+              <td>Top Bar</td>
+              <td>Clock>Show date = checked</td>
+            </tr>
+            <tr>
+              <td>Typing</td>
+              <td>Keep all defaults.</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td>Titlebar Buttons>Maximize = ON</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Titlebar Buttons>Minimize = ON</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/001.02.tweak.keyboardmouse.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/001.02.tweak.keyboardmouse.png" alt="GNOME settings - Tweak Keyboard and Mouse"></a>
+        </div>
+	    </div>
+	  </div>
+	</div>
 
 
+  <div class="ke-callout ke-callout-warning">
+    <h3>Extension Settings</h3>
+
+    <div class="row no-top-border">
+      <div class="col-md-8">
+        <p>To change an extensions settings go to Tweak Tool > Extensions. All extensions that have settings present a gear icon to the right of the description.</p>
+      </div>
+      <div class="col-md-4">
+        <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/002.00.tweak.extension.settings.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/002.00.tweak.extension.settings.png" alt="GNOME settings - Tweak Tool extension settings button"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>PutWindows</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <p>PutWindows offers much finer control of windows than GNOME out ot the box. Since it has so many settings I'm providing pictures rather than a list.</p>
+          <p class="ke-callout ke-callout-info">The key combinations as configured below are comfortable when using the right Super key. If you are using the left Super key you may want to change them. GNOME's default is to use the left Super key. You can switch to right Super in 'Tweak Tool > Keyboard and Mouse > Switch between overview and desktop'.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-align-center">Main</h3>
+          <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/001.01.putwindows.main.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/001.01.putwindows.main.png" alt="GNOME settings - PutWindows Main tab"></a>
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-align-center">Width & Height</h3>
+          <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/002.01.putwindows.widthandheight.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/002.01.putwindows.widthandheight.png" alt="GNOME settings - PutWindows width and height tab"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-align-center">Keyboard Shortcuts</h3>
+          <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/003.01.putwindows.keyboardshortcuts.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/003.01.putwindows.keyboardshortcuts.png" alt="GNOME settings - PutWindows keyboard shortcuts tab"></a>
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-align-center">Move Focus</h3>
+          <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/004.01.putwindows.movefocus.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/004.01.putwindows.movefocus.png" alt="GNOME settings - PutWindows Move Focus tab"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-align-center">Applications</h3>
+          <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/005.01.putwindows.applications.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/005.01.putwindows.applications.png" alt="GNOME settings - PutWindows Applications tab"></a>
+        </div>
+        <div class="col-md-6">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Recent(item)s</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <table class="table" style="max-width:50%">
+            <tr>
+              <td>Popup Shortcut</td>
+              <td>Super+f</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <a href="http://klequis.com/klequis/wp-content/uploads/gnome-settings/006.01.recentItems.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/gnome-settings/006.01.recentItems.png" alt="GNOME settings - PutWindows Applications tab"></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-</div> <!-- container-fluid -->
+</div> <!-- container fluid -->
 
 
 
