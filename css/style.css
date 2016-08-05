@@ -69,6 +69,11 @@ body {
   margin-bottom: 5px;
 }
 
+.ke-callout h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
 .ke-callout-danger h4 {
   color: #ce4844;
 }
@@ -78,6 +83,9 @@ body {
   background-color: white;
 }
 .ke-callout-warning h4 {
+  color: #aa6708;
+}
+.ke-callout-warning h3 {
   color: #aa6708;
 }
 .ke-callout-info {
@@ -287,10 +295,6 @@ table.git-lifecycle td i {
   color: green;
 }
 
-.lifecycle-committed {
-
-}
-
 .td-align-center {
   align-items: center;
   text-align: center;
@@ -303,7 +307,7 @@ p:empty {
 
 
 
-/* 
+/*
  * Sidebar Styles
  */
 
@@ -395,4 +399,18 @@ div.front-page article {
   max-width: 95%;
   padding: 0 20px 20px;
 
+}
+
+/*
+ * Style tweaks
+ */
+.text-align-center {
+  text-align: center;
+}
+.no-top-border {
+  border-top: none !important;
+}
+
+i.ke-chevron-sm {
+  font-size:0.8em;
 }
