@@ -20,7 +20,7 @@ Git installs a Bash tool. "Git Bash" should be somewhere in windows.
 "Project Root"
 All commands should be excuted from project root unless otherwise noted.
 Discuss 'relative to project root'
-$ git inti
+$ git init
 
 ================================
 Create .gitignore with contents

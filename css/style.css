@@ -116,8 +116,6 @@ blockquote cite {
   padding-top:2.0em;
 }
 
-
-
 .seriesmeta {
   padding: 20px;
   margin: 20px 0;
@@ -305,12 +303,9 @@ p:empty {
   display:none;
 }
 
-
-
 /*
  * Sidebar Styles
  */
-
 #seriestoc-2 > h4 {
   font-size: 1.5em;
 }
@@ -365,7 +360,6 @@ p:empty {
   margin-right:15px;
 }
 
-
 @media (min-width: 768px) {
   #menu-main-menu.nav.navbar-nav {
     font-weight: bolder;
@@ -398,7 +392,6 @@ div.front-page article {
   margin-left: auto;
   max-width: 95%;
   padding: 0 20px 20px;
-
 }
 
 /*
