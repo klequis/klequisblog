@@ -71,7 +71,7 @@ $ npm init
 Regular v dev dependencies, install with --save or --save-dev
 $ npm install --save underscore
 (warning messages related to things you need if you are creating your own packages.
-> package.json will show underscore as a dependency. Contains all that is needed to recreate the project's (call it something - "dependencies). 
+> package.json will show underscore as a dependency. Contains all that is needed to recreate the project's (call it something - "dependencies).
 You can delete /node_modules (the dependencies folder) and then run the below command to recreate
 $ npm install
 
@@ -197,5 +197,3 @@ $ node dist/test.js
 Next: Add dist and public/dist to .gitignore
 
 Linting
-
-
