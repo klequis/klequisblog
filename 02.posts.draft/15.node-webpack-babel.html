@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>15.node wp ba</title>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+  <div class="ke-callout ke-callout-danger">
+    <ul>
+      <li>complete text</li>
+      <li>pending read out-loud</li>
+      <li>pending spelling</li>
+      <li>pending punctuation</li>
+    </ul>
+  </div>
+
+
+
+
+
+
+<h2>Prepare the machine</h2>
+<pre>$ sudo apt-get update</pre>
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+Just wait a bit
+<pre>$ sudo apt-get upgrade</pre>
+<h3>Curl</h3>
+<p>Check if cURL is installed</p>
+<pre>$ curl --version</pre>
+<p>If not installed execute the following command.</p>
+<pre>$ sudo apt install curl</pre>
+
+<h3>Node Version Manager (NVM)</h3>
+<h2>Prequisites</h2>
+$ sudo apt-get isntall checkinstall
+$ sudo apt-get install build-essential checkinstall
+
+<pre>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash</pre>
+<p>Close and reopen terminal or it won't run</p>
+<p>Verify that NVM has been installed.</p>
+<pre>command -v nvm OR nvm -v</pre>
+
+<h2>Create project directory</h2>
+<h2>Install Node.js</h2>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<pre>$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -</pre>
+<pre>$ sudo apt-get install nodejs</pre>
+<p>Check your node version.</p>
+<pre>$ node --version</pre>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+++++++++++++++++++++++++++++++++++++++++++++++++
+<p>Install node using NVM.</p>
+<pre>$ nvm install node</pre>
+++++++++++++++++++++++++++++++++++++++++++++++++
+******************************************************************************
+<h2>Install Webpack</h2>
+<p>This can take some time, be patient</p>
+<pre>sudo $ npm install -g webpack webpack-dev-server</pre>
+
+<h2>Setup Project</h2>
+<p>All other installs are local to a project so let's set one up.</p>
+<ol>
+  <li>babel-core</li>
+  <li>babel-loader</li>
+  <li>babel-preset-es2015</li>
+  <li>file-loader</li>
+  <li>source-map-loader</li>
+  <li>strip-loader</li>
+  <p>* looks like I need to include webpack in the below</p>
+  <pre>$ npm install babel-core babel-loader babel-preset-es2015 webpack webpack-dev-server file-loader source-map-loader babel-preset-react strip-loader --save-dev</pre>
+
+
+webpack-dev-server --content-base dist/
+
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</div> <!-- containter-fluid -->
+</body>
