@@ -24,6 +24,7 @@
     </ul>
   </div>
 
+<p>This tutorial will show you how to use Webpack, Babel and ESLint. We will construct a minimal but working ... </p>
 
 <h2>Prepare the machine</h2>
 <p>I had some problems getting everything to work until I updated my VM. Although I didn't user the scientific method to prove the VM needed to be updated, it won't hurt to do so.</p>
@@ -67,7 +68,7 @@
 
 module.exports = function() {
   var element = document.createElement('h1');
-  element.innerHTML = 'Hello big world';
+  element.innerHTML = 'Hello world';
   return element;
 };</pre>
 <p>Make the contents of index.js as below.</p>
@@ -156,8 +157,75 @@ module.exports = {
   },</pre>
 <p>Before running Webpack, observe that the /build directory is empty, then run this command.</p>
 <pre>$ npm run build</pre>
+<p>Take note that Webpack has created 2 files in the /build directory, app.js and app.js.map. The latter file is used for debugging but won't be useful to us until we install some additional modules below.</p>
+<p>Open index.html in a browser to see your app in action.</p>
+
+<p class="ke-callout ke-callout-info">Different browsers have different developer tools. In both Firefox and Chrome you press <kbd>F12</kbd> to activate developer tools. I'm using Firefox without Firebug and the next section will be easier to follow if you are using Firefox as well.</p>
+<h3>Loader: source-map-loader</h3>
+<p>Install source-map-loader</p>
+<pre>$ npm i source-map-loader --save-dev</pre>
+<p>Make the contents of the module.exports section in webpack.config.js as below</p>
+<pre>module.exports = {
+  context: __dirname + '/app',
+  entry: {
+    app: PATHS.app
+  },
+  output: {
+    path: PATHS.build,
+    filename: '[name].js'
+  },
+  <span style="color:darkgreen"><b>module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: "source-map-loader"
+      }
+    ],
+  }</b></span>
+}; // module exports</pre>
+<h3>Using Developer Tools</h3>
+<p>You can now step through your code in Firefox developer tools.</p>
+<p>With index.html open in a browser press F12 to activate the developer tools. Click on <button class="btn btn-default btn-xs">Debugger</button> and then <button class="btn btn-default btn-xs">Sources</button>.</p>
+<p>Under Sources select number.js and in the left margin of the code window click on '14' to set a break point.</p>
+<p>Press <kbd>F5</kbd> to refresh the page. Line 14 will be highlighted in the code window. Press the <button class="btn btn-default btn-xs">Step In</button> button to move to the next line of code.</p>
+<p>Press the <button class="btn btn-default btn-xs">Click to resume</button> button to let code execution to exit step mode.</p>
+<p>Click '14' in the margin to remove the break point.</p>
 
 
+<h2>Babel</h2>
+<p>Now lets add Babel to our project. Babel will ... </p>
+<pre>$ npm i babel-core babel-loader babel-preset-es2015 --save-dev</pre>
+<p>Change the contents of webpack.config.js as show below.</p>
+<pre>module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: "source-map-loader"
+      }
+    ],
+    <span style="color:darkgreen"><b>loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        }
+      },
+    ]</b></span>
+  }, // module:</pre>
+
+Now show them what it does with the comment / uncomment stuff
+
+
+ESLint
+
+
+
+
+
+
+add file-loader
 
 
 
@@ -178,39 +246,6 @@ I have to look into source-map-loader and file-loader to see which are necessary
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h2>If you show with and w/o soruce-map they can see it built in chromium dev tools</h2>
 
 
@@ -219,12 +254,7 @@ I have to look into source-map-loader and file-loader to see which are necessary
 
 <p>All other installs are local to a project so let's set one up.</p>
 
-<h3>Bable</h3>
-<pre>$ npm i babel-core babel-loader babel-preset-es2015 --save-dev</pre>
-<p>**config.02.js**</p>
-<h3>Source Map Loader</h3>
-<pre>$ npm i source-map-loader --save-dev</pre>
-<p>** config.03.js **</p>
+
 <h3>ESLint</h3>
 <pre>$ npm i eslint eslint-loader --savve-dev</pre>
 <p>** config.04.js **</p>
