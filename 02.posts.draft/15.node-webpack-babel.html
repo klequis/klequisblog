@@ -25,66 +25,257 @@
   </div>
 
 
-
-
-
-
 <h2>Prepare the machine</h2>
+<p>I had some problems getting everything to work until I updated my VM. Although I didn't user the scientific method to prove the VM needed to be updated, it won't hurt to do so.</p>
 <pre>$ sudo apt-get update</pre>
-E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
-E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
-Just wait a bit
+<div class="ke-callout ke-callout-warning">
+  <p>Sometimes when you try to update right after booting  you will get a message like below. If you do, wait a few minutes and try again.</p>
+  <pre>E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)<br>E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</pre>
+</div>
+<p class="ke-callout ke-callout-warning">With the next command you will see a message regarding 'grub-pc'. When prompted, check the box next to '/dev/sda' and click OK.</p>
+<p>The process can take a while so be patient.</p>
 <pre>$ sudo apt-get upgrade</pre>
+<p>And then remove packages that are no longer in use if there are any.</p>
+<pre>$ sudo apt-get autoremove</pre>
+
 <h3>Curl</h3>
-<p>Check if cURL is installed</p>
+<p>Both NVM and Node use cURL as for installation. Check if it is installed.</p>
 <pre>$ curl --version</pre>
 <p>If not installed execute the following command.</p>
 <pre>$ sudo apt install curl</pre>
+<p>Then check the version again.</p>
+<pre>$ curl --version</pre>
 
-<h3>Node Version Manager (NVM)</h3>
-<h2>Prequisites</h2>
-$ sudo apt-get isntall checkinstall
-$ sudo apt-get install build-essential checkinstall
-
+<h2>Install Node Version Manager (NVM)</h3>
+<p>Install prequisites</p>
+<pre>$ sudo apt-get isntall checkinstall<br>$ sudo apt-get install build-essential checkinstall</pre>
+<p>Now install it</p>
 <pre>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash</pre>
 <p>Close and reopen terminal or it won't run</p>
 <p>Verify that NVM has been installed.</p>
-<pre>command -v nvm OR nvm -v</pre>
+<pre>$ nvm -version</pre>
 
-<h2>Create project directory</h2>
-<h2>Install Node.js</h2>
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<h2>Create the Project</h2>
+<p>If you have been following the series you will already have the directory ~/workspace, if not, create one now.</p>
+<pre>mkdir ~/workspace/</pre>
+<p>Then create a project directory</p>
+<pre>$ cd ~/workspace<br>$ mkdir sample-project<br>$ cd sample-project</pre>
+<p>Then add directors and files as follows:</p>
+<pre>$ mkdir app<br>$ cd app<br>$ touch hello.js index.js number.js<br>$ cd ..<br>$ mkdir build<br>$ cd build<br>$ touch index.html<br>$ cd ..<br>$ touch webpack.config.js<br></pre>
+<p>Make the contents of hello.js as as below.</p>
+<pre>'use strict';
+
+module.exports = function() {
+  var element = document.createElement('h1');
+  element.innerHTML = 'Hello big world';
+  return element;
+};</pre>
+<p>Make the contents of index.js as below.</p>
+<pre>'use strict';
+
+var helloElement = require('./hello');
+var numElement = require('./number');
+
+document.body.appendChild(helloElement());
+document.body.appendChild(numElement());</pre>
+<p>Make the contents of number.js as below.</p>
+<pre>'use strict';
+
+module.exports = function() {
+
+  // es5
+  var num = 0;
+  var element = document.createElement('h2');
+
+  // es6
+  // let num = 0;
+  // const element = document.createElement('h2');
+
+  // rest of the code
+  num += 5;
+  element.innerHTML = 'number = ' + num;
+  return element;
+};</pre>
+
+<p>Make the contents of index.html as below.</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Sample Project&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<h2>Install Node.js Using NVM</h2>
+<pre>$ nvm install node</pre>
+<p>NVM will print out the Node version being used but you can check it with the below command.</p>
+<pre>$ node --version</pre>
+<h3>Initialize the project</h3>
+<p>This process will create a package.json file which will track all NPM installations and provide other functionality as you will see later in the turtorial. <code>$npm init </code> will ask you a series of questions. For the purposes of this tutorial you can take the default for each question by pressing <kbd>Enter</kbd>.</p>
+<pre>$ npm init</pre>
+
+
+<h2>Adding Project Denpendancies</h2>
+<div class="ke-callout ke-callout-info">
+  <h4>Some NPM terms</h4>
+  <table>
+    <tr><td>i</td><td>Is short for <b>i</b>nstall.</td></tr>
+    <tr><td>--save</td><td>Used to save a dependancy for use in the production distribution.</td></tr>
+    <tr><td>--save-dev</td><td>Use to save a dependancy for use in development only.</td></tr>
+  </table>
+</div>
+<p>We will install Webpack locally to the project. This way you can use different versions of Webpack for different projects if needed.</p>
+<pre>$ npm i webpack --save-dev</pre>
+<p>Make the contents of webpack.config.js as below.</p>
+<pre>const path = require('path');
+
+const PATHS = {
+  app: path.join(__dirname, 'app'),
+  build: path.join(__dirname, 'build')
+};
+
+module.exports = {
+  context: __dirname + '/app',
+  entry: {
+    app: PATHS.app
+  },
+  output: {
+    path: PATHS.build,
+    filename: '[name].js'
+  },
+}; // module exports</pre>
+
+<h3>Let's take it for a spin!</h3>
+<p>There are many ways to launch Webpack which suit differt purposes or goals. We are going to add a script to package.json which will allow us to launch Webpack from the command line. In package.json, modify the 'scripts' secton to be as folllows, where the '-d' is for 'development'. Be careful to not miss the comma at the end of the 'test: "echo ..."' line.</p>
+<pre>"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d"
+  },</pre>
+<p>Before running Webpack, observe that the /build directory is empty, then run this command.</p>
+<pre>$ npm run build</pre>
+
+
+
+
+
+
+
+*****************************
+*****************************
+OK I'm here. It appears that when using -d you get a source map but it
+does not appear in the browser debugging.
+I have to look into source-map-loader and file-loader to see which are necessary.
+
+*****************************
+*****************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>If you show with and w/o soruce-map they can see it built in chromium dev tools</h2>
+
+
+
+
+
+<p>All other installs are local to a project so let's set one up.</p>
+
+<h3>Bable</h3>
+<pre>$ npm i babel-core babel-loader babel-preset-es2015 --save-dev</pre>
+<p>**config.02.js**</p>
+<h3>Source Map Loader</h3>
+<pre>$ npm i source-map-loader --save-dev</pre>
+<p>** config.03.js **</p>
+<h3>ESLint</h3>
+<pre>$ npm i eslint eslint-loader --savve-dev</pre>
+<p>** config.04.js **</p>
+
+
+========================<br>
+xxxxxxxxxxxxxxxxxxxxxxxx<br>
+========================<br>
+
+
+<p>webpack-dev-server --content-base dist/</p>
+<h2>List of commands</2>
+<pre>$ npm list -g --depth=0</pre>
+<pre>$ npm list --depth=0</pre>
+
+<p>Switch between es5 and es6 change .eslintrc env:es6:true/false</p>
+<p>see number.js. comment / uncomment</p>
+
+<h2>Add source-map</h2>
+<p>Check out, there is no source code **picture**</p>
+
+<h2>Production</h2>
+<pre>webpack --config webpack.production.config.js -p</pre>
+
+</div>
+
+
+
+********<br>
+probably not going to use
+
+<span style="color:red">------------------------------------------------</span><br>
 <pre>$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -</pre>
 <pre>$ sudo apt-get install nodejs</pre>
 <p>Check your node version.</p>
 <pre>$ node --version</pre>
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-++++++++++++++++++++++++++++++++++++++++++++++++
-<p>Install node using NVM.</p>
-<pre>$ nvm install node</pre>
-++++++++++++++++++++++++++++++++++++++++++++++++
-******************************************************************************
+<span style="color:red">------------------------------------------------</span><br>
+
+
+<span style="color:red">------------------------------------------------</span><br>
 <h2>Install Webpack</h2>
 <p>This can take some time, be patient</p>
 <pre>sudo $ npm install -g webpack webpack-dev-server</pre>
+<span style="color:red">------------------------------------------------</span><br>
 
-<h2>Setup Project</h2>
-<p>All other installs are local to a project so let's set one up.</p>
+
 <ol>
-  <li>babel-core</li>
-  <li>babel-loader</li>
-  <li>babel-preset-es2015</li>
-  <li>file-loader</li>
-  <li>source-map-loader</li>
-  <li>strip-loader</li>
+  <li>file-loader - does the name thing</li>
   <p>* looks like I need to include webpack in the below</p>
   <pre>$ npm install babel-core babel-loader babel-preset-es2015 webpack webpack-dev-server file-loader source-map-loader babel-preset-react strip-loader --save-dev</pre>
-
-
-webpack-dev-server --content-base dist/
-
-</div>
-
+*************<br>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
