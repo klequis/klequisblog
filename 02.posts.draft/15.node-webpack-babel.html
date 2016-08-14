@@ -164,7 +164,7 @@ module.exports = {
 <h3>Loader: source-map-loader</h3>
 <p>Install source-map-loader</p>
 <pre>$ npm i source-map-loader --save-dev</pre>
-<p>Make the contents of the module.exports section in webpack.config.js as below</p>
+<p>Make the contents of the module.exports section in webpack.config.js as below.</p>
 <pre>module.exports = {
   context: __dirname + '/app',
   entry: {
@@ -214,98 +214,113 @@ module.exports = {
       },
     ]</b></span>
   }, // module:</pre>
+<h3>See Babel in Action</h3>
+<p>Now let's look into the code to see what Babel is doing.</p>
+<p>In number.js lines 6 & 7 under the line 5 'es5' comment use 'var' which is the es5 way to declare variables. Lines 10 & 11 under the line 9 'es6' comment use let and const respectively, which is new es6 syntax.</p>
+<p>Next, look at app.js lines 84 - 90. You will see the same lines of the code with the es5 lines active and the es6 lines commented.</p>
+<p>Now let's enable the es6 code. In number.js, comment out lines 10 & 11 and uncomment lines 6 & 7. Save number.js and rebuild the project using <code>$ npm run build</code>.</p>
+<p>Once the build is complete, take a look in app.js lines 89 & 90. You will see that 'let' and 'const' have both been converted to 'var'. This is Babel in action converting es6 to es5.</p>
 
-Now show them what it does with the comment / uncomment stuff
-
-
-ESLint
-
-
-
-
-
-
-add file-loader
-
-
-
-
-
-*****************************
-*****************************
-OK I'm here. It appears that when using -d you get a source map but it
-does not appear in the browser debugging.
-I have to look into source-map-loader and file-loader to see which are necessary.
-
-*****************************
-*****************************
-
-
-
-
-
-
-
-<h2>If you show with and w/o soruce-map they can see it built in chromium dev tools</h2>
-
-
-
-
-
-<p>All other installs are local to a project so let's set one up.</p>
-
-
+<h2>ESLint</h2>
+<p>ESLint is a 'linter' for JavaScript. It will check your code for many different types of problems and save you a lot of time.</p>
+<p>To install ESLint to your project, run this command.</p>
 <h3>ESLint</h3>
-<pre>$ npm i eslint eslint-loader --savve-dev</pre>
-<p>** config.04.js **</p>
+<pre>$ npm i eslint eslint-loader --save-dev</pre>
+<p>Make the contents of the 'preLoaders' section in webpack.config.js as below.</p>
+<pre>preLoaders: [
+      <span style="color:darkgreen"><b>{
+        test: /\.js$/,
+        loaders: ['eslint-loader'],
+        exclude: /node_modules/,
+        include: PATHS.app
+      },</b></span>
+      {
+        test: /\.js$/,
+        loader: "source-map-loader"
+      }
+    ],</pre>
+<p>Add  '.eslintignore' & '.eslintrc' files to the project root. First make sure you current directory in terminal is ~/workspace/sample-project and then execute the below command.</p>
+<pre>$ touch .eslintignore .eslintrc</pre>
+<p>Make the contents of .eslintignore as follows.</p>
+<pre>build/</pre>
+<p>Make the contents of .eslintrc as follows.</p>
+<pre>---
+extends: eslint:recommended
+
+ecmaFeatures:
+  modules: true
+
+env:
+  es6: true
+  browser: true
+  node: true
+
+parserOptions:
+  script: module;
+
+    ecmaVersion - set to 3, 5 (default), 6, or 7 to specify the version of ECMAScript you want to use.
+    sourceType - set to "script" (default) or "module"
+
+rules:
+  indent: [2, 2] # 2 spaces indentation
+  max-len: [2, 80, 4]
+  quotes: [2, "single"]
+  semi: [2, "always"]
+  no-multiple-empty-lines: [2, {"max": 1}]
+
+  brace-style: [2, "stroustrup"]
+  comma-dangle: [2, "always-multiline"]
+  comma-style: [2, "last"]
+  computed-property-spacing: [2, "never"]
+  dot-location: [2, "property"]
+
+  one-var: [2, "never"]
+  #no-var: [2]
+  prefer-const: [2]
+  no-bitwise: [2]
+
+  object-curly-spacing: [2, "never"]
+  array-bracket-spacing: [2, "never"]
+  space-unary-ops: [2, {"words": true, "nonwords": false}]
+  keyword-spacing: [2, {"after": true}]
+  space-before-blocks: [2, "always"]
+  space-before-function-paren: [2, "never"]
+  space-in-parens: [2, "never"]
+  spaced-comment: [2, "always"]
+  no-console: [0]
+  no-underscore-dangle: [1]
+</pre>
+<p>Now rebuild the project. Unless you made a change that doesn't conform to ESLint's rules, nothing different will happen. Let's make two changes to number.js so we can see ESLint in action.</p>
+<p>On line 11 change 'const' to 'let'.</p>
+<p>On line 14 remove the semicolon from the end of the line.</p>
+<p>Rebuild the project and you will see ESLint recommend you use 'const' instead of 'let' and point out the missing semicolor. Note that both are considered an 'error' and the project build was terminated. Also note that ESLint is running before Babel replaces the 'let' & 'const' with 'var' so it is checking es6 syntax, not es5.</p>
+<p>Put the 2 changed lines back the way they were.</p>
+
+<h2>Production Build</h2>
+<p>In a more full-featured Webpack implementation you would use separate Webpack configuration files do that tasks only needed for a development build, like including a source map, didn't run. For our simple implementation you can make a production build by editing package.json.<p>
+<p>In package.json, change the "build" line to have -p instead of -d as shown.</p>
+<pre>"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    <span style="color:darkgreen"><b>"build": "webpack -p"</b></span>
+},</pre>
+<p>Now rebuild the project and note that Webpack has not emitted an app.js.map file. However, it will still be in your /build directory from the last build so delete it from there.</p>
+
+<div class="ke-callout ke-callout-goal">
+  <h4>Congratulations - Webpack, ESLint and Babel are all operational in you development environment!</h4>
+  <p>There is much, much more these tools can do to make your everyday development experience better. Use the references listed below to start you exploration.</p>
+</div>
 
 
-========================<br>
-xxxxxxxxxxxxxxxxxxxxxxxx<br>
-========================<br>
-
-
-<p>webpack-dev-server --content-base dist/</p>
 <h2>List of commands</2>
 <pre>$ npm list -g --depth=0</pre>
 <pre>$ npm list --depth=0</pre>
 
 <p>Switch between es5 and es6 change .eslintrc env:es6:true/false</p>
-<p>see number.js. comment / uncomment</p>
-
-<h2>Add source-map</h2>
-<p>Check out, there is no source code **picture**</p>
 
 <h2>Production</h2>
 <pre>webpack --config webpack.production.config.js -p</pre>
 
 </div>
-
-
-
-********<br>
-probably not going to use
-
-<span style="color:red">------------------------------------------------</span><br>
-<pre>$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -</pre>
-<pre>$ sudo apt-get install nodejs</pre>
-<p>Check your node version.</p>
-<pre>$ node --version</pre>
-<span style="color:red">------------------------------------------------</span><br>
-
-
-<span style="color:red">------------------------------------------------</span><br>
-<h2>Install Webpack</h2>
-<p>This can take some time, be patient</p>
-<pre>sudo $ npm install -g webpack webpack-dev-server</pre>
-<span style="color:red">------------------------------------------------</span><br>
-
-
-<ol>
-  <li>file-loader - does the name thing</li>
-  <p>* looks like I need to include webpack in the below</p>
-  <pre>$ npm install babel-core babel-loader babel-preset-es2015 webpack webpack-dev-server file-loader source-map-loader babel-preset-react strip-loader --save-dev</pre>
-*************<br>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
