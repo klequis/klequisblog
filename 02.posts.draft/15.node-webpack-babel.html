@@ -24,286 +24,451 @@
     </ul>
   </div>
 
-<p>This tutorial will show you how to use Webpack, Babel and ESLint. We will construct a minimal but working ... </p>
+  <div class="ke-callout ke-callout-danger">
+    <ol>
+      <li>You probably don't need checkinstall</li>
+    </ol>
+  </div>
 
-<h2>Prepare the machine</h2>
-<p>I had some problems getting everything to work until I updated my VM. Although I didn't user the scientific method to prove the VM needed to be updated, it won't hurt to do so.</p>
-<pre>$ sudo apt-get update</pre>
-<div class="ke-callout ke-callout-warning">
-  <p>Sometimes when you try to update right after booting  you will get a message like below. If you do, wait a few minutes and try again.</p>
-  <pre>E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)<br>E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</pre>
-</div>
-<p class="ke-callout ke-callout-warning">With the next command you will see a message regarding 'grub-pc'. When prompted, check the box next to '/dev/sda' and click OK.</p>
-<p>The process can take a while so be patient.</p>
-<pre>$ sudo apt-get upgrade</pre>
-<p>And then remove packages that are no longer in use if there are any.</p>
-<pre>$ sudo apt-get autoremove</pre>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This tutorial will show you how to use Webpack, Babel and ESLint. We will construct a minimal but very useful implementation that will significantly speed-up your development process. Webpack, Babel and ESLint are capable of much more. With the foundation you will get from this tutorial you will be prepared to explore their full reange of features.</p>
+      <p>This being a tutorial where things are done step-by-step, the process of setting-up the project with Webpack seems long, when in fact it isn't. Here is an outline of the process as you would do it without explanation:</p>
 
-<h3>Curl</h3>
-<p>Both NVM and Node use cURL as for installation. Check if it is installed.</p>
-<pre>$ curl --version</pre>
-<p>If not installed execute the following command.</p>
-<pre>$ sudo apt install curl</pre>
-<p>Then check the version again.</p>
-<pre>$ curl --version</pre>
+      <ol class="multilevel">
+        <h3>One-time installs for the development machine</h3>
+        <li>Machine configuration
+          <ol class="multilevel">
+            <li><code>$ sudo apt-get update</code></li>
+            <li><code>$ sudo apt-get upgrade</code></li>
+            <li><code>$ sudo apt-get autoremove</code></li>
+          </ol>
+        </li>
+        <li>Install cURL
+          <ol start="4" class="multilevel">
+            <li><code>$ sudo apt install curl</code></li>
+          </ol>
+        </li>
+        <li>Install Node Version Manager
+          <ol start="5" class="multilevel">
+            <li><code>$ sudo apt-get install checkinstall</code></li>
+            <li><code>$ sudo apt-get install build-essential checkinstall</code></li>
+            <li><code>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash</code></li>
+          </ol>
+        </li>
+        <h3>Configuration for each project</h3>
+        <li>Install Node.js
+          <ol start="8" class="multilevel">
+            <li><code>$ nvm isntall node</code></li>
+          </ol>
+        </li>
+        <li>Install NPM modules
+          <ol start="9" class="multilevel">
+            <li><code>npm i webpack source-map-loader babel-core babel-loader babel-preset-es2015 eslint eslint-loader --save-dev</code></li>
+          </ol>
+        <li>Create configuration files (copy/paste)
+          <ol start="10" class="multilevel">
+            <li>webpack.config.js</li>
+            <li>.eslintignore</li>
+            <li>.eslintrc (copy paste)</li>
+          </ol>
+        </li>
+      </ol>
+      <br><p>With the above in mind, let's dive in.</p>
 
-<h2>Install Node Version Manager (NVM)</h3>
-<p>Install prequisites</p>
-<pre>$ sudo apt-get isntall checkinstall<br>$ sudo apt-get install build-essential checkinstall</pre>
-<p>Now install it</p>
-<pre>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash</pre>
-<p>Close and reopen terminal or it won't run</p>
-<p>Verify that NVM has been installed.</p>
-<pre>$ nvm -version</pre>
 
-<h2>Create the Project</h2>
-<p>If you have been following the series you will already have the directory ~/workspace, if not, create one now.</p>
-<pre>mkdir ~/workspace/</pre>
-<p>Then create a project directory</p>
-<pre>$ cd ~/workspace<br>$ mkdir sample-project<br>$ cd sample-project</pre>
-<p>Then add directors and files as follows:</p>
-<pre>$ mkdir app<br>$ cd app<br>$ touch hello.js index.js number.js<br>$ cd ..<br>$ mkdir build<br>$ cd build<br>$ touch index.html<br>$ cd ..<br>$ touch webpack.config.js<br></pre>
-<p>Make the contents of hello.js as as below.</p>
-<pre>'use strict';
+    </div>
+  </div>
 
-module.exports = function() {
-  var element = document.createElement('h1');
-  element.innerHTML = 'Hello world';
-  return element;
-};</pre>
-<p>Make the contents of index.js as below.</p>
-<pre>'use strict';
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Prepare the machine</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <p>I had some problems getting everything to work until I updated my VM. Although I didn't user the scientific method to prove the VM needed to be updated, it won't hurt to do so.</p>
+          <pre>$ sudo apt-get update</pre>
+          <div class="ke-callout ke-callout-warning">
+            <p>Sometimes when you try to update right after booting  you will get a message like below. If you do, wait a few minutes and try again.</p>
+            <pre>E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)<br>E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</pre>
+          </div>
+          <p class="ke-callout ke-callout-warning">With the next command you will see a message regarding 'grub-pc'. When prompted, check the box next to '/dev/sda' and click OK.</p>
+          <p>The process can take a while so be patient.</p>
+          <pre>$ sudo apt-get upgrade</pre>
+          <p>And then remove packages that are no longer in use if there are any.</p>
+          <pre>$ sudo apt-get autoremove</pre>
+        </div>
+      </div>
+    </div>
+  </div>
 
-var helloElement = require('./hello');
-var numElement = require('./number');
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>cURL</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <p>We will be using NVM (Node Version Manager) to install Node.js. NVM installation uses cURL so let's install that now.</p>
+          <p>Check if it is installed.</p>
+          <pre>$ curl --version</pre>
+          <p>If not installed execute the following command.</p>
+          <pre>$ sudo apt install curl</pre>
+          <p>Then check the version again.</p>
+          <pre>$ curl --version</pre>
+        </div>
+      </div>
+    </div>
+  </div>
 
-document.body.appendChild(helloElement());
-document.body.appendChild(numElement());</pre>
-<p>Make the contents of number.js as below.</p>
-<pre>'use strict';
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Install NVM (Node Version Manager)</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <p><b><span style="color:red">You may not need checkinstall and build-essential may already be installed on the fresh machine so check this stuff out first.</span></b></p>
+          <p>Install prequisites</p>
+          <pre>$ sudo apt-get isntall checkinstall<br>$ sudo apt-get install build-essential checkinstall</pre>
+          <p>Now install NVM</p>
+          <pre>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash</pre>
+          <p>Close and reopen terminal or it won't run</p>
+          <p>Verify that NVM has been installed.</p>
+          <pre>$ nvm -version</pre>
+        </div>
+      </div>
+    </div>
+  </div>
 
-module.exports = function() {
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Title</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Create the Project</h2>
+          <p>If you have been following the series you will already have the directory ~/workspace, if not, create one now.</p>
+          <pre>mkdir ~/workspace/</pre>
+          <p>Then create a project directory</p>
+          <pre>$ cd ~/workspace<br>$ mkdir sample-project<br>$ cd sample-project</pre>
+          <p>Then add directors and files as follows:</p>
+          <pre>$ mkdir app<br>$ cd app<br>$ touch hello.js index.js number.js<br>$ cd ..<br>$ mkdir build<br>$ cd build<br>$ touch index.html<br>$ cd ..<br>$ touch webpack.config.js<br></pre>
+          <p>Make the contents of hello.js as as below.</p>
+          <pre>'use strict';<br><br>module.exports = function() {<br>  var element = document.createElement('h1');<br>  element.innerHTML = 'Hello world';<br>  return element;<br>};</pre>
 
-  // es5
-  var num = 0;
-  var element = document.createElement('h2');
+          <p>Make the contents of index.js as below.</p>
+          <pre>'use strict';<br><br>var helloElement = require('./hello');<br>var numElement = require('./number');<br>document.body.appendChild(helloElement());<br>document.body.appendChild(numElement());</pre>
 
-  // es6
-  // let num = 0;
-  // const element = document.createElement('h2');
+          <p>Make the contents of number.js as below.</p>
+          <pre>'use strict';<br><br>module.exports = function() {<br><br>  // es5<br>  // var num = 0;<br>  // var element = document.createElement('h2');<br><br>  // es6<br>  let num = 0;<br>  const element = document.createElement('h2');<br><br>  // rest of the code<br>  num += 5;<br>  element.innerHTML = 'number = ' + num;<br>  return element;<br>};</pre>
 
-  // rest of the code
-  num += 5;
-  element.innerHTML = 'number = ' + num;
-  return element;
-};</pre>
-
-<p>Make the contents of index.html as below.</p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;title&gt;Sample Project&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;script src="app.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
+          <p>Make the contents of index.html as below.</p>
+          <pre>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>  &lt;meta charset="utf-8"&gt;<br>  &lt;title&gt;Sample Project&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  &lt;script src="app.js"&gt;&lt;/script&gt;<br>
+            &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-<h2>Install Node.js Using NVM</h2>
-<pre>$ nvm install node</pre>
-<p>NVM will print out the Node version being used but you can check it with the below command.</p>
-<pre>$ node --version</pre>
-<h3>Initialize the project</h3>
-<p>This process will create a package.json file which will track all NPM installations and provide other functionality as you will see later in the turtorial. <code>$npm init </code> will ask you a series of questions. For the purposes of this tutorial you can take the default for each question by pressing <kbd>Enter</kbd>.</p>
-<pre>$ npm init</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Title</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-<h2>Adding Project Denpendancies</h2>
-<div class="ke-callout ke-callout-info">
-  <h4>Some NPM terms</h4>
-  <table>
-    <tr><td>i</td><td>Is short for <b>i</b>nstall.</td></tr>
-    <tr><td>--save</td><td>Used to save a dependancy for use in the production distribution.</td></tr>
-    <tr><td>--save-dev</td><td>Use to save a dependancy for use in development only.</td></tr>
-  </table>
-</div>
-<p>We will install Webpack locally to the project. This way you can use different versions of Webpack for different projects if needed.</p>
-<pre>$ npm i webpack --save-dev</pre>
-<p>Make the contents of webpack.config.js as below.</p>
-<pre>const path = require('path');
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Install Node.js Using NVM</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <pre>$ nvm install node</pre>
+          <p>NVM will print out the Node version being used but you can check it with the below command.</p>
+          <pre>$ node --version</pre>
+          <h3>Initialize the project</h3>
+          <p>This process will create a package.json file which will track all NPM installations and provide other functionality as you will see later in the turtorial. <code>$npm init </code> will ask you a series of questions. For the purposes of this tutorial you can take the default for each question by pressing <kbd>Enter</kbd>.</p>
+          <pre>$ npm init</pre>
+        </div>
+        <div class="col-md-4">
 
-const PATHS = {
-  app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'build')
-};
+        </div>
+      </div>
+    </div>
+  </div>
 
-module.exports = {
-  context: __dirname + '/app',
-  entry: {
-    app: PATHS.app
-  },
-  output: {
-    path: PATHS.build,
-    filename: '[name].js'
-  },
-}; // module exports</pre>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Adding Project Denpendancies</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="ke-callout ke-callout-info">
+            <h4>Some NPM terms</h4>
+            <table>
+              <tr><td>i</td><td>Is short for <b>i</b>nstall.</td></tr>
+              <tr><td>--save</td><td>Used to save a dependancy for use in the production distribution.</td></tr>
+              <tr><td>--save-dev</td><td>Use to save a dependancy for use in development only.</td></tr>
+            </table>
+          </div>
+          <p>We will install Webpack locally to the project. This way you can use different versions of Webpack for different projects if needed.</p>
+          <pre>$ npm i webpack --save-dev</pre>
+          <p>Make the contents of webpack.config.js as below.</p>
+          <pre>const path = require('path');<br>
 
-<h3>Let's take it for a spin!</h3>
-<p>There are many ways to launch Webpack which suit differt purposes or goals. We are going to add a script to package.json which will allow us to launch Webpack from the command line. In package.json, modify the 'scripts' secton to be as folllows, where the '-d' is for 'development'. Be careful to not miss the comma at the end of the 'test: "echo ..."' line.</p>
-<pre>"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -d"
-  },</pre>
-<p>Before running Webpack, observe that the /build directory is empty, then run this command.</p>
-<pre>$ npm run build</pre>
-<p>Take note that Webpack has created 2 files in the /build directory, app.js and app.js.map. The latter file is used for debugging but won't be useful to us until we install some additional modules below.</p>
-<p>Open index.html in a browser to see your app in action.</p>
+          const PATHS = {
+            app: path.join(__dirname, 'app'),
+            build: path.join(__dirname, 'build')
+          };
 
-<p class="ke-callout ke-callout-info">Different browsers have different developer tools. In both Firefox and Chrome you press <kbd>F12</kbd> to activate developer tools. I'm using Firefox without Firebug and the next section will be easier to follow if you are using Firefox as well.</p>
-<h3>Loader: source-map-loader</h3>
-<p>Install source-map-loader</p>
-<pre>$ npm i source-map-loader --save-dev</pre>
-<p>Make the contents of the module.exports section in webpack.config.js as below.</p>
-<pre>module.exports = {
-  context: __dirname + '/app',
-  entry: {
-    app: PATHS.app
-  },
-  output: {
-    path: PATHS.build,
-    filename: '[name].js'
-  },
-  <span style="color:darkgreen"><b>module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: "source-map-loader"
-      }
-    ],
-  }</b></span>
-}; // module exports</pre>
-<h3>Using Developer Tools</h3>
-<p>You can now step through your code in Firefox developer tools.</p>
-<p>With index.html open in a browser press F12 to activate the developer tools. Click on <button class="btn btn-default btn-xs">Debugger</button> and then <button class="btn btn-default btn-xs">Sources</button>.</p>
-<p>Under Sources select number.js and in the left margin of the code window click on '14' to set a break point.</p>
-<p>Press <kbd>F5</kbd> to refresh the page. Line 14 will be highlighted in the code window. Press the <button class="btn btn-default btn-xs">Step In</button> button to move to the next line of code.</p>
-<p>Press the <button class="btn btn-default btn-xs">Click to resume</button> button to let code execution to exit step mode.</p>
-<p>Click '14' in the margin to remove the break point.</p>
+          module.exports = {
+            context: __dirname + '/app',
+            entry: {
+              app: PATHS.app
+            },
+            output: {
+              path: PATHS.build,
+              filename: '[name].js'
+            },
+          }; // module exports</pre>
+
+          <h3>Let's take it for a spin!</h3>
+          <p>There are many ways to launch Webpack which suit differt purposes or goals. We are going to add a script to package.json which will allow us to launch Webpack from the command line. In package.json, modify the 'scripts' secton to be as folllows, where the '-d' is for 'development'. Be careful to not miss the comma at the end of the 'test: "echo ..."' line.</p>
+          <pre>"scripts": {
+              "test": "echo \"Error: no test specified\" && exit 1",
+              "build": "webpack -d"
+            },</pre>
+          <p>Before running Webpack, observe that the /build directory is empty, then run this command.</p>
+          <pre>$ npm run build</pre>
+          <p>Take note that Webpack has created 2 files in the /build directory, app.js and app.js.map. The latter file is used for debugging but won't be useful to us until we install some additional modules below.</p>
+          <p>Open index.html in a browser to see your app in action.</p>
+
+          <p class="ke-callout ke-callout-info">Different browsers have different developer tools. In both Firefox and Chrome you press <kbd>F12</kbd> to activate developer tools. I'm using Firefox without Firebug and the next section will be easier to follow if you are using Firefox as well.</p>
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Install source-map-loader</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <pre>$ npm i source-map-loader --save-dev</pre>
+          <p>Make the contents of the module.exports section in webpack.config.js as below.</p>
+          <pre>module.exports = {
+            context: __dirname + '/app',
+            entry: {
+              app: PATHS.app
+            },
+            output: {
+              path: PATHS.build,
+              filename: '[name].js'
+            },
+            <span style="color:darkgreen"><b>module: {
+              preLoaders: [
+                {
+                  test: /\.js$/,
+                  loader: "source-map-loader"
+                }
+              ],
+            }</b></span>
+          }; // module exports</pre>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Using Developer Tools</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>You can now step through your code in Firefox developer tools.</p>
+          <p>With index.html open in a browser press F12 to activate the developer tools. Click on <button class="btn btn-default btn-xs">Debugger</button> and then <button class="btn btn-default btn-xs">Sources</button>.</p>
+          <p>Under Sources select number.js and in the left margin of the code window click on '14' to set a break point.</p>
+          <p>Press <kbd>F5</kbd> to refresh the page. Line 14 will be highlighted in the code window. Press the <button class="btn btn-default btn-xs">Step In</button> button to move to the next line of code.</p>
+          <p>Press the <button class="btn btn-default btn-xs">Click to resume</button> button to let code execution to exit step mode.</p>
+          <p>Click '14' in the margin to remove the break point.</p>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Title</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Babel</h2>
+          <p>Now lets add Babel to our project. Babel will ... </p>
+          <pre>$ npm i babel-core babel-loader babel-preset-es2015 --save-dev</pre>
+          <p>Change the contents of webpack.config.js as show below.</p>
+          <pre>module: {
+              preLoaders: [
+                {
+                  test: /\.js$/,
+                  loader: "source-map-loader"
+                }
+              ],
+              <span style="color:darkgreen"><b>loaders: [
+                {
+                  test: /\.js$/,
+                  exclude: /node_modules/,
+                  loader: 'babel-loader',
+                  query: {
+                    presets: ['es2015']
+                  }
+                },
+              ]</b></span>
+            }, // module:</pre>
+
+            <h3>See Babel in Action</h3>
+            <p>Now let's look into the code to see what Babel is doing.</p>
+            <p>In number.js lines 6 & 7 under the line 5 'es5' comment use 'var' which is the es5 way to declare variables. Lines 10 & 11 under the line 9 'es6' comment use let and const respectively, which is new es6 syntax.</p>
+            <p>Next, look at app.js lines 84 - 90. You will see the same lines of the code with the es5 lines active and the es6 lines commented.</p>
+            <p>Now let's enable the es6 code. In number.js, comment out lines 10 & 11 and uncomment lines 6 & 7. Save number.js and rebuild the project using <code>$ npm run build</code>.</p>
+            <p>Once the build is complete, take a look in app.js lines 89 & 90. You will see that 'let' and 'const' have both been converted to 'var'. This is Babel in action converting es6 to es5.</p>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-<h2>Babel</h2>
-<p>Now lets add Babel to our project. Babel will ... </p>
-<pre>$ npm i babel-core babel-loader babel-preset-es2015 --save-dev</pre>
-<p>Change the contents of webpack.config.js as show below.</p>
-<pre>module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: "source-map-loader"
-      }
-    ],
-    <span style="color:darkgreen"><b>loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
-      },
-    ]</b></span>
-  }, // module:</pre>
-<h3>See Babel in Action</h3>
-<p>Now let's look into the code to see what Babel is doing.</p>
-<p>In number.js lines 6 & 7 under the line 5 'es5' comment use 'var' which is the es5 way to declare variables. Lines 10 & 11 under the line 9 'es6' comment use let and const respectively, which is new es6 syntax.</p>
-<p>Next, look at app.js lines 84 - 90. You will see the same lines of the code with the es5 lines active and the es6 lines commented.</p>
-<p>Now let's enable the es6 code. In number.js, comment out lines 10 & 11 and uncomment lines 6 & 7. Save number.js and rebuild the project using <code>$ npm run build</code>.</p>
-<p>Once the build is complete, take a look in app.js lines 89 & 90. You will see that 'let' and 'const' have both been converted to 'var'. This is Babel in action converting es6 to es5.</p>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>ESLint</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>ESLint is a 'linter' for JavaScript. It will check your code for many different types of problems and save you a lot of time.</p>
+          <p>To install ESLint to your project, run this command.</p>
+          <h3>ESLint</h3>
+          <pre>$ npm i eslint eslint-loader --save-dev</pre>
+          <p>Make the contents of the 'preLoaders' section in webpack.config.js as below.</p>
+          <pre>preLoaders: [
+                <span style="color:darkgreen"><b>{
+                  test: /\.js$/,
+                  loaders: ['eslint-loader'],
+                  exclude: /node_modules/,
+                  include: PATHS.app
+                },</b></span>
+                {
+                  test: /\.js$/,
+                  loader: "source-map-loader"
+                }
+              ],</pre>
+          <p>Add  '.eslintignore' & '.eslintrc' files to the project root. First make sure you current directory in terminal is ~/workspace/sample-project and then execute the below command.</p>
+          <pre>$ touch .eslintignore .eslintrc</pre>
+          <p>Make the contents of .eslintignore as follows.</p>
+          <pre>build/</pre>
+          <p>Make the contents of .eslintrc as follows.</p>
+          <pre>---<br>extends: eslint:recommended<br>ecmaFeatures:<br>  modules: true<br><br>env:<br>  es6: true<br>  browser: true<br>  node: true<br><br>parserOptions:<br>  script: module;<br><br>    ecmaVersion - set to 3, 5 (default), 6, or 7 to specify the version of ECMAScript you want to use.<br>    sourceType - set to "script" (default) or "module"<br><br>rules:<br>  indent: [2, 2] # 2 spaces indentation<br>  max-len: [2, 80, 4]<br>  quotes: [2, "single"]<br>  semi: [2, "always"]<br>  no-multiple-empty-lines: [2, {"max": 1}]<br><br>  brace-style: [2, "stroustrup"]<br>  comma-dangle: [2, "always-multiline"]<br>  comma-style: [2, "last"]<br>  computed-property-spacing: [2, "never"]<br>  dot-location: [2, "property"]<br><br>  one-var: [2, "never"]<br>  #no-var: [2] <br>  prefer-const: [2]<br>  no-bitwise: [2]<br><br>  object-curly-spacing: [2, "never"]<br>  array-bracket-spacing: [2, "never"]<br>  space-unary-ops: [2, {"words": true, "nonwords": false}]<br>  keyword-spacing: [2, {"after": true}]<br>  space-before-blocks: [2, "always"]<br>  space-before-function-paren: [2, "never"]<br>  space-in-parens: [2, "never"]<br>  spaced-comment: [2, "always"]<br>  no-console: [0]<br>  no-underscore-dangle: [1]</pre>
 
-<h2>ESLint</h2>
-<p>ESLint is a 'linter' for JavaScript. It will check your code for many different types of problems and save you a lot of time.</p>
-<p>To install ESLint to your project, run this command.</p>
-<h3>ESLint</h3>
-<pre>$ npm i eslint eslint-loader --save-dev</pre>
-<p>Make the contents of the 'preLoaders' section in webpack.config.js as below.</p>
-<pre>preLoaders: [
-      <span style="color:darkgreen"><b>{
-        test: /\.js$/,
-        loaders: ['eslint-loader'],
-        exclude: /node_modules/,
-        include: PATHS.app
-      },</b></span>
-      {
-        test: /\.js$/,
-        loader: "source-map-loader"
-      }
-    ],</pre>
-<p>Add  '.eslintignore' & '.eslintrc' files to the project root. First make sure you current directory in terminal is ~/workspace/sample-project and then execute the below command.</p>
-<pre>$ touch .eslintignore .eslintrc</pre>
-<p>Make the contents of .eslintignore as follows.</p>
-<pre>build/</pre>
-<p>Make the contents of .eslintrc as follows.</p>
-<pre>---
-extends: eslint:recommended
+          <h3>ESLint in Action</h3>
+          <p>Now rebuild the project. Unless you made a change that doesn't conform to ESLint's rules, nothing different will happen.</p>
+          <p>Let's make two changes to number.js so we can see ESLint in action.</p>
+          <ol>
+            <li>On line 11 change 'const' to 'let'.</li>
+            <li>On line 14 remove the semicolon from the end of the line.</li>
+            <li>Rebuild the project and you will see ESLint recommend you use 'const' instead of 'let' and point out the missing semicolor. Note that both are considered an 'error' and the project build was terminated. Also note that ESLint is running before Babel replaces the 'let' & 'const' with 'var' so it is checking es6 syntax, not es5.</li>
+            <li>Put the 2 changed lines back the way they were.</li>
+          </ol>
 
-ecmaFeatures:
-  modules: true
+        </div>
+        <div class="col-md-4">
 
-env:
-  es6: true
-  browser: true
-  node: true
+        </div>
+      </div>
+    </div>
+  </div>
 
-parserOptions:
-  script: module;
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Production Build</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
 
-    ecmaVersion - set to 3, 5 (default), 6, or 7 to specify the version of ECMAScript you want to use.
-    sourceType - set to "script" (default) or "module"
+          <p>Given the simplicity of our Webpack implementation you could make a simple change in package.json as show below to do a produciton build by simply replacing -d -p.<p>
+          <pre>"scripts": {<br>  "test": "echo \"Error: no test specified\" && exit 1",<br>  "build": "webpack <span style="color:darkgreen"><b>-p"</b></span><br>
+          },</pre>
+          <p>With the above change complete, run the build with <code>$ npm run build</code>.</p>
 
-rules:
-  indent: [2, 2] # 2 spaces indentation
-  max-len: [2, 80, 4]
-  quotes: [2, "single"]
-  semi: [2, "always"]
-  no-multiple-empty-lines: [2, {"max": 1}]
+          <h3>Using a separate config script</h3>
+          <p>For a more full featured Webpack implementation you would use a separate configuration file and tell Webpack to use it from the command line. For our Webpack implementation, the only thing we need to change to have a production configuration is to remove source-map-loader.</p>
+          <ol>
+            <li>Make a new file named webpack.production.config.js.</li>
+            <li>Copy the contents of webpack.config.js and paste it into webpack.production.config.js.</li>
+            <li>Modify the 'preLoaders:' by removing source-map-loader as show below.</li>
+          </ol>
+          <pre>preLoaders: [<br>  {<br>    test: /\.js$/,<br>    loaders: ['eslint-loader'],<br>    exclude: /node_modules/,<br>    include: PATHS.app<br>  }<br>],</pre>
+          <p>The command we will use to make the production build uses the full path to webpack and passes to parameters: webpack.production.config.js file and -p. Execute this command as show below.</p>
+          <pre>$ node_modules/.bin/webpack --config webpack.production.config.js -p</pre>
+        </div>
+        <div class="col-md-4">
 
-  brace-style: [2, "stroustrup"]
-  comma-dangle: [2, "always-multiline"]
-  comma-style: [2, "last"]
-  computed-property-spacing: [2, "never"]
-  dot-location: [2, "property"]
+        </div>
+      </div>
+    </div>
+  </div>
 
-  one-var: [2, "never"]
-  #no-var: [2]
-  prefer-const: [2]
-  no-bitwise: [2]
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Using webpack-dev-server</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>One of the nicer features of Webpack is it development server which when configured to do so will automatically update you project in the browser. Here is how to use it.</p>
+        </div>
+        <div class="col-md-4">
 
-  object-curly-spacing: [2, "never"]
-  array-bracket-spacing: [2, "never"]
-  space-unary-ops: [2, {"words": true, "nonwords": false}]
-  keyword-spacing: [2, {"after": true}]
-  space-before-blocks: [2, "always"]
-  space-before-function-paren: [2, "never"]
-  space-in-parens: [2, "never"]
-  spaced-comment: [2, "always"]
-  no-console: [0]
-  no-underscore-dangle: [1]
-</pre>
-<p>Now rebuild the project. Unless you made a change that doesn't conform to ESLint's rules, nothing different will happen. Let's make two changes to number.js so we can see ESLint in action.</p>
-<p>On line 11 change 'const' to 'let'.</p>
-<p>On line 14 remove the semicolon from the end of the line.</p>
-<p>Rebuild the project and you will see ESLint recommend you use 'const' instead of 'let' and point out the missing semicolor. Note that both are considered an 'error' and the project build was terminated. Also note that ESLint is running before Babel replaces the 'let' & 'const' with 'var' so it is checking es6 syntax, not es5.</p>
-<p>Put the 2 changed lines back the way they were.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<h2>Production Build</h2>
-<p>In a more full-featured Webpack implementation you would use separate Webpack configuration files do that tasks only needed for a development build, like including a source map, didn't run. For our simple implementation you can make a production build by editing package.json.<p>
-<p>In package.json, change the "build" line to have -p instead of -d as shown.</p>
-<pre>"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    <span style="color:darkgreen"><b>"build": "webpack -p"</b></span>
-},</pre>
-<p>Now rebuild the project and note that Webpack has not emitted an app.js.map file. However, it will still be in your /build directory from the last build so delete it from there.</p>
+
+
 
 <div class="ke-callout ke-callout-goal">
   <h4>Congratulations - Webpack, ESLint and Babel are all operational in you development environment!</h4>
