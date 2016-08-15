@@ -406,3 +406,30 @@ div.front-page article {
 i.ke-chevron-sm {
   font-size:0.8em;
 }
+
+/*
+ * Multi-level lists
+ *
+ */
+ol.multilevel {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+ol.multilevel > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+ol.multilevel > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+li ol.multilevel > li {
+  margin: 0;
+}
+li ol.multilevel > li:before {
+  content: counters(item, ".") " ";
+}
