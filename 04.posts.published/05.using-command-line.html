@@ -46,7 +46,7 @@
       <li>Everything you do in Terminal is case sensitive. If something doesn't work, be sure to double check the case.</li>
       <li>You can open multiple tabs in terminal by pressing <kbd>Ctrl-t</kbd>.</li>
       <li>Spaces in file names require quotes. It is easiest to not use spaces in your file names.</li>
-      <li>You can see all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typing and many typos.
+      <li>You can see all of your previous commands in Terminal by using your up and down arrow keys. Doing so will save you a lot of typing and many typos.</li>
     </ol>
   </div>
 
@@ -201,7 +201,7 @@
     <div class="panel-body">
       <p>There is a great deal of detail printed out by the ls command. We will go through it piece by piece using <b>'-rw-rw-r-- 1 karl karl 0 May 28:08:50 test1.txt'</b> as an example. Each of the first 10 letters have individual meaning. The first character indicates the file type and the next 9 show the permissions. The meaning of the the individual characters is listed below. Although it is potentially confusing having a user named karl and a group named karl, Ubuntu creates a group for each user with the same name as the users login name.</p>
       <p>A <b>user</b> is assigned privileges which are the right to perform an action on a computer. 'Login' is the right to log in. 'Read' is the right to read (aka view/see) a file, directory or other object on the computer.</p>
-      <p>A <b>group</b> is a container of users. Members of the group are given privileges. Ubuntu comes with a set of default groups. Groups can be created, deleted and renamed. Users and privileges can be added to and removed from a group.
+      <p>A <b>group</b> is a container of users. Members of the group are given privileges. Ubuntu comes with a set of default groups. Groups can be created, deleted and renamed. Users and privileges can be added to and removed from a group.</p>
       <table>
         <tr>
           <th>Character</th>
@@ -434,7 +434,7 @@
   <!-- -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Creating Files <code>$ gedit</code>,<code>$ ></code>,<code>$ touch</code></h2>
+      <h2>Creating Files <code>$ gedit</code>,<code>$ &gt;</code>,<code>$ touch</code></h2>
     </div>
     <div class="panel-body">
       <p>Up to now we have been working with directories. Now let's work with some files while exploring several different methods to create files.</p>
@@ -451,10 +451,10 @@
       <p>Using Terminal and the <code>$ ls -l</code> command, look in '~/workspace/samplefiles' for page1.html.</p>
       <div class="row">
         <div class="col-md-8">
-          <p><b>'>' Redirection</b> - You can read-up on redirection on your own. For now I'll just note that normally output will go to the screen but you can 'redirect' it using '&gt;'. First lets try to print something without redirection.</p>
+          <p><b>'&gt;' Redirection</b> - You can read-up on redirection on your own. For now I'll just note that normally output will go to the screen but you can 'redirect' it using '&gt;'. First lets try to print something without redirection.</p>
           <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;'</pre>
           <p>That printed to the screen. Now lets redirect it to a file.</p>
-          <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;' > page2.html</pre>
+          <pre>$ echo '&lt;h1&gt;page2.html&lt;/h1&gt;' &gt; page2.html</pre>
           <p>View the file in Files and then in Terminal.</p>
           <p>Open the file with FireFox.</p>
           <pre>$ firefox page2.html</pre>
@@ -466,7 +466,7 @@
       <div class="row">
         <div class="col-md-8">
           <p>You can also create empty files with redirection.</p>
-          <pre>$ > page3.html</pre>
+          <pre>$ &gt; page3.html</pre>
           <p><code>$ touch</code> - <b>touch</b> is an easy way to create new empty files with the command line. It is also used to change the date/time of a file.</p>
           <pre>$ touch file1.css</pre>
         </div>
@@ -555,7 +555,7 @@
           <p>So far we have been working with files owned by the currently log-in user (you). If you want to work with files and directories that you don't own you need to use <b>sudo</b>. Let's create both a directory and a file with <code>sudo</code> and then view the results.</p>
           <pre>$ cd ~/workspace/samplefiles<br>$ sudo mkdir sudorootdir</pre>
           <p>You will be prompted for your password, the same one you log in with.</p>
-          <p>You can't use <code>$ sudo > ...</code> so we will use touch to create the file.</p>
+          <p>You can't use <code>$ sudo &gt; ...</code> so we will use touch to create the file.</p>
           <pre>$ sudo touch sudorootfile.txt</pre>
           <p>Performing a directory listing will show that both the Owner and Group are 'root' which is the super user.</p>
           <pre>$ ls -l</pre>
@@ -578,10 +578,11 @@
               <td>rwx</td><td>User 'root' has read, write & execute.</td>
             </tr>
             <tr>
-              <td>r-x</td><td>Group 'root' has read & execute but not write./td>
+              <td>r-x</td><td>Group 'root' has read & execute but not write.</td>
             </tr>
-              <td>r-x</td><td>Everyone else (includes you) has the same as group 'root', i.e., read & execute but not write.</td>
             <tr>
+              <td>r-x</td><td>Everyone else (includes you) has the same as group 'root', i.e., read & execute but not write.</td>
+            </tr>
           </table>
         </div>
         <div class="col-md-4">
@@ -772,8 +773,8 @@
         </tr>
         <tr>
           <td>Create a file</td>
-          <td>$ ></td>
-          <td>$ > file1.txt<br>$ echo '&lt;h1&gt;' > file2.txt</td>
+          <td>$ &gt;</td>
+          <td>$ &gt; file1.txt<br>$ echo '&lt;h1&gt;' &gt; file2.txt</td>
           <td>'echo' means print</td>
         </tr>
         <tr>
@@ -823,12 +824,9 @@
 
 </div> <!-- container-fluid -->
 
-
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
 
-
-</div> <!-- containter-fluid -->
 </body>

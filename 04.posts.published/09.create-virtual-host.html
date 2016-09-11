@@ -41,7 +41,7 @@
             <li>/sites-available contains all the virtual host files.</li>
             <li>/sites-enabled contains links to virtual host files in /sites-available. If a file in /sites-available is linked to /sites-enabled the site is enabled. If it is not linked, the site is not enabled.</li>
             <li>000-default.conf is the default site that was setup by the Apache installation.</li>
-            <li>000-default.conf in /sites-enabled is a link to the file of the same name in /sites-available. You can tell it is a link by the first letter of its listing, 'l' in 'lrwxrwxrwx' means 'symbolic link'. Following the '->- symbol, the listing also shows the file it is linked to.</li>
+            <li>000-default.conf in /sites-enabled is a link to the file of the same name in /sites-available. You can tell it is a link by the first letter of its listing, 'l' in 'lrwxrwxrwx' means 'symbolic link'. Following the '-&gt;- symbol, the listing also shows the file it is linked to.</li>
           </ol>
           <p>Looking at the listing of /etc/apache2 you can also see two other pairs of folders: /conf-available & /conf-enabled, /mods-available & /mods-enabled. In /mods-enabled you will find the file rewrite.load which is a symbolic link to rewrite.load in /mods-available. This is the rewrite module we enabled when installing Apache.</p>
         </div>
@@ -198,7 +198,7 @@
       </div>
       <div class="ke-callout ke-callout-warning">
         <h4>Didn't work?</h4>
-        <p>Did you get the Apache2 Ubuntu Default Page or an error instead of the PHPInfo page? It is very likely a typo is to blame.<p>
+        <p>Did you get the Apache2 Ubuntu Default Page or an error instead of the PHPInfo page? It is very likely a typo is to blame.</p>
         <p>The other remedies listed below should not be necessary, but over the four years I have been working with Apache on Ubuntu I have needed to do one or more of them many times. If fact, while writing this guide my phpInfo site worked in Chrome but not FireFox and clearing everything (history, cookies, etc.) fixed it.</p>
         <ul>
           <li>Go through all of the steps again looking for a typo.</li>
