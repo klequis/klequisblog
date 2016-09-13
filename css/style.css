@@ -29,11 +29,14 @@ body {
 }
 
 .img-step-figure {
+  /*
   margin-top: 10px;
   margin-bottom: 10px;
-  /* To get pictures to center */
+  /* To get pictures to center
   margin-left:auto;
   margin-right:auto;
+  */
+  margin: 10px auto 10px auto;
 }
 
 /* Common styles for all types */
@@ -376,14 +379,14 @@ p:empty {
 
 div.front-page {
   /*border-top: 1px solid #ddd;*/
-  padding-top 10px;
+  padding-top: 10px;
 }
 div.front-page div.panel-default {
   border: none;
   box-shadow: none;
 }
 div.front-page article {
-  background #fff none repeat scroll 0 0;
+  background: #fff none repeat scroll 0 0;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
