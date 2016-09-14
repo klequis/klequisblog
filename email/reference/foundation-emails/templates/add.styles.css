@@ -1,0 +1,65 @@
+/* taken out of additions */
+
+
+
+
+
+
+
+
+
+
+
+
+/* body */
+body {
+  font-family: "Open Sans",sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+
+
+
+  .table {
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+/*first row
+  /* first column / td */
+  border-top: 1px solid #ddd;
+  line-height: 1.42857;
+  padding: 8px;
+  text-align: center;
+
+  /* second column / td */
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+  line-height: 1.42857;
+  padding: 8px;
+
+  /* third column / td */
+  vertical-align:middle;
+  border-top: 1px solid #ddd;
+  line-height: 1.42857;
+  padding: 8px;
+
+
+/* img */
+.img-logo-in-table {
+  border: 0 none !important;
+  max-height: 50px;
+  max-width: 100px !important;
+}
+
+img {
+  vertical-align: middle;
+  height:auto;
+}
