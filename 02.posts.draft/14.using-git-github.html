@@ -63,10 +63,43 @@
   You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
 -->
+
+For those new to Git and GitHub it can appear complicated and the workflow may seem long-winded. It isn't either of those things. However, forign in terms of vocabulary and concepts, and so takes some time to get accustomed to. But trust me, once you get it you will wonder how you lived without it. You code will be safely stored on a remote server (GitHub) and you changes will be in 'snapshots' that you can refer back to for reference and restore if needed. You will also be able to manager version of you code so you can have separate code bases for production and under development. It is going to be some effort, but well worth it.
+
+To avoid making it seem overly complicated I will walk you through the process once in clear steps and dig into the explanation after that.
+
+First we will do it and then we will dig into the explination
+
+You cannot create a github repository from the command line.
+
+1. Create a GitHub account
+1. Configure Git
+1. Create a GitHub Repository
+2. Create a Project
+3. Add the project to Git
+4. Add the remote
+5. Push the project to GitHub
+6. Work on you files
+7. Work on your files
+8. Add files
+9. Commit changes
+10. Push
+
+
+Here is an interesting command
+<code>git remote show origin</code> will show more detail than <code>$ git remote --v</code>
+
+
+Let's get into some details
+
+<h2>Details</h2>
+
+
+
 <h1>Create and check out a branch</h1>
 <h2>see comment in html</h2>
-<!-- 
-  I created a branch in git hub but had not pushed the latest changes to master so had to 
+<!--
+  I created a branch in git hub but had not pushed the latest changes to master so had to
   synchronize them.
   First I pushed the changes to Master
   Second I fetched the branch:
@@ -75,6 +108,19 @@
                       // was open in Atom and all open files were updated - wow!
   Third I used 'rebase'
   $ git rebase master // this brought the diffs from master in to the branch!
+
+  ALSO, it seems easy to have created the branch on the local machine rather than
+  on GitHub. I have not done this but here is a stockoverflow.com post
+  http://stackoverflow.com/questions/1519006/how-do-you-create-a-remote-git-branch
+  $ git checkout -b <branch-name> // creates the branch, looks like it populates it as
+                                  // well but I should test this.
+  $ git push <remote-name> <branch-name> // if the local and remote branch names are the same
+  $ git push <remote-name> <local-branch-name>:<remote-branch-name> // if they have different names
+  WARNING if you do
+  $ git push <remote-name>: // with the colon on the end
+  ... the remote will be deleted :(
+  ALSO, see later in the article post by Jasper on $git push -u
+
 -->
 
 
