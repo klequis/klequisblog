@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>14.git github</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+
+  <div class="ke-callout ke-callout-danger">
+    <ul>
+      <li>complete text</li>
+      <li>pending read out-loud</li>
+      <li>pending spelling</li>
+      <li>pending punctuation</li>
+      <li>Remove picture comments</li>
+      <li>Remove this list</li>
+    </ul>
+
+  </div>
+  <h2>Things to Add Maybe</h2>
+
+
+
+
+  <h2>CREATING A NEW REPOSITORY - instructions from GitHub</h2>
+  <p>
+
+  Quick setup — if you’ve done this kind of thing before
+  or
+   HTTPS
+   SSH
+
+  https://github.com/klequis/time.git
+
+  We recommend every repository include a README, LICENSE, and .gitignore.
+  …or create a new repository on the command line
+
+  echo "# time" >> README.md
+  git init
+  git add README.md
+  git commit -m "first commit"
+  git remote add origin https://github.com/klequis/time.git
+  git push -u origin master
+  …or push an existing repository from the command line
+
+  git remote add origin https://github.com/klequis/time.git
+  git push -u origin master
+  …or import code from another repository
+  You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+<p>
+
+
+  <h2>Using Git with GitHub Quick Start</h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>This guide will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used Git before. There is a very good <b>free</b> online book for using Git. If you are new to Git, reading at least the first three chapters will be well worth your time. See the 'See Also' section at the bottom of the post for a link to the book.</p>
+      <p>There are different ways you can create a Git repository and work with it. The Git/GitHub workflow in this tutorial is one possible process, and one that I think it is easy for a new Git/GitHub user to follow and learn from. Long-term, you'll want to learn more advanced Git techniques. This tutorial will get you up and started.</p>
+
+
+      <p class="ke-callout ke-callout-info">I will be using the email account demoacct.klequis@gmail.com for this guide. When following along, replace this email address with yours. Please note that all email sent to this account is automatically deleted without review.</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Contents</h2>
+    </div>
+    <div class="panel-body">
+      <h3>Introduction</h3>
+      <p>This tutorial will teach you how to get started with Git and GitHub. First I'll guide you through installation and account setup. Then you will learn two ways of starting a new project, either starting from GitHub or from you local machine. This second method can be used for an existing project that is not already in Git and/or GitHub.</p>
+
+      <h3>Part I - Setup</h3>
+      <ol>
+        <li>Creat a GitHub Account</li>
+        <li>Installing Git</li>
+      </ol
+      >
+      <h3>Part II - Starting a New Project From GitHub</h3>
+
+      <h3>Part III - Starting a New Project From Your Local Machine</h3>
+
+      <h3>Getting Into The Details</h3>
+
+    </div>
+
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Installing Git</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <pre>$ sudo apt-get update<br>$ sudo apt install git</pre>
+        </div>
+        <div class="col-md-4">
+  	      pic.001.install.git.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Configuring Git</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <pre>$ git config --global user.name "Your Name"<br>$ git config --global user.email "youremail@domain.com"</br>$ git config --list</pre>
+        </div>
+        <div class="col-md-4">
+  	      pic.002.git.config.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Setup GitHub</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Go to <a href="https://github.com">github.com</a> and create an account.</p>
+          <p>Once you verify your email address you will be redirected to a new page. Click the <button class="btn btn-default btn-xs">Start a project</button> button.</p>
+          <p>
+        </div>
+        <div class="col-md-4">
+  	       pic.003.github.start.project.png
+           <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p class="ke-callout ke-callout-warning">
+            I am going to create a repository named 'git-github-tutorial'. You can use a different name. However, because I will be referring to 'git-github-tutorial' in the steps below it will be easier to follow the steps if you use git-github-tutorial as well.
+          </p>
+          <p>Enter 'git-github-tutorial' as the repository name.</p>
+          <p>Keep the default of Public. Creating a private repository requires a paid account.</p>
+          <p>Check 'Initialize this repository with a README'. All projects should have a readme.md file regardless of how simple the project or readme is.</p>
+        </div>
+        <div class="col-md-4">
+          pic.004.github.create.repository.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Workflow</h2>
+    </div>
+    <div class="panel-body">
+      <p>We will use the following workflow</p>
+      <ol>
+        <li>$ git clone</li>
+        <li>$ git add</li>
+        <li>$ git commit</li>
+        <li>$ git push</li>
+      </ol>
+      <p>We will also make frequent use of <code>$ git status</code> while we move through the above workflow</p>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Cloning a Repository <code>$ git clone</code></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>we will **dkdkdkd** </p>
+          <p>We are going to 'clone' the repository in GitHub to our local machine. Git will create a directory with the name of the repository. So that Git will create this in ~/workspace, switch to that directory now.</p>
+          <pre>cd ~/workspace</pre>
+          <p>Switch back to your browser. If you are not still on your repository's home page, go there now.</p>
+          <p>Click the green <button class="btn btn-default btn-xs">Clone or download</button> button, then click the small clipboard icon which will copy the repository's URL to the clipboard.</p>
+        </div>
+        <div class="col-md-4">
+          pic.005.github.copyurl.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/005.github.copyurl.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/005.github.copyurl.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>In Terminal, execute the below command to create a local copy of the repository. After typing 'git clone ' you can right-click on the terminal window and paste the URL.</p>
+          <pre>$ git clone <i>yourURL</i>
+        </div>
+        <div class="col-md-4">
+        	pic.006.git.clone.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/006.git.clone.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/006.git.clone.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>To check the status of your repository execute the below command.</p>
+          <pre>$ git status</pre>
+          <p>The output says that everthing is up to date. We will take a closer look at the output of <code>$git status</code> below.</p>
+        </div>
+        <div class="col-md-4">
+          pic.007.git.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/007.git.statu.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/007.git.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>As a way of seeing what <code>$ git clone</code> put on your local machine, let's open the project directory with Atom.</p>
+          <p>Open Files and navigate to ~/workspace. Right-click on /git-github-tutorial and choose 'Open with Atom'. If Atom is not in the list click <button class="btn btn-default btn-xs">View All Applications</button>, then select Atom. Atom will open the folder and display all the project's files and folders. As you can see, this is identical to what you put in GitHub.</p>
+          <p>So far the project structure is very simple. You can see the README.md file you created when creating the repository on GitHub and there is a .git directory which is a hidden folder containing the Git files.</p>
+
+        </div>
+        <div class="col-md-4">
+          pic.008.project.in.atom.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/008.project.in.atom.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/008.project.in.atom.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <p class="ke-callout ke-callout-warning">We will cover how to move changes made to the local repository back to GitHub later in this post.</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Definitions</h2>
+    </div>
+    <div class="panel-body">
+      <p>Like many specialized subjects, Git has its own vocabulary and understanding Git well enough to make use of it requires that you learn its vocabulary. Here are some definitions to help with the next steps.</p>
+      <table>
+        <tr>
+          <td><b>Working Directory</b></td>
+          <td>'Working directory' is used to refer to files in the project's folder that are currently in a state other than committed. It contains all the files from one version of the project. In our example, the working directory is ~/workspace/git-github-tutorial. It is also the project's root directory.</td>
+        </tr>
+        <tr>
+          <td><b>Staging Area</b></td>
+          <td>The 'staging area' is not actually an 'area'. It is a file that tracks files that have been added to the staging area with <code>$ git add</code>.</td>
+        </tr>
+        <tr>
+          <td><b>Untracked (file)</b></td>
+          <td>An untracked is a file in the working directory that has not been added to Git.</td>
+        </tr>
+        <tr>
+          <td><b>Tracked (file)</b></td>
+          <td>A tracked file is a file that has been added to the Git repository with <code>$ git add</code>.</td>
+        </tr>
+        <tr>
+          <td><b>Staged (file)</b></td>
+          <td>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on an untracked or modified file.</td>
+        </tr>
+        <tr>
+          <td><b>Committed (file)</b></td>
+          <td>A staged file that has moved to a committed state by using <code>$ git commit</code>.</td>
+        </tr>
+        <tr>
+          <td><b>Modified (file)</b></td>
+          <td>A modified file is a tracked file that has been changed since it was last committed.</td>
+        </tr>
+        <tr>
+          <td><b>Repository ("repo")</b></td>
+          <td>A repository can be thought of as a Git database. It is a complete copy of your project with all history.</td>
+        </tr>
+        <tr>
+          <td><b>Local Repository</b></td>
+          <td>The 'local repository' is on your local machine in a /.git directory. In our example the repository is ~/workspace/git-github-tutorial/.git. The '.' before 'git' in .git means it is a hidden directory. To see it using Terminal, use <code>$ ls -la</code> where -a means 'show hidden files'.</td>
+        </tr>
+        <tr>
+          <td><b>Remote Repository</b></td>
+          <td>The remote repsitory is a repository on a remote server. In our example, the remote repository is the one we created on GitHub. GitHub is not the only place where a remote repository can reside.</td>
+        </tr>
+        <tr>
+          <td><b>Remote<b></td>
+          <td>A remote is a name that holds the URL to the remote repository. You can think of it as a variable that holds a string where the string is the URL to the remote repository, which in our case is GitHub</td>
+        </tr>
+        <tr>
+          <td><b>Branch</b></td>
+          <td>Git is like a tree. You can add branches to your tree. Each branch is a complete version of your project. The default branch is called 'master'. Take a look at your GitHub home page and find the dropdown that says 'Master'. Currently, your repository only has one branch, i.e., Master</td>
+        </tr>
+      </table>
+      <h2>Git Areas</h2>
+      <p>There are four 'areas' that we will be working with. The first three are part of Git and are on you local machine. The fouth is GitHub. The term 'areas' is used but they are actually a combination of files and folders. For example, the 'staging area' is a file.</p>
+      <table id="git-structure">
+        <tr>
+          <td class="git-structure-td-left git-structure-red">Wroking Directory<br>(~/workspace/git-git-hub-tutorial)</td>
+          <td class="git-structure-td-right git-structure-red">- Untracked files are red<br>- Tracked but modified files are red</td>
+        </tr>
+        <tr class="tbl-row-spacer">
+        </tr>
+        <tr>
+          <td class="git-structure-td-left git-structure-green">Staging Area<br>(is really a file)</td>
+          <td class="git-structure-td-right git-structure-green">- Staged files are green</td>
+        </tr>
+        <tr class="tbl-row-spacer">
+        </tr>
+        <tr>
+          <td class="git-structure-td-left git-structure-black">Local Repository<br>(~/workspace/git-github-tutorial/.git)</td>
+          <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
+        </tr>
+        <tr class="tbl-row-spacer">
+        </tr>
+        <tr>
+          <td class="git-structure-td-left git-structure-black">GitHub Repository<br>(https://github.com/demoacct-klequis/git-github-tutorial.git)</td>
+          <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Document Life-cycle</h2>
+    </div>
+    <div class="panel-body">
+      <p>We will be using the commands <code>$ git add</code> & <code>$ git commit</code> to move the files through their life-cycle. Don't worry about what the commands mean just yet. I'll go into them in more detail later.</p>
+      <table class="git-lifecycle">
+        <tr>
+          <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Untracked</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
+        </tr>
+      </table>
+      <table class="git-lifecycle">
+        <tr>
+          <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Modified</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
+          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+          <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
+        </tr>
+      </table>
+      <ul>
+        <li>In the output of <code>$ git add</code> modified and untracked files are in red text.</li>
+        <li>When you add a new file to the working directory it is an 'untracked' file.</li>
+        <li>When you modify a previously committed file it becomes 'modified'.</li>
+        <li>When you include a modified or untracked file in the <code>$ git add</code> command it becomes 'staged'.</li>
+        <li>When the <code>$ git commit</code> command is executed, all staged files become committed. Commited files are not show in the output of <code>$ git status</code>.</li>
+      </ul>
+
+      <p>Let's setup some files to explore the various states.</p>
+      <p>In Terminal, make sure the current directory is ~/workspace/git-github-tutorial and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
+      <pre>$ cd ~/workspace/git-github-tutorial<br>$ echo '&lt;h3&gt;index.html&lt;/h3&gt;' &gt; index.html<br>$ mkdir css<br>$ > css/style.css</pre>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>To see the state of the files you have committed, execute these two commands in Terminal</p>
+          <pre>$ git status<br>$ git status css/</pre>
+          <p>index.html, style.css and the directory /css are all untracked so they are in red text.</p>
+        </div>
+        <div class="col-md-4">
+          pic.017.01.post.git.clone.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/017.01.post.git.clone.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/017.01.post.git.clone.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Add index.html to the staging area.</p>
+          <pre>$ git add index.html<br>$ git status</pre>
+          <p>Now that it is 'staged', index.html is in green text. /css and everthing below it are still untracked.</p>
+        </div>
+        <div class="col-md-4">
+          pic.018.01.git.add.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/018.01.git.add.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/018.01.git.add.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Add all the untracked files and folders to the staging area</p>
+          <pre>$ git add --all<br>$ git status</pre>
+          <p>All untracked files are now in the staging area. Git will also keep track of the directory structure so that style.css will be in the /css directory.</p>
+        </div>
+        <div class="col-md-4">
+          pic.019.01.git.addall.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/019.01.git.addall.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/019.01.git.addall.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p>When you use <code>$ git commit</code> all files in the staging area are committed.</p>
+          <pre>$ git commit -m "initial commit"<br>$ git status</pre>
+          <p>-m means 'message'. You should add a message that describes what changes are being commited to every commit. It is a common convention when committing files for the first time to use the comment 'initial commit'.</p>
+          <p>As you can see, committed files do not show in the <code>$ git status</code> output.</p>
+        </div>
+        <div class="col-md-4">
+          pic.020.01.git.commit.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/020.01.git.commit.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/020.01.git.commit.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<!--
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>So far we have created a simple website **make sure you have** and made use of Git to get an overview of basic Git functionalty. In the sections that follow we go into detail on the 4 commands used so far as well as <code>$ git push</code> which will be next.</p>
+    </div>
+  </div>
+-->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Remotes Explained</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-4">
+    <!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ke-callout ke-callout-info">
+    <h2>Commands in Detail</h2>
+    <p>So far we have created a simple website **make sure you have** and made use of Git to get an overview of basic Git functionalty. In the sections that follow we go into detail on the 4 commands used so far as well as <code>$ git push</code> which will be next.</p>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Pushing to GitHub <code>$ git push</code></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>To move you files to GitHub use <code>$ git push</code>. We will first push our project changes to GitHub and then dive into an explanation of doing so.</p>
+          <p>The syntax of <code>$ git push </code> is:</p>
+          <pre>git push [remote-name] [branch-name]</pre>
+          <p>Since our remote-name is 'origin' and our current branch-name is 'master', execute the push command as follows:</p>
+          <pre>$ git push origin master</pre>
+          <p>When prompted, enter you GitHub user name and password.</p>
+          <p>That's it, your chnages are already in the GitHub repository! Take a look at your project's GitHub page to confirm the files are added.</p>
+          <p class="ke-callout ke-callout-info">It is worth taking a moment to realize that so far we have only used 3 commands, add, commit and push.</p>
+        </div>
+        <div class="col-md-4">
+          pic.015.01.git.push.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/015.01.git.push.png" alt="**alt**"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>Let's take a closer look at <code>$ git push</code> and its output.</p>
+          <table>
+            <tr>
+              <td><code>$ git push origin master</code></td>
+              <td><code>$git push</code> moves you chnages from your local machine to GitHub. 'master', as you have already seen, is the current branch you are working on. 'origin' is a 'remote' (see next definition). It is a label that contains the path to the GitHub repository.</td>
+            </tr>
+            <tr>
+              <td></code></td>
+              <td></td>
+            </tr>
+          </table>
+          *outline**
+
+            Master is branch ... know already
+            origin is the name of remote
+            Remote, explain 'remote'
+            url's - make clear that they are the git hub repository url's and compare them to the actual url's to make sure you are correct.
+            3 objects
+            master -> master from local master to remote master
+          */outline**
+          <p>To understand origin you need to understand 'remote'. Remote refers to the repository on GitHub. Execute the below command.</p>
+          <pre>$ git remote -v</pre>
+          <p>Given the results in the screenshot it appears that 'origin' is a name for something that holds a URL, and it is. It is the name of the Git repository on GitHub, but not the name you gave it. Git assigned this name when you did the clone. You can change it if you want to but for the moment there is no need to.</p>
+          <p>You'll note that there is 'fetch' and 'push'. These are the URLs that Git will use to fetch data from and push data to GitHub.</p>
+          <h4>master -&gt; master</h4>
+          <p>This means we move date from the master branch in our local repository to the master branch on the remote repository (i.e., the repository on GitHub).</p>
+        </div>
+        <div class="col-md-4">
+          pic.016.01.git.remote.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/016.01.git.remote.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+      <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
+
+
+
+
+
+
+      <!--
+
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>Let's add a file to the project and then to Git.</p>
+          <p>In Atom, right-click on the project directory and choose <button class="btn btn-default btn-xs">New file</button>.</p>
+          <p>Make the file contents as show as below.</p>
+          <pre>&lt;h1&gt;Using Git with GitHub&lt;/h1&gt;<br>&lt;p class="green-text"&gt;This is some green text.&lt;/p&gt;<br>&lt;p class="blue-text"&gt;Some blue text here.&lt;/p&gt;</pre>
+        </div>
+        <div class="col-md-4">
+          pic.009.new.file.in.project.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/009.new.file.in.project.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/009.new.file.in.project.png" alt="**alt**"></a>
+        </div>
+      </div>
+    -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git status</code></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Switch to Terminal and make you current directory ~/workspace/git-github-tutorial.</p>
+          <pre>$ cd ~/workspace/git-github-tutorial</pre>
+          <p>Check your repositories status when the below command></p>
+          <pre>$ git status</pre>
+          <p>Here is a view of words and phrases in the status</p>
+          <p>Now let's take a closer look at <code>$ git status</code> which we executed above.</p>
+          <table>
+            <tr>
+              <td><b>master</b></td>
+              <td>Git is like a tree. You can create branches to you tree. Each branch is a complete version of your project. The default branch is called 'master'. Look at your GitHub home page and find the dropdown that says "Branch: master".111</td>
+            </tr>
+            <tr>
+              <td><b>origin</b></td>
+              <td>'origin' is a name has associated with the repository on your local machine. As we will see later, it holds the URL to the repository on GitHub.</td>
+            </tr>
+            <tr>
+              <td><b>Your branch is up-to-date with 'origin/master'</b></td>
+              <td>This message means that the repository on your local machine matches the repository on GitHub. It does not mean that everthing in your project directory matches what is on GitHub. You probably need to understand 'commit' before you can understand this. So come back and read this again once you undertand 'commit'.</td>
+            </tr>
+            <tr>
+              <td><b>'nothing to commit'</b></td>
+              <td>In a simple sense this means, 'you have nothing ready to make permenant in the repository'. In Git language it says you have nothing in the repository's staging area.</td>
+            </tr>
+            <tr>
+              <td><b>'working directory is clean'</b></td>
+              <td>This means there is nothing in your project's directory that is not already in the Git repository on you local machine. It is not saying anything about the repository on GitHub.</td>
+            </tr>
+          </table>
+          <dl class="dl-horizontal">
+            <dt>Your branch is up-to-date with 'origin/master'</dt>
+            <dd>While you have added a file to the project directory you have not added the file to the local Git repository so in fact the local and GitHub repositories are still the same.</dd>
+            <dt>Untracked files</dt>
+            <dd>index.html has not been added to Git yet so it is called 'untracked'</dd>
+            <dt>nothing added to commit</dt>
+            <dd>As you will see and do in a moment, 'commit' or 'committed' means 'has been added to Git'.
+        </div>
+        <div class="col-md-4">
+          pic.010.git.status.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/010.git.status.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git add</code></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>To a file into the staging area use <code>$ git add</code>.</p>
+          <pre>$ git add index.html<br>$ git status</pre>
+          <p>You don't have to type the full file name. I'll show you some shortcuts later in this post</p>
+        </div>
+        <div class="col-md-4">
+          pic.011.git.add.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/011.git.add.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git commit</code></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>The next step is to commit the file. This is the final step to put the file into Git. However, note that the file will not be in GitHub yet.</p>
+          <p>When you perform a commit with the next command, you are committing everything in the staging area</p>
+          <pre>$ git commit -m "initial commit"</pre>
+          <p><code>-m</code>means 'message'. So what follows is a message that will be associated with this commit. It is common practice when adding a file for the first time that the message is 'initial commit'. For future commits on a file, the commit message describes what has changed.</p>
+        </div>
+        <div class="col-md-4">
+          pic.012.git.commit.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/012.git.commit.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><code>$ git commit</code></h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Let's take a closer look at the message produced by <code>$ git commit</code>.</p>
+          <dl class="dl-horizontal">
+            <dt>[master e133f12]</dt>
+            <dd>The commit was to branch 'master'</dd>
+            <dt>initial commit</dt>
+            <dd>This is the message entered with the commit</dd>
+            <dt>1 file changed</dt>
+            <dd>Right, we changed 1 file</dd>
+            <dt>3 insertions (+)</dt>
+            <dd>Three lines were added</dd>
+            <dt>create mode</dt>
+            <dd>A new file was added</dd>
+            <dt>index.html</dt>
+            <dd>The name of the file committed</dd>
+          </dl>
+        </div>
+        <div class="col-md-4">
+          pic.013.git.commit.closer.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/013.git.commit.closer.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+> Add a remote<br>
+
+================================================================
+================================================================
+
+      <div class="row">
+        <div class="col-md-8">
+          <p>This screenshot is from a GUI/Git tool. It is showing the "3 insertions" that were referred to in the commit status message above. As you can see, 3 insertions means 3 lines.</p>
+          <p>I will address GUI tools v. command line later in this post.</p>
+        </div>
+        <div class="col-md-4">
+          pic.014.three.insertions.png
+          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/014.three.insertions.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/014.three.insertions.png" alt="**alt**"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Shortcuts</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-4">
+  	<!-- empty -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ke-callout ke-callout-goal">
+    <h4>Congratulations - you are now using Git & GitHub</h4>
+    <p>
+      This guide is a good learning experience and you can use its workflow to effectively work on a project. However it is not the right way to use Git. To effectively use Git in a way that allows you to manage the development life-cycle and to collaborate with other developers, you need to use 'branching'. I am currently working on a guide for branching. Subscribe to this blog to get notified when it is available.
+    </p>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>See Also</h2>
+    </div>
+    <div class="panel-body">
+      <ol>
+        <li><a href="https://git-scm.com/documentation">Git documentation</a>, git-scm.com</li>
+        <li><a href="https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf">Git Cheat Sheet</a>, GitHub</li>
+        <li><a href="https://git-scm.com/docs">Git Reference Manual</a>, git-scm.com</li>
+      </ol>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</div> <!-- containter-fluid -->
+</body>
