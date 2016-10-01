@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>14.git github</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+  <h2>Creating a Repository</h2>
+  <p>To create a new git repository you only need one command.</p>
+  <pre>$ git init<br>outputs: Initialized empty Git repository in /home/user01/workspace/.git/</pre>
+  <h2>Creating a Sample Project</h2>
+  <p>It doesn't matter to Git how you create your project files. You can create them in a file manager, code editor or via the command line (which I'll show you below). All that matters is that all project files are located under one master folder commonly referred to as 'root'. In our case, the root directory will be named 'gittutorial'</p>
+  <p>In Terminal, make sure the current directory is ~/workspace/</p>
+  <pre>$ cd ~/workspace</pre>
+  <p>... and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
+  <pre>$ mkdir gittutorial<br>$ touch index.html<br>$ mkdir css<br>$ cd css<br>$ touch style.css</pre>
+  <p>Your project structure should now look like this:</p>
+  <img src="../images/using-git-github/001.01.init.file.structure.png" alt="initial file structure" />
+  <p>Let's put some content in the files.</p>
+  <div class="file-box">
+    <div class="file-name">
+      index.html
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">&lt;!DOCTYPE html&gt;<br>&lt;head&gt;<br>  &lt;title&gt;Git Tutorial&lt;/title&gt;<br>  &lt;link rel="stylesheet" href="css/style.css"&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  &lt;h1&gt;Hello World, as usual.&lt;/h1&gt;<br>&lt;/body&gt;</pre>
+    </div>
+  </div>
+  <div class="file-box">
+    <div class="file-name">
+      style.css
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">body {<br>  background-color: lightgray<br>}</pre>
+    </div>
+  </div>
+  <p>Open index.html in a browser</p>
+  <img src="../images/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
+
+  <h2>Using Git to Manage Project Files</h2>
+  <p>We will be using the following commands.</p>
+  <ol class="ol-code">
+    <li>$ git init</li>
+    <li>$ git status</li>
+    <li>$ git add</li>
+    <li>$ git commit</li>
+  </ol>
+  <h3><code>$ git init</code> - Create a New Git Repository</h3>
+  <p><code>$ git init</code> creates a new empty git repository. It needs to be executed from your project root, so let's get there now.</p>
+  <pre>$ cd ~/workspace/gittutorial</pre>
+  <p>Now execute <code>$ git init</code> and then look in your file manager to see the '.git' folder that contains the reposigory. This is a hidden folder. If your file manager is not showing hidden files &amp; folders, you will need to change a setting.</p>
+  <img src="../images/using-git-github/003.01.git-folder-in-files.png" alt="showing .git folder in file manager" />
+
+  <h3><code>$ git status</code> - Show the Status of the Repository</h3>
+  <p>To see the status of your repository use the below command.</p>
+  <pre>$ git status</pre>
+  <p>Note where it says 'Untracked files'. These are files that are in the project folder but not yet in the Git repository.</p>
+  <h3><code>$ git add</code> - 'Stage' (Prepare) Files to be Committed</h3>
+  <p>Adding files is a two step process. Remember, full explanations of what is happening are given later in the tutorial. Just go with the flow for now.</p>
+  <pre>$ git add --all<br>$ git status</pre>
+  <p>Note that Git status shows 'Changes to be committed' and the files are labeled 'new file'. The files are not yet in the repository. There is one last step.</p>
+  <h3><code>$ git commit</code> - Add Files to the Git Repository</h3>
+  <pre>$ git commit -m "initial commit"<br>$ git status</pre>
+  <p>The <code>-m</code> means 'message'. The output of <code>$ git status</code> is a bit crypitc but you can see both your files have been added with 'create mode'. The directory structure has been preserved as well.</p>
+  <p><code>$ git status</code> indicates that all files and changes are in the Git repository.</p>
+  <h3>Adding Changes to the Git Repository</h3>
+  <p>So far we have added new files to the repository. Adding changes to those files follows the same process. Let's do that now. Make the changes shown in <b>bold</b>.</p>
+  <div class="file-box">
+    <div class="file-name">
+      index.html
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">&lt;!DOCTYPE html&gt;<br>&lt;head&gt;<br>  &lt;title&gt;Git Tutorial&lt;/title&gt;<br>  &lt;link rel="stylesheet" href="css/style.css"&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  &lt;h1&gt;Hello World, as usual.&lt;/h1&gt;<br>  <b>&lt;p&gt;Adding file changes to Git&lt;/p&gt;</b><br>&lt;/body&gt;</pre>
+    </div>
+  </div>
+  <div class="file-box">
+    <div class="file-name">
+      style.css
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">body {<br>  background-color: <b>burlywood</b><br>}</pre>
+    </div>
+  </div>
+  <p>Using <code>$ git status</code> now shows two modified files.</p>
+  <pre>$ git status</pre>
+  <p>Next 'add' the changes and note that 'status' shows the files as 'modified' instead of 'new file'.</p>
+  <p>Now commit the changes.</p>
+  <pre>$ git commit -m "changed body color and added a paragraph"<br>$ git status</pre>
+  <p>Status once again shows 'working directory is clean' which means all files and changes are in the repository.</p>
+  <h2>Summary</h2>
+  <p>Doing all that with some explanation and comments makes it seem like a long process. It really isn't. Here is what we did with Git.</p>
+  <pre>$ git init // is only done once<br>$ git add<br>$ git commit -m "initial commit"<br>$ git add<br>$ git commit "changed body color and added a paragraph"</pre>
+  <p>The next part of this tutorial will show you how to push your Git repositiry to GitHub.</p>
+  <p class="ke-callout ke-callout-goal">Fantastic! You are now using Git to manage your project.</p>
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</div> <!-- containter-fluid -->
+</body>

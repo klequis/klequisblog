@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>14.git github</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <h2>Understanding Git</h2>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Definitions</h2>
+        </div>
+        <div class="panel-body">
+          <p>Like many specialized subjects, Git has its own vocabulary and understanding Git well enough to make use of it requires that you learn its vocabulary. Here are some definitions to help with the next steps.</p>
+          <table>
+            <tr>
+              <td><b>Working Directory</b></td>
+              <td>'Working directory' is used to refer to files in the project's folder that are currently in a state other than committed. It contains all the files from one version of the project. In our example, the working directory is ~/workspace/git-github-tutorial. It is also the project's root directory.</td>
+            </tr>
+            <tr>
+              <td><b>Staging Area</b></td>
+              <td>The 'staging area' is not actually an 'area'. It is a file that tracks files that have been added to the staging area with <code>$ git add</code>.</td>
+            </tr>
+            <tr>
+              <td><b>Untracked (file)</b></td>
+              <td>An untracked is a file in the working directory that has not been added to Git.</td>
+            </tr>
+            <tr>
+              <td><b>Tracked (file)</b></td>
+              <td>A tracked file is a file that has been added to the Git repository with <code>$ git add</code>.</td>
+            </tr>
+            <tr>
+              <td><b>Staged (file)</b></td>
+              <td>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on an untracked or modified file.</td>
+            </tr>
+            <tr>
+              <td><b>Committed (file)</b></td>
+              <td>A staged file that has moved to a committed state by using <code>$ git commit</code>.</td>
+            </tr>
+            <tr>
+              <td><b>Modified (file)</b></td>
+              <td>A modified file is a tracked file that has been changed since it was last committed.</td>
+            </tr>
+            <tr>
+              <td><b>Repository ("repo")</b></td>
+              <td>A repository can be thought of as a Git database. It is a complete copy of your project with all history.</td>
+            </tr>
+            <tr>
+              <td><b>Local Repository</b></td>
+              <td>The 'local repository' is on your local machine in a /.git directory. In our example the repository is ~/workspace/git-github-tutorial/.git. The '.' before 'git' in .git means it is a hidden directory. To see it using Terminal, use <code>$ ls -la</code> where -a means 'show hidden files'.</td>
+            </tr>
+            <tr>
+              <td><b>Remote Repository</b></td>
+              <td>The remote repsitory is a repository on a remote server. In our example, the remote repository is the one we created on GitHub. GitHub is not the only place where a remote repository can reside.</td>
+            </tr>
+            <tr>
+              <td><b>Remote<b></td>
+              <td>A remote is a name that holds the URL to the remote repository. You can think of it as a variable that holds a string where the string is the URL to the remote repository, which in our case is GitHub</td>
+            </tr>
+            <tr>
+              <td><b>Branch</b></td>
+              <td>Git is like a tree. You can add branches to your tree. Each branch is a complete version of your project. The default branch is called 'master'. Take a look at your GitHub home page and find the dropdown that says 'Master'. Currently, your repository only has one branch, i.e., Master</td>
+            </tr>
+          </table>
+          <h2>Git Areas</h2>
+          <p>There are four 'areas' that we will be working with. The first three are part of Git and are on you local machine. The fouth is GitHub. The term 'areas' is used but they are actually a combination of files and folders. For example, the 'staging area' is a file.</p>
+          <table id="git-structure">
+            <tr>
+              <td class="git-structure-td-left git-structure-red">Wroking Directory<br>(~/workspace/git-git-hub-tutorial)</td>
+              <td class="git-structure-td-right git-structure-red">- Untracked files are red<br>- Tracked but modified files are red</td>
+            </tr>
+            <tr class="tbl-row-spacer">
+            </tr>
+            <tr>
+              <td class="git-structure-td-left git-structure-green">Staging Area<br>(is really a file)</td>
+              <td class="git-structure-td-right git-structure-green">- Staged files are green</td>
+            </tr>
+            <tr class="tbl-row-spacer">
+            </tr>
+            <tr>
+              <td class="git-structure-td-left git-structure-black">Local Repository<br>(~/workspace/git-github-tutorial/.git)</td>
+              <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
+            </tr>
+            <tr class="tbl-row-spacer">
+            </tr>
+            <tr>
+              <td class="git-structure-td-left git-structure-black">GitHub Repository<br>(https://github.com/demoacct-klequis/git-github-tutorial.git)</td>
+              <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Document Life-cycle</h2>
+        </div>
+        <div class="panel-body">
+          <p>We will be using the commands <code>$ git add</code> & <code>$ git commit</code> to move the files through their life-cycle. Don't worry about what the commands mean just yet. I'll go into them in more detail later.</p>
+          <table class="git-lifecycle">
+            <tr>
+              <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Untracked</td>
+              <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+              <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
+              <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+              <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
+            </tr>
+          </table>
+          <table class="git-lifecycle">
+            <tr>
+              <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Modified</td>
+              <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+              <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
+              <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
+              <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
+            </tr>
+          </table>
+          <ul>
+            <li>In the output of <code>$ git add</code> modified and untracked files are in red text.</li>
+            <li>When you add a new file to the working directory it is an 'untracked' file.</li>
+            <li>When you modify a previously committed file it becomes 'modified'.</li>
+            <li>When you include a modified or untracked file in the <code>$ git add</code> command it becomes 'staged'.</li>
+            <li>When the <code>$ git commit</code> command is executed, all staged files become committed. Commited files are not show in the output of <code>$ git status</code>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Remotes Explained</h2>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+        <!-- empty -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</div> <!-- containter-fluid -->
+</body>

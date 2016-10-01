@@ -68,8 +68,8 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>This guide will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used Git before. There is a very good <b>free</b> online book for using Git. If you are new to Git, reading at least the first three chapters will be well worth your time. See the 'See Also' section at the bottom of the post for a link to the book.</p>
-      <p>There are different ways you can create a Git repository and work with it. The Git/GitHub workflow in this tutorial is one possible process, and one that I think it is easy for a new Git/GitHub user to follow and learn from. Long-term, you'll want to learn more advanced Git techniques. This tutorial will get you up and started.</p>
+      <p>This tutorial will show you how to install Git and then use Git with GitHub. This is not a complete Git tutorial but is a very good start for someone who has not used Git before. There is a very good <b>free</b> online book for using Git. If you are new to Git, reading at least the first three chapters will be well worth your time. See the 'See Also' section at the bottom of the post for a link to the book.</p>
+      <p>There are different ways you can create a Git repository and work with it. The Git/GitHub workflow in this tutorial is one that is easy for a new Git/GitHub user to follow and learn from. Long-term, you'll want to learn more advanced Git techniques. This tutorial will get you up and started.</p>
 
 
       <p class="ke-callout ke-callout-info">I will be using the email account demoacct.klequis@gmail.com for this guide. When following along, replace this email address with yours. Please note that all email sent to this account is automatically deleted without review.</p>
@@ -81,8 +81,7 @@
       <h2>Contents</h2>
     </div>
     <div class="panel-body">
-      <h3>Introduction</h3>
-      <p>This tutorial will teach you how to get started with Git and GitHub. First I'll guide you through installation and account setup. Then you will learn two ways of starting a new project, either starting from GitHub or from you local machine. This second method can be used for an existing project that is not already in Git and/or GitHub.</p>
+
 
       <h3>Part I - Setup</h3>
       <ol>
@@ -90,9 +89,12 @@
         <li>Installing Git</li>
       </ol
       >
-      <h3>Part II - Starting a New Project From GitHub</h3>
+      <h3>Part II - Starting a New Project With Git and GitHub</h3>
+      <p>This section will walk you through two ways to use Git and GitHub. The first is for starting a new project and the second is for adding an existing project.</p>
+      <h4>Part II.i - Starting a New Project From GitHub</h4>
 
-      <h3>Part III - Starting a New Project From Your Local Machine</h3>
+      <h4>Part II.ii - Starting a New Project From Your Local Machine</h4>
+      <p>With this workflow you can add an existing project to Git / GitHub. However, it is entirely possible to use this workflow for a new project as well.</p>
 
       <h3>Getting Into The Details</h3>
 
@@ -100,72 +102,17 @@
 
   </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Installing Git</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <pre>$ sudo apt-get update<br>$ sudo apt install git</pre>
-        </div>
-        <div class="col-md-4">
-  	      pic.001.install.git.png
-          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/001.install.git.png" alt="**alt**"></a>
-        </div>
-      </div>
-    </div>
-  </div>
+<hr><h3 style="color:red;">Start of Tutorial</h3><hr>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Configuring Git</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <pre>$ git config --global user.name "Your Name"<br>$ git config --global user.email "youremail@domain.com"</br>$ git config --list</pre>
-        </div>
-        <div class="col-md-4">
-  	      pic.002.git.config.png
-          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/002.git.config.png" alt="**alt**"></a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h1>Using Git and GitHub for New Users</h1>
+  <h2>Introduction</h2>
+  <p>
+    This is a 4 part series. Part 1 is isntallation and configuration. Parts 2 & 3 guide you through 2 ways of getting a project into Git and GitHub. Part 4 contains details and explanations.
+  </p>
+  <p>The workflow you will learn in this tutorial is one that is easy for a new Git / GitHub user to follow and it can be used effectively if you are working on your own. However, it is not adequate for managing a project with releases or collaborating on a project with other developers. To do that there is more to learn. An excellent resource for learning more is a free book which can be found on the <a href="https://git-scm.com/documentation">Git documentation page</a>.</p>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Setup GitHub</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <p>Go to <a href="https://github.com">github.com</a> and create an account.</p>
-          <p>Once you verify your email address you will be redirected to a new page. Click the <button class="btn btn-default btn-xs">Start a project</button> button.</p>
-          <p>
-        </div>
-        <div class="col-md-4">
-  	       pic.003.github.start.project.png
-           <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/003.github.start.project.png" alt="**alt**"></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <p class="ke-callout ke-callout-warning">
-            I am going to create a repository named 'git-github-tutorial'. You can use a different name. However, because I will be referring to 'git-github-tutorial' in the steps below it will be easier to follow the steps if you use git-github-tutorial as well.
-          </p>
-          <p>Enter 'git-github-tutorial' as the repository name.</p>
-          <p>Keep the default of Public. Creating a private repository requires a paid account.</p>
-          <p>Check 'Initialize this repository with a README'. All projects should have a readme.md file regardless of how simple the project or readme is.</p>
-        </div>
-        <div class="col-md-4">
-          pic.004.github.create.repository.png
-          <a href="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/2016/using-git-github/004.github.create.repository.png" alt="**alt**"></a>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
 
 
   <div class="panel panel-default">
@@ -192,8 +139,8 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <p>we will **dkdkdkd** </p>
-          <p>We are going to 'clone' the repository in GitHub to our local machine. Git will create a directory with the name of the repository. So that Git will create this in ~/workspace, switch to that directory now.</p>
+          <p>Next you will clone your repository. This will bring it down from GitHub to you local machine. In this case you are cloaning your own repository, but you can use these steps to cloan any public GitHub repository.</p>
+          <p>Git will create a directory with the name of the repository. So that Git will create this in ~/workspace, switch to that directory now.</p>
           <pre>cd ~/workspace</pre>
           <p>Switch back to your browser. If you are not still on your repository's home page, go there now.</p>
           <p>Click the green <button class="btn btn-default btn-xs">Clone or download</button> button, then click the small clipboard icon which will copy the repository's URL to the clipboard.</p>
@@ -242,123 +189,17 @@
     </div>
   </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Definitions</h2>
-    </div>
-    <div class="panel-body">
-      <p>Like many specialized subjects, Git has its own vocabulary and understanding Git well enough to make use of it requires that you learn its vocabulary. Here are some definitions to help with the next steps.</p>
-      <table>
-        <tr>
-          <td><b>Working Directory</b></td>
-          <td>'Working directory' is used to refer to files in the project's folder that are currently in a state other than committed. It contains all the files from one version of the project. In our example, the working directory is ~/workspace/git-github-tutorial. It is also the project's root directory.</td>
-        </tr>
-        <tr>
-          <td><b>Staging Area</b></td>
-          <td>The 'staging area' is not actually an 'area'. It is a file that tracks files that have been added to the staging area with <code>$ git add</code>.</td>
-        </tr>
-        <tr>
-          <td><b>Untracked (file)</b></td>
-          <td>An untracked is a file in the working directory that has not been added to Git.</td>
-        </tr>
-        <tr>
-          <td><b>Tracked (file)</b></td>
-          <td>A tracked file is a file that has been added to the Git repository with <code>$ git add</code>.</td>
-        </tr>
-        <tr>
-          <td><b>Staged (file)</b></td>
-          <td>A staged file is ready to be added to Git. It is in the 'staging area' but has not been 'committed' yet. A file is staged with the <code>$ git add</code> command. You can use <code>$ git add </code> on an untracked or modified file.</td>
-        </tr>
-        <tr>
-          <td><b>Committed (file)</b></td>
-          <td>A staged file that has moved to a committed state by using <code>$ git commit</code>.</td>
-        </tr>
-        <tr>
-          <td><b>Modified (file)</b></td>
-          <td>A modified file is a tracked file that has been changed since it was last committed.</td>
-        </tr>
-        <tr>
-          <td><b>Repository ("repo")</b></td>
-          <td>A repository can be thought of as a Git database. It is a complete copy of your project with all history.</td>
-        </tr>
-        <tr>
-          <td><b>Local Repository</b></td>
-          <td>The 'local repository' is on your local machine in a /.git directory. In our example the repository is ~/workspace/git-github-tutorial/.git. The '.' before 'git' in .git means it is a hidden directory. To see it using Terminal, use <code>$ ls -la</code> where -a means 'show hidden files'.</td>
-        </tr>
-        <tr>
-          <td><b>Remote Repository</b></td>
-          <td>The remote repsitory is a repository on a remote server. In our example, the remote repository is the one we created on GitHub. GitHub is not the only place where a remote repository can reside.</td>
-        </tr>
-        <tr>
-          <td><b>Remote<b></td>
-          <td>A remote is a name that holds the URL to the remote repository. You can think of it as a variable that holds a string where the string is the URL to the remote repository, which in our case is GitHub</td>
-        </tr>
-        <tr>
-          <td><b>Branch</b></td>
-          <td>Git is like a tree. You can add branches to your tree. Each branch is a complete version of your project. The default branch is called 'master'. Take a look at your GitHub home page and find the dropdown that says 'Master'. Currently, your repository only has one branch, i.e., Master</td>
-        </tr>
-      </table>
-      <h2>Git Areas</h2>
-      <p>There are four 'areas' that we will be working with. The first three are part of Git and are on you local machine. The fouth is GitHub. The term 'areas' is used but they are actually a combination of files and folders. For example, the 'staging area' is a file.</p>
-      <table id="git-structure">
-        <tr>
-          <td class="git-structure-td-left git-structure-red">Wroking Directory<br>(~/workspace/git-git-hub-tutorial)</td>
-          <td class="git-structure-td-right git-structure-red">- Untracked files are red<br>- Tracked but modified files are red</td>
-        </tr>
-        <tr class="tbl-row-spacer">
-        </tr>
-        <tr>
-          <td class="git-structure-td-left git-structure-green">Staging Area<br>(is really a file)</td>
-          <td class="git-structure-td-right git-structure-green">- Staged files are green</td>
-        </tr>
-        <tr class="tbl-row-spacer">
-        </tr>
-        <tr>
-          <td class="git-structure-td-left git-structure-black">Local Repository<br>(~/workspace/git-github-tutorial/.git)</td>
-          <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
-        </tr>
-        <tr class="tbl-row-spacer">
-        </tr>
-        <tr>
-          <td class="git-structure-td-left git-structure-black">GitHub Repository<br>(https://github.com/demoacct-klequis/git-github-tutorial.git)</td>
-          <td class="git-structure-td-right git-structure-black">- Commited files are tracked & un-modified. They are not shown in <code>$ git status</code>.</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+
+
+
+
+
+
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Document Life-cycle</h2>
+      <h2>NEEDS A TITLE</h2>
     </div>
-    <div class="panel-body">
-      <p>We will be using the commands <code>$ git add</code> & <code>$ git commit</code> to move the files through their life-cycle. Don't worry about what the commands mean just yet. I'll go into them in more detail later.</p>
-      <table class="git-lifecycle">
-        <tr>
-          <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Untracked</td>
-          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
-          <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
-          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
-          <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
-        </tr>
-      </table>
-      <table class="git-lifecycle">
-        <tr>
-          <td class="lifecycle-new"><i class="fa fa-file-code-o fa-2x"></i> Modified</td>
-          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
-          <td class="lifecycle-staged"><i class="fa fa-file-code-o fa-2x"></i> Staged</td>
-          <td class="td-align-center"><i class="fa fa-chevron-right" aria-hidden="true"></i></td>
-          <td><i class="fa fa-file-code-o fa-2x"></i> Committed</td>
-        </tr>
-      </table>
-      <ul>
-        <li>In the output of <code>$ git add</code> modified and untracked files are in red text.</li>
-        <li>When you add a new file to the working directory it is an 'untracked' file.</li>
-        <li>When you modify a previously committed file it becomes 'modified'.</li>
-        <li>When you include a modified or untracked file in the <code>$ git add</code> command it becomes 'staged'.</li>
-        <li>When the <code>$ git commit</code> command is executed, all staged files become committed. Commited files are not show in the output of <code>$ git status</code>.</li>
-      </ul>
-
       <p>Let's setup some files to explore the various states.</p>
       <p>In Terminal, make sure the current directory is ~/workspace/git-github-tutorial and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
       <pre>$ cd ~/workspace/git-github-tutorial<br>$ echo '&lt;h3&gt;index.html&lt;/h3&gt;' &gt; index.html<br>$ mkdir css<br>$ > css/style.css</pre>
@@ -419,21 +260,6 @@
     </div>
   </div>
 -->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Remotes Explained</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-
-        </div>
-        <div class="col-md-4">
-    <!-- empty -->
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="ke-callout ke-callout-info">
     <h2>Commands in Detail</h2>
@@ -704,7 +530,7 @@
 
 
 
-</div>
+</div> <!-- container-fluid -->
 
 
 

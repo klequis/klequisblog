@@ -436,3 +436,31 @@ li ol.multilevel > li {
 li ol.multilevel > li:before {
   content: counters(item, ".") " ";
 }
+
+.file-box {
+  border: 0.5px solid darkgray;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin: 0 0 10px;
+}
+.file-name {
+  font-weight: bold;
+  padding: 3px 9.5px 3px 9.5px;
+  border-bottom: 0.3px solid darkgray
+}
+.pre-file-body {
+  border: none;
+}
+
+.ol-code {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+}
