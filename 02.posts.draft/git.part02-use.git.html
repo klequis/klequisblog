@@ -18,15 +18,12 @@
 <body>
 
 <div class="container-fluid">
-  <h2>Creating a Repository</h2>
-  <p>To create a new git repository you only need one command.</p>
-  <pre>$ git init<br>outputs: Initialized empty Git repository in /home/user01/workspace/.git/</pre>
   <h2>Creating a Sample Project</h2>
   <p>It doesn't matter to Git how you create your project files. You can create them in a file manager, code editor or via the command line (which I'll show you below). All that matters is that all project files are located under one master folder commonly referred to as 'root'. In our case, the root directory will be named 'gittutorial'</p>
   <p>In Terminal, make sure the current directory is ~/workspace/</p>
   <pre>$ cd ~/workspace</pre>
   <p>... and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
-  <pre>$ mkdir gittutorial<br>$ touch index.html<br>$ mkdir css<br>$ cd css<br>$ touch style.css</pre>
+  <pre>$ mkdir gittutorial<br>$ cd gittutorial<br>$ touch index.html README.md<br>$ mkdir css<br>$ cd css<br>$ touch style.css</pre>
   <p>Your project structure should now look like this:</p>
   <img src="../images/using-git-github/001.01.init.file.structure.png" alt="initial file structure" />
   <p>Let's put some content in the files.</p>
@@ -46,6 +43,14 @@
       <pre class="pre-file-body">body {<br>  background-color: lightgray<br>}</pre>
     </div>
   </div>
+  <div class="file-box">
+    <div class="file-name">
+      README.md
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">#Git Tutorial ReadMe</pre>
+    </div>
+  </div>
   <p>Open index.html in a browser</p>
   <img src="../images/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
 
@@ -60,7 +65,9 @@
   <h3><code>$ git init</code> - Create a New Git Repository</h3>
   <p><code>$ git init</code> creates a new empty git repository. It needs to be executed from your project root, so let's get there now.</p>
   <pre>$ cd ~/workspace/gittutorial</pre>
-  <p>Now execute <code>$ git init</code> and then look in your file manager to see the '.git' folder that contains the reposigory. This is a hidden folder. If your file manager is not showing hidden files &amp; folders, you will need to change a setting.</p>
+  <p>Now execute ...</p>
+  <pre>$ git init</pre>
+  <p>... and then look in your file manager to see the '.git' folder that contains the reposigory. This is a hidden folder. If your file manager is not showing hidden files &amp; folders, you will need to change a setting.</p>
   <img src="../images/using-git-github/003.01.git-folder-in-files.png" alt="showing .git folder in file manager" />
 
   <h3><code>$ git status</code> - Show the Status of the Repository</h3>
@@ -90,12 +97,13 @@
       style.css
     </div>
     <div class="file-body">
-      <pre class="pre-file-body">body {<br>  background-color: <b>burlywood</b><br>}</pre>
+      <pre class="pre-file-body">body {<br>  background-color: <b>burlywood;</b><br>}</pre>
     </div>
   </div>
-  <p>Using <code>$ git status</code> now shows two modified files.</p>
+  <p>Using <code>$ git status</code> now shows two <i>modified</i> files.</p>
   <pre>$ git status</pre>
-  <p>Next 'add' the changes and note that 'status' shows the files as 'modified' instead of 'new file'.</p>
+  <p>Next 'add' the changes and note that 'status' shows the files as <i>'modified'</i> instead of <i>'new file'</i>.</p>
+  <pre>$ git add --all<br>$ git status</pre>
   <p>Now commit the changes.</p>
   <pre>$ git commit -m "changed body color and added a paragraph"<br>$ git status</pre>
   <p>Status once again shows 'working directory is clean' which means all files and changes are in the repository.</p>
@@ -105,13 +113,17 @@
   <p>The next part of this tutorial will show you how to push your Git repositiry to GitHub.</p>
   <p class="ke-callout ke-callout-goal">Fantastic! You are now using Git to manage your project.</p>
 
-
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
 </div> <!-- containter-fluid -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+  // alert("Script");
+  $('img').click(function() {
+    var msg = $(this).attr("src");
+    alert(msg);
+  });
+</script>
+
 </body>
