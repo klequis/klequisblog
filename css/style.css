@@ -464,3 +464,11 @@ li ol.multilevel > li:before {
   word-break: break-all;
   word-wrap: break-word;
 }
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
