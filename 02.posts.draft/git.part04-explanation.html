@@ -156,28 +156,32 @@
       <img src="../images/using-git-github/010.01.git-commit-and-status.png" alt="new github repository" />
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-8">
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-8">
-
-    </div>
-  </div>
   <h2>Remotes Explained</h2>
+  <p>You created a remote in part 3 of this tutorial when you used the command ...</p>
+  <pre>$ git remote add origin https://github.com/demoacct-klequis/gittutorial.git</pre>
+  <p>In this case you created a remote named 'origin'. There is nothing special about 'origin' except that it is the default name used by Git, as you will see when we use the<code>$ git cloan</code> command below.</p>
+  <p>As defined in the Git documentation, "A repository which is used to track the same project but resides somewhere else." Like a bookmark you create in you web browser, it has a name and a URL. Let's do a brief exercise to learn about remotes.</p>
+  <p>Your 'gittutorial' project is safely stored on GitHub and now we are going to do something uncomfortable but completely safe. In your file manager, delete the entire /gittutorial directory. If you want to do one last <code>$ git status</code> and if needed <code>$ git push origin master</code> just to be sure all your changes are up on GitHub, do that first. Then delete the entire directory.</p>
+  <p>We are going to use the <code>$ git cloan</code>, which we will look at in more detail later. Execute the following command.</p>
+  <p>Go to you project on GitHub, click on the green <button class="btn btn-default btn-xs">Cloan or download</button> button and copy the url as shown below.</p>
+  <img src="../images/using-git-github/011.01.github-cloan-or-download.png" alt="github cloan or download" />
+  <p>Now use the <i>'cloan'</i> command to download your project from GitHub. (My url is how below. Be sure to use yours.)</p>
+  <pre>$ git cloan https://github.com/klequis/gittutorial.git</pre>
+  <p>Take a quick look at your project in a file manager. Everything is back!</p>
+  <p><code>$ git cloan</code> has created a remote for you named 'origin' and it points to the url you used with the <code>$ git cloan</code> command. To see this, use the below command. (The -v stands for 'verbose'.) As you can see in the output of the command you have a remote named 'origin' and it contains two URLs, which happen to be the same, one to <i>'fetch'</i> from GitHub and another to <i>'push'</i> to GitHub.</p>
+  <pre>$ git remote -v</pre>
+  <img src="../images/using-git-github/012.01.git-remote-command.png" alt="git remote command" />
+  <p>So to sum it up, a <i>remote</i> is like a bookmark that has a name and two URLs, one to get files/changes from GitHub and another to push files/changes to GitHub.</p>
+
+  <h2>Summary</h2>
+  <p>So far we have covered each term in the definitions list with the exception of 'branch' which will be discussed in a future addition of this tutorial. In the next part we will go over the most commonly used Git commands in detail.</p>
+  <p class="ke-callout ke-callout-goal">Keep going!</p>
+
 
 </div> <!-- panel-body -->
 </div> <!-- panel-default -->
 </div> <!-- container-fluid -->
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

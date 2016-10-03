@@ -21,13 +21,192 @@
 <div class="panel panel-default">
 <div class="panel-body">
 
+  <h1>Git Commands in Detail</h1>
+  <p>In this part of the tutotorial we will go over the most common Git commands in greater detail than we did earlier. Let's jump right in.</p>
+
+  <h2><code>$ git init</code> - Creating a New Git Repository</h2>
+  <p>Using <code>$ git init</code> to create a new repository is straight-forward. Here are steps for creating a new project with <code>$ git init</code></p>
+  <p>Create the project's root folder if it does not already exist.</p>
+  <pre>$ mkdir sample-project</pre>
+  <p>Make sure you are inside the projects root directory.</p>
+  <pre>$ cd sample-project</pre>
+  <p>Create the repository.</p>
+  <pre>$ git init</pre>
+  <img src="../images//using-git-github/012.01.git-init.png" alt="showing use of git init" />
+
+  <!-- git add -->
+  <h2><code>$ git add</code> - Add Files (&amp; Directories) to Stage Files</h2>
+  <p class="ke-callout ke-callout-info">As noted in an earlier part of this tutorial series, <code>$ git add</code> does not add the files to the repository, it adds them to a staging area in preparation to using <code>$ git commit</code> which will actually put them into the repository.</p>
+  <p>You do not have to add directories (i.e., folders) to Git as when you add files Git will preserve the directory structure. Let's go through an exercise to illustrate how <code>$ git add</code> works.</p>
+  <p>At the start of this exercise you project structure should look like below. If you do not see the .git/ directory it is likely you file manager is hiding hidden directories. Use the file managers preferences/options to unhide them.</p>
+  <img src="../images/using-git-github/013.01.starting-project-structure.png" alt="starting project structure" />
+  <p>We are going to delete the Git repository so that we can add the files again. In terminal, make sure you are inside the gittutorial/ directory.</p>
+  <p>Check the contents of the directory including the <code>-a</code> option to show hidden files</p>
+  <pre>$ dir -la</pre>
+  <p>Delete the .git/ directory</p>
+  <pre>$ rm -rf .git</pre>
+  <p>Check that .git/ is gone</p>
+  <pre>$ dir -la</pre>
+  <img src="../images/using-git-github/014.01.repository-deleted.png" alt="git repository deleted" />
+  <p><code>$ git status</code> will show there is no longer a Git repository with the message, "fatal: Not a git repository (or any of the parent directories): .git"</p>
+  <img src="../images/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" />
+  <p>Add a new empty repository</p>
+  <pre>$ git init</pre>
+  <p><code>$ git status</code> will show that we have two files and one directory. However, as you know, there is a third file inside of css/ which <code>$ git status</code> does not show. Using the <code>--all</code> option will add all files at once, including the style.css file inside of css/.</p>
+  <pre>$ git status<br>$ git add --all<br>$ git status</pre>
+  <img src="../images/using-git-github/016.01.using-git-add-all.png" alt="git add --all" />
 
 
 
 
+  <p>To a file into the staging area use <code>$ git add</code>.</p>
+  <pre>$ git add index.html<br>$ git status</pre>
+  <p>You don't have to type the full file name. I'll show you some shortcuts later in this post</p>
+  <img class="img-responsive img-step-figure" src="../images/using-git-github/using-git-github/011.git.add.png" alt="**alt**">
 
 
-  
+  <h2><code>$ git push</code> - Pushing Code to GitHub</h2>
+  <p>To move you files to GitHub use <code>$ git push</code>. We will first push our project changes to GitHub and then dive into an explanation of doing so.</p>
+  <p>The syntax of <code>$ git push </code> is:</p>
+  <pre>git push [remote-name] [branch-name]</pre>
+  <p>Since our remote-name is 'origin' and our current branch-name is 'master', execute the push command as follows:</p>
+  <pre>$ git push origin master</pre>
+  <p>When prompted, enter you GitHub user name and password.</p>
+  <p>That's it, your chnages are already in the GitHub repository! Take a look at your project's GitHub page to confirm the files are added.</p>
+  <p class="ke-callout ke-callout-info">It is worth taking a moment to realize that so far we have only used 3 commands, add, commit and push.</p>
+  <a href="../images/using-git-github/015.01.git.push.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/015.01.git.push.png" alt="**alt**"></a>
+
+  <p>Let's take a closer look at <code>$ git push</code> and its output.</p>
+  <table>
+    <tr>
+      <td><code>$ git push origin master</code></td>
+      <td><code>$git push</code> moves you chnages from your local machine to GitHub. 'master', as you have already seen, is the current branch you are working on. 'origin' is a 'remote' (see next definition). It is a label that contains the path to the GitHub repository.</td>
+    </tr>
+  </table>
+  <p>
+    *outline**<br>
+
+    Master is branch ... know already<br>
+    origin is the name of remote<br>
+    Remote, explain 'remote'<br>
+    url's - make clear that they are the git hub repository url's and compare them to the actual url's to make sure you are correct.<br>
+    3 objects<br>
+    master -&ght; master from local master to remote master<br>
+  */outline**
+  </p>
+  <p>To understand origin you need to understand 'remote'. Remote refers to the repository on GitHub. Execute the below command.</p>
+  <pre>$ git remote -v</pre>
+  <p>Given the results in the screenshot it appears that 'origin' is a name for something that holds a URL, and it is. It is the name of the Git repository on GitHub, but not the name you gave it. Git assigned this name when you did the clone. You can change it if you want to but for the moment there is no need to.</p>
+  <p>You'll note that there is 'fetch' and 'push'. These are the URLs that Git will use to fetch data from and push data to GitHub.</p>
+  <h4>master -&gt; master</h4>
+  <p>This means we move date from the master branch in our local repository to the master branch on the remote repository (i.e., the repository on GitHub).</p>
+  <a href="../images/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/016.01.git.remote.png" alt="**alt**"></a>
+
+
+  <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
+
+  <br>
+  <br>
+  <p>Let's add a file to the project and then to Git.</p>
+  <p>In Atom, right-click on the project directory and choose <button class="btn btn-default btn-xs">New file</button>.</p>
+  <p>Make the file contents as show as below.</p>
+  <pre>&lt;h1&gt;Using Git with GitHub&lt;/h1&gt;<br>&lt;p class="green-text"&gt;This is some green text.&lt;/p&gt;<br>&lt;p class="blue-text"&gt;Some blue text here.&lt;/p&gt;</pre>
+  <a href="../images/using-git-github/016.01.new.file.in.project.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/016.01.new.file.in.project.png" alt="**alt**"></a>
+  <br>
+  <br>
+
+  <h2><code>$ git status</code></h2>
+  <p>Switch to Terminal and make you current directory ~/workspace/git-github-tutorial.</p>
+  <pre>$ cd ~/workspace/git-github-tutorial</pre>
+  <p>Check your repositories status when the below command.</p>
+  <pre>$ git status</pre>
+  <p>Here is a view of words and phrases in the status</p>
+  <p>Now let's take a closer look at <code>$ git status</code> which we executed above.</p>
+  <table>
+    <tr>
+      <td><b>master</b></td>
+      <td>Git is like a tree. You can create branches to you tree. Each branch is a complete version of your project. The default branch is called 'master'. Look at your GitHub home page and find the dropdown that says "Branch: master".111</td>
+    </tr>
+    <tr>
+      <td><b>origin</b></td>
+      <td>'origin' is a name has associated with the repository on your local machine. As we will see later, it holds the URL to the repository on GitHub.</td>
+    </tr>
+    <tr>
+      <td><b>Your branch is up-to-date with 'origin/master'</b></td>
+      <td>This message means that the repository on your local machine matches the repository on GitHub. It does not mean that everthing in your project directory matches what is on GitHub. You probably need to understand 'commit' before you can understand this. So come back and read this again once you undertand 'commit'.</td>
+    </tr>
+    <tr>
+      <td><b>'nothing to commit'</b></td>
+      <td>In a simple sense this means, 'you have nothing ready to make permenant in the repository'. In Git language it says you have nothing in the repository's staging area.</td>
+    </tr>
+    <tr>
+      <td><b>'working directory is clean'</b></td>
+      <td>This means there is nothing in your project's directory that is not already in the Git repository on you local machine. It is not saying anything about the repository on GitHub.</td>
+    </tr>
+  </table>
+  <dl class="dl-horizontal">
+    <dt>Your branch is up-to-date with 'origin/master'</dt>
+    <dd>While you have added a file to the project directory you have not added the file to the local Git repository so in fact the local and GitHub repositories are still the same.</dd>
+    <dt>Untracked files</dt>
+    <dd>index.html has not been added to Git yet so it is called 'untracked'</dd>
+    <dt>nothing added to commit</dt>
+    <dd>As you will see and do in a moment, 'commit' or 'committed' means 'has been added to Git'.</dd>
+  </dl>
+  <a href="../images/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/010.git.status.png" alt="**alt**"></a>
+
+
+  <h2><code>$ git commit</code></h2>
+  <p>The next step is to commit the file. This is the final step to put the file into Git. However, note that the file will not be in GitHub yet.</p>
+  <p>When you perform a commit with the next command, you are committing everything in the staging area</p>
+  <pre>$ git commit -m "initial commit"</pre>
+  <p><code>-m</code>means 'message'. So what follows is a message that will be associated with this commit. It is common practice when adding a file for the first time that the message is 'initial commit'. For future commits on a file, the commit message describes what has changed.</p>
+  <a href="../images/using-git-github/012.git.commit.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/012.git.commit.png" alt="**alt**"></a>
+  <h2><code>$ git commit</code></h2>
+  <p>Let's take a closer look at the message produced by <code>$ git commit</code>.</p>
+  <dl class="dl-horizontal">
+    <dt>[master e133f12]</dt>
+    <dd>The commit was to branch 'master'</dd>
+    <dt>initial commit</dt>
+    <dd>This is the message entered with the commit</dd>
+    <dt>1 file changed</dt>
+    <dd>Right, we changed 1 file</dd>
+    <dt>3 insertions (+)</dt>
+    <dd>Three lines were added</dd>
+    <dt>create mode</dt>
+    <dd>A new file was added</dd>
+    <dt>index.html</dt>
+    <dd>The name of the file committed</dd>
+  </dl>
+  <a href="../images/using-git-github/013.git.commit.closer.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/013.git.commit.closer.png" alt="**alt**"></a>
+
+  <h2> Add a remote</h2>
+
+  ================================================================
+  ================================================================
+
+  <p>This screenshot is from a GUI/Git tool. It is showing the "3 insertions" that were referred to in the commit status message above. As you can see, 3 insertions means 3 lines.</p>
+  <p>I will address GUI tools v. command line later in this post.</p>
+  pic.014.three.insertions.png
+  <a href="../images/using-git-github/014.three.insertions.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/014.three.insertions.png" alt="**alt**"></a>
+  <h2>Shortcuts</h2>
+
+  <div class="ke-callout ke-callout-goal">
+  <h4>Congratulations - you are now using Git & GitHub</h4>
+  <p>
+  This guide is a good learning experience and you can use its workflow to effectively work on a project. However it is not the right way to use Git. To effectively use Git in a way that allows you to manage the development life-cycle and to collaborate with other developers, you need to use 'branching'. I am currently working on a guide for branching. Subscribe to this blog to get notified when it is available.
+  </p>
+  </div>
+
+  <h2>See Also</h2>
+  <ol>
+    <li><a href="https://git-scm.com/documentation">Git documentation</a>, git-scm.com</li>
+    <li><a href="https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf">Git Cheat Sheet</a>, GitHub</li>
+    <li><a href="https://git-scm.com/docs">Git Reference Manual</a>, git-scm.com</li>
+  </ol>
+
+
+
+
 </div> <!-- panel-body -->
 </div> <!-- panel-default -->
 </div> <!-- container-fluid -->
