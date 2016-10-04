@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>14.git github</title>
+  <title>part05.git</title>
   <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/flint-style.css">
@@ -23,10 +23,60 @@
 
   <h1>Git Commands in Detail</h1>
   <p>In this part of the tutotorial we will go over the most common Git commands in greater detail than we did earlier. Let's jump right in.</p>
+  <p class="ke-callout ke-callout-info">A directory is a folder. Windows uses the term 'folder'. Linux calls them 'directories'.</p>
 
+  <!-- project setup -->
+  <h2>Creating a Sample Project</h2>
+  <p>For this part of the tutorial we will create a new project and a new GitHub repository.</p>
+  <h3>Create a GitHub Account</h3>
+  <p>If you already have a GitHub account you can skip this step.</p>
+  <p>Create a GitHub account by going to <a href="https://github.com/">GitHub</a>. Give your user name some thought. GitHub is a very public place which people use to help develop their identity as a developer. You will store your code here and may in the future share it with other developers or with a potential employer to show your abilities.</p>
+  <h3>Create a GitHub Repository</h3>
+  <p>In the upper righ-hand corner of the GitHub page, click the '+' sign and select <button class="btn btn-default btn-xs">New repository</button>.</p>
+  <img src="../images//using-git-github/004.01.new-repository.png" alt="showing use of git init" />
+  <p>Fill out the repository details as show below and then click <button class="btn btn-default btn-xs">Create repository</button>. Make sure to leave the other choices as is.</p>
+  <img src="../images//using-git-github/018.01.new-github-repository.png" alt="showing use of git init" />
+  <h3>Create the Project Files &amp; Directories</h3>
+  <p class="ke-callout ke-callout-info">It doesn't matter how you create the project files as long as the file and directory names match. I'm using Linux. '~' stands for the 'home' directory and I create all my projects in a folder named 'workspace'. You do not have to create your project in the same location. I am providing command line instructions for creating the project. You could do the same using a file manager or text editor.</p>
+  <p>... and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
+  <p>In Terminal, make sure the current directory is ~/workspace/</p>
+  <pre>$ cd ~/workspace<br>$ mkdir sample-project<br>$ cd sample-project<br>$ touch index.html README.md<br>$ mkdir css<br>$ cd css<br>$ touch style.css</pre>
+  <p>Your project structure should now look like this:</p>
+  <img src="../images/using-git-github/019.01.project-structure.png" alt="initial file structure" />
+  <p>Let's put some content in the files.</p>
+  <div class="file-box">
+    <div class="file-name">
+      index.html
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">&lt;!DOCTYPE html&gt;<br>&lt;head&gt;<br>  &lt;title&gt;sample-project&lt;/title&gt;<br>  &lt;link rel="stylesheet" href="css/style.css"&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>  &lt;h1&gt;Hello World, once again.&lt;/h1&gt;<br>&lt;/body&gt;</pre>
+    </div>
+  </div>
+  <div class="file-box">
+    <div class="file-name">
+      style.css
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">body {<br>  background-color: lightgray<br>}</pre>
+    </div>
+  </div>
+  <div class="file-box">
+    <div class="file-name">
+      README.md
+    </div>
+    <div class="file-body">
+      <pre class="pre-file-body">#Git Tutorial ReadMe</pre>
+    </div>
+  </div>
+  <p>Open index.html in a browser</p>
+  <img src="../images/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
+  <p>If you use <code>$ git status</code> now it will show there is no Git repository with the message, "fatal: Not a git repository (or any of the parent directories): .git".</p>
+  <img src="../images/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" />
+
+  <!-- git init -->
   <h2><code>$ git init</code> - Creating a New Git Repository</h2>
   <p>Using <code>$ git init</code> to create a new repository is straight-forward. Here are steps for creating a new project with <code>$ git init</code></p>
-  <p>Create the project's root folder if it does not already exist.</p>
+  <p>Create the project's root directory if it does not already exist.</p>
   <pre>$ mkdir sample-project</pre>
   <p>Make sure you are inside the projects root directory.</p>
   <pre>$ cd sample-project</pre>
@@ -35,46 +85,72 @@
   <img src="../images//using-git-github/012.01.git-init.png" alt="showing use of git init" />
 
   <!-- git add -->
-  <h2><code>$ git add</code> - Add Files (&amp; Directories) to Stage Files</h2>
-  <p class="ke-callout ke-callout-info">As noted in an earlier part of this tutorial series, <code>$ git add</code> does not add the files to the repository, it adds them to a staging area in preparation to using <code>$ git commit</code> which will actually put them into the repository.</p>
-  <p>You do not have to add directories (i.e., folders) to Git as when you add files Git will preserve the directory structure. Let's go through an exercise to illustrate how <code>$ git add</code> works.</p>
-  <p>At the start of this exercise you project structure should look like below. If you do not see the .git/ directory it is likely you file manager is hiding hidden directories. Use the file managers preferences/options to unhide them.</p>
-  <img src="../images/using-git-github/013.01.starting-project-structure.png" alt="starting project structure" />
-  <p>We are going to delete the Git repository so that we can add the files again. In terminal, make sure you are inside the gittutorial/ directory.</p>
-  <p>Check the contents of the directory including the <code>-a</code> option to show hidden files</p>
-  <pre>$ dir -la</pre>
-  <p>Delete the .git/ directory</p>
-  <pre>$ rm -rf .git</pre>
-  <p>Check that .git/ is gone</p>
-  <pre>$ dir -la</pre>
-  <img src="../images/using-git-github/014.01.repository-deleted.png" alt="git repository deleted" />
-  <p><code>$ git status</code> will show there is no longer a Git repository with the message, "fatal: Not a git repository (or any of the parent directories): .git"</p>
-  <img src="../images/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" />
-  <p>Add a new empty repository</p>
+  <h2><code>$ git add</code> - Staging Files</h2>
+  <p class="ke-callout ke-callout-info">As noted in an earlier part of this tutorial series, <code>$ git add</code> does not add the files to the repository, it adds them to a staging area in preparation for using <code>$ git commit</code> which will actually put them into the repository.</p>
+  <p>You do not have to add directories to Git. As you add files Git will preserve the directory structure. Let's go through an exercise to illustrate how <code>$ git add</code> works.</p>
+  <p>Add a new empty repository.</p>
   <pre>$ git init</pre>
   <p><code>$ git status</code> will show that we have two files and one directory. However, as you know, there is a third file inside of css/ which <code>$ git status</code> does not show. Using the <code>--all</code> option will add all files at once, including the style.css file inside of css/.</p>
   <pre>$ git status<br>$ git add --all<br>$ git status</pre>
   <img src="../images/using-git-github/016.01.using-git-add-all.png" alt="git add --all" />
 
+  <!-- git commit -->
+  <h2><code>$ git commit</code></h2>
+  <p><code>$ git commit</code> takes the files in the staging area and puts them into the repository. Unless you use the <code>--allow-empty-message</code> option, a message/comment is required.</p>
+  <p>For the beginner developers reading this I'll let you know we are about to discuss something that is very important to developers.</p>
+  <p>It is a best practice to always have a message and if you are working with a team, committing without a message will most likely result in some form a repramand.</p>
+  <p>The message can be very short and it should describe the changes to the files being committed. To achieve this you need to stage and commit files with a related change such that you message could be something like, "Updated sidebar and related styles", for which you are likely committing in a .html and .css file. If you add to this commit a change you made to the text of another .html file then you comment becomes wordy like, 'did this to these files and that to those files, etc.'. Additionally, it becomes hard to revert one change without the other. Therefore, commits should include the files for one change and the message should succintly describe that change.</p>
+  <p>All of this does not mean you cannot make unrelated changes to multiple files before committing. You simply move the files for one change into the staging area and commit, then stage the files for the next change and commit.</p>
+  <p>Let's commit our files. This is the first time they are being committed and the traditional message for that is, "initial commit". Commit will move everything in the staging area to the repository.</p>
+  <p><code>-m</code>means 'message'. What follows in quotes is the message.</p>
+  <pre>$ git commit -m "initial commit"</pre>
+  <a href="../images/using-git-github/017.01.git-commit.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/017.01.git-commit.png" alt="$ git commit"></a>
+  <p>Using the above picture, let's take a closer look at the message produced by <code>$ git commit</code>.</p>
+  <table>
+    <tr>
+      <td>
+        [master (root-commit) 9fe2f2a] initial commit
+      </td>
+      <td>
+        The commit was to branch 'master', which is the root, not a branch. The message was 'initial commit'.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        3 file changed
+      </td>
+      <td>
+        Right, we changed 3 files
+      </td>
+    </tr>
+    <tr>
+      <td>
+        13 insertions(+)
+      </td>
+      <td>
+        If you count the lines of code in the 3 files we committed there are 13 of them. Since this is the initial commit they all count as an insertions which is indicated by a (+) sign.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        create mode
+      </td>
+      <td>
+        They are new files so they were created.
+      </td>
+    </tr>
+  </table>
 
-
-
-  <p>To a file into the staging area use <code>$ git add</code>.</p>
-  <pre>$ git add index.html<br>$ git status</pre>
-  <p>You don't have to type the full file name. I'll show you some shortcuts later in this post</p>
-  <img class="img-responsive img-step-figure" src="../images/using-git-github/using-git-github/011.git.add.png" alt="**alt**">
-
-
+  <!-- git push -->
   <h2><code>$ git push</code> - Pushing Code to GitHub</h2>
-  <p>To move you files to GitHub use <code>$ git push</code>. We will first push our project changes to GitHub and then dive into an explanation of doing so.</p>
-  <p>The syntax of <code>$ git push </code> is:</p>
+  <p><code>$ git push</code> will move the changes in your local repository to the remote repository on GitHub.</p>
+  <p>The syntax of <code>$ git push </code> is...</p>
   <pre>git push [remote-name] [branch-name]</pre>
   <p>Since our remote-name is 'origin' and our current branch-name is 'master', execute the push command as follows:</p>
   <pre>$ git push origin master</pre>
   <p>When prompted, enter you GitHub user name and password.</p>
-  <p>That's it, your chnages are already in the GitHub repository! Take a look at your project's GitHub page to confirm the files are added.</p>
-  <p class="ke-callout ke-callout-info">It is worth taking a moment to realize that so far we have only used 3 commands, add, commit and push.</p>
-  <a href="../images/using-git-github/015.01.git.push.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/015.01.git.push.png" alt="**alt**"></a>
+  <p>That's it, your chnages are now in the GitHub repository! Take a look at your project's GitHub page to confirm the files are added.</p>
+  <p class="ke-callout ke-callout-info">It is worth taking a moment to realize the process of committing and push to GitHub requires only three commands, add, commit and push.</p>
 
   <p>Let's take a closer look at <code>$ git push</code> and its output.</p>
   <table>
@@ -155,29 +231,6 @@
   <a href="../images/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/010.git.status.png" alt="**alt**"></a>
 
 
-  <h2><code>$ git commit</code></h2>
-  <p>The next step is to commit the file. This is the final step to put the file into Git. However, note that the file will not be in GitHub yet.</p>
-  <p>When you perform a commit with the next command, you are committing everything in the staging area</p>
-  <pre>$ git commit -m "initial commit"</pre>
-  <p><code>-m</code>means 'message'. So what follows is a message that will be associated with this commit. It is common practice when adding a file for the first time that the message is 'initial commit'. For future commits on a file, the commit message describes what has changed.</p>
-  <a href="../images/using-git-github/012.git.commit.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/012.git.commit.png" alt="**alt**"></a>
-  <h2><code>$ git commit</code></h2>
-  <p>Let's take a closer look at the message produced by <code>$ git commit</code>.</p>
-  <dl class="dl-horizontal">
-    <dt>[master e133f12]</dt>
-    <dd>The commit was to branch 'master'</dd>
-    <dt>initial commit</dt>
-    <dd>This is the message entered with the commit</dd>
-    <dt>1 file changed</dt>
-    <dd>Right, we changed 1 file</dd>
-    <dt>3 insertions (+)</dt>
-    <dd>Three lines were added</dd>
-    <dt>create mode</dt>
-    <dd>A new file was added</dd>
-    <dt>index.html</dt>
-    <dd>The name of the file committed</dd>
-  </dl>
-  <a href="../images/using-git-github/013.git.commit.closer.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/013.git.commit.closer.png" alt="**alt**"></a>
 
   <h2> Add a remote</h2>
 
