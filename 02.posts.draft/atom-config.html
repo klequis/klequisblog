@@ -1,54 +1,92 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>atom config</title>
-  </head>
-  <body>
-    documentation: ./doc/atom.packages.ods
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    list of all linters: http://atomlinter.github.io/
+  <title>14.git github</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
 
-    # linter-eslint: https://atom.io/packages/linter-eslint
-      > .eslintrc: example is in root of this project named zz.eslintrc
-      > you can also put .eslintrc in your home directory which is what I am doing
+</head>
 
-      > Getting started article: http://devnull.guru/get-started-with-eslint/
+<body>
 
-    # atom-beautify: https://github.com/Glavin001/atom-beautify
-      > config file is in ~/.jsbeautifyrc
+<div class="container-fluid">
+
+  <h2>References Material</h2>
+  <ol>
+    <li>documentation: ./doc/atom.packages.ods</li>
+    <li>list of all linters: http://atomlinter.github.io/</li>
+    <li>linter-eslint: https://atom.io/packages/linter-eslint</li>
+    <li>.eslintrc: example is in root of this project named zz.eslintrc</li>
+    <li>you can also put .eslintrc in your home directory which is what I am doing</li>
+    <li>Getting started article: http://devnull.guru/get-started-with-eslint/</li>
+    <li>atom-beautify: https://github.com/Glavin001/atom-beautify</li>
+    <li>config file is in ~/.jsbeautifyrc</li>
+  </ol>
 
 
-      <h2>Packages</h2>
-      <ol>
-        <li>color-picker</li>
-        <li>linter</li>
-        <li>linter-csslint</li>
-        <li>linter-eslint</li>
-        <li>linter-htmlhint</li>
-        <li>open-in-browser</li>
-        <li>split-diff</li>
-        <li>webbox-color</li>
-      </ol>
-      <h2>Editor Settings</h2>
-      <ol>
-        <li>Scroll Past End</li>
-        <li>Show Indent Guide</li>
-        <li>Show Invisibles</li>
-        <li>Soft Tabs</li>
-        <li>Soft Wrap</li>
-        <li>Tab Length = 2</li>
+<div class="panel panel-default">
+<div class="panel-body">
+  <p>There is seemingly an unlimited number of packages you can add to Atom to customize the way it works. In this post, I'm going to show you the packages that I find most useful. We will be doing installation via the command line and it will only take a few minutes.</p>
+  <p class="ke-callout ke-callout-warning">If you do not have Atom installed, go to http://atom.io and install it now.</p>
 
-      </ol>
-      <h2>Theme Settings</h2>
-      <ol>
-        <li>UI Theme = Seti</li>
-        <li>Syntax Theme = Base16 Tomorrow Dark</li>
-      </ol>
-      <ol>
-        <li>seti-ui</li>
-      </ol>
-      apm install color-picker linter linter-csslint linter-eslint linter-htmlhint open-in-browser split-diff webbox-color seti-ui
+    <h2>We will install the following packages</h2>
+    <ol>
+      <li>color-picker</li>
+      <li>linter</li>
+      <li>linter-csslint</li>
+      <li>linter-eslint</li>
+      <li>linter-htmlhint</li>
+      <li>open-in-browser</li>
+      <li>split-diff</li>
+      <li>webbox-color</li>
+    </ol>
+    <p>To install the above packages open terminal and use the following command</p>
+    <pre>apm install linter linter-csslint linter-eslint linter-htmlhint open-in-browser split-diff webbox-color seti-ui</pre>
+    <p class="ke-callout ke-callout-warning">If Atom is open, close and reopen it.</p>
+    <h2>Here are the editor settings I prefer</h2>
+    <p>In Atom choose Edit&gt;Preferences and then the Editor tab on the left.</p>
+    <p>Change settings to match the below.</p>
+    <ol>
+      <li>Scroll Past End = checked</li>
+      <li>Show Indent Guide = checked</li>
+      <li>Show Invisibles = checked</li>
+      <li>Soft Tabs = checked</li>
+      <li>Soft Wrap = checked</li>
+      <li>Tab Length = 2</li>
+    </ol>
+    <h2>A nice theme with icons which show file type</h2>
+    <p>The Seti theme was installed when we use the 'apm' command above. It needs to be activated.</p>
+    <ol>
+      <li>In the settings page, choose 'Themes' on the left</li>
+      <li>Set UI Theme = Seti</li>
+      <li>Set Syntax Theme = Base16 Tomorrow Dark</li>
+    </ol>
 
-  </body>
-</html>
+
+
+
+</div> <!-- panel-body -->
+</div> <!-- panel-default -->
+</div> <!-- container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+  // alert("Script");
+  $('img').click(function() {
+    var msg = $(this).attr("src");
+    alert(msg);
+  });
+</script>
+
+</body>
