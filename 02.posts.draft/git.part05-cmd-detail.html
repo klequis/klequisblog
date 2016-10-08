@@ -22,7 +22,7 @@
 <div class="panel-body">
 
   <h1>Git Commands in Detail</h1>
-  <p>In this part of the tutotorial we will go over the most common Git commands in greater detail than we did earlier. Let's jump right in.</p>
+  <p>In <a href="#">Part 2</a> of this series we quickly move through using four basic commands to add files to a Git repository with little or no explanation. This was to show how simple working with Git could be (OK, it isn't all that simple) and to avoid making the introduction complicated. In this part of the series we will go over the same four four commands, as well as <code>$ git push</code> more in detail. After woking through these exercises you should have a better understanding of how Git works. Let's jump right in.</p>
   <p class="ke-callout ke-callout-info">A directory is a folder. Windows uses the term 'folder'. Linux calls them 'directories'.</p>
 
   <!-- project setup -->
@@ -70,17 +70,14 @@
   </div>
   <p>Open index.html in a browser</p>
   <img src="../images/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
-  <p>If you use <code>$ git status</code> now it will show there is no Git repository with the message, "fatal: Not a git repository (or any of the parent directories): .git".</p>
-  <img src="../images/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" />
 
   <!-- git init -->
   <h2><code>$ git init</code> - Creating a New Git Repository</h2>
+  <p>This project currently has no Git repository. If you look in file manager or via terminal there is no .git/ directory. If you use <code>$ git status</code> it will show there is no Git repository with the message, "fatal: Not a git repository (or any of the parent directories): .git".</p>
+  <img src="../images/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" />
   <p>Using <code>$ git init</code> to create a new repository is straight-forward. Here are steps for creating a new project with <code>$ git init</code></p>
-  <p>Create the project's root directory if it does not already exist.</p>
-  <pre>$ mkdir sample-project</pre>
-  <p>Make sure you are inside the projects root directory.</p>
-  <pre>$ cd sample-project</pre>
-  <p>Create the repository.</p>
+
+  <p>Make sure you are in the sample-project/ directory and create the repository.</p>
   <pre>$ git init</pre>
   <img src="../images//using-git-github/012.01.git-init.png" alt="showing use of git init" />
 
@@ -88,23 +85,42 @@
   <h2><code>$ git add</code> - Staging Files</h2>
   <p class="ke-callout ke-callout-info">As noted in an earlier part of this tutorial series, <code>$ git add</code> does not add the files to the repository, it adds them to a staging area in preparation for using <code>$ git commit</code> which will actually put them into the repository.</p>
   <p>You do not have to add directories to Git. As you add files Git will preserve the directory structure. Let's go through an exercise to illustrate how <code>$ git add</code> works.</p>
-  <p>Add a new empty repository.</p>
-  <pre>$ git init</pre>
-  <p><code>$ git status</code> will show that we have two files and one directory. However, as you know, there is a third file inside of css/ which <code>$ git status</code> does not show. Using the <code>--all</code> option will add all files at once, including the style.css file inside of css/.</p>
-  <pre>$ git status<br>$ git add --all<br>$ git status</pre>
-  <img src="../images/using-git-github/016.01.using-git-add-all.png" alt="git add --all" />
+  <p><code>$ git status</code> will show that we have two files and one directory. However, as you know, there is a third file inside of css/ which <code>$ git status</code> does not show.</p>
+  <img src="../images//using-git-github/020.01.git-status.png" alt="git status" />
+  <p>As you can see in the above screenshot, <code>$ git status</code> clearly shows that we have untracked files, 2 in the root and some unknow number in css/.</p>
+  <p>Using the <code>$git add</code> with the <code>--all</code> option will add all files to the staging area at once, including the style.css file inside of css/. You can also use the shortcut <code>$ git add .</code> (the '.' is required).</p>
+  <pre>$ git add .<br>$ git status</pre>
+  <img src="../images/using-git-github/021.01.git-add-dot.png" alt="git add --all" />
+  <p>You can also add files one at a time. Let's reset everything by removing the .git/ folder so we can give that a try. This will also illustrate that a Git repository is just a folder. On Mac &amp; you can use the below command or a file manager if you prefer.</p>
+  <pre>$ rm -rf .git</pre>
+  <p>Using <code>$ git status</code> will show there is no repository.</p>
+  <pre>$ git status</pre>
+  <p>Re-initialize the repository and check status. Status will show the 'untracked files' again.</p>
+  <pre>$ git init<br>$ git status</pre>
+  <p>Now we can demonstrate adding one file at a time.</p>
+  <pre>$ git add README.md</pre>
+  <p>As you can see, only README is staged (i.e., under 'Chagnes to be commited:')</p>
+  <img src="../images/using-git-github/022.01.git-add-one-file.png" alt="git add --all" />
+  <p>No let's explore adding multiple files instead of all. To do so, we will need to add some files to our project. We will use <code>$ touch</code> to create the files and <code>$ls -l to see the newly created files</code></p>
+  <pre>$ touch imagine.html<br>$ ls -l<br>$ cd css<br>$ touch master.css<br>$ ls -l<br>$ cd ..</pre>
+  <img src="../images/using-git-github/023.01.add-new-files.png" alt="git add --all" />
+  <p>Now we will add all files in the css/ directory. Remember, README.md was already staged and is still there.</p>
+  <pre>$ git add css/*</pre>
+  <img src="../images/using-git-github/024.01.git-add-css-asterisk.png" alt="git add" />
+  <p>Finally, we will add all files in the current directory that start with 'i'. This will add imagine.html and index.html to the staging area.</p>
+  <pre>$ git add i*</pre>
+  <img src="../images/using-git-github/025.01.git-add-i-asterisk.png" alt="git add" />
 
   <!-- git commit -->
-  <h2><code>$ git commit</code></h2>
-  <p><code>$ git commit</code> takes the files in the staging area and puts them into the repository. Unless you use the <code>--allow-empty-message</code> option, a message/comment is required.</p>
-  <p>For the beginner developers reading this I'll let you know we are about to discuss something that is very important to developers.</p>
-  <p>It is a best practice to always have a message and if you are working with a team, committing without a message will most likely result in some form a repramand.</p>
-  <p>The message can be very short and it should describe the changes to the files being committed. To achieve this you need to stage and commit files with a related change such that you message could be something like, "Updated sidebar and related styles", for which you are likely committing in a .html and .css file. If you add to this commit a change you made to the text of another .html file then you comment becomes wordy like, 'did this to these files and that to those files, etc.'. Additionally, it becomes hard to revert one change without the other. Therefore, commits should include the files for one change and the message should succintly describe that change.</p>
+  <h2><code>$ git commit</code>- Adding Files to the Repository</h2>
+  <p>As already stated, <code>$ git commit</code> moves files from the staging area to the repository. If you look at the Git documentation you will see that <code>$ git commit</code> has many options. We will use only one of these <code>-m</code> which means message. The command will look like this:</p>
+  <pre>$ git commit -m "commit message goes here"</pre>
+  <p>Commit messages are serious business. It is a best practice to always have a message and if you are working with a team, committing without a message will most likely result in some form of negative feedback.</p>
+  <p>The message can and often is very short. It should describe the changes to the files being committed. To achieve this you need to stage and commit files with a related change such that your message would be something like, "Updated sidebar and related styles", for which you are likely committing a .html and .css file. If you add to this commit a change made to an unrelated .html file then your commit message becomes wordy like, 'did this to these files and that to those files, etc.'. Additionally, it becomes hard to revert one change without the other and for another developer to understand the goal of your change. Therefore, commits should include the files for one change and the message should succintly describe that change.</p>
   <p>All of this does not mean you cannot make unrelated changes to multiple files before committing. You simply move the files for one change into the staging area and commit, then stage the files for the next change and commit.</p>
-  <p>Let's commit our files. This is the first time they are being committed and the traditional message for that is, "initial commit". Commit will move everything in the staging area to the repository.</p>
-  <p><code>-m</code>means 'message'. What follows in quotes is the message.</p>
-  <pre>$ git commit -m "initial commit"</pre>
-  <a href="../images/using-git-github/017.01.git-commit.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/017.01.git-commit.png" alt="$ git commit"></a>
+  <p>Let's commit our files. This is the first time they are being committed and the traditional message for that is, "initial commit". Commit will move everything in the staging area to the repository. If the results of <code>$ git status</code> are not currently on your screen, use it first to see what you are committing.</p>
+  <pre>$ git status<br>$ git commit -m "initial commit"</pre>
+  <a href="../images/using-git-github/026.01.git-commit.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/026.01.git-commit.png" alt="$ git commit"></a>
   <p>Using the above picture, let's take a closer look at the message produced by <code>$ git commit</code>.</p>
   <table>
     <tr>
@@ -112,23 +128,23 @@
         [master (root-commit) 9fe2f2a] initial commit
       </td>
       <td>
-        The commit was to branch 'master', which is the root, not a branch. The message was 'initial commit'.
+        The commit was to branch 'master', which is the root, not a branch. The message was 'initial commit'. 9fe2fa2 is an identifer for the commit. Yours will differ.
       </td>
     </tr>
     <tr>
       <td>
-        3 file changed
+        5 file changed
       </td>
       <td>
-        Right, we changed 3 files
+        Right, we changed 5 files. A new files is always changed.
       </td>
     </tr>
     <tr>
       <td>
-        13 insertions(+)
+        15 insertions(+)
       </td>
       <td>
-        If you count the lines of code in the 3 files we committed there are 13 of them. Since this is the initial commit they all count as an insertions which is indicated by a (+) sign.
+        If you count the lines of code in the 5 files we committed there are 15 of them. Since this is the initial commit they all count as an insertions which is indicated by a (+) sign.
       </td>
     </tr>
     <tr>
@@ -140,6 +156,49 @@
       </td>
     </tr>
   </table>
+
+  <!-- git remote -->
+
+  <p>
+    *outline**<br>
+
+    Master is branch ... know already<br>
+    origin is the name of remote<br>
+    Remote, explain 'remote'<br>
+    url's - make clear that they are the git hub repository url's and compare them to the actual url's to make sure you are correct.<br>
+    3 objects<br>
+    master -&ght; master from local master to remote master<br>
+  */outline**
+  </p>
+  <h2><code>$ git remote</code> - What is a Remote?</h2>
+  <p>Before we get into <code>$ git push</code> we need to discuss remotes because 'push' uses 'remotes'. clone this repro, look at the remote ... ok great. We will discuss <code>$ git clone</code> later. For now, go back up one file directory and then issue the command as show.</p>
+  <pre>$ cd ..<br>$ git clone https://github.com/petehunt/webpack-howto.git</pre>
+  <a href="../images/using-git-github/027.01.git-clone-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/027.01.git-clone-webpack-howto.png" alt="git clone of webpack-howto"></a>
+  <p class="ke-callout ke-callout-info">There is no reason for downloading webpack-howto other than I have recently learned to use Webpack and am familiar with this repository.</p>
+
+
+
+  <p>Change to the webpack-howto/ directory and then use <code>$ git status</code>.
+  <pre>$ cd webpack-howto<br>$ git status</pre>
+  <a href="../images/using-git-github/028.01.git-status-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/028.01.git-status-webpack-howto.png" alt="webpack-howto in file manager"></a>
+  <p>As you can see there is a Git repository there. Also take note where is says 'origin/master'. 'origin', which I explain more in a moment, is a remote and 'master' is the current branch.</p>
+
+  <p>Now take a look at the files downloaded in a file manager. You can see that all the projects current files and the Git repository has been downloaded to your machine.</p>
+  <a href="../images/using-git-github/029.01.webpack-howto-file-manager.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/029.01.webpack-howto-file-manager.png" alt="webpack-howto in file manager"></a>
+  <p>Using the <code>$ git remote -v</code> command will show you the name of the remote and where it points to. Notice that the URL for the remote is the same one we used with <code>$ git clone</code> above.</p>
+  <pre>$ git remote -v</pre>
+  <a href="../images/using-git-github/030.01.git-remote-v.png"><img src="../images/using-git-github/030.01.git-remote-v.png" alt="git remote -v" /></a>
+  <p>The above screenshot shows you what a remote is. It is a name that holds the URL to a remote repository. In our case, the remote repository is hosted on GitHub.</p>
+  <p>The name 'origin' has no special significance other than this is the default remote named used by Git. To illustrate this point, let's add another remote using the same URL.</p>
+  <pre>$ git remote add myremotename https://github.com/petehunt/webpack-howto.git<br>$ git remote -v</pre>
+  <a href="../images/using-git-github/031.01.got-remote-add.png"><img src="../images/using-git-github/031.01.got-remote-add.png" alt="git add remote" /></a>
+  <p>The above screenshot shows that you have added a new remote named 'myremotename'.</p>
+
+  <!-- $ git clone -->
+  <h2><code>$ git clone</code></h2>
+  <p>It it's simpliest form, <code>git clone</code> looks like this:</p>
+  <pre>git clone &lt;url to git repository&gt;</pre>
+  <p>We saw an example of using <code>$ git clone</code> above so we will move on to <code>$ git push</code>.</p>
 
   <!-- git push -->
   <h2><code>$ git push</code> - Pushing Code to GitHub</h2>
@@ -159,27 +218,18 @@
       <td><code>$git push</code> moves you chnages from your local machine to GitHub. 'master', as you have already seen, is the current branch you are working on. 'origin' is a 'remote' (see next definition). It is a label that contains the path to the GitHub repository.</td>
     </tr>
   </table>
-  <p>
-    *outline**<br>
-
-    Master is branch ... know already<br>
-    origin is the name of remote<br>
-    Remote, explain 'remote'<br>
-    url's - make clear that they are the git hub repository url's and compare them to the actual url's to make sure you are correct.<br>
-    3 objects<br>
-    master -&ght; master from local master to remote master<br>
-  */outline**
-  </p>
   <p>To understand origin you need to understand 'remote'. Remote refers to the repository on GitHub. Execute the below command.</p>
   <pre>$ git remote -v</pre>
   <p>Given the results in the screenshot it appears that 'origin' is a name for something that holds a URL, and it is. It is the name of the Git repository on GitHub, but not the name you gave it. Git assigned this name when you did the clone. You can change it if you want to but for the moment there is no need to.</p>
   <p>You'll note that there is 'fetch' and 'push'. These are the URLs that Git will use to fetch data from and push data to GitHub.</p>
   <h4>master -&gt; master</h4>
   <p>This means we move date from the master branch in our local repository to the master branch on the remote repository (i.e., the repository on GitHub).</p>
-  <a href="../images/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/016.01.git.remote.png" alt="**alt**"></a>
+  <a href="../images/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/xxx..............016.01.git.remote.png" alt="**alt**"></a>
 
 
   <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
+
+
 
   <br>
   <br>
@@ -187,7 +237,7 @@
   <p>In Atom, right-click on the project directory and choose <button class="btn btn-default btn-xs">New file</button>.</p>
   <p>Make the file contents as show as below.</p>
   <pre>&lt;h1&gt;Using Git with GitHub&lt;/h1&gt;<br>&lt;p class="green-text"&gt;This is some green text.&lt;/p&gt;<br>&lt;p class="blue-text"&gt;Some blue text here.&lt;/p&gt;</pre>
-  <a href="../images/using-git-github/016.01.new.file.in.project.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/016.01.new.file.in.project.png" alt="**alt**"></a>
+  <a href="../images/using-git-github/016.01.new.file.in.project.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/xx...........016.01.new.file.in.project.png" alt="**alt**"></a>
   <br>
   <br>
 
@@ -228,7 +278,7 @@
     <dt>nothing added to commit</dt>
     <dd>As you will see and do in a moment, 'commit' or 'committed' means 'has been added to Git'.</dd>
   </dl>
-  <a href="../images/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/010.git.status.png" alt="**alt**"></a>
+  <a href="../images/using-git-github/010.git.status.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/xx..............010.git.status.png" alt="**alt**"></a>
 
 
 
