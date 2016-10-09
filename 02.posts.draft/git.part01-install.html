@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>part01.git</title>
+  <title>part05.git</title>
   <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/flint-style.css">
@@ -18,54 +18,40 @@
 <body>
 
 <div class="container-fluid">
+<div class="panel panel-default">
+<div class="panel-body">
   <h2>Introduction</h2>
   <p>For those new to Git and GitHub it can appear complicated and the workflow may seem long-winded. It isn't either of those things. Like any specialized tool, it has its own vocabulary, which to the new user is like a small foreign language. Trust me, Git and GitHub will make your life easer and your code safe from disaster. Once you learn it you will wonder how you lived without.</p>
-  <p>This tutorial series will teach you the basics of Git and GitHub with examples and exersizes to increase your understaning. It will start with a very simple workflow that is adequate for someone working on their own or building a small project. It will then move into more advance but still basic features that are used daily by developers. When you complete the tutorial you will be able to effectively use Git and GitHub to manage your code.</p>
+  <p>This tutorial series will teach you the basics of Git and GitHub with examples and exercises to increase your understaning. It will start with a very simple workflow that is adequate for someone working on their own or building a small project. It will then move into more advance but still basic features that are used daily by developers. When you complete the tutorial you will be able to effectively use Git and GitHub to manage your code.</p>
   <div class="ke-callout ke-callout-info">
-    <p>This tutorial makes heavy use of the command line for manulipating files. If you are not comfortable with the command line please go through the tutorial <a href="http://klequis.com/klequis/using-command-line/">Using the Command Line &amp; Understanding Permissions</a>. Alternatively, you could perform the file operations using a file manager.</p>
+    <p>This tutorial makes heavy use of the command line for manipulating files. If you are not comfortable with the command line please go through the tutorial <a href="http://klequis.com/klequis/using-command-line/">Using the Command Line &amp; Understanding Permissions</a>. Alternatively, you could perform the file operations using a file manager.</p>
     <p>All the Git commands shown will work in Linux, Mac and Windows. However, the file manipulation commands will not work on Windows. Windows user may want to use a file manager or functionality in their editor for creating files and folders.</p>
   </div>
-  <h2>Installation &amp; Configuration</h2>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Installing Git</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <pre>$ sudo apt-get update<br>$ sudo apt install git</pre>
-        </div>
-        <div class="col-md-4">
-          <a href="../images/using-git-github/001.01.install.git.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/000.01.install-git.png" alt="sudo apt install git"></a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2>Installation</h2>
+  <pre>$ sudo apt-get update<br>$ sudo apt install git</pre>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/000.01.install-git.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/using-git-github/000.01.install-git.png" alt="sudo apt install git"></a>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Configuring Git</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-8">
-          <pre>$ git config --global user.name "Your Name"<br>$ git config --global user.email "youremail@domain.com"<br>$ git config --list</pre>
-        </div>
-        <div class="col-md-4">
-
-          <a href="../images/using-git-github/000.02.git-config.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/000.02.git-config.png" alt="**alt**"></a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2>Configuring Git</h2>
+  <p>First set your user name and email. These can be any name and email address as they are used for identification of who made a change to git and are not account credentials. I use my actual email plus my online user name 'klequis'.</p>
+  <pre>$ git config --global user.name "Your Name"<br>$ git config --global user.email "youremail@domain.com"<br>$ git config --list</pre>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/000.02.git-config.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/using-git-github/000.02.git-config.png" alt="**alt**"></a>
+  <p class="ke-callout ke-callout-goal">You have installed Git!</p>
 
 
+  </div> <!-- panel-body -->
+  </div> <!-- panel-default -->
+  </div> <!-- container-fluid -->
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    // alert("Script");
+    $('img').click(function() {
+      var msg = $(this).attr("src");
+      alert(msg);
+    });
+  </script>
 
-
-</div> <!-- containter-fluid -->
 </body>

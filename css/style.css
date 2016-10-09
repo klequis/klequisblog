@@ -188,6 +188,13 @@ div.row:not(:first-child) {
 div.row.row-no-border {
   border-top: none;
 }
+/* This is a hack on top of a hack and needs to be fixed once the
+   blog styling matures. row-no-border is a poor name so I'm
+   creating row-no-top-border which is a more accurate name */
+div.row.row-no-top-border {
+  border-top: none;
+}
+
 
 /* Chart / Highlight Colors */
 .chart-color-one {
