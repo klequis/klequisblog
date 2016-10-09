@@ -22,11 +22,13 @@
 <div class="panel-body">
 
   <h1>Git Commands in Detail</h1>
-  <p>In <a href="#">Part 2</a> of this series we quickly move through using four basic commands to add files to a Git repository with little or no explanation. This was to show how simple working with Git could be (OK, it isn't all that simple) and to avoid making the introduction complicated. In this part of the series we will go over the same four four commands, as well as <code>$ git push</code> more in detail. After woking through these exercises you should have a better understanding of how Git works. Let's jump right in.</p>
+  <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
+
+  <p>In <a href="#">Part 2</a> of this series we quickly moved through using four basic commands to add files to a Git repository with little or no explanation. This was to show how simple working with Git could be (OK, it isn't all that simple) and to avoid making the introduction complicated. In this part of the series we will go over the same four four commands, as well as <code>$ git push</code> more in detail. After woking through these exercises you should have a better understanding of how Git works. Let's jump right in.</p>
   <p class="ke-callout ke-callout-info">A directory is a folder. Windows uses the term 'folder'. Linux calls them 'directories'.</p>
 
   <!-- project setup -->
-  <h2>Creating a Sample Project</h2>
+  <h2>Getting Ready</h2>
   <p>For this part of the tutorial we will create a new project and a new GitHub repository.</p>
   <h3>Create a GitHub Account</h3>
   <p>If you already have a GitHub account you can skip this step.</p>
@@ -70,9 +72,19 @@
   </div>
   <p>Open index.html in a browser</p>
   <img src="../images/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
+  <h2>Exploring Six Frequently Used Git Commands</h2>
+  <p>In this part of the tutorial we will explore six of the most frequently used Git commands:</p>
+  <ol>
+    <li>$ git init</li>
+    <li>$ git add</li>
+    <li>$ git commit</li>
+    <li>$ git remote</li>
+    <li>$ git push</li>
+    <li>$ git status</li>
+  </ol>
 
   <!-- git init -->
-  <h2><code>$ git init</code> - Creating a New Git Repository</h2>
+  <h3><code>$ git init</code> - Creating a New Git Repository</h3>
   <p>This project currently has no Git repository. If you look in file manager or via terminal there is no .git/ directory. If you use <code>$ git status</code> it will show there is no Git repository with the message, "fatal: Not a git repository (or any of the parent directories): .git".</p>
   <img src="../images/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" />
   <p>Using <code>$ git init</code> to create a new repository is straight-forward. Here are steps for creating a new project with <code>$ git init</code></p>
@@ -82,7 +94,7 @@
   <img src="../images//using-git-github/012.01.git-init.png" alt="showing use of git init" />
 
   <!-- git add -->
-  <h2><code>$ git add</code> - Staging Files</h2>
+  <h3><code>$ git add</code> - Staging Files</h3>
   <p class="ke-callout ke-callout-info">As noted in an earlier part of this tutorial series, <code>$ git add</code> does not add the files to the repository, it adds them to a staging area in preparation for using <code>$ git commit</code> which will actually put them into the repository.</p>
   <p>You do not have to add directories to Git. As you add files Git will preserve the directory structure. Let's go through an exercise to illustrate how <code>$ git add</code> works.</p>
   <p><code>$ git status</code> will show that we have two files and one directory. However, as you know, there is a third file inside of css/ which <code>$ git status</code> does not show.</p>
@@ -112,7 +124,7 @@
   <img src="../images/using-git-github/025.01.git-add-i-asterisk.png" alt="git add" />
 
   <!-- git commit -->
-  <h2><code>$ git commit</code>- Adding Files to the Repository</h2>
+  <h3><code>$ git commit</code>- Adding Files to the Repository</h3>
   <p>As already stated, <code>$ git commit</code> moves files from the staging area to the repository. If you look at the Git documentation you will see that <code>$ git commit</code> has many options. We will use only one of these <code>-m</code> which means message. The command will look like this:</p>
   <pre>$ git commit -m "commit message goes here"</pre>
   <p>Commit messages are serious business. It is a best practice to always have a message and if you are working with a team, committing without a message will most likely result in some form of negative feedback.</p>
@@ -170,14 +182,11 @@
     master -&ght; master from local master to remote master<br>
   */outline**
   </p>
-  <h2><code>$ git remote</code> - What is a Remote?</h2>
+  <h3><code>$ git remote</code> - What is a Remote?</h3>
   <p>Before we get into <code>$ git push</code> we need to discuss remotes because 'push' uses 'remotes'. clone this repro, look at the remote ... ok great. We will discuss <code>$ git clone</code> later. For now, go back up one file directory and then issue the command as show.</p>
   <pre>$ cd ..<br>$ git clone https://github.com/petehunt/webpack-howto.git</pre>
   <a href="../images/using-git-github/027.01.git-clone-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/027.01.git-clone-webpack-howto.png" alt="git clone of webpack-howto"></a>
   <p class="ke-callout ke-callout-info">There is no reason for downloading webpack-howto other than I have recently learned to use Webpack and am familiar with this repository.</p>
-
-
-
   <p>Change to the webpack-howto/ directory and then use <code>$ git status</code>.</p>
   <pre>$ cd webpack-howto<br>$ git status</pre>
   <a href="../images/using-git-github/028.01.git-status-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/028.01.git-status-webpack-howto.png" alt="webpack-howto in file manager"></a>
@@ -195,13 +204,13 @@
   <p>The above screenshot shows that you have added a new remote named 'myremotename'.</p>
 
   <!-- $ git clone -->
-  <h2><code>$ git clone</code></h2>
+  <h3><code>$ git clone</code></h3>
   <p>It it's simpliest form, <code>git clone</code> looks like this:</p>
   <pre>git clone &lt;url to git repository&gt;</pre>
   <p>We saw an example of using <code>$ git clone</code> above so we will move on to <code>$ git push</code>.</p>
 
   <!-- git push -->
-  <h2><code>$ git push</code> - Pushing Code to GitHub</h2>
+  <h3><code>$ git push</code> - Pushing Code to GitHub</h3>
   <p><code>$ git push</code> will move the changes in your local repository to the remote repository on GitHub.</p>
   <p>The syntax of <code>$ git push </code> is...</p>
   <pre>git push [remote-name] [branch-name]</pre>
@@ -227,7 +236,6 @@
   <a href="../images/using-git-github/016.01.git.remote.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/xxx..............016.01.git.remote.png" alt="**alt**"></a>
 
 
-  <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we isntalled Atom, let's use it.</p>
 
 
 

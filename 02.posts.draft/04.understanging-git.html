@@ -16,11 +16,11 @@
 </head>
 
 <body>
+<h1>Understanding Git</h1>
 
 <div class="container-fluid">
 <div class="panel panel-default">
 <div class="panel-body">
-  <h2>Understanding Git</h2>
   <p>If you are new to Git or are comming from a different version control system, Git can seem very complicated. I was in the latter category and it took a good amout of time to comfortably think in a new way. If you are a new developer, git may seem especially difficult, but I assure you it is worth learning and will seem simple once you use it for a while.</p>
   <p>This tutorial will dive into the details and provide an explanation of what you learned in parts one, two and three. As you start using Git, refer back to this part of the tutorial often.</p>
 
@@ -76,7 +76,7 @@
       <td>Git is like a tree. You can add branches to your tree. Each branch is a complete version of your project. The default branch is called 'master'. Take a look at your GitHub home page and find the dropdown that says 'Master'. Currently, your repository only has one branch, i.e., Master</td>
     </tr>
   </table>
-  <h2>Git Life-cycle</h2>
+  <h2>Where Do Git Files Reside?</h2>
   <p>There are four 'areas' that we will be working with. The first three are on your local machine. The fouth is GitHub. An <i>'area'</i> is either a file or a folder. The 'staging area' is a file. The 'working directory' is a folder.</p>
   <p>While the areas are the same regardless of which command line interface (CLI) you are using, the colors may vary. The below colors are from Ubuntu Gnome (a flavor of Linux). You will see these colors when using <code>$ git status</code> and <code>$ git add</code></p>
   <table id="git-structure">
@@ -131,7 +131,7 @@
     <li>When you include a modified or untracked file in the <code>$ git add</code> command it becomes 'staged'.</li>
     <li>When the <code>$ git commit</code> command is executed, all staged files become committed. Commited files are not show in the output of <code>$ git status</code>.</li>
   </ul>
-  <h3>Examples</h3>
+  <h3>Life-cycle Examples</h3>
   <div class="row">
     <div class="col-md-4">
       <p>Untracked files are in <span class="red-text">red text</span>.</p>
