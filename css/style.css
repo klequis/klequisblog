@@ -29,13 +29,6 @@ body {
 }
 
 .img-step-figure {
-  /*
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /* To get pictures to center
-  margin-left:auto;
-  margin-right:auto;
-  */
   margin: 10px auto 10px auto;
 }
 
@@ -478,4 +471,36 @@ li ol.multilevel > li:before {
 
 .green-text {
   color: green;
+}
+
+/* Styles for table 'github-synch' in using-git.html */
+.github-synch {
+  max-width: 350px;
+  margin: 0 auto;
+}
+.github-synch td {
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+}
+
+.github-synch-heading td {
+  font-size: 1.1em;
+}
+
+.td-border-top {
+  border-top: 1px solid darkgray !important;
+}
+.td-border-right {
+  border-right: 1px solid darkgray !important;
+}
+.td-border-bottom {
+  border-bottom: 1px solid darkgray !important;
+}
+.td-border-left {
+  border-left: 1px solid darkgray !important;
+}
+
+.td-footnote {
+  text-align: left !important;
 }

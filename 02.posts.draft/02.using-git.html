@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>part02.git</title>
+  <title>part01.git</title>
   <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/flint-style.css">
@@ -19,14 +19,18 @@
 <h1>Using Git</h1>
 
 <div class="container-fluid">
+<div class="panel panel-default">
+<div class="panel-body">
+
   <h2>Creating a Sample Project</h2>
-  <p>It doesn't matter to Git how you create your project files. You can create them in a file manager, code editor or via the command line (which I'll show you below). All that matters is that all project files are located under one master folder commonly referred to as 'root'. In our case, the root directory will be named 'gittutorial'</p>
-  <p>In Terminal, make sure the current directory is ~/workspace/</p>
-  <pre>$ cd ~/workspace</pre>
+  <p>It doesn't matter to Git how you create your project files. You can create them in a file manager, code editor or via the command line (which I'll show you below). All that matters is that all project files are located under one master folder commonly referred to as 'root'. In our case, the root directory will be named 'gittutorial'.</p>
+  <p>Every developer has their set of conventions for organizing their projects. One of mine is to put all projects in a folder named 'workspace'. Let's follow that convention for the tutorial. In Terminal, create a folder named workspace/ and make it the current directory.</p>
+  <pre>$ mkdir workspace<br>$ cd workspace</pre>
+  <p class="ke-callout ke-callout-info">The <code>$ touch</code> command is used to create a file or to change the files date/time. For more information see <a target="_blank" href="https://linuxconfig.org/touch">this page</a>.</p>
   <p>... and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
   <pre>$ mkdir gittutorial<br>$ cd gittutorial<br>$ touch index.html README.md<br>$ mkdir css<br>$ cd css<br>$ touch style.css</pre>
   <p>Your project structure should now look like this:</p>
-  <img src="../images/using-git-github/001.01.init.file.structure.png" alt="initial file structure" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/001.01.init-file-structure.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/001.01.init-file-structure.png" alt="initial file structure" /></a>
   <p>Let's put some content in the files.</p>
   <div class="file-box">
     <div class="file-name">
@@ -41,7 +45,7 @@
       style.css
     </div>
     <div class="file-body">
-      <pre class="pre-file-body">body {<br>  background-color: lightgray<br>}</pre>
+      <pre class="pre-file-body">body {<br>  background-color: lightgray;<br>}</pre>
     </div>
   </div>
   <div class="file-box">
@@ -52,8 +56,9 @@
       <pre class="pre-file-body">#Git Tutorial ReadMe</pre>
     </div>
   </div>
-  <p>Open index.html in a browser</p>
-  <img src="../images/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
+  <p>Open index.html in a browser.</p>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/002.01.git-tutorial-mozilla-firefox.png">
+  <img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" /></a>
 
   <h2>Using Git to Manage Project Files</h2>
   <p>We will be using the following commands.</p>
@@ -69,7 +74,7 @@
   <p>Now execute ...</p>
   <pre>$ git init</pre>
   <p>... and then look in your file manager to see the '.git' folder that contains the reposigory. This is a hidden folder. If your file manager is not showing hidden files &amp; folders, you will need to change a setting.</p>
-  <img src="../images/using-git-github/003.01.git-folder-in-files.png" alt="showing .git folder in file manager" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/003.01.git-folder-in-files.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/003.01.git-folder-in-files.png" alt="showing .git folder in file manager" /></a>
 
   <h3><code>$ git status</code> - Show the Status of the Repository</h3>
   <p>To see the status of your repository use the below command.</p>
@@ -82,9 +87,9 @@
   <h3><code>$ git commit</code> - Add Files to the Git Repository</h3>
   <pre>$ git commit -m "initial commit"<br>$ git status</pre>
   <p>The <code>-m</code> means 'message'. The output of <code>$ git status</code> is a bit crypitc but you can see both your files have been added with 'create mode'. The directory structure has been preserved as well.</p>
-  <p><code>$ git status</code> indicates that all files and changes are in the Git repository.</p>
+  <p>Part of the <code>$ git status</code> message says 'nothing to commit, working directory clean'. This indicates that all files and changes are in the Git repository.</p>
   <h2>Adding Changes to the Git Repository</h2>
-  <p>So far we have added new files to the repository. Adding changes to those files follows the same process. Let's do that now. Make the changes shown in <b>bold</b>.</p>
+  <p>So far we have added new files to the repository. Adding changes changes that have been made to those files follows the same process. Let's do that now. Make the changes shown in <b>bold</b>.</p>
   <div class="file-box">
     <div class="file-name">
       index.html
@@ -114,7 +119,10 @@
   <p>The next part of this tutorial will show you how to push your Git repositiry to GitHub.</p>
   <p class="ke-callout ke-callout-goal">Fantastic! You are now using Git to manage your project.</p>
 
-</div> <!-- containter-fluid -->
+</div> <!-- panel-body -->
+</div> <!-- panel-default -->
+</div> <!-- container-fluid -->
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
