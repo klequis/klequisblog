@@ -25,6 +25,9 @@
   <p>In this section I will walk you through using some of the most common Git commands while creating a very simple website to illustrate their use. You can use whichever text editor you prefer, but since we installed Atom, let's use it.</p>
 
   <p>In <a href="#">Part 2</a> of this series we quickly moved through using four basic commands to add files to a Git repository with little or no explanation. This was to show how simple working with Git could be (OK, it isn't all that simple) and to avoid making the introduction complicated. In this part of the series we will go over the same four four commands, as well as <code>$ git push</code> more in detail. After working through these exercises you should have a better understanding of how Git works. Let's jump right in.</p>
+
+  <!--more-->
+
   <p class="ke-callout ke-callout-info">A directory is a folder. Windows uses the term 'folder'. Linux calls them 'directories'.</p>
 
   <!-- project setup -->
@@ -35,16 +38,16 @@
   <p>Create a GitHub account by going to <a href="https://github.com/">GitHub</a>. Give your user name some thought. GitHub is a very public place which people use to help develop their identity as a developer. You will store your code here and may in the future share it with other developers or with a potential employer to show your abilities.</p>
   <h3>Create a GitHub Repository</h3>
   <p>In the upper right-hand corner of the GitHub page, click the '+' sign and select <button class="btn btn-default btn-xs">New repository</button>.</p>
-  <img src="../images//using-git-github/004.01.new-repository.png" alt="showing use of git init" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/004.01.new-repository.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/004.01.new-repository.png" alt="showing use of git init" /></a>
   <p>Fill out the repository details as show below and then click <button class="btn btn-default btn-xs">Create repository</button>. Make sure to leave the other choices as is.</p>
-  <img src="../images//using-git-github/018.01.new-github-repository.png" alt="showing use of git init" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/018.01.new-github-repository.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/018.01.new-github-repository.png" alt="showing use of git init" /></a>
   <h3>Create the Project Files &amp; Directories</h3>
   <p class="ke-callout ke-callout-info">It doesn't matter how you create the project files as long as the file and directory names match. I'm using Linux. '~' stands for the 'home' directory and I create all my projects in a folder named 'workspace'. You do not have to create your project in the same location. I am providing command line instructions for creating the project. You could do the same using a file manager or text editor.</p>
   <p>... and then execute the following commands. Don't worry what they mean for now, they will be explained below.</p>
   <p>In Terminal, make sure the current directory is ~/workspace/</p>
   <pre>$ cd ~/workspace<br>$ mkdir sample-project<br>$ cd sample-project<br>$ touch index.html README.md<br>$ mkdir css<br>$ cd css<br>$ touch style.css<br>$ cd ..</pre>
   <p>Your project structure should now look like this:</p>
-  <img src="../images/using-git-github/019.01.project-structure.png" alt="initial file structure" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/019.01.project-structure.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/019.01.project-structure.png" alt="initial file structure" /></a>
   <p>Let's put some content in the files.</p>
   <div class="file-box">
     <div class="file-name">
@@ -71,7 +74,7 @@
     </div>
   </div>
   <p>Open index.html in a browser</p>
-  <img src="../images/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
+  <img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/002.01.git-tutorial-mozilla-firefox.png" alt="initial file structure" />
   <h2>Exploring Six Frequently Used Git Commands</h2>
   <p>In this part of the tutorial we will explore six of the most frequently used Git commands:</p>
   <ol>
@@ -86,12 +89,12 @@
   <!-- git init -->
   <h3><code>$ git init</code> - Creating a New Git Repository</h3>
   <p>This project currently has no Git repository. If you look in file manager or via terminal there is no .git/ directory. If you use <code>$ git status</code> it will show there is no Git repository with the message, "fatal: Not a git repository (or any of the parent directories): .git".</p>
-  <img src="../images/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/015.01.not-a-git-repository.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/015.01.not-a-git-repository.png" alt="git repository deleted" /></a>
   <p>Using <code>$ git init</code> to create a new repository is straight-forward. Here are steps for creating a new project with <code>$ git init</code></p>
 
   <p>Make sure you are in the sample-project/ directory and create the repository.</p>
   <pre>$ git init</pre>
-  <img src="../images//using-git-github/012.01.git-init.png" alt="showing use of git init" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/012.01.git-init.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/012.01.git-init.png" alt="showing use of git init" /></a>
 
   <!-- git add -->
   <h3><code>$ git add</code> - Staging Files</h3>
@@ -99,11 +102,11 @@
   <p>You do not have to add directories to Git. As you add files Git will preserve the directory structure. Let's go through an exercise to illustrate how <code>$ git add</code> works.</p>
   <h4>Reset the Sample Project</h4>
   <p><code>$ git status</code> will show that we have two files and one directory. However, as you know, there is a third file inside of css/ which <code>$ git status</code> does not show. All files are 'untracked', which make sense since we just created a blank repository.</p>
-  <img src="../images//using-git-github/020.01.git-status.png" alt="git status" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/020.01.git-status.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/020.01.git-status.png" alt="git status" /></a>
   <h4>Adding All Files At Once</h4>
   <p>Using <code>$ git add</code> with the <code>--all</code> option will add all files to the staging area at once, including the style.css file inside of css/. You can also use the shortcut <code>$ git add .</code> (the '.' is required).</p>
   <pre>$ git add .<br>$ git status</pre>
-  <img src="../images/using-git-github/021.01.git-add-dot.png" alt="git add --all" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/021.01.git-add-dot.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/021.01.git-add-dot.png" alt="git add --all" /></a>
   <h4>Add Files One At A Time</h4>
   <p>You can also add files one at a time. Let's reset everything by removing the .git/ folder so we can give that a try. This will also illustrate that a Git repository is just a folder. On Mac &amp; Linux you can use the below command or a file manager if you prefer.</p>
   <pre>$ rm -rf .git</pre>
@@ -111,21 +114,21 @@
   <pre>$ git status</pre>
   <p>Re-initialize the repository and check status. Status will show the 'untracked files' again.</p>
   <pre>$ git init<br>$ git status</pre>
-  <img src="../images/using-git-github/021.02.git-init-status.png" alt="git add --all" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/021.02.git-init-status.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/021.02.git-init-status.png" alt="git add --all" /></a>
   <p>Now we can demonstrate adding one file at a time.</p>
   <pre>$ git add README.md</pre>
   <p>As you can see, only README.md is staged (i.e., under 'Chagnes to be commited:')</p>
-  <img src="../images/using-git-github/022.01.git-add-one-file.png" alt="git add --all" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/022.01.git-add-one-file.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/022.01.git-add-one-file.png" alt="git add --all" /></a>
   <h4>Adding multiple files but not all</h4>
   <p>Now let's explore adding multiple files instead of all. To do so, we will need to add some files to our project. We will use <code>$ touch</code> to create the files and <code>$ls -l to see the newly created files</code></p>
   <pre>$ touch imagine.html<br>$ ls -l<br>$ cd css<br>$ touch master.css<br>$ ls -l<br>$ cd ..</pre>
-  <img src="../images/using-git-github/023.01.add-new-files.png" alt="git add --all" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/023.01.add-new-files.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/023.01.add-new-files.png" alt="git add --all" /></a>
   <p>Now we will add all files in the css/ directory. Remember, README.md was already staged and is still there.</p>
   <pre>$ git add css/*</pre>
-  <img src="../images/using-git-github/024.01.git-add-css-asterisk.png" alt="git add" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/024.01.git-add-css-asterisk.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/024.01.git-add-css-asterisk.png" alt="git add" /></a>
   <p>Finally, we will add all files in the current directory that start with 'i'. This will add imagine.html and index.html to the staging area.</p>
   <pre>$ git add i*</pre>
-  <img src="../images/using-git-github/025.01.git-add-i-asterisk.png" alt="git add" />
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/025.01.git-add-i-asterisk.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/025.01.git-add-i-asterisk.png" alt="git add" /></a>
 
   <!-- git commit -->
   <h3><code>$ git commit</code>- Adding Files to the Repository</h3>
@@ -138,7 +141,7 @@
   <h4>Let's commit our files.</h4>
   <p>This is the first time they are being committed and the traditional message for that is, "initial commit". Commit will move everything in the staging area to the repository. If the results of <code>$ git status</code> are not currently on your screen, use it first to see what you are committing.</p>
   <pre>$ git status<br>$ git commit -m "initial commit"</pre>
-  <a href="../images/using-git-github/026.01.git-commit.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/026.01.git-commit.png" alt="$ git commit"></a>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/026.01.git-commit.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/using-git-github/026.01.git-commit.png" alt="$ git commit"></a>
   <p>Using the above picture, let's take a closer look at the message produced by <code>$ git commit</code>.</p>
   <table>
     <tr>
@@ -251,22 +254,22 @@
   <p class="ke-callout ke-callout-warning">You may hear people refer to 'origin' as a remote. Don't be confused by this. Origin is the shortname for the remote repository which is on Github</p>
   <p>Let's do a brief exercise to learn about remotes. Make sure the current directory is workspace/ and then execute the below command.</p>
   <pre>$ git clone https://github.com/petehunt/webpack-howto.git</pre>
-  <a href="../images/using-git-github/027.01.git-clone-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/027.01.git-clone-webpack-howto.png" alt="git clone of webpack-howto"></a>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/027.01.git-clone-webpack-howto.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/using-git-github/027.01.git-clone-webpack-howto.png" alt="git clone of webpack-howto"></a>
   <p>You have just cloned (i.e., made a local copy of) the <a href="https://github.com/petehunt/webpack-howto">webpack-howto project</a>.</p>
   <p class="ke-callout ke-callout-info">There is no reason for downloading webpack-howto other than I have recently learned to use Webpack and am familiar with this repository.</p>
   <p>Change to the webpack-howto/ directory and then use <code>$ git status</code>.</p>
   <pre>$ cd webpack-howto<br>$ git status</pre>
-  <a href="../images/using-git-github/028.01.git-status-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/028.01.git-status-webpack-howto.png" alt="webpack-howto in file manager"></a>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/028.01.git-status-webpack-howto.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/using-git-github/028.01.git-status-webpack-howto.png" alt="webpack-howto in file manager"></a>
   <p>As you can see there is a Git repository there. Also take note where is says 'origin/master'. 'origin' is the short name for the remote and 'master' is the current branch.</p>
 
   <p>Now take a look at the files downloaded in a file manager. You can see that all the projects current files and the Git repository have been downloaded to your machine.</p>
-  <a href="../images/using-git-github/029.01.webpack-howto-file-manager.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/029.01.webpack-howto-file-manager.png" alt="webpack-howto in file manager"></a>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/029.01.webpack-howto-file-manager.png"><img class="img-responsive img-step-figure" src="http://klequis.com/klequis/wp-content/uploads/using-git-github/029.01.webpack-howto-file-manager.png" alt="webpack-howto in file manager"></a>
   <p>Using the <code>$ git remote -v</code> command will show you a list of remotes. Notice that the URL for the remote is the same one we used with <code>$ git clone</code> above.</p>
   <pre>$ git remote -v</pre>
-  <a href="../images/using-git-github/030.01.git-remote-v.png"><img src="../images/using-git-github/030.01.git-remote-v.png" alt="git remote -v" /></a>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/030.01.git-remote-v.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/030.01.git-remote-v.png" alt="git remote -v" /></a>
   <p>The shortname 'origin' has no special significance other than this is the default used by Git. To illustrate this point, let's add another remote using the same URL.</p>
   <pre>$ git remote add myremotename https://github.com/petehunt/webpack-howto.git<br>$ git remote -v</pre>
-  <a href="../images/using-git-github/031.01.got-remote-add.png"><img src="../images/using-git-github/031.01.got-remote-add.png" alt="git add remote" /></a>
+  <a href="http://klequis.com/klequis/wp-content/uploads/using-git-github/031.01.got-remote-add.png"><img src="http://klequis.com/klequis/wp-content/uploads/using-git-github/031.01.got-remote-add.png" alt="git add remote" /></a>
   <p>The above screenshot shows that you have added a new remote with a shortname of 'myremotename'.</p>
 
   <!-- $ git clone -->
