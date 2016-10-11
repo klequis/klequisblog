@@ -170,29 +170,84 @@
   </table>
 
   <!-- git remote -->
-
-  <p>
-    *outline**<br>
-
-    Master is branch ... know already<br>
-    origin is the name of remote<br>
-    Remote, explain 'remote'<br>
-    url's - make clear that they are the git hub repository url's and compare them to the actual url's to make sure you are correct.<br>
-    3 objects<br>
-    master -&ght; master from local master to remote master<br>
-  */outline**
-  </p>
   <h3><code>$ git remote</code> - What is a Remote?</h3>
-  <p>Before we get into <code>$ git push</code> we need to discuss remotes because 'push' uses 'remotes'. clone this repro, look at the remote ... ok great. We will discuss <code>$ git clone</code> later. For now, go back up one file directory and then issue the command as show.</p>
-  <pre>$ cd ..<br>$ git clone https://github.com/petehunt/webpack-howto.git</pre>
+  <p>As defined in the Git documentation, a remote is: "A repository which is used to track the same project but resides somewhere else." Your local Git repository can maintain one or more referenced to one or more remotes. This local reference is also called 'a remote'. It is like a bookmark you create in you web browser. It has a name and a URL.</p>
+  <p>The below diagram shows a local repository that has a remoted named 'origin' pointing to a remote repository on GitHub.</p>
+
+  <table class="git-remote center-table td-align-center-middle">
+    <tr>
+      <td class="github-synch-heading td-border-top td-border-right td-border-left" colspan="3">
+        <b>Local</b><br>(your computer)
+      </td>
+      <td>
+
+      </td>
+      <td class="github-synch-heading td-border-top td-border-right td-border-left" colspan="2">
+        <b>Remote</b><br>(GitHub)
+      </td>
+    </tr>
+    <tr>
+      <td class="td-border-left">
+        <i class="fa fa-files-o fa-2x" aria-hidden="true"></i>
+      </td>
+      <td>
+        <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
+      </td>
+      <td class="td-border-right">
+        <i class="fa fa-database fa-2x" aria-hidden="true"></i>
+      </td>
+      <td>
+        <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i><br>
+        <i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
+      </td>
+      <td class="td-border-right td-border-left">
+        <i class="fa fa-database fa-2x" aria-hidden="true"></i>
+      </td>
+    </tr>
+    <tr>
+      <td class="td-border-right td-border-left" colspan="3">
+        origin = https://github.com/petehunt/webpack-howto.git (fetch)
+      </td>
+      <td>
+
+      </td>
+      <td class="td-border-right td-border-left">
+
+      </td>
+    </tr>
+    <tr>
+      <td class="td-border-right td-border-bottom td-border-left" colspan="3">
+        origin = https://github.com/petehunt/webpack-howto.git (push)
+      </td>
+      <td class="td-border-right td-border-left">
+
+      </td>
+      <td class="td-border-right td-border-bottom">
+
+      </td>
+    </tr>
+    <tr>
+      <td class="td-footnote" colspan="5">
+        <i class="fa fa-database" aria-hidden="true"></i> = repository
+      </td>
+    </tr>
+    <tr>
+      <td class="td-footnote td-footnote-not-first" colspan="5">
+        The remote on GitHub is located at http://github.com/peterhunt/webpack-howto.git
+      </td>
+    </tr>
+  </table>
+  <p>Let's do a brief exercise to learn about remotes. Make sure you are in your workspace/ directory and then execute the below command.</p>
+  <pre>$ git clone https://github.com/petehunt/webpack-howto.git</pre>
   <a href="../images/using-git-github/027.01.git-clone-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/027.01.git-clone-webpack-howto.png" alt="git clone of webpack-howto"></a>
+  <p>You have just cloned (i.e., maked a local copy of) the <a href="https://github.com/petehunt/webpack-howto">webpack-howto project</a>.</p>
   <p class="ke-callout ke-callout-info">There is no reason for downloading webpack-howto other than I have recently learned to use Webpack and am familiar with this repository.</p>
   <p>Change to the webpack-howto/ directory and then use <code>$ git status</code>.</p>
   <pre>$ cd webpack-howto<br>$ git status</pre>
   <a href="../images/using-git-github/028.01.git-status-webpack-howto.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/028.01.git-status-webpack-howto.png" alt="webpack-howto in file manager"></a>
   <p>As you can see there is a Git repository there. Also take note where is says 'origin/master'. 'origin', which I explain more in a moment, is a remote and 'master' is the current branch.</p>
 
-  <p>Now take a look at the files downloaded in a file manager. You can see that all the projects current files and the Git repository has been downloaded to your machine.</p>
+  <p>Now take a look at the files downloaded in a file manager. You can see that all the projects current files and the Git repository have been downloaded to your machine.</p>
   <a href="../images/using-git-github/029.01.webpack-howto-file-manager.png"><img class="img-responsive img-step-figure" src="../images/using-git-github/029.01.webpack-howto-file-manager.png" alt="webpack-howto in file manager"></a>
   <p>Using the <code>$ git remote -v</code> command will show you the name of the remote and where it points to. Notice that the URL for the remote is the same one we used with <code>$ git clone</code> above.</p>
   <pre>$ git remote -v</pre>
