@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>unique values</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/flint-style.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/dev-style.css">
+  <link rel="stylesheet" href="../../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="container-fluid">
+<div class="panel panel-default">
+<div class="panel-body">
+
+  <h2>Finding Unique Values in an Array</h2>
+  <pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(findValue); // returns 'bca'<br><br>function findValue (element, index, array) {<br>  return arr.indexOf(element, index+1) === -1;<br>}</pre>
+  <h4>So why does this work?</h4>
+  <p>The strategy is to find each element only once. On each iteration filter passes findValue() an element and its index. findValue() look for the element starting at index+1, so it is not looking at the current element. If it finds another instance of the element's value it returns false. If it doesn't find another instance than the one past in is the last instance so it returns True. In this way, the function avoids double counting.</p>
+
+  <h2>Examining the JavaScript Functions Used</h2>
+  <div class="ke-callout ke-callout-info"><p>Remember, arrays are (0) zero based.</p>
+    <table id="tbl-arrays-zero-based" class="">
+      <tr>
+        <td>
+
+        </td>
+        <td class="td-align-center">
+          0
+        </td>
+        <td class="td-align-center">
+          1
+        </td>
+        <td class="td-align-center">
+          2
+        </td>
+        <td>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+
+        </td>
+        <td class="td-align-center">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </td>
+        <td class="td-align-center">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </td>
+        <td class="td-align-center">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </td>
+        <td>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="td-align-right">
+          arr = [
+        </td>
+        <td class="td-align-center">
+          "a",
+        </td>
+        <td  class="td-align-center">
+          "b",
+        </td>
+        <td  class="td-align-center">
+          "c"
+        </td>
+        <td class="td-align-left">
+          ]
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <h3><code>filter()</code></h3>
+  <p>The syntax of filter() is:</p>
+  <pre>var new_array = arr.filter(callback[, thisArg])</pre>
+  <p>We will only make use of the callback.</p>
+  <p>For each element in the array filter() will pass the callback 3 parameters:</p>
+  <ol>
+    <li>One element from the array</li>
+    <li>The index of the element passed (zero based)</li>
+    <li>The entire array</li>
+  </ol>
+  <p>The callback function will follow the below format which takes the 3 parameters passed in by filter(). The callback must return True or False. If True is returned the element passed in gets added to 'new_array'. If False is returned the element does not get added to new_array.</p>
+  <pre>function functioName(element, index, array) {<br>  // return True or False<br>}</pre>
+  <p>So, given our code ...</p>
+  <pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(findValue); // returns 'bca'<br><br>function findValue (element, index, array) {<br>  return arr.indexOf(element, index+1) === -1;<br>}</pre>
+  ... the first call to findValue will pass the parameters:</p>
+  <ol>
+    <li>element = "a"</li>
+    <li>index = 0</li>
+    <li>array = ["a", "b", "c", "a", "c", "a"]</li>
+  </ol>
+  <p>And the second call to findValue will pass the parameters</p>
+  <ol>
+    <li>element = "b"</li>
+    <li>index = 1</li>
+    <li>array = ["a", "b", "c", "a", "c", "a"]</li>
+  </ol>
+  <p>... etc., for each element in the array.</p>
+<h3>filter() Example</h3>
+<p>Using filter to find all even numbers would look as below.</p>
+
+<pre>arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];<br>arrEven = arr.filter(isEven);<br>function isEven(element) {<br>  return element % 2 = 0;<br>}<br>// retuns 2, 4, 6, 8</pre>
+filter() iterates over arr[] passing each element one by one to the callback function isEven(). isEven() returns True if element is even and False if it is odd. For each True returned form isEven(), filter() stores the tested in arrEven.
+
+<h2>indexOf()</h2>
+<p>indexOf() looks for a given value/element in an array and returns the position/index of the element if found or -1 if it is not found. Its syntax is as follows.</p>
+<pre>arr.indexOf(searchElement[, fromIndex = 0])</pre>
+<p>Where <i>searchElement</i> is the value being searched for and <i>fromIndex</i> is the starting position in the array to search from. If <i>fromIndex</i> is not specified the search begins from the first position which is 0. The example below shows that indexOf() will start searching at the position specified by <i>fromIndex</i> until it reaches the end of the array.</p>
+<pre>arr = ["a", "b", "c"];<br>var ret;<br>ret = arr.indexOf("a") // returns 0;<br>ret = arr.indexOf("a", 0) // also returns 0 because <i>indexFrom</i> is 0 which is the first element in the array.<br>ret = arr.indexOf("b") // returns 1 which is the second element in the array.<br>ret = arr.indexOf("b", 1) also returns 1<br>ret = arr.indexOf("b",2) // returns -1</pre>
+
+<h2>Let's walk though the proceedure</h2>
+<pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(function(e, i, arr) {<br>  p("e=" + e + " | i=" + i + " | arr=" +arr);<br>  return a2.indexOf(e, i+1) === -1;<br>}).reverse();</pre>
+<p>As stated, filter() will iterate over the array from the first element to the last passing it along with the index of the element and the entire array to the callback. Let's follow the iterations until a pattern emerges. The array is passed each time</p>
+<p>Iteration 1</p>
+<ol>
+  <li>element = "a"</li>
+  <li>index=0</li>
+</ol>
+
+
+
+
+<h2>Final Version</h2>
+<pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(function(e, i, arr) {<br>  p("e=" + e + " | i=" + i + " | arr=" +arr);<br>  return a2.indexOf(e, i+1) === -1;<br>}).reverse();</pre>
+
+
+
+<br><br>
+<!--
+  ** NOTE:
+  **      (1) all values returned are already in the array
+  **      (2) each value will only be returned once on the iteration it is not found
+  **      (3) each value will only be not found once
+  **      (Alternatively stated) Because each value will only be NOT found once, it is returned only once
+
+  > Look at each element in a2
+  > If you don't find the element at index+=, then true (include it)
+  e = a
+  i+1 = 1
+  indexOf = 3
+  return FALSE
+
+  e = b
+  i+1 = 2
+  indexOf = FALSE
+  return TRUE
+
+  ADD b
+
+  e = c
+  i+1 = 3
+  indexOf = TRUE
+  return FALSE
+
+  e = a
+  i+1 = 4
+  indexOf = TRUE
+  return FALSE
+
+  e = c
+  i+1 = 5
+  indexOf = FALSE
+  return TRUE
+
+  ADD c
+
+  e = a
+  i+1 = 6
+  indexOf = FALSE
+  return TRUE
+
+  ADD a
+
+         0    1    2    3    4    5
+  a2 = ["a", "b", "c", "a", "c", "a"];
+
+  order of not found: b, c, a
+
+         0    1    2    3    4    5
+  a2 = ["a", "c", "a", "c", "b", "a"];
+  order of not found: c, b, a
+  and that order revered is a, b, c which preserves the original order of first occurance.
+
+-->
+
+
+
+
+</div> <!-- panel-body -->
+</div> <!-- panel-default -->
+</div> <!-- container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+  // alert("Script");
+  $('img').click(function() {
+    var msg = $(this).attr("src");
+    alert(msg);
+  });
+</script>
+<script src="find-unique-values-in-array.js"></script>
+</body>
