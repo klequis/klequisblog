@@ -188,7 +188,6 @@ div.row.row-no-top-border {
   border-top: none;
 }
 
-
 /* Chart / Highlight Colors */
 .chart-color-one {
   background-color:#265a88;
@@ -242,6 +241,10 @@ div.row.row-no-top-border {
   padding-left: 0 !important;
 }
 
+/*
+ * Table Structure Styles
+ *
+*/
 /* table git-structure */
 #git-structure td {
   vertical-align: middle;
@@ -531,4 +534,27 @@ li ol.multilevel > li:before {
 }
 .td-footnote-not-first {
   padding-top: 0;
+}
+
+#tbl-arrays-zero-based {
+  max-width: 210px;
+  table-layout: fixed;
+  border: none;
+  vertical-align: middle;
+}
+
+#tbl-arrays-zero-based td {
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.td-align-right {
+  text-align: right;
+}
+.td-align-center {
+  text-align: center;
+}
+.td-align-right {
+  text-align: right;
 }
