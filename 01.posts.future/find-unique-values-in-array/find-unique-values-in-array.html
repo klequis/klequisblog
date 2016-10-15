@@ -20,7 +20,7 @@
 <div class="panel-body">
 
   <h2>Finding Unique Values in an Array</h2>
-  <pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(findValue); // returns 'bca'<br><br>function findValue (element, index, array) {<br>  return arr.indexOf(element, index+1) === -1;<br>}</pre>
+  <pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var new_array = arr.filter(findValue); // returns 'bca'<br><br>function findValue (element, index, array) {<br>  return arr.indexOf(element, index+1) === -1;<br>}</pre>
   <h4>So why does this work?</h4>
   <p>The strategy is to find each element only once. On each iteration filter passes findValue() an element and its index. findValue() look for the element starting at index+1, so it is not looking at the current element. If it finds another instance of the element's value it returns false. If it doesn't find another instance than the one past in is the last instance so it returns True. In this way, the function avoids double counting.</p>
 
@@ -94,7 +94,7 @@
   <p>The callback function will follow the below format which takes the 3 parameters passed in by filter(). The callback must return True or False. If True is returned the element passed in gets added to 'new_array'. If False is returned the element does not get added to new_array.</p>
   <pre>function functioName(element, index, array) {<br>  // return True or False<br>}</pre>
   <p>So, given our code ...</p>
-  <pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(findValue); // returns 'bca'<br><br>function findValue (element, index, array) {<br>  return arr.indexOf(element, index+1) === -1;<br>}</pre>
+  <pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var new_array = a2.filter(findValue); // returns 'bca'<br><br>function findValue (element, index, array) {<br>  return arr.indexOf(element, index+1) === -1;<br>}</pre>
   ... the first call to findValue will pass the parameters:</p>
   <ol>
     <li>element = "a"</li>
@@ -114,28 +114,179 @@
 <pre>arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];<br>arrEven = arr.filter(isEven);<br>function isEven(element) {<br>  return element % 2 = 0;<br>}<br>// retuns 2, 4, 6, 8</pre>
 filter() iterates over arr[] passing each element one by one to the callback function isEven(). isEven() returns True if element is even and False if it is odd. For each True returned form isEven(), filter() stores the tested in arrEven.
 
-<h2>indexOf()</h2>
+<h2><code>indexOf()</code></h2>
 <p>indexOf() looks for a given value/element in an array and returns the position/index of the element if found or -1 if it is not found. Its syntax is as follows.</p>
 <pre>arr.indexOf(searchElement[, fromIndex = 0])</pre>
 <p>Where <i>searchElement</i> is the value being searched for and <i>fromIndex</i> is the starting position in the array to search from. If <i>fromIndex</i> is not specified the search begins from the first position which is 0. The example below shows that indexOf() will start searching at the position specified by <i>fromIndex</i> until it reaches the end of the array.</p>
 <pre>arr = ["a", "b", "c"];<br>var ret;<br>ret = arr.indexOf("a") // returns 0;<br>ret = arr.indexOf("a", 0) // also returns 0 because <i>indexFrom</i> is 0 which is the first element in the array.<br>ret = arr.indexOf("b") // returns 1 which is the second element in the array.<br>ret = arr.indexOf("b", 1) also returns 1<br>ret = arr.indexOf("b",2) // returns -1</pre>
 
 <h2>Let's walk though the proceedure</h2>
-<pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(function(e, i, arr) {<br>  p("e=" + e + " | i=" + i + " | arr=" +arr);<br>  return a2.indexOf(e, i+1) === -1;<br>}).reverse();</pre>
-<p>As stated, filter() will iterate over the array from the first element to the last passing it along with the index of the element and the entire array to the callback. Let's follow the iterations until a pattern emerges. The array is passed each time</p>
-<p>Iteration 1</p>
-<ol>
-  <li>element = "a"</li>
-  <li>index=0</li>
-</ol>
+<pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var new_array = a2.filter(findValue); // returns 'bca'<br><br>function findValue (element, index, array) {<br>  return arr.indexOf(element, index+1) === -1;<br>}</pre>
+<p>As stated, filter() will iterate over the array from the first element to the last passing it along with the index of the element and the entire array to findValue(). findValue() will return True if a value is not found and False if it is. That may see a little backwards, but as you follow the steps below you will see we are interested the first time a value is not find, so it returns True for not found. Let's follow the iterations until a pattern emerges. The array is passed to findValue every time so I will not show that.</p>
 
+<div class="row">
+  <div class="col-md-12">
+    <table class="values-passed-table">
+      <tr>
+        <td><h4>Iteration 1</h4></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="td-align-left">
+          Values passed:
+        </td>
+        <td class="td-align-left">
+          element = <span class="highlight-blue">"a"</span>
+        </td>
+        <td class="td-align-left">
+          index = <span class="highlight-green">0</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row row-eq-height">
+  <div class="col-sm-4">
+    <table class="array-table">
+      <tr>
+        <td></td>
+        <td class="td-align-center highlight-green">0</td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="td-align-center"><i class="fa fa-arrow-down" aria-hidden="true"></i></td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="td-align-right">arr=[</td>
+        <td class="td-align-center highlight-blue">"a",</td>
+        <td class="td-align-center">"b",</td>
+        <td class="td-align-center">"c"</td>
+        <td class="td-align-center">"a"</td>
+        <td class="td-align-center">"c"</td>
+        <td class="td-align-center">"a"</td>
+        <td class="td-align-left">]</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="td-align-center"><i class="fa fa-arrow-up" aria-hidden="true"></i></td>
+        <td class="td-align-left" colspan="5"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="td-align-left" colspan="5">index +1</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-sm-8 col-vcenter">
+    <p>indexOf() starts looking for "a" from the second element (index + 1 = 1). It will find it at position 3 and so will return false and "a" will not be added to new_array</p>
+  </div>
+</div> <!-- row -->
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="values-passed-table">
+      <tr>
+        <td><h4>Iteration 2</h4></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="td-align-left">
+          Values passed:
+        </td>
+        <td class="td-align-left">
+          element = <span class="highlight-blue">"b"</span>
+        </td>
+        <td class="td-align-left">
+          index = <span class="highlight-green">1</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row row-eq-height">
+  <div class="col-sm-4">
+    <table class="array-table">
+      <tr>
+        <td></td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center highlight-green">1</td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td class="td-align-center"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="td-align-center"><i class="fa fa-arrow-down" aria-hidden="true"></i></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="td-align-right">arr=[</td>
+        <td class="td-align-center">"a",</td>
+        <td class="td-align-center highlight-blue">"b",</td>
+        <td class="td-align-center">"c"</td>
+        <td class="td-align-center">"a"</td>
+        <td class="td-align-center">"c"</td>
+        <td class="td-align-center">"a"</td>
+        <td class="td-align-left">]</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="td-align-center"><i class="fa fa-arrow-up" aria-hidden="true"></i></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="td-align-left" colspan="5">index +1</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-sm-8 col-vcenter">
+    <p>indexOf() starts looking for "b" from the third element (index + 1 = 2). It will NOT find it at this position or any of the remaining positions and so will return Ture (it is not found) and "b" will be added to new_array. That is the odd part. Since "b" will not be found on this iteration or any of the remaining ones we can count it now and it will not get counted again.</p>
+  </div>
+</div> <!-- row -->
+
+
+</div> <!-- panel-body -->
 
 
 
 <h2>Final Version</h2>
-<pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var a3 = a2.filter(function(e, i, arr) {<br>  p("e=" + e + " | i=" + i + " | arr=" +arr);<br>  return a2.indexOf(e, i+1) === -1;<br>}).reverse();</pre>
+<p>The above solution will not return the values in the order they originally occurred. The below will.</p>
+<pre>var a2 = ["a", "b", "c", "a", "c", "a"];<br>var new_array = a2.filter(function(e, i, arr) {<br>  return arr.indexOf(e, i+1) === -1;<br>}).reverse();</pre>
 
-
+<h2>Credits</h2>
+<p>Thank you to tjameson for his solution to this problem which can be found <a href="http://stackoverflow.com/questions/13486479/how-to-get-an-array-of-unique-values-from-an-array-containing-duplicates-in-java">here</a>.</P>
 
 <br><br>
 <!--

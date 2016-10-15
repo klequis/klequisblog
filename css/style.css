@@ -558,3 +558,57 @@ li ol.multilevel > li:before {
 .td-align-right {
   text-align: right;
 }
+
+.array-table {
+  max-width: 350px;
+  min-width: 250px;
+  table-layout: fixed;
+  border: none;
+  vertical-align: middle;
+  word-break: keep-all;
+}
+
+.array-table td {
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.values-passed-table {
+  max-width: 375px;
+  table-layout: fixed;
+  border: none;
+  vertical-align: middle;
+}
+
+.values-passed-table td {
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.highlight-blue {
+  background-color: lightblue;
+}
+.highlight-green {
+  background-color: lightgreen;
+}
+
+/*
+ * Vertically center in a Bootstrap column
+ */
+ .col-vcenter {
+   display: flex;
+   align-items: center;
+ }
+
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
