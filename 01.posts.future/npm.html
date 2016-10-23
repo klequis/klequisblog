@@ -38,17 +38,41 @@
   <li><a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally#installing-npm-packages-locally">Installing npm packages locally</a></li>
   <li>Use a package.json file</li>
   <li><a href="https://docs.npmjs.com/misc/semver">The semantic versioner for npm</a> $npm install semver</li>
+  <li>installing globally (for things like grunt where you want to use it from the command line)</li>
+  <li><a href="https://docs.npmjs.com/how-npm-works/npm3-dupe">npm deduping</a> $ npm dedupe</li>
+  <li><a href="https://docs.npmjs.com/how-npm-works/npm3-nondet">npm3 Non-determinism</a>. Depending on install order the tree in node_modules may differ between machines. However, all the dependencies are there and there is not actual difference to the application. To get the tree structures to match, delete the node_modules folder and run $ npm install.</li>
 </ul>
+
 
 <h2>NPM Cheatsheet</h2>
 check node version | $ node -v <br>
 install latest version of node | $ npm@latest -g <br>
 find path to node install directory | $ npm config get prefix <br>
 install a module | npm install <package_name> <br>
+see if you have outdated packages (means there are updates that meet your semver rules. It wont change anything) | npm outdated<br>
+get updates to packages currently in project | $ npm update<br>
+uninstall a local package | $ npm uninstall <package> --save || --save-dev<br>
+list outdated global packages | npm outdated -g --depth=0<br>
+update global packages | npm install -g <package><br>
+add - update global packages for npm ver > 2.6.1 | npm update -g<br>
+uninstall global package | npm uninstall -g <package><br>
+see the npm tree in terminal | $ tree -d node_modules/ OR $ npm ls<br>
+see top level / primary dependencies | npm ls --depth=0 <br>
+get rid of duplicate modules in dependency tree | $ npm dedupe<br>
 
 
+<h2>Topic Info</h2>
+<h3>Semantic Versioning</h3>
+https://docs.npmjs.com/getting-started/semantic-versioning <br>
+<a href="https://docs.npmjs.com/misc/semver">granular semver ranges</a><br>
+<h4>Semver for consumers</h4>
+If you were starting with a package 1.0.4, this is how you would specify the ranges:<br>
+* Patch releases: 1.0 or 1.0.x or ~1.0.4<br>
+* Minor releases: 1 or 1.x or ^1.0.4<br>
+* Major releases: * or x<br>
 
-
+<h2>Some Notes</h2>
+<p>If you are creating a npm package the default file name is index.js</p>
 
 </div> <!-- panel-body -->
 </div> <!-- panel-default -->
