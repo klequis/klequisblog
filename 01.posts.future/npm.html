@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>part02.git</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+<h1>Using Git</h1>
+
+<div class="container-fluid">
+<div class="panel panel-default">
+<div class="panel-body">
+
+
+<h2>About NPM</h2>
+<p>NPM is not only for using other people's modules/packages. You can use it for your own project to modulaize you project and make it possible for multiple developers to integrate their work via npm modules.</p>
+<p>It isn't just for server side node.js, there are modules that are not for node.js such as packages that enhance the commendline and front-end package such as bootstrap..</p>
+
+<h2>Features of interest</h2>
+<ul>
+  <li>Organizations</li>
+  <li></li>
+</ul>
+
+<h2>Important Topics</h2>
+<ul>
+  <li><a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally#installing-npm-packages-locally">Installing npm packages locally</a></li>
+  <li>Use a package.json file</li>
+  <li><a href="https://docs.npmjs.com/misc/semver">The semantic versioner for npm</a> $npm install semver</li>
+</ul>
+
+<h2>NPM Cheatsheet</h2>
+check node version | $ node -v <br>
+install latest version of node | $ npm@latest -g <br>
+find path to node install directory | $ npm config get prefix <br>
+install a module | npm install <package_name> <br>
+
+
+
+
+
+</div> <!-- panel-body -->
+</div> <!-- panel-default -->
+</div> <!-- container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+  // alert("Script");
+  $('img').click(function() {
+    var msg = $(this).attr("src");
+    alert(msg);
+  });
+</script>
+
+</body>
