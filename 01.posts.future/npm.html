@@ -43,6 +43,15 @@
   <li><a href="https://docs.npmjs.com/how-npm-works/npm3-nondet">npm3 Non-determinism</a>. Depending on install order the tree in node_modules may differ between machines. However, all the dependencies are there and there is not actual difference to the application. To get the tree structures to match, delete the node_modules folder and run $ npm install.</li>
 </ul>
 
+<h2>Node Installation - What Goes Where?</h2>
+<ul>
+  <li>Local install puts stuff in ./node_modules of current package root</li>
+  <li>global install (with -g): puts stuff in /usr/local or whereever node is installed</li>
+  <li>Install locally if you are going to require() it.</li>
+  <li>install globally if you want to run it from the command line</li>
+  <li>if you need local and global then install it in both places or use $ npm link.</li>
+</ul>
+
 
 <h2>NPM Cheatsheet</h2>
 check node version | $ node -v <br>
@@ -59,7 +68,8 @@ uninstall global package | npm uninstall -g <package><br>
 see the npm tree in terminal | $ tree -d node_modules/ OR $ npm ls<br>
 see top level / primary dependencies | npm ls --depth=0 <br>
 get rid of duplicate modules in dependency tree | $ npm dedupe<br>
-
+see a set of configuration parameters that are internal to npm, and are defaults if nothing else is specified | $ npm config ls -l<br>
+find where node is installed | $ which npm <br>
 
 <h2>Topic Info</h2>
 <h3>Semantic Versioning</h3>
