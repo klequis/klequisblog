@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>14.git github</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+<div class="panel panel-default">
+<div class="panel-body">
+
+
+  <h1>Arrow Functions</h1>
+
+  <p>This guide is for those who understand traditional JavaScript function but are not familiar with arrow functions. It will show tradition functions and those same functions rewritten with arrow syntax.</p>
+
+  <h2>What Are Arrow Functions?</h2>
+  <p>Arrow functions do not introduce any new functionality / abilities to JavaScript. They are simply a new  and briefer syntax for writing functions that could be written with the traditional function() {} syntax.</p>
+
+  <h2>Must I Use Arrow Functions?</h2>
+  <p>No. There is no requirement to do so and there is nothing you can do with arrow functions that you cannot do with traditional functions.</p>
+
+  <h2>Should I Use Arrow Functions?</h2>
+  <p>That is up to you but I suggest you get to know them well because, unless you write code in isolation, and few if any of us do, you are going to be reading code that has them. You may even work on a team that requires their use.</p>
+
+  <p class="ke-callout ke-callout-info">All the code in this guide can be downloaded from GitHub http://kdkdkd</p>
+
+  The below examples illustrate the following rules
+
+  <ol class="multilevel">
+    <li>If the arrow functions takes no parameters you must use <code>()</code> to indicate were they would be. <pre>() =&gt; { \\ body }</pre>
+    </li>
+    <li>If the arrow function takes one parameter you do not need the <code>()</code>. <pre>x =&gt; { \\ body }</pre></li>
+    <li>If the arrow function takes 2 or more parameters you must have the <code>()</code>. <pre>(x, y) =&gt; { \\ body }</pre></li>
+    <li>If the function body is only one statement you <b>do not</b> need <code>{}</code>and you <b>do not</b> need a <code>return</code>  statement. <pre>(x, y) =&gt; x + y</pre></li>
+    <li>If the function body has more than one statement you <b>do</b> need <code>{}</code> and you <b>do</b> need a <code>return</code> statement. <pre>(x) =&gt; {
+         var y = x + 1;
+         return y * 2;
+       }</pre></li>
+ </ol>
+  /*
+
+  <h2>Example 01</h2>
+  <ul>
+    <li>This example function takes no parameters and returns a string.</li>
+    <li>The traditional function indicates there are no parameters by having empty '()' following the 'function' keyword.</li>
+    <li>The arrow functions indicates no parameters by having the empty '()' on the left side of the arrow.</li>
+    <li>An arrow function that takes no parameters <b>must</b> have () on the left side of the =&gt; to indicate this fact.</li>
+    <li>If the body of an arrow function is only one statement you <b></b> need to enclose the body in <code>{}</code> and you do not need a <code>return</code> statement.
+   </ul>
+  */
+  var traditional01 = function() {
+    return "traditional01";
+  };
+  var arrow01 = () => "arrow01";
+  write(traditional01());
+  write(arrow01());
+
+  /*
+   * EXAMPLE 02
+   *
+   * - With arrow functions, when you have only one parameter, the parameter
+   *   does not require '()', but you can put there there if you prefer.
+  */
+  var traditional02 = function(str) {
+    return str;
+  };
+  var arrow02 = str => str;
+  write(traditional02("traditional02"));
+  write(arrow02("arrow02"));
+
+  /*
+   * EXAMPLE 03
+   * - With arrow functions, you need '()' if you have 2 or more arguments.
+  */
+  var traditional03 = function(str1, str2) {
+    return str1 + " " + str2;
+  };
+  var arrow03 = (str1, str2) => str1 + " " + str2;
+  write(traditional03("this is", "traditional3"));
+  write(arrow03("this is", "arrow03"));
+
+  /*
+   * EXAMPLE 04
+   * - Use '{}'  and a Return statement if the function body is more than
+   *   one statement.
+  */
+  var traditional04 = function(str) {
+    var strOut;
+    if (str.length > 4) {
+      strOut = str + " is more than 4 characters";
+    } else {
+      strOut = str + " is less than 4 characters";
+    }
+    return strOut;
+  };
+  var arrow04 = str => {
+    var strOut;
+    if (str.length > 4) {
+      strOut = str + " is more than 4 characters";
+    } else {
+      strOut = str + " is less than 4 characters";
+    }
+    return strOut;
+  };
+  write(traditional04("traditional04"));
+  write(arrow04("arrow04"));
+
+  ????????????????????????????????
+  /???????????????????????????????????????/
+  6
+  /*
+   * EXAMPLE 05
+   * - If you have more than one statement in the function body you not
+   *   only need the '{}' but you also need a return statement if you
+   *   are returning a value.
+  */
+  var traditional05 = function(str) {
+    var newStr;
+    if (str.length > 4) {
+      newStr = str + " is more than 4 characters";
+    } else {
+      newStr = str + " is less than 4 characters";
+    }
+    return newStr;
+  };
+  var arrow05 = str => {
+    var newStr;
+    if (str.length > 4) {
+      newStr = str + " is more than 4 characters";
+    } else {
+      newStr = str + " is less than 4 characters";
+    }
+    return newStr;
+  };
+  write(traditional05("1234"));
+  write(arrow05("12345", "arrow03"));
+
+  /*
+   * Utility functions
+  */
+  // This just adds "<br><br>" to the message for spacing.
+  function write(msg) {
+    document.write(msg + "<br><br>");
+  }
+
+
+</div> <!-- panel-body -->
+</div> <!-- panel-default -->
+</div> <!-- container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+  // alert("Script");
+  $('img').click(function() {
+    var msg = $(this).attr("src");
+    alert(msg);
+  });
+</script>
+
+</body>
