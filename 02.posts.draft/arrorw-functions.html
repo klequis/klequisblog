@@ -20,10 +20,6 @@
 <div class="container-fluid">
 <div class="panel panel-default">
 <div class="panel-body">
-
-
-  <h1>Arrow Functions</h1>
-
   <p>This guide is for those who understand traditional JavaScript function but are not familiar with arrow functions. It will show tradition functions and those same functions rewritten with arrow syntax.</p>
 
   <h2>What Are Arrow Functions?</h2>
@@ -35,17 +31,17 @@
   <h2>Should I Use Arrow Functions?</h2>
   <p>That is up to you but I suggest you get to know them well because, unless you write code in isolation, and few if any of us do, you are going to be reading code that has them. You may even work on a team that requires their use.</p>
 
-  <p class="ke-callout ke-callout-info">All the code in this guide can be downloaded from GitHub http://kdkdkd</p>
+  <p class="ke-callout ke-callout-info">All the code in this guide can be downloaded from GitHub <a href="https://github.com/klequis/intro-arrow-functions">Arrow Functions with JavaScript</a></p>
 
   <h2>Arrow Function Rules</h2>
   <p>The examples in this guide will illustrate the following rules.</p>
 
   <ol>
-    <li>If the arrow functions takes no parameters you must use <code>()</code> to indicate were they would be. <pre>() =&gt; { \\ body }</pre>
+    <li>If the arrow functions takes no parameters you <b>must</b> use <code>()</code> to indicate were they would be. <pre>() =&gt; { \\ body }</pre>
     </li>
+    <li>If the arrow function takes only one parameter you <b>do not</b> need the <code>()</code>. <pre>x =&gt; { \\ body }</pre></li>
+    <li>If the arrow function takes 2 or more parameters you <b>must</b> have the <code>()</code>. <pre>(x, y) =&gt; { \\ body }</pre></li>
     <li>If the function body is only one statement you <b>do not</b> need <code>{}</code>and you <b>do not</b> need a <code>return</code>  statement. <pre>(x, y) =&gt; x + y</pre></li>
-    <li>If the arrow function takes only one parameter you do not need the <code>()</code>. <pre>x =&gt; { \\ body }</pre></li>
-    <li>If the arrow function takes 2 or more parameters you must have the <code>()</code>. <pre>(x, y) =&gt; { \\ body }</pre></li>
     <li>If the function body has more than one statement you <b>do</b> need <code>{}</code> and you <b>do</b> need a <code>return</code> statement. <pre>(x) =&gt; {
          var y = x + 1;
          return y * 2;
@@ -53,35 +49,35 @@
  </ol>
 
   <h2>Examples</h2>
+  <p class="ke-callout ke-callout-info">In each arrow function example the arrow starts after the 'variableName = '. I.e., if you have <code>var arrow01 = <b>() = "hello"</b>;</code>, the arrow function is the bold part.</p>
   <h3>Example 01</h3>
-  Rule 1
-  Rule 2
   <ul>
+    <li><b>Rule 1:</b> An arrow function that takes no parameters <b>must</b> have () on the left side of the =&gt; to indicate this fact.</li>
     <li>This example function takes no parameters and returns a string.</li>
     <li>The traditional function indicates there are no parameters by having empty '()' following the 'function' keyword.</li>
     <li>The arrow functions indicates no parameters by having the empty '()' on the left side of the arrow.</li>
-    <li><b>Rule 1:</b> An arrow function that takes no parameters <b>must</b> have () on the left side of the =&gt; to indicate this fact.</li>
-    <li><b>Rule2:</b> If the body of an arrow function is only one statement you <b></b> need to enclose the body in <code>{}</code> and you do not need a <code>return</code> statement.
    </ul>
-  <pre>// traditional<br>var traditional01 = function() {<br>  return "traditional01";<br>};<br><br>// arrow<br>var arrow01 = () =&gt; "arrow01";</pre>
+  <pre>// traditional<br>var traditional01 = function() {<br>  return "traditional01";<br>};<br><br>// arrow<br>var arrow01 = <b>() =&gt; "arrow01"</b>;</pre>
 
   <h3>Example 02</h3>
   <ul>
-    <li><b>Rule03:</b> With arrow functions, when you have only one parameter, the parameter does not require '()', but you can put them there there if you prefer.</li>
+    <li><b>Rule 2:</b> If the arrow function takes only one parameter you <b>do not</b> need the <code>()</code>.</li>
   </ul>
-  <pre>// traditional<br>  var traditional02 = function(str) {<br>  return str;<br>};<br><br>// arrow<br>var arrow02 = str =&gt; str;</pre>
+  <pre>// traditional<br>  var traditional02 = function(str) {<br>  return str;<br>};<br><br>// arrow<br>var arrow02 = <b>str =&gt; str</b>;</pre>
 
    <h3>Example 03</h3>
    <ul>
-     <li><b>Rule</b> With arrow functions, if there are 2 or more parameters you need '()'.</li>
+     <li><b>Rule 3:</b> If the arrow function takes 2 or more parameters you <b>must</b> have the <code>()</code>.</li>
    </ul>
-   <pre>// traditional<br>var traditional03 = function(str1, str2){<br>return str1 + " " + str2;<br>};<br><br>// arrow<br>var arrow03 = (str1, str2) =&gt; str1 + " " + str2;<br></pre>
+   <pre>// traditional<br>var traditional03 = function(str1, str2){<br>return str1 + " " + str2;<br>};<br><br>// arrow<br>var arrow03 = <b>(str1, str2) =&gt; str1 + " " + str2</b>;<br></pre>
 
   <h3>Example 04</h3>
   <ul>
-    <li><b>Rule 5:</b>If the body is more than one statement, bot {}'  and a Return statement are required.</li>
+    <li><b>Rule 4:</b> If the function body is only one statement you <b>do not</b> need <code>{}</code>and you <b>do not</b> need a <code>return</code>  statement.</li>
+    <li><b>Rule 5:</b> If the function body has more than one statement you <b>do</b> need <code>{}</code> and you <b>do</b> need a <code>return</code> statement.</li>
   </ul>
-  <pre>// traditional<br>var traditional04 = function(str) {<br>  var strOut;<br>  if (str.length &gt; 4) {<br>    strOut = str + " is more than 4 characters";<br>  } else {<br>    strOut = str + " is less than 4 characters";<br>  }<br>  return strOut;<br>};<br><br>// arrow<br>var arrow04 = str =&gt; {<br>  var strOut;<br>  if (str.length &gt; 4) {<br>    strOut = str + " is more than 4 characters";<br>  } else {<br>    strOut = str + " is less than 4 characters";<br>  }<br>  return strOut;<br>};</pre>
+  <pre>// traditional<br>var traditional04 = function(str) {<br>  var strOut;<br>  if (str.length &gt; 4) {<br>    strOut = str + " is more than 4 characters";<br>  } else {<br>    strOut = str + " is less than 4 characters";<br>  }<br>  return strOut;<br>};<br><br>// arrow<br>var arrow04 = <b>str =&gt; {<br>  var strOut;<br>  if (str.length &gt; 4) {<br>    strOut = str + " is more than 4 characters";<br>  } else {<br>    strOut = str + " is less than 4 characters";<br>  }<br>  return strOut;<br>}</b>;</pre>
+  <p class="ke-callout ke-callout-goal">That is a good start. As a way to learn, I highly suggest you take functions you have already written & understand using traditional functions and rewrite them as arrow functions. Start simple!</p>
 </div> <!-- panel-body -->
 </div> <!-- panel-default -->
 </div> <!-- container-fluid -->
