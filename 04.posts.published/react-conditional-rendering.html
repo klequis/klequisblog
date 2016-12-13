@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>React-Play</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/flint-style.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/dev-style.css">
+  <link rel="stylesheet" href="../../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+<div class="panel panel-default">
+<div class="panel-body">
+  <p>This guide will show you how to use JavaScript control structures to vary what gets rendered based on conditions. The conditions are often changes in state or a response to a UI event.</p>
+  <div class="ke-callout ke-callout-info">
+    <p>This guide is part of the series React Play. You can download all the code for the series from GitHub <a href="https://github.com/klequis/react-play">React Play</a>.</p>
+    <p>To see the code run, open the file /app/templates/index.js in your browser. The code has been tested in Firefox but should run in Chrome just as well.</p>
+  </div>
+  <!--more-->
+  <p class="ke-callout ke-callout-warning">In case the comment about Firefox vs Chrome raises your concern I'll explain. The example code uses some ES6 (newer JavaScript) features. I highly suspect both Chrome and Firefox support them but I have not tried Chrome. For production code I use Webpack with Babel to convert the code to ES5. I have left these out to keep the examples simpler.</p>
+
+  <h2>Using Element Variables</h2>
+  <p>Element variables are simple variables that contain a React component. The basic structure is like this:</p>
+  <pre>var element = null;<br>if (condition) {<br>  element = &lt;ComponentA /&gt;<br>} else {<br>  element = &lt;ComponentB /&gt;<br>}</pre>
+  <p><code>element</code> can then be used inside of <code>render()</code>.</p>
+  <p>In the example code, open the file /app/components/Home.jsx and find comment // (A). The code appears below.</p>
+  <pre>let rectangle = null;<br>if (this.state.flag) {<br>  rectangle = &lt;BlueRectangle /&gt;;<br>} else {<br>  rectangle = &lt;RedRectangle /&gt;;<br>}</pre>
+  <p>This code checks the value of the state variable 'flag' which is either true or false. If true, rectangle is set to &lt;BlueRectange&gt; or if false &lt;RedRectange&gt;. If you want to see &lt;BlueTriangle /> rendered, change the value of 'flag' to true.</p>
+  <p><code>rectangle</code> is then used inside <code>render()</code> where it appears as <code>{rectangle}</code>.</p>
+  <p>The <code>rectangle</code> variable is used inside of <code>return()</code> where its current value will be rendered.</p>
+  <pre>return(<br>  &lt;div&gt;<br>    &lt;Warning /&gt;<br>    &lt;Message flag={this.state.flag} /&gt;<br>    <b>{rectangle}</b><br>  &lt;/div&gt;<br>);</pre>
+
+  <h2>Simple <code>if</code></h2>
+  <p>You can use a simple <code>if</code> statement to determine what gets returned from a component.</p>
+  <p>Open the file /app/components/Message.jsx. The code is below.</p>
+  <pre>const Message = function(props) {<br>  if (props.flag) {<br>    return &lt;h1&gt;Hello&lt;/h1&gt;;<br>  } else {<br>    return &lt;h1&gt;Good Bye&lt;/h1&gt;;<br>  }<br>}</pre>
+  <p>If <code>props.flag</code> is <code>true</code> then "Hello" inside of an H1 will be returned, and if false "Good Bye". The example is very simple but you can use more complex conditions as needed or even return other component.</p>
+
+  <h2>Returning <code>null</code></h2>
+  <p>A component can prevent itself from being rendered by returning <code>null</code>. This is useful in the case where the parent component does not have knowledge of the one or more aspects of the components state.</p>
+  <p>Open the file /app/components/Warning.jsx. The code is shown below.</p>
+
+  <pre>const Warning = function(props) {<br>  let randomNumber = Math.random();<br>  if (randomNumber &lt; 0.5) {<br>    return null;<br>  }  <br>return (<br>  &lt;div className="warning"&gt;<br>    &lt;b&gt;Ignore this. Things are really OK.&lt;/b&gt;<br>  &lt;/div&gt;<br>  );<br>}</pre>
+  <p>The code uses <code>Math.random()</code> to generate a number between 0 and 1. If the number is &lt; 0.5 the component returns <code>null</code> and nothing will be rendered. If the number is &gt;= 0.5 a message will be returned. There is no technical reason to have this logic inside the component. However, since it is not needed outside the component it is cleaner to safely encapsulate it inside of the component.</p>
+
+</div> <!-- panel-body -->
+</div> <!-- panel-default -->
+</div> <!-- container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+  // alert("Script");
+  $('img').click(function() {
+    var msg = $(this).attr("src");
+    alert(msg);
+  });
+</script>
+
+</body>
