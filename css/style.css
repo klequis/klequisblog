@@ -614,7 +614,7 @@ li ol.multilevel > li:before {
 }
 
 #tbl-component-model {
-  max-width: 110px;
+  max-width: 210px;
   table-layout: fixed;
   border: none;
   vertical-align: middle;

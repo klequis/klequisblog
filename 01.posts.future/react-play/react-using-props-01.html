@@ -21,13 +21,14 @@
 <div class="panel panel-default">
 <div class="panel-body">
   <p>In react 'props' are used to pass properties (name value pairs) from parent components to child components. 'Props' is short for properties and properties are like variables that you create.</p>
+  <!--more-->
   <h2>What is a 'Name Value Pair'?</h2>
-  <p>Name value pairs are extremely common in programming. A name value pair is simply a name that holds a value. I a way, variables are name value pairs where name=value. If I have a variable 'model' and set its value to "Camery" then the name value pair is 'make=Camery'</p>
+  <p>Name value pairs are extremely common in programming. A name value pair is simply a name that holds a value. I a way, variables are name value pairs where name=value. If I have a variable 'model' and set its value to "Camry" then the name value pair is 'make=Camry'</p>
   <p>Like JavaScript variables, React properties can hold differty types of values.</p>
   <pre>make = "toyta" // string<br>cylinders=6 // number<br>types=["sedan", "suv", "sport"] // array<br>colors={interior: "white", exterior: "red"} // object</pre>
 
   <h2>Component Model</h2>
-  <p>React breaks the UI into complnents and the components are arrenged in a hierarchy with parent / child relationships. The component model in our example is show below. It shows that Home is the parent/owner of Auto01 through Auto04.</p>
+  <p>React breaks the UI into components and the components are arranged in a hierarchy with parent / child relationships. The component model in our example is show below. It shows that Home is the parent/owner of Auto01 through Auto04.</p>
   <table id="tbl-component-model">
     <tr>
       <td colspan="2" class="tbl-component-model-col-1 chart-color-one">Home</td>
@@ -57,15 +58,16 @@
   <p>Open /app/components/Auto01.jsx where you can see it makes use of <code>props.make</code>.</p>
   <pre>const Auto01 = function Auto(props) {<br>  return (<br>    &lt;div&gt;<br>      &lt;h3&gt;Auto01 - using one prop&lt;/h3&gt;<br>      &lt;p&gt;My car is a <b>{props.make}</b>&lt;/p&gt;<br>    &lt;/div&gt;<br>  )<br>}</pre>
   <p>Looking back at Home you can see Auto01 is rendered a second time. This time <code>make="Mazda"</code>.</p>
+
   <h3>Passing Multiple Props</h3>
-  <p>Looking in Home agin you can see Home renders Auto02 passing it 3 props.</p>
+  <p>Looking in Home again you can see Home renders Auto02 passing it 3 props.</p>
   <pre>&lt;Auto02 <b>make="Toyota" model="Highlander" type="SUV"</b> /&gt;</pre>
   <p>Looking at Auto2.jsx you can see where the 3 props are used.</p>
   <pre>const Auto02 = function Auto(props) {<br>  return (<br>    &lt;div&gt;<br>      &lt;h3&gt;Auto02 - using three props&lt;/h3&gt;<br>      &lt;p&gt;My car is a <b>{props.make} {props.model} {props.type}</b>&lt;/p&gt;<br>    &lt;/div&gt;<br>  )<br>}<br></pre>
 
   <div class="ke-callout ke-callout-info">
     <h4>When to use <code>{}</code> around props?</h4>
-    <p>You may have noticed that when passing props the format is <code>propName="propValue"</code> without <code>{}</code> but when using props the format is <code>{props.propName}</code> with <code>{}</code>. The difference here is not between passing vs. using props but between using strings vs. using JavaScropt.</p>
+    <p>You may have noticed that when passing props the format is <code>propName="propValue"</code> without <code>{}</code> but when using props the format is <code>{props.propName}</code> with <code>{}</code>. The difference here is not between passing vs. using props but between using strings vs. using JavaScript.</p>
     <p>Whenever you are using JavaScript inside of <a href="https://facebook.github.io/jsx/">JSX</a>, the JavaScript needs to be inside of '{}'.</p>
     <p>The below is passing a string.</p>
     <pre>&lt;ComponentName <b>make="Toyota"</b> /&gt;</pre>
@@ -73,6 +75,7 @@
     <pre>&lt;Auto01 color={sectionColor} /&gt;</pre>
     <p>... where 'color' is the property name and {sectionColor} passes the current value of the sectionColor variable.</p>
   </div>
+
   <h3>Passing an Object</h3>
   <p>To pass an object, use JavaScript object syntax for the property. Home shows how to pass an object. Note that the object is JavaScript and therefore must be inside of '{}'.</p>
   <pre>&lt;Auto03 <b>car={{make: "Inifinti", model: "Q60", type: "Coupe"}}</b> /&gt;</pre>
@@ -85,20 +88,8 @@
   <p>Auto04 shows using the array.</p>
   <pre>&lt;p&gt;Hello, <b>{props.clientName[0]} {props.clientName[1]} {props.clientName[1]}</b>&lt;/p&gt;</pre>
 
-
   <h2>What's Next</h2>
-  <p>You would rarely embed values directly into your JSX as they are essentiall hard coded and could just as easily be put into the child component. You will almost always be passing the value of variables. This will be demonstrated in the next example where you will also learn how to maintain state (i.e., maintaining/preserving the value of variables).</p>
-
-
-
-
-
-
-
-
-
-
-
+  <p>You would rarely embed values directly into your JSX as they are essentially hard coded and could just as easily be put into the child component. You will almost always be passing the value of variables. This will be demonstrated in the next example where you will also learn how to maintain state (i.e., maintaining/preserving the value of variables).</p>
 
 </div> <!-- panel-body -->
 </div> <!-- panel-default -->
