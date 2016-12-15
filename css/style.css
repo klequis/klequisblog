@@ -209,7 +209,7 @@ div.row.row-no-top-border {
 }
 
 .chart-color-five {
-  background-color:#c12e2a;
+  background-color: #c12e2a;
 
   color:white;
 }
@@ -611,4 +611,33 @@ li ol.multilevel > li:before {
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
+}
+
+#tbl-component-model {
+  max-width: 110px;
+  table-layout: fixed;
+  border: none;
+  vertical-align: middle;
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+#tbl-component-model td {
+  padding: 2px;
+  overflow: hidden;
+  border: none;
+}
+
+#tbl-component-model td.td-align-right {
+  padding-right: 10%;
+}
+
+.tbl-component-model-col-1 {
+  width: 50px;
+  font-weight: bold;
+}
+
+
+.fa-angle-double-right {
+  color: #265a88;
 }
