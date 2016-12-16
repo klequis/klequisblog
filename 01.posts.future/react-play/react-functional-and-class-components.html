@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>React Play</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/flint-style.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/dev-style.css">
+  <link rel="stylesheet" href="../../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+<div class="panel panel-default">
+<div class="panel-body">
+
+<p>This example project introduces React 'class' components and illustrates the differences between class and functional components. This will be a brief introduction. A later example will illustrate more advanced features that are available when using classes such as state and lifecycle events.</p>
+
+<h2>What is a Functional Component</h2>
+<p>In the example projects so far we have been using functional components. A functional component is a react component that exports a function. It does not extend a React class as a class component does.</p>
+
+<h2>What is a Class Component?</h2>
+<p>In React, a class component is a component that extends the class React.Component. Class components can do things that functional components cannot, such as maintain state and use React lifecycle events.</p>
+
+<h2>What Makes a Functional Component a Functional Component?</h2>
+<p>Looking at the file Auto01.jsx there are several features that make it a react component:</p>
+<ul>
+  <li>React is imported</li>
+  <li>It contains a function that returns JSX</li>
+  <li>The function is exported using <code>export default</code></li>
+</ul>
+<pre><b>import React from 'react';</b><br><b>const Auto01 = function Auto</b>(props) {<br>  return (<br>    &lt;div&gt;<br>      &lt;h3&gt;Auto01 - is a functional component&lt;/h3&gt;<br>      &lt;p&gt;My car is a {props.make}&lt;/p&gt;<br>    &lt;/div&gt;<br>  )<br>}<br><b>export default Auto01;</b></pre>
+
+
+
+</div> <!-- panel-body -->
+</div> <!-- panel-default -->
+</div> <!-- container-fluid -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+  // alert("Script");
+  $('img').click(function() {
+    var msg = $(this).attr("src");
+    alert(msg);
+  });
+</script>
+
+</body>
