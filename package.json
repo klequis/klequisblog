@@ -13,12 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/manavsehgal/react-speed-book.git"
   },
-  "author": "Manav Sehgal",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/manavsehgal/react-speed-book/issues"
-  },
-  "homepage": "https://github.com/manavsehgal/react-speed-book#readme",
+  "author": "klequis",
+  "license": "",
+    "homepage": "http://klequis.com",
   "dependencies": {
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
