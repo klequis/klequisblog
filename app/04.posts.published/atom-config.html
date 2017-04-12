@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>14.git github</title>
+  <script src="https://use.fontawesome.com/6d23ccb989.js"></script>
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/flint-style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dev-style.css">
+  <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>A little over a year ago I got back into development and wanted a free editor. I tried Sublime, Brackets and Atom. Brackets wouldn't install on my Linux machine and although there is likely a way to get it working I felt an editor that needed
+          research to install was a bad bet. I very much liked Sublime but didn't want to deal with the nagging to pay for it. It is well worth paying for but I wasn't up to it at that time. As a result I switched to Atom and found it easy to configure
+          compared to Sublime and so I have stuck with it since.</p>
+        <p>Out of the box Atom is a very simple editor. However, there are, at this moment, 6,023 packages available to customize atom in terms of functionality and appearance. To find the packages you want you can <a href="https://atom.io/packages">search the atom repository</a>          by the type of functionality you are looking for and/or Goggle for Atom packages of interest.</p>
+        <p>Atom is often criticized for being slow and unable to open very large files. Neither of these present a problem for me. Atom does take some number of seconds to launch. However, I don't open and close it much during the day so it isn't a problem
+          for me. Atom has crashed when I was opening a very large file, say bootstrap.css, but I rarely do that and have other editors on hand for when I do such as gEdit and Sublime.</p>
+        <p>Below we will install Atom, install packages and then change a few settings in the editor. The setup is based on how I have Atom setup. My focus is the JavaScript, HTML, CSS &amp; React. If you are working with these technologies my setup will be a good starting point for you.</p>
+        <p class="ke-callout ke-callout-info">Are you a new programmer that hasn't settled on an editor yet? <i>Choose one of the most popular ones and stick with it.</i> Knowing your editor well, particularly the keyboard shortcuts, configuration and addons, will improve you productivity.</p>
+
+        <h2>Installing Atom</h2>
+        <p>If you do not have Atom installed go to <a href="https://atom.io">atom.io</a> and download the install for your system. The installation instructions can be found in the <a href="http://flight-manual.atom.io/getting-started/sections/installing-atom/">Atom Flight Manual</a>.</p>
+
+        <h2>Atom Packages</h2>
+        <p>The list below is all the Atom packages I currently use.</p>
+        <table>
+          <tr>
+            <td>highlight-selected</td>
+            <td>Double click on a word to highlight it throughout the open file</td>
+          </tr>
+          <td>git-plus</td>
+          <tr>
+            <td>pigments</td>
+            <td>A package to display colors in project and files</td>
+          </tr>
+          <tr>
+            <td>atom-beautify</td>
+            <td>Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, C, ...</td>
+          </tr>
+          <tr>
+            <td>auto-detect-indentation</td>
+            <td>Automatically detect indentation of opened files</td>
+          </tr>
+          <tr>
+            <td>rest-client</td>
+            <td>A simple REST client for your favorite editor</td>
+          </tr>
+          <tr>
+            <td>merge-conflicts</td>
+            <td>Resolve git conflicts within Atom</td>
+          </tr>
+          <tr>
+            <td>autocomplete-modules</td>
+            <td>Autocomplete for require/import statements</td>
+          </tr>
+          <tr>
+            <td>custom-title</td>
+            <td>Set your own template for Atom's title bar</td>
+          </tr>
+          <tr>
+            <td>expose</td>
+            <td>Quick tab overview of open files</td>
+          </tr>
+          <tr>
+            <td>todo-show</td>
+            <td>Finds all the TODOs, FIXMEs, CHANGEDs, etc. in your project.</td>
+          </tr>
+          <tr>
+            <td>git-time-machine</td>
+            <td>Visually interact with git commit history for a fil</td>
+          </tr>
+          <tr>
+            <td>goto-definition</td>
+            <td>Will got to the definition of the selected item</td>
+          </tr>
+          <tr>
+            <td>atom-ternjs</td>
+            <td>JavaScript code intelligence for atom with Tern. Adds support for ES5, ES6 (JavaScript 2015), Node.js, jQuery & Angular. Extendable via plugins. Uses suggestion provider by autocomplete-plus</td>
+          </tr>
+          <tr>
+            <td>autocomplete-paths</td>
+            <td>Adds path autocompletion to autocomplete+</td>
+          </tr>
+          <tr>
+            <td>docblockr</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>glowing-cursor</td>
+            <td>A helper package for writing documentation</td>
+          </tr>
+          <tr>
+            <td>markdown-preview-plus</td>
+            <td>Markdown Preview + Community Features</td>
+          </tr>
+          <tr>
+            <td>linter linter-csslint</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>linter-eslint</td>
+            <td>Lint CSS on the fly, using csslint</td>
+          </tr>
+          <tr>
+            <td>linter-htmlhint</td>
+            <td>A plugin for Atom Linter providing an interface to HTMLHint.</td>
+          </tr>
+          <tr>
+            <td>open-in-browser</td>
+            <td>Simple Package to open file in default application</td>
+          </tr>
+          <tr>
+            <td>browser-plus</td>
+            <td>Open a browser right in Atom with live update</td>
+          </tr>
+          <tr>
+            <td>language-babel</td>
+            <td>JavaScript ES201x, React JSX, Flow and GraphQL Grammar. Babel Transpiler</td>
+          </tr>
+          <tr>
+            <td>seti-ui</td>
+            <td>A dark colored UI theme for Atom with custom file icons</td>
+          </tr>
+        </table>
+
+        <h2>Installing Packages</h2>
+        <p>You can install packages using the Atom UI but the fastest way is to use the <code>$ apm</code> command from the command line. The format is</p>
+        <pre>$ apm install <i>package1</i> <i>package2</i> <i>packageN</i></pre>
+        <p>Here is the command to install all the packages listed above</p>
+        <pre>apm install highlight-selected seti-ui pigments atom-beautify auto-detect-indentation rest-client git-plus merge-conflicts autocomplete-modules custom-title expose todo-show git-time-machine goto-definition atom-ternjs autocomplete-paths docblockr glowing-cursor markdown-preview-plus linter linter-csslint linter-eslint linter-htmlhint open-in-browser browser-plus language-babel</pre>
+
+        <h2>Here are the editor settings I prefer</h2>
+        <p>In Atom choose Edit&gt;Preferences and then the Editor tab on the left.</p>
+        <p>Change settings to match the below.</p>
+        <ol>
+          <li>Scroll Past End = checked</li>
+          <li>Show Indent Guide = checked</li>
+          <li>Show Invisibles = checked</li>
+          <li>Soft Tabs = checked</li>
+          <li>Soft Wrap = checked</li>
+          <li>Tab Length = 2</li>
+        </ol>
+        <h2>A nice theme with icons which show file type</h2>
+        <p>The Seti theme was installed when we use the 'apm' command above. It needs to be activated.</p>
+        <ol>
+          <li>In the settings page, choose 'Themes' on the left</li>
+          <li>Set UI Theme = Seti</li>
+        </ol>
+        <p>I set the syntax theme to Base16 Tomorrow Dark</p>
+
+        <p class="ke-callout ke-callout-goal">I hope you enjoy using Atom!</p>
+      </div>
+    </div>
+  </div> <!-- container-fluid -->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    // alert("Script");
+    $('img').click(function() {
+      var msg = $(this).attr("src");
+      alert(msg);
+    });
+  </script>
+
+</body>
